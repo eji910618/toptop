@@ -37,17 +37,13 @@
 
             <header>
                 <h1><a href="/m/kr/front/viewMain.do">topten10mall</a></h1>
-                <ul class="util util-l">
-                    <li class="gnb"><a href="#">GNB</a></li>
-                    <li class="search"><a href="javascript:move_page('searchForm')">SEARCH</a></li>
-                </ul>
                 <ul class="util util-r" id="loginHeader">
+                    <li class="search"><a href="javascript:move_page('searchForm')">SEARCH</a></li>
                     <li class="cart"><a href="https://www.topten10mall.com/m/kr/front/basket/basketList.do"></a></li>
-                    <li class="my login"><a href="javascript:move_page('prelogin')">MY</a></li>
                 </ul>
                 <ul class="util util-r" id="logoutHeader" style="display: none;">
+                    <li class="search"><a href="javascript:move_page('searchForm')">SEARCH</a></li>
                     <li class="cart"><a href="https://www.topten10mall.com/m/kr/front/basket/basketList.do"></a></li>
-                    <li class="mypage"><a href="https://www.topten10mall.com/m/kr/front/member/mypage.do">MY</a></li>
                 </ul>
             </header>
         </div>
@@ -1066,47 +1062,79 @@
         </footer>
         <!-- // #footer -->
 
-        <div class="footer-scrl-btns">
-            <a href="#" class="gotopre"><i>PREV</i></a>
-            <a href="#" class="gototop"><i>TOP</i></a>
-            <!-- 20181122 카카오 상담톡 추가 -->
-
-            <div id="plusfriend-chat-button-new" style="display: none;">
-                <a href="javascript:;" id="kakaoTalkBtn" target="_blank"><img style="width: 100%;" src="/m/front/img/ssts/common/kakaoNewIconM.png"></a>
+        <!-- #stickySide -->
+        <aside id="stickySide">
+            <div class="stickySide-wrap">
+                <div id="plusfriend-chat-button-new" class="stickySide__btn" style="display: none;">
+                    <a href="javascript:;" id="kakaoTalkBtn" target="_blank">
+                        <img src="/m/front/img/common/layout/icon-talk-circle-fill.png" class="img-responsive">
+                    </a>
+                </div>
+                <div id="happytalk-chat-button" class="stickySide__btn">
+                    <a href="javascript:;" id="happyTalkBtn" target="_blank">
+                        <img src="/m/front/img/common/layout/icon-talk-circle-fill.png" class="img-responsive">
+                    </a>
+                </div>
+                <a href="#" class="stickySide__btn stickySide__alert label">알림</a>    <!-- 안읽은 푸쉬알림 있을때 label class 추가 -->
             </div>
-
-            <div id="happytalk-chat-button" style="display: none;">
-                <!-- <a href="javascript:;" onclick="window.open('https://customer.happytalk.io/public_v1/chat_v4/public_point?go=C&is_login=N&uid=&site_id=1000221496&category_id=99006&division_id=99007&usergb=W&title=%5B%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%83%81%EB%8B%B4%EC%B0%BD%5D', '', 'width=350, height=500'); return false;"><img style="width: 100%;" src="//happytalk.io/assets/main/img/btn-chat.png"></a> -->
-                <a href="javascript:;" id="happyTalkBtn" target="_blank"><img style="width: 100%;" src="/m/front/img/ssts/common/Mobile_talk_new_2.png?v=1"></a>
-            </div>
-
-        </div>
+            <button type="button" class="stickySide__btn stickySide__toggle label">더보기</button>   <!-- 안읽은 푸쉬알림 있을때 label class 추가 -->
+            <button type="button" class="stickySide__btn stickySide__top">위로</button>
+        </aside>
+        <!-- // #stickySide -->
 
         <div id="bottom_bar">
-            <div class="item"><a href="#" onclick="javascript:$('header > ul.util.util-l > li.gnb > a').trigger('click');">
-                <span class="icon"><img src="/m/front/img/ssts/main/img_bottom_1.png"></span>
-                <span class="txt">카테고리</span>
-            </a></div>
-            <div class="item gnb"><a href="https://www.topten10mall.com/m/kr/front/interest/interestList.do">
-                <span class="icon"><img src="/m/front/img/ssts/main/img_bottom_2.png"></span>
-                <span class="txt">관심상품</span>
-            </a></div>
-            <div class="item"><a href="https://www.topten10mall.com/m/kr/front/viewMain.do">
-                <span class="icon"><img src="/m/front/img/ssts/main/img_bottom_3.png?v=1"></span>
-                <span class="txt">탑텐몰</span>
-            </a></div>
-            <div class="item"><a href="https://www.topten10mall.com/m/kr/front/search/latelyGoodsList.do">
-                <span class="icon"><img src="/m/front/img/ssts/main/img_bottom_5.png"></span>
-                <span class="txt">히스토리</span>
-            </a></div>
-            <div class="item"><a href="https://www.topten10mall.com/m/kr/front/member/mypage.do">
-        <span class="icon">
-        <img src="/m/front/img/ssts/main/img_bottom_4.png"></span>
-                <span class="txt">MY</span>
-            </a>
+            <div class="bottomBar-item bottomBar-gnb">
+                <button type="button">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-cate@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">카테고리</span>
+                </button>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/interest/interestList.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-like@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">관심상품</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/viewMain.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-home@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">탑텐몰</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/search/latelyGoodsList.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-recent@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">히스토리</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/member/mypage.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-mypage@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">MY</span>
+                </a>
             </div>
         </div>
+        <!--<script>
+            var lastPoint = 0;
+            var direction = 0;
+            $(window).scroll(function() {
+                direction = lastPoint - $(this).scrollTop();
+                if(direction < 0) {
+                    $('#bottom_bar').removeClass('on');
+                }else{
+                    $('#bottom_bar').addClass('on');
+                }
+                lastPoint = $(this).scrollTop();
+            });
+            function myPageMove(){
 
+                if(loginYn){
+                    $('header > ul.util.util-r > li.my > a').trigger('click');
+                }else{
+                    move_page('loginToMain');
+                }
+            }
+        </script>-->
         <!-- //footer --><!-- //footer -->
     </div>
 

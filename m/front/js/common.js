@@ -93,7 +93,7 @@ jQuery(document).ready(function() {
     });
     
 /////////////////header start
-    $('header ul.util .gnb').click(function(){//util(메뉴/검색/장바구니/MY 영역) 상세 보기 20171013 수정
+    $('#bottom_bar .bottomBar-gnb').click(function(){//util(메뉴/검색/장바구니/MY 영역) 상세 보기 20171013 수정
         $('#ssts-wrapper').addClass('active');
         $('.header-util-op').css({ zIndex: 3 });
         op_layer_viewer();
@@ -136,14 +136,54 @@ jQuery(document).ready(function() {
         }
         $('.header-util-op').height($height);
     }
-    /////////////////header end
+    ///////////////// header end
 
-    /////////////////top 버튼 start
-    $('.footer-scrl-btns a.gototop').click(function(){
-        $('html, body').stop().animate({ scrollTop: 0 }, 150);
+    var scrollTriggerPos = 400;
+    ///////////////// #stickySide
+    var $stickySide = $('#stickySide');
+    var stickySideWrap = $stickySide.find('.stickySide-wrap');
+    var stickySidePlus = $stickySide.find('.stickySide__toggle');
+    var stickySideTop = $stickySide.find('.stickySide__top');
+    stickySidePlus.on('click', function() {
+        stickySideWrap.toggleClass('active');
+    });
+    stickySideTop.on('click', function () {
+        $('html, body').stop().animate({scrollTop: 0}, 150);
         return false;
     });
-    /////////////////top 버튼 end
+    ///////////////// #stickySide end
+    ///////////////// #bottom_bar
+    var scrollLastTop = 0;
+    var scrollDir = 0;
+    var $bottomBar = $('#bottom_bar');
+    function bottomBarMotion() {
+        var scrollTop = $(window).scrollTop();
+        scrollDir = scrollLastTop - scrollTop;
+        if ( scrollTop >= scrollTriggerPos ) {
+            if (scrollDir < 0) {
+                $bottomBar.addClass('active');
+                $stickySide.addClass('active-down');
+            } else {
+                $bottomBar.removeClass('active');
+                $stickySide.removeClass('active-down');
+            }
+        }
+        scrollLastTop = scrollTop;
+    }
+    bottomBarMotion();
+    ///////////////// #bottom_bar end
+    /**************
+      Scroll Event
+     *************/
+    $(window).on('scroll', function() {
+        var scrollTop = $(this).scrollTop();
+        bottomBarMotion();
+        if ( scrollTop >= scrollTriggerPos ) {
+            stickySideTop.addClass('active');
+        } else {
+            stickySideTop.removeClass('active');
+        }
+    });
 
     //select
     $('select').uniform();
