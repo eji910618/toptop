@@ -136,6 +136,12 @@ jQuery(document).ready(function() {
         }
         $('.header-util-op').height($height);
     }
+    var $headerBrandBtn = $('header .header-brand__toggle');
+    var $headerBrandList = $('.header-brand__list');
+    $headerBrandBtn.on('click', function() {
+        $headerBrandBtn.toggleClass('active');
+        $headerBrandList.toggleClass('active');
+    });
     ///////////////// header end
 
     var scrollTriggerPos = 400;
