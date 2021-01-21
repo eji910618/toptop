@@ -8,22 +8,12 @@
     <meta http-equiv="Expires" CONTENT="0">
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="title" content="TOPTEN MALL" />
-    <meta name="author" content="신성통상" />
-    <meta name="description" content="신성통상 온라인 쇼핑몰, 지오지아, 앤드지, 올젠, 에디션, 탑텐, 탑텐키즈등 의류, ACC 판매" />
-    <meta name="keywords" content="신성통상 온라인 쇼핑몰, 지오지아, 앤드지, 올젠, 에디션, 탑텐, 탑텐키즈등 의류, ACC 판매" />
-    <!-- <meta property="og:image" content=""/> -->
     <meta property="og:image" content="https://www.topten10mall.com/m/front/img/ssts/event/kakao.png">
-    <meta property="groobee:member_id" content=""/>
-    <meta property="groobee:member_grade" content=""/>
     <meta name="_csrf" content="e5d20dcf-80ba-405a-a903-c46dcd963b17"/>
     <!-- default header name is X-CSRF-TOKEN -->
     <meta name="_csrf_header" content="X-CSRF-TOKEN"/>
     <meta name="naver-site-verification" content="f94fd8adb97c5cd8867c590251bf50badcc6af42"/>
     <!-- 모바일 context -->
-    <script type="text/javascript">
-        var MOBILE_CONTEXT_PATH ="/m";
-    </script>
     <link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://imgb.topten10mall.com/m/front/css/swiper.min.css">
@@ -32,12 +22,7 @@
     <link rel="stylesheet" type="text/css" href="https://imgb.topten10mall.com/m/front/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://imgb.topten10mall.com/m/front/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="https://imgb.topten10mall.com/m/front/css/custom.css">
-    <script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery.min.js"></script>
-    <script type="text/javascript">
-        var HTTP_SERVER_URL = 'http://www-cdn.topten10mall.com',
-            HTTPS_SERVER_URL = 'https://www-cdn.topten10mall.com',
-            HTTPX_SERVER_URL = 'https://www-cdn.topten10mall.com';
-    </script>
+    <script type="text/javascript" src="/m/front/js/libs/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/m/front/css/ssts/main.css">
 </head>
@@ -45,55 +30,6 @@
 <div id="ssts-wrapper-wr"><!-- 20171013 ssts-wrapper/GNB/MY/All Brand 를 감싸는 ssts-wrapper-wr 영역 추가 -->
     <div id="ssts-wrapper">
         <!-- header// -->
-        <script>
-            function lineBannerLoad(){
-                var topBanSlide = '',
-                    topBanSetting = {
-                        auto: true,
-                        stopAutoOnClick: true,
-                        pause: 3500,
-                        controls: false,
-                        infiniteLoop: true,
-                        touchEnabled: false,
-                        pager: false,
-                        mode: 'fade'
-                    };
-
-                if ($('.mainTopLineBanner').length > 0) {//메인 상단 띠배너가 있으면
-                    topBanSlide = $('.mainTopLineBanner .lineBannerArea').bxSlider(topBanSetting);//메인 상단 띠배너 load
-                }
-
-                var interval = setInterval(function(){
-                    if($('.mainTopLineBanner').height() != 0){
-                        var lineBannerHeight = $('.mainTopLineBanner').height();
-                        $('.header-util-title').css('margin-top', lineBannerHeight + 51);
-                        $('#container').css('margin-top', lineBannerHeight + 51);
-                        clearInterval(interval);
-                    }
-                },20);
-
-                $('.mainTopLineBanner a.clslider').click(function(){//메인 상단 띠배너 닫기
-                    $('#ssts-wrapper .header-util-detail').css({ marginTop: 0 });
-                    $('.mainTopLineBanner').slideUp(400);
-
-                    // 띠배너 쿠키 설정
-                    setCookie('lineBannerCloseCookie', 'Y', '', cookieServerName);
-
-                    setTimeout(function(){
-                        topBanSlide.destroy();//메인 상단 띠배너 destroy
-                    }, 400);
-
-                    // 검색창 높이 조절
-                    $('.header-util-search').css('padding-top', '30px');
-
-                    // 헤더 높이 조절
-                    $('.header-util-title').css('margin-top', '');
-                    $('#container').css('margin-top', '');
-
-                    return false;
-                });
-            }
-        </script>
         <div class="header_container">
             <div class="mainTopLineBanner">
             </div>
@@ -1050,12 +986,6 @@
             </section>
             <!-- //main_stories -->
 
-            <!-- main_recommend -->
-            <!-- //main_recommend -->
-
-            <!-- main_instagram -->
-            <!-- //main_instagram -->
-
         </section>
         <!-- //container -->
 
@@ -1136,176 +1066,6 @@
         </footer>
         <!-- // #footer -->
 
-        <script type="text/javascript">
-            $(document).ready(function(){
-                var now = new Date();
-
-                var hour = now.getHours();
-                var minute = now.getMinutes();
-                var day = now.getDay();
-                //var today = hour+ "" + minute;      //현재시간
-
-                var loginChk = 'N';
-                var memberNm = '';
-                var mobile = '';
-                var parameter1 = '';
-                var host = '';
-                var pathName = '';
-                var search = '';
-                memberNm = '';
-                mobile = '';
-                host = $(location).attr('host');
-                pathName = $(location).attr('pathname');
-                search = $(location).attr('search');
-
-                parameter1 = host + pathName + search;
-
-//      var happyTalkUrl = 'https://customer.happytalk.io/public_v1/chat_v4/public_point?go=C&is_login='+loginChk+'&uid='+loginId+'&site_uid='+loginId+'&cus_extra_username='+memberNm+'&cus_extra_phone='+mobile+'&user_parameter='+parameter1+'&site_id=1000221496&category_id=99006&division_id=99007&usergb=W&title=%5B%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%83%81%EB%8B%B4%EC%B0%BD%5D';
-//      var kakaoTalkUrl = 'https://api.happytalk.io/api/kakao/chat_open?yid=%40topten10mall&is_login='+loginChk+'&uid='+loginId+'&site_uid='+loginId+'&cus_extra_username='+memberNm+'&cus_extra_phone='+mobile+'&user_parameter='+parameter1+'&site_id=1000221496&category_id=99006&division_id=99007&usergb=W';
-
-                $('#happyTalkBtn').on('click', function(){
-                    happytalk.open();
-                    return false;
-                });
-
-                /* $('#kakaoTalkBtn').on('click', function(){
-                    window.open(kakaoTalkUrl, '', 'width=350, height=500');
-                    return false;
-                }); */
-
-                /*
-                if(hour > 8 && hour < 18 && day >= 1 && day <= 5){ // 월~금 9시부터 18시까지
-                    $("#plusfriend-chat-button-new").hide();
-                    $("#happytalk-chat-button").show();
-                } else {
-                    $("#plusfriend-chat-button-new").show();
-                    $("#happytalk-chat-button").hide();
-                }
-                 */
-                // 2020-04-20 카톡 상담창 안씀
-                $("#plusfriend-chat-button-new").hide();
-                $("#happytalk-chat-button").show();
-
-                if(location.pathname.indexOf('/m/kr/front/goods/goodsDetail.do') == -1){
-                    $('.gotopre').remove();
-                }
-
-                // 지급보증서
-                $('#btn_usafe').on('click', function(){
-                    func_popup_init('.layer_usafe');
-                });
-
-            });
-
-            $(window).load(function(){
-// 	 if(navigator.userAgent.toUpperCase().indexOf('APP_SSTS') != -1 && navigator.userAgent.toUpperCase().indexOf('1.0.0.76') != -1){
-//     	 location.href = 'market://details?id=com.topten10mall.mallapp';
-//      }
-
-// 	 if(isAndroidApp && navigator.userAgent.toUpperCase().indexOf('1.0.0.87') == -1){
-//          Storm.LayerUtil.alertCallback("안정적인 서비스 사용을 위해 최신 버전으로 업데이트 해주세요.",function(){
-//              location.href = 'market://details?id=com.topten10mall.mallapp';
-//          });
-//      }
-
-                if(isApp) {
-                    $('ul.etc_link').append('<li><a href="#none" onclick="func_push_agree();return false;">알림설정</a></li>');
-
-//          if(getCookie('UPDATE_YN') != 'Y' && navigator.userAgent.toUpperCase().indexOf('1.0.0.79') == -1 && navigator.userAgent.toUpperCase().indexOf('1.1.15') == -1){
-//         	 setCookie('UPDATE_YN', 'Y', '', '.topten10mall.com');
-
-//              Storm.LayerUtil.confirm('최신 버전이 있습니다. 업데이트 이후 사용 하시겠습니까?', function(){
-//                  if(appCd == 'I'){
-//                     location.href = 'https://apps.apple.com/us/app/%ED%83%91%ED%85%90%EB%AA%B0/id1352952523';
-//                  }else if(appCd == 'A'){
-//                     location.href = 'market://details?id=com.topten10mall.mallapp';
-//                  }
-//              }, '', '업데이트', '');
-//          }
-                }
-
-                $('a[href*="openBrowser=1"]').on('click',function(e){
-                    e.preventDefault();
-                    if(isIosApp){
-                        webkit.messageHandlers.openBrowser.postMessage($(this).attr('href'));
-                    }else if(isAndroidApp){
-                        window.android.openBrowser($(this).attr('href'));
-                    }else{
-                        window.open($(this).attr('href'), '_black');
-                    }
-                });
-
-                $('a[href*="newWebview=1"]').on('click',function(e){
-                    e.preventDefault();
-                    if(isIosApp){
-                        webkit.messageHandlers.newWebview.postMessage($(this).attr('href'));
-                    }else if(isAndroidApp){
-                        window.android.newWebview($(this).attr('href'));
-                    }else{
-                        window.open($(this).attr('href'), '_self');
-                    }
-                });
-
-            });
-
-            function func_push_agree(){
-                Storm.LayerUtil.confirm('할인쿠폰, 세일, 이벤트 등의 광고성 정보(PUSH)를 받으시겠습니까?', function(){
-                    var data = "ok";
-                    if(appCd == "A") {
-                        window.android.callPushAgree(data);
-                    }else if(appCd == "I") {
-                        try {
-                            webkit.messageHandlers.pushConfirm.postMessage(data);
-                        } catch(err) {}
-                    }
-                }, function(){
-                    var data = "no";
-                    if(appCd == "A") {
-                        window.android.callPushDisagree(data);
-                    }else if(appCd == "I") {
-                        try {
-                            webkit.messageHandlers.pushConfirm.postMessage(data);
-                        } catch(err) {}
-                    }
-                }, '광고성 정보(PUSH) 수신 동의');
-                $('#div_id_confirm.active #btn_id_confirm_yes').text('동의');
-                $('#div_id_confirm.active #btn_id_confirm_no').text('거부');
-            }
-
-
-            function accessLog(){
-                var host = $(location).attr('host');
-                if(host.indexOf('-cdn.topten10mall.com') != -1 || host.indexOf('.ssts.com') != -1 ) return;
-
-                //var url = Constant.uriPrefix + '/front/accessLogger/insert.do';
-                var url = 'https://www-ssts.topten10mall.com/m/kr/front/accessLogger/insert.do';
-                var path = window.location.href;
-                var referer = document.referrer;
-
-                var paramMemberNo = memberNo;
-                var paramPartnerNo = '0';
-                var siteNo = '1';
-
-                if(host.indexOf('ziozia') == 0) paramPartnerNo =  '1'; if(host.indexOf('andz') == 0) paramPartnerNo =  '2';
-                if(host.indexOf('olzen') == 0) paramPartnerNo =  '3'; if(host.indexOf('edition') == 0) paramPartnerNo =  '4';
-                if(host.indexOf('toptenkids') == 0) paramPartnerNo =  '5'; if(host.indexOf('topten') == 0) paramPartnerNo =  '6';
-                if(host.indexOf('polham') == 0) paramPartnerNo =  '7'; if(host.indexOf('projectm') == 0) paramPartnerNo =  '8';
-                if(host.indexOf('polhamkids') == 0) paramPartnerNo =  '9'; if(host.indexOf('ex2o2') == 0) paramPartnerNo =  '10';
-                if(host.indexOf('male24365') == 0) paramPartnerNo =  '11'; if(host.indexOf('cnts') == 0) paramPartnerNo =  '12';
-
-                var gaId = getCookie('_ga');
-                var paramJsessionid = jsessionid;
-                var paramServerName = serverName;
-
-                var param = {url:path, referer:referer, paramMemberNo:paramMemberNo, paramPartnerNo:paramPartnerNo, siteNo:siteNo, gaId:gaId, paramJsessionid:paramJsessionid, paramServerName:paramServerName};
-                $.ajax({
-                    type: 'post',
-                    url: url,
-                    data: param,
-                    async: true
-                });
-            }
-        </script>
         <div class="footer-scrl-btns">
             <a href="#" class="gotopre"><i>PREV</i></a>
             <a href="#" class="gototop"><i>TOP</i></a>
@@ -1345,213 +1105,7 @@
                 <span class="txt">MY</span>
             </a>
             </div>
-            <!--
-               <div class="item"><a href="#" onclick="javascript:move_page('loginToMain');">
-                       <span class="icon"><img src="/m/front/img/ssts/main/img_bottom_4.png"></span>
-                       <span class="txt">MY</span>
-                   </a></div>
-
-           -->
-
         </div>
-
-        <script>
-            var lastPoint = 0;
-            var direction = 0;
-            $(window).scroll(function() {
-                direction = lastPoint - $(this).scrollTop();
-                if(direction < 0) {
-                    $('#bottom_bar').removeClass('on');
-                }else{
-                    $('#bottom_bar').addClass('on');
-                }
-                lastPoint = $(this).scrollTop();
-            });
-            function myPageMove(){
-
-                if(loginYn){
-                    $('header > ul.util.util-r > li.my > a').trigger('click');
-                }else{
-                    move_page('loginToMain');
-                }
-            }
-        </script>
-
-        <t:putAttribute name="popupLayer">
-            <div class="layer layer_usafe">
-                <div class="popup">
-                    <div class="head">
-                        <h1>서비스가입사실확인</h1>
-                        <button type="button" name="button" class="btn_close popup_btn_close">close</button>
-                    </div>
-                    <div class="body">
-                        <div class="usafe_conts">
-                            <img style="width: 100%;" src="/front/img/ssts/common/img_usafe.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </t:putAttribute>
-
-        <t:putAttribute name="cafe24">
-
-            <!-- canonical SEO 2018/08/17 -->
-            <link rel="canonical" href="https://www.topten10mall.com">
-            <span itemscope="" itemtype="http://schema.org/Organization">
-<link itemprop="url" href="https://www.topten10mall.com">
-<a itemprop="sameAs" href="https://www.facebook.com/topten10mall">
-</a>
-</span>
-
-            <script async="async">
-                window.__ht_wc = window.__ht_wc || {};
-                window.__ht_wc.host = 'design.happytalkio.com';
-                window.__ht_wc.site_id = '1000221496'; // site_id
-                window.__ht_wc.site_name = '신성통상(주)'; // 회사 이름
-                window.__ht_wc.category_id = '99006'; // 대분류 id
-                window.__ht_wc.division_id = '99007'; // 중분류 id
-
-                // 고정 및 Custom 파라미터 추가 영역, 파라미터가 여러개인 경우 ,(콤마)로 구분
-                // window.__ht_wc.params = 'site_uid=abcd1234,parameter1=param1';
-                // 앱 개발시, 웹뷰 Local Storage 사용가능하도록 처리
-
-                (function() {
-                    var ht = document.createElement('script');
-                    ht.type = 'text/javascript';
-                    ht.async = true;
-                    ht.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + window.__ht_wc.host + '/web_chatting/tracking.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(ht, s);
-                })();
-            </script>
-
-            <!-- groobee -->
-            <!--cafe24 2018/06/27-->
-            <script type='text/javascript'>
-                var cmcJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
-                document.write(unescape("%3Cscript id='cmclog_script' src='" + cmcJsHost + "toptenmall.cmclog.cafe24.com/weblog.js?uid=toptenmall&uname=toptenmall'type='text/javascript'%3E%3C/script%3E"));
-            </script>
-
-            <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
-            <script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
-            <script type="text/javascript">
-                if (!wcs_add) var wcs_add={};
-                wcs_add["wa"] = "s_40b6465d4f90";
-                if (!_nasa) var _nasa={};
-                wcs.inflow("topten10mall.com");
-                wcs_do(_nasa);
-            </script>
-
-            <!-- 리포트2.0 로그분석코드 시작 -->
-            <script type="text/javascript">
-                var JsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
-                var sTime = new Date().getTime();
-                document.write(unescape("%3Cscript id='log_script' src='" + JsHost + "toptenmall.weblog.cafe24.com/weblog.js?uid=toptenmall&t="+sTime+"' type='text/javascript'%3E%3C/script%3E"));
-            </script>
-            <!-- 리포트2.0  로그분석코드 완료 -->
-
-            <!-- Facebook Pixel Code -->
-            <script>
-                !function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                    n.queue=[];t=b.createElement(e);t.async=!0;
-                    t.src=v;s=b.getElementsByTagName(e)[0];
-                    s.parentNode.insertBefore(t,s)}(window, document,'script',
-                    'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '589840528045600');
-                fbq('track', 'PageView');
-            </script>
-
-            <noscript>
-                <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=589840528045600&ev=PageView&noscript=1"/>
-            </noscript>
-            <!-- End Facebook Pixel Code -->
-
-            <!-- Return script start -->
-            <div id="return_panel"></div>
-            <script type="text/javascript">
-                var shop_id = "topten10mall";
-                var shop_domain = "topten10mall.com";
-                var shop_pr = "etc";
-                var shop_etc = {"prod_link":"/m/kr/front/goods/goodsDetail.do?goodsNo=", "img":"image1"};
-                function return_panel_init(){
-                    $("#return_panel").RETURNPanel({});
-                }
-                function return_panel_start(){
-                    var url = "//blackhole.hearina.com/return/gid/"+shop_domain;
-                    var xmlhttp = new createCORSRequest('GET',url);
-                    xmlhttp.withCredentials = true;
-                    xmlhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            var jsonObj = JSON.parse(this.responseText);
-                            if( jsonObj.use == "true" ){
-                                window.globalRETURN = new HEARINA();
-                                globalRETURN.jsInit(shop_id, shop_domain, shop_pr, jsonObj.gid, shop_etc, false);
-                            }
-                        }
-                    };
-                    xmlhttp.open("GET", url, true);
-                    xmlhttp.send();
-                }
-                function createCORSRequest(method, url) {
-                    var xhr = new XMLHttpRequest();
-                    if ("withCredentials" in xhr) {
-                        xhr.open(method, url, true);
-                    } else if (typeof XDomainRequest != "undefined") {
-                        xhr = new XDomainRequest();
-                        xhr.open(method, url);
-                    } else {
-                        xhr = null;
-                    }
-                    return xhr;
-                }
-                try {
-                    var now = new Date();
-                    var script = document.createElement('script');
-                    var url = "//cdn.hearina.com/js/return_hearina.v.1.5.js?ver=2&req="+ now.getFullYear() + now.getMonth() + now.getDate();
-                    var head = document.getElementsByTagName("head")[0] || document.body;
-                    script.async = true;
-                    script.src = url;
-                    script.onreadystatechange = function () {
-                        if (this.readyState == 'complete' || this.readyState == 'loaded') {
-                            try {
-                                return_panel_start();
-                            }catch(e){}
-                        }
-                    };
-                    script.onload = function () {
-                        try{
-                            return_panel_start();
-                        }catch(e){}
-                    };
-                    head.appendChild(script);
-                } catch(e){}
-            </script>
-            <!-- Return script end -->
-
-            <!-- Return script end -->
-            <!-- BS CTS TRACKING SCRIPT FOR SETTING ENVIRONMENT V.20 / FILL THE VALUE TO SET. -->
-            <!-- COPYRIGHT (C) 2002-2018 BIZSPRING INC. L4AD ALL RIGHTS RESERVED. -->
-            <script type="text/javascript">
-                _L_LACD = ".toptenmall.com";
-            </script>
-            <!-- END OF ENVIRONMENT SCRIPT -->
-
-            <!-- BS CTS TRACKING SCRIPT V.20 / 14240 : CTS / DO NOT ALTER THIS SCRIPT. -->
-            <!-- COPYRIGHT (C) 2002-2018 BIZSPRING INC. L4AD ALL RIGHTS RESERVED. -->
-            <script type="text/javascript">
-                (function(b,s,t,c,k){b[k]=s;b[s]=b[s]||function(){(b[s].q=b[s].q||[]).push(arguments)};  var f=t.getElementsByTagName(c)[0],j=t.createElement(c);j.async=true;j.src='//fs.bizspring.net/fs4/l4cts.v4.2.js';f.parentNode.insertBefore(j,f);})(window,'_tcts_m',document,'script','BSAnalyticsObj');
-                _tcts_m('14240','SJCOMM');
-            </script><!-- END OF BS CTS TRACKING SCRIPT -->
-
-            <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
-            <script type="text/javascript">
-                kakaoPixel('1221914281330557110').pageView();
-            </script>
-
-        </t:putAttribute>
 
         <!-- //footer --><!-- //footer -->
     </div>
@@ -1568,50 +1122,52 @@
                 <button type="button" name="button" class="active">카테고리</button>
             </div>
             <div class="tab_content">
-                <dl>
-                    <dt><a href="//ziozia.topten10mall.com/m/kr/front/viewMain.do">ZIOZIA</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="//andz.topten10mall.com/m/kr/front/viewMain.do">AND Z</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="//olzen.topten10mall.com/m/kr/front/viewMain.do">OLZEN</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="//edition.topten10mall.com/m/kr/front/viewMain.do">EDITION</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="//topten.topten10mall.com/m/kr/front/viewMain.do">TOPTEN10</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="//polham.topten10mall.com/m/kr/front/viewMain.do">POLHAM</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="//projectm.topten10mall.com/m/kr/front/viewMain.do">PROJECT M</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="//toptenkids.topten10mall.com/m/kr/front/viewMain.do">TOPTEN KIDS</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="//polhamkids.topten10mall.com/m/kr/front/viewMain.do">POLHAM KIDS</a></dt>
-                </dl>
-                <div class="hr-m-gnb"></div>
-
-                <dl>
-                    <dt><a href="https://topten.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1435">BALANCE</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="https://wml.topten10mall.com">WML</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="https://olzen.topten10mall.com/kr/front/search/categorySearch.do?ctgNo=17562">OLIVER</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="https://topten.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1720">EX2O2</a></dt>
-                </dl>
-                <dl>
-                    <dt><a href="https://www.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1940">CNTS</a></dt>
-                </dl>
+                <div class="header-util__brand">
+                    <dl>
+                        <dt><a href="//ziozia.topten10mall.com/m/kr/front/viewMain.do">ZIOZIA</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//andz.topten10mall.com/m/kr/front/viewMain.do">AND Z</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//olzen.topten10mall.com/m/kr/front/viewMain.do">OLZEN</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//edition.topten10mall.com/m/kr/front/viewMain.do">EDITION</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//topten.topten10mall.com/m/kr/front/viewMain.do">TOPTEN10</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//polham.topten10mall.com/m/kr/front/viewMain.do">POLHAM</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//projectm.topten10mall.com/m/kr/front/viewMain.do">PROJECT M</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//toptenkids.topten10mall.com/m/kr/front/viewMain.do">TOPTEN KIDS</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//polhamkids.topten10mall.com/m/kr/front/viewMain.do">POLHAM KIDS</a></dt>
+                    </dl>
+                </div>
+                <div class="header-util__brand">
+                    <dl>
+                        <dt><a href="https://topten.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1435">BALANCE</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://wml.topten10mall.com">WML</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://olzen.topten10mall.com/kr/front/search/categorySearch.do?ctgNo=17562">OLIVER</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://topten.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1720">EX2O2</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://www.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1940">CNTS</a></dt>
+                    </dl>
+                </div>
             </div>
             <div class="tab_content active">
                 <dl>
@@ -1652,7 +1208,6 @@
                         </dl>
                     </dd>
                 </dl>
-
                 <dl>
                     <dt>
                         <button type="button" name="button">남성</button>
@@ -1724,7 +1279,6 @@
                         </dl>
                     </dd>
                 </dl>
-
                 <dl>
                     <dt>
                         <button type="button" name="button">여성</button>
@@ -1792,7 +1346,6 @@
                         </dl>
                     </dd>
                 </dl>
-
                 <dl>
                     <dt>
                         <button type="button" name="button">아동</button>
@@ -1845,7 +1398,6 @@
                         </dl>
                     </dd>
                 </dl>
-
                 <dl>
                     <dt>
                         <button type="button" name="button">아울렛</button>
@@ -1889,7 +1441,6 @@
                         </dl>
                     </dd>
                 </dl>
-
                 <dl>
                     <dt>
                         <button type="button" name="button">악세서리</button>
@@ -1908,7 +1459,7 @@
                     <dd><a href="/m/kr/front/magazine/lookbookList.do">룩북</a></dd>
                     <dd><a href="/m/kr/front/magazine/newsList.do">뉴스</a></dd>
                 </dl>
-                <dl>
+                <dl class="header-util__event">
                     <dt>
                         <button type="button" name="button">이벤트</button>
                     </dt>
@@ -1916,14 +1467,41 @@
                     <dd><a href="/m/kr/front/event/eventList.do">이벤트</a></dd>
                     <dd><a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=8552">베스트 리뷰</a></dd>
                 </dl>
-
             </div>
-
-
         </nav>
         <a href="#" class="btn-cls">CLOSE</a>
+        <script type="text/javascript"> /* 원래 위치 -> /m/kr/front/djs/linkJS.js */
+            /************************** toptenkids몰 좌측메뉴 이벤트 ****************************/
+            $('.header-util-gnb .ttkids_head .tab_items button').on('click', function(){
+                var idx = $(this).index();
+                $('.header-util-gnb .ttkids_head .tab_items button').removeClass('active');
+                $('.header-util-gnb .ttkids_head .tab_content').removeClass('active');
+                $(this).addClass('active');
+                $('.header-util-gnb .ttkids_head .tab_content').eq(idx).addClass('active');
+            });
+            $('.header-util-gnb .ttkids_head dt button').on('click', function(){
+                if($(this).parents('dl').hasClass('active')){
+                    $('.header-util-gnb .ttkids_head dl').removeClass('active');
+                    $('.header-util-gnb .ttkids_head dd').removeClass('active');
+                }else{
+                    $('.header-util-gnb .ttkids_head dl').removeClass('active');
+                    $('.header-util-gnb .ttkids_head dd').removeClass('active');
+                    $(this).parents('dl').addClass('active');
+                }
+            });
+
+            $('.header-util-gnb .ttkids_head dd button').on('click', function(){
+                if($(this).parents('dd').hasClass('active')){
+                    $('.header-util-gnb .ttkids_head dd').removeClass('active');
+                }else{
+                    $('.header-util-gnb .ttkids_head dd').removeClass('active');
+                    $(this).parents('dd').addClass('active');
+                }
+            });
+        </script>
     </div>
-    <!-- //GNB --></div>
+    <!-- //GNB -->
+</div>
 <!-- //GNB/MY -->
 <!-- Layer// -->
 <!-- 회원등급별 혜택보기// -->
@@ -2357,79 +1935,6 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function() {
-        var obj = [];
-        var popupGrpCd = jQuery("#popupGrpCd").val();
-        $.each(obj, function(i) {
-            var name = "cookieName_"+obj[i].siteNo+obj[i].popupGrpCd+obj[i].popupNo;
-            var value = "cookieValue_"+obj[i].siteNo+obj[i].popupGrpCd+obj[i].popupNo;
-            var cookieValue = getCookie(name);
-
-            //쿠기 생성
-            jQuery('#cookieInsert_'+i).on('click', function(e) {
-                var ckkClick = $('input:checkbox[id=today_check_'+i+']').is(':checked');
-                if(ckkClick){
-                    var expdate = new Date();
-                    expdate.setTime(expdate.getTime() + 1000 * 3600 * 24 * obj[i].cookieValidPeriod);
-                    var name = "cookieName_"+obj[i].siteNo+obj[i].popupGrpCd+obj[i].popupNo;
-                    var value = "cookieValue_"+obj[i].siteNo+obj[i].popupGrpCd+obj[i].popupNo;
-                    setCookie(name,value,expdate);
-                }
-
-                $('#layerPopup_'+i).removeClass('active');
-            });
-
-            if(obj[i].popupGbCd == "P"){
-                var width=10;
-                var height=10;
-                var left = obj[i].pstLeft;
-                var top = obj[i].pstTop;
-                var specs = "position:absolute, width=" + width;
-                specs += ",height=" + height;
-                specs += ",left=" + left;
-                specs += ",top=" + top;
-                specs += ",scrollbars=no";
-                specs += ",status=no";
-                specs += ",toolbar=no";
-
-                if(obj[i].popupGrpCd == popupGrpCd){
-                    if(cookieValue != value){
-                        var frmObj = document.frmPopup;
-                        var url = Constant.uriPrefix + "/front/openPopup.do";
-                        window.open("", "mywindow"+obj[i].popupNo, specs );
-                        frmPopup.action = url;
-                        frmPopup.method="post";
-                        frmPopup.target = "mywindow"+obj[i].popupNo;
-                        frmPopup.popupNm.value = obj[i].popupNm;
-                        frmPopup.content.value = obj[i].content;
-                        frmPopup.popupGrpCd.value = obj[i].popupGrpCd;
-                        frmPopup.popupNo.value = obj[i].popupNo;
-                        frmPopup.cookieValidPeriod.value = obj[i].cookieValidPeriod;
-                        frmPopup.submit();
-                    }
-                }
-            } else {
-                if(obj[i].popupGrpCd == popupGrpCd){
-                    if(cookieValue != value){
-                        $('#layerPopup_'+i).addClass('active');
-                    }
-                } else {
-                    $('#layerPopup_'+i).removeClass('active');
-                }
-            }
-        });
-    });
-</script>
-<input type="hidden" id = "popupGrpCd" name = "popupGrpCd" value = "MM" />
-<form name="frmPopup">
-    <input type="hidden" name="popupNm" id = "popupNm" >
-    <input type="hidden" name="content" id = "content" >
-    <input type="hidden" name="popupNo" id = "popupNo" >
-    <input type="hidden" name="popupGrpCd" id = "popupGrpCd" >
-    <input type="hidden" name="cookieValidPeriod" id = "cookieValidPeriod" >
-</form>
-
 <!-- //Layer -->
 </body>
 <script type="text/javascript" src="/m/front/js/libs/jquery-ui.min.js"></script>
@@ -2452,250 +1957,9 @@
 <script type="text/javascript" src="/m/front/js/datepicker.js?v=2"></script>
 <script type="text/javascript" src="/m/front/js/libs/instagram/instafeed.min.js"></script>
 <script type="text/javascript" src="/m/front/js/instagram.js"></script>
-<script type="text/javascript" src="/m/front/js/libs/swiper.min.js?v=1"></script>
+<script type="text/javascript" src="/m/kr/front/djs/jsVar.js"></script>
+<script type="text/javascript" src="/m/kr/front/djs/linkJS.js"></script>
+<script type="text/javascript" src="/m/kr/front/djs/memberJS.js"></script>
+<script type="text/javascript" src="/m/front/js/libs/swiper.min.js"></script>
 <script type="text/javascript" src="https://imgp.topten10mall.com/com/product/js/custom.js?v=1"></script>
-<script>
-    // google GTM 향상된 전자 상거래를 위한 클릭 이벤트
-    function commonGtmClickEvent(obj){
-        try {
-            dataLayer.push({
-                'event': 'productClick',
-                'ecommerce': {
-                    'click': {
-                        'actionField': {'list': 'Search Results'},      // Optional list property.
-                        'products': [{
-                            'name': $(obj).find('div.prd-info').find('.name').text(),      // 제품의 이름 (상품명)
-                            'id': $(obj).attr('data-goodsNo'),                      // 제품의 ID   (상품번호)
-                            'price': parseInt($(obj).find('div.prd-info').find('.p_o').text().replace(/,/g,"")),  // 제품의 가격 (상품가격)
-                            'brand': $(obj).attr('data-brand'),    // 브랜드 명
-                            'category': $('.tl-d1').find('a').last().text(),        // 카테고리 명
-                            // 'variant': "TOPTEN MALL",                    // 제품의 옵션 ((상품옵션))
-                            'position': parseInt($(obj).attr('data-position'))                // 제품의 위치
-                        }]
-                    }
-                },
-                'eventCallback': function() {
-                    document.location = $(obj).attr('href')
-                }
-            });
-            //console.log("goods commonGtmClickEvent info:"+JSON.stringify(dataLayer));
-        } catch (e) {
-            console.error("google GTM commonGtmClickEvent error:"+e.message);
-        }
-    }
-
-
-    // google GTM 장바구니 담기 이벤트
-    function commonGtmAddtoCartEvent(){
-        try {
-
-            //console.log("goods commonGtmAddtoCartEvent info:"+JSON.stringify(dataLayer));
-        } catch (e) {
-            console.error("google GTM commonGtmAddtoCartEvent error:"+e.message);
-        }
-    }
-
-    //google GTM 장바구니 개별 담기 이벤트 (마이페이지 > 관심상품, 재입고알림)
-    function commonGtmAddtoCartMypageEvent(obj){
-        try {
-            dataLayer.push({
-                'event': 'addToCart',
-                'ecommerce': {
-                    'currencyCode' : 'KRW',
-                    'add': {
-                        'products': [{
-                            'name': obj.goodsNm,                    // 제품의 이름 (상품명)
-                            'id': obj.goodsNo,                      // 제품의 ID   (상품번호)
-                            'price': obj.salePrice,                 // 제품의 가격 (상품가격)
-                            'brand': obj.partnerNm,                 // 브랜드 명
-                            'quantity': 1                           // 상품의 개수
-                        }]
-                    }
-                }
-            });
-            //console.log("goods commonGtmAddtoCartMypageEvent info:"+JSON.stringify(dataLayer));
-        } catch (e) {
-            console.error("google GTM commonGtmAddtoCartMypageEvent error:"+e.message);
-        }
-    }
-
-    //google GTM 장바구니 제거 이벤트
-    function commonGtmRemoveCartEvent(obj){
-        try {
-            dataLayer.push({
-                'event': 'removeFromCart',
-                'ecommerce': {
-                    'remove': {
-                        'products': [{
-                            'name': obj.goodsNm,                    // 제품의 이름 (상품명)
-                            'id': obj.goodsNo,                      // 제품의 ID   (상품번호)
-                            'price': obj.salePrice,                 // 제품의 가격 (상품가격)
-                            'brand': obj.partnerNm,                 // 브랜드 명
-                            'quantity': 1                           // 상품의 개수
-                        }]
-                    }
-                }
-            });
-            //console.log("goods commonGtmRemoveCartEvent info:"+JSON.stringify(dataLayer));
-        } catch (e) {
-            console.error("google GTM commonGtmRemoveCartEvent error:"+e.message);
-        }
-    }
-
-    //googel GTM 결제 행동(Checkout 행동분석)
-    function commonGtmCheckout() {
-        try {
-            dataLayer.push({
-                'event': 'checkout',
-                'ecommerce': {
-                    'checkout': {
-                        'actionField': {'step': 1, 'option': '결재'},
-                        'products':
-                            [
-
-                            ]
-                    }
-                }
-            });
-            //console.log("goods commonGtmCheckout info:"+JSON.stringify(dataLayer));
-        } catch (e) {
-            console.error("google GTM commonGtmCheckout error:"+e.message);
-        }
-    }
-
-    //google GTM 구매 완료
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        recomIdAddCookie();
-
-        // 20180125 edit
-        var swiper1 = new Swiper('.main_rolling', {//메인 슬라이더
-            autoplay: {
-                delay: 5000,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            loop: true,
-        });
-
-//            var swiper2 = new Swiper('.main_mall .swiper-container', {//메인 슬라이더
-//              autoplay: {
-//             	delay: 5000,
-//              },
-//              pagination: {
-//                el: '.swiper-pagination',
-//              },
-//              loop: true,
-//            });
-
-        //Hash Tag 슬라이드 start
-        var featureSlider3 = $('.main_hash_tag .thumbnail-list ul').bxSlider({
-            slideWidth: 75,
-            minSlides: 4,
-            maxSlides: 4,
-            slideMargin: 12,
-            infiniteLoop: false,
-            pager: false,
-            controls: false
-        });
-
-        //New, Best, MD’s pick 슬라이드 start
-        var featureSlider = $('.main_feature .man .thumbnail-list ul').bxSlider({
-            auto: true,
-            slideWidth: 233,
-            minSlides: 2,
-            maxSlides: 4,
-            slideMargin: 10,
-            pager: false,
-            infiniteLoop: true,
-            controls: false,
-            speed: 800,
-            hideControlOnEnd: true,
-            autoHover: true,
-            onSlideAfter: function($slideElement, oldIndex, newIndex){
-                featureSlider.stopAuto();
-                featureSlider.startAuto();
-            }
-        });
-
-        var featureSlider1 = $('.main_feature .casual .thumbnail-list ul').bxSlider({
-            auto: true,
-            slideWidth: 233,
-            minSlides: 2,
-            maxSlides: 4,
-            slideMargin: 10,
-            pager: false,
-            infiniteLoop: true,
-            controls: false,
-            speed: 800,
-            hideControlOnEnd: true,
-            autoHover: true,
-            onSlideAfter: function($slideElement, oldIndex, newIndex){
-                featureSlider1.stopAuto();
-                featureSlider1.startAuto();
-            }
-        });
-        //New, Best, MD’s pick 슬라이드 end
-
-        // 인스타그램
-        var userId = "1733900561";
-        var clientId = "a0342a4d85ecd4defbc1c1c58382f522";
-        var accessToken = "";
-        var siteNo = "1";
-        var partnerNo = "1";
-        var instagramAct = "r.ziozia_official";
-        var articleCnt = 4;
-        if(accessToken == ""){
-            $('.main_instagram').remove();
-        }else{
-            Instagram.create(instagramAct, userId, clientId, accessToken, siteNo, partnerNo, articleCnt);
-        }
-    });
-
-    function recomIdAddCookie(){
-        var url = decodeURIComponent(location.href);
-        var params = url.substring(url.indexOf('?')+1, url.length);
-        params = params.split("&");
-        var size = params.length;
-        var key, value;
-        for(var i=0; i<size; i++){
-            key = params[i].split("=")[0];
-            value = params[i].split("=")[1];
-            if(key == "recomId"){
-                setCookie('RECOM_ID', value, '', '.topten10mall.com');
-            }
-        }
-    }
-
-    var moveOrderList = function() {
-        if(loginYn){
-            location.href = Constant.dlgtMallUrl + '/front/order/orderList.do';
-        } else {
-            Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
-                function() {
-                    var returnUrl = window.location.pathname+window.location.search;
-                    location.href= Constant.dlgtMallUrl + "/front/login/viewLogin.do?returnUrl="+returnUrl;
-                },''
-            );
-        }
-    };
-
-</script>
-
-<!-- 크리테오 스크립트 -->
-<script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
-<script type="text/javascript">
-    try {
-        window.criteo_q = window.criteo_q || [];
-        window.criteo_q.push(
-            { event: "setAccount", account: 51710 },
-            { event: "setEmail", email: "" },
-            { event: "setSiteType", type: "m" },
-            { event: "viewHome" }
-        );
-    } catch (e) {
-        console.error(e.message);
-    }
-</script></html>
+</html>
