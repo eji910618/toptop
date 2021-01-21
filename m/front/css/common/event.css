@@ -1,0 +1,50 @@
+@import "//fonts.googleapis.com/earlyaccess/notosanskr.css";
+#event .common_list img { width: 45%; height: auto; }
+#event .common_list ul li { margin-bottom: 20px; position: relative; }
+#event .common_list ul li div { display: inline-block; position: absolute; padding: 0vw 2vw 0 3vw; letter-spacing: -0.008em; line-height: 1.6em; }
+#event .common_list ul li div ul.tagList li { float: left; padding: 3px 9px; margin: 0 2px 4px 0; color: white; width: auto; }
+#event .common_list ul li p { display: inline-block; }
+#event .common_list ul li p span { display: block; }
+#event .common_list ul li p span.brand { font-size: 3.2vw; color: #999; margin-top: 0.5em; }
+#event .common_list ul li p span.txt { font-size: 3.6vw; font-weight: bold; color: #111; }
+#event .common_list ul li p span.date { font-size: 3.2vw; color: #999; margin-top: 0.5em; }
+#event .sort_wrap.fixed {/* 20181030 add */ position: fixed; width: 96.6%; top: 90px; z-index: 2;}
+#event .sort_wrap.special { padding-right: 0; padding-bottom: 0; }
+#event .sort_wrap.special > div { float: none; width: 100%; padding-right: 0; }
+#event .sort_wrap.special > div .select_item { right: 0; }
+#event .list_wrap { padding-top: 45px; }
+#event .list_wrap h4 { font-size: 15px; font-weight: bold; text-align: center; margin-bottom: 10px; }
+#event .list_wrap + .list_wrap { padding-top: 45px; border-top: 1px solid #ddd; }
+#event .list_wrap .btn_more { /* 20180116 add */ margin-bottom: 50px; }
+#event .list_wrap:last-child .btn_more { /* 20180116 add */ margin-bottom: 0px; }
+#event .menu_wrap { position: relative; }
+#event .menu_wrap > ul { background: #f4f4f4; height: 35px; }
+#event .menu_wrap > ul > li { float: left; }
+#event .menu_wrap > ul > li > span { position: relative; display: inline-block; }
+#event .menu_wrap > ul > li > span button { padding: 9px 15px 10px; font-size: 12px; font-weight: bold; color: #111; }
+#event .menu_wrap > ul > li + li > span:before { content: ''; display: block; position: absolute; top: 13px; left: 0; width: 1px; height: 10px; background: #ddd; }
+#event .menu_wrap > ul > li .depth2 { display: none; position: absolute; top: 35px; left: 0; width: 100%; background: #fff; border-top: 1px solid #ddd; z-index: 1; }
+#event .menu_wrap > ul > li .depth2 li { float: left; width: 50%; border-bottom: 1px solid #ddd; }
+#event .menu_wrap > ul > li .depth2 li:nth-child(odd) { border-right: 1px solid #ddd; }
+#event .menu_wrap > ul > li .depth2 li a { display: block; padding: 7px 0 7px 15px; font-size: 12px; color: #666; }
+#event .menu_wrap > ul > li.active > span button { text-decoration: underline; }
+#event .menu_wrap > ul > li.active .depth2 { display: block; }
+
+.cal_area { padding: 0 4.7%; }
+.cal_area .head { overflow: hidden; padding-top: 26px; margin-bottom: 31px; }
+.cal_area .head h4 { font-family: "Open Sans", sans-serif; font-weight: 700; font-size: 25px; line-height: 100%; text-align: center; margin-bottom: 9px; }
+.cal_area .head p { font-size: 12px; text-align: center; letter-spacing: -0.05em; margin-bottom: 18px; }
+.cal_area .head p span { color: #c69c6d; }
+.cal_area .head button { display: block; height: 35px; width: 100%; -webkit-border-radius: 35px; -moz-border-radius: 35px; border-radius: 35px; background-color: #111; }
+.cal_area .head button img { display: block; height: 100%; margin: 0 auto; }
+.cal_area table { table-layout: fixed; border-collapse: collapse; }
+.cal_area table th { border-top: 3px solid #111; position: relative; height: 30px; font-family: "Open Sans", sans-serif; font-weight: 700; font-size: 10px; }
+.cal_area table th:after { content: ''; display: block; width: 1px; height: 3px; background-color: #fff; position: absolute; top: -3px; right: 0; }
+.cal_area table td { border: 1px solid #e5e5e5; height: 60px; vertical-align: top; }
+.cal_area table td span { display: block; font-family: "Open Sans", sans-serif; font-weight: 700; font-size: 11px; line-height: 100%; padding: 5px 0 8px 7px; }
+.cal_area table td img { display: block; margin: 0 auto; width: 27px; }
+.cal_area .event_notice { padding-bottom: 27px; margin: 27px 0 0 0; border-bottom: 1px solid #e5e5e5; }
+.cal_area .event_notice li { line-height: 18px; position: relative; padding-left: 10px; color: #666; font-size: 12px; word-break: keep-all; }
+.cal_area .event_notice li:before { display: block; content: '.'; position: absolute; top: -8px; left: 0; font-size: 25px; }
+
+/*# sourceMappingURL=event.css.map */

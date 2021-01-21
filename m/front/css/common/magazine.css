@@ -1,0 +1,114 @@
+@import "//fonts.googleapis.com/earlyaccess/notosanskr.css";
+#magazine .hot_wrap a { display: block; }
+#magazine .hot_wrap img { width: 100%; }
+#magazine .hot_wrap div { padding: 15px 4.7%; background: #f4f4f4; }
+#magazine .hot_wrap div > span { display: block; color: #111; }
+#magazine .hot_wrap div > span.cate { font-size: 11px; }
+#magazine .hot_wrap div > span.tit { margin: 8px 0 5px; }
+#magazine .hot_wrap div > span.date { font-size: 10px; color: #999; }
+#magazine .hot_wrap + .inner .common_list { margin-top: 50px; }
+#magazine .common_list img { width: 45%; height: auto; }
+#magazine .common_list ul li { margin-bottom: 20px; position: relative; }
+#magazine .common_list ul li div { display: inline-block; position: absolute; padding: 0vw 2vw 0 3vw; letter-spacing: -0.008em; line-height: 1.6em; }
+#magazine .common_list ul li div ul.tagList li { float: left; padding: 3px 9px; margin: 0 2px 4px 0; color: white; width: auto; }
+#magazine .common_list ul li p span { display: block; }
+#magazine .common_list ul li p span.txt { font-size: 3.6vw; font-weight: bold; color: #111; }
+#magazine .common_list ul li p span.date, #magazine .common_list ul li p span.brand { font-size: 3.2vw; color: #999; margin-top: 0.5em; }
+#magazine .prd_with_list { /* 20180125 edit */ position: relative; margin: 40px 4.7% 0; padding-bottom: 55px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+#magazine .prd_with_list h4 { padding: 25px 0 5px; font-size: 15px; font-family: "Open Sans", sans-serif; font-weight: 600; text-align: center; }
+#magazine .prd_with_list .thumbnail-list { padding-bottom: 23px; margin-bottom: -23px; }
+#magazine .prd_with_list .thumbnail-list .swiper-wrapper .swiper-slide { font-size: 0; margin: 0; padding: 0; }
+#magazine .prd_with_list .thumbnail-list .swiper-wrapper .swiper-slide:nth-child(odd) { clear: both; /* 20180119 added */ }
+#magazine .prd_with_list .thumbnail-list .swiper-wrapper .swiper-slide a { padding: 0 10px 0 5px; font-size: 12px; display: inline-block; width: 50%; vertical-align: top; }
+#magazine .prd_with_list .swiper-pagination { bottom: 0; }
+#magazine .prd_with_list .swiper-pagination-bullet { border-color: #000; }
+#magazine .prd_with_list .swiper-pagination-bullet-active { background: #000; }
+#magazine .tv_list { padding-bottom: 20px; }
+#magazine .tv_list .main_movie { margin-bottom: 14px; }
+#magazine .tv_list ul li { width: 0; float: left; }
+#magazine .tv_list li { margin-bottom: 30px; width: 48%; float: left; margin-right: 4vw; }
+#magazine .tv_list .movie { position: relative; }
+#magazine .tv_list .movie .youtube-movie { position: relative; height: 0; padding-bottom: 56.25%; }
+#magazine .tv_list .movie .youtube-movie iframe { position: absolute; width: 100%; height: 100%; left: 0; }
+#magazine .tv_list .movie .vod_cover { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; background-position: 50% 50%; background-repeat: no-repeat; background-size: cover; }
+#magazine .tv_list .movie .vod_cover img { width: 100%; }
+#magazine .tv_list .movie .vod_cover .txt { position: absolute; bottom: 30px; left: 0; width: 100%; font-size: 12px; font-family: "Open Sans", sans-serif; color: #fff; text-align: center; }
+#magazine .vod_btn { position: absolute; top: 50%; left: 50%; width: 42px; height: 42px; margin: -21px 0 0 -21px; background: url("/m/front/img/ssts/common/spr_slider.png") 0 -20px no-repeat; background-size: 50px auto; text-indent: -9999px; z-index: 50; }
+#magazine .sort_wrap.special { padding-right: 0; padding-bottom: 0; }
+#magazine .sort_wrap.special > div { float: none; width: 100%; padding-right: 0; }
+#magazine .sort_wrap.special > div .select_item { right: 0; }
+#magazine .sort_wrap.fixed { position: fixed; width: 96.6%; top: 90px; z-index: 2; }
+#magazine .list_wrap { padding-top: 45px; }
+#magazine .list_wrap + .list_wrap { border-top: 1px solid #ddd; }
+#magazine .list_wrap h4 { font-size: 15px; font-weight: bold; text-align: center; margin-bottom: 10px; }
+#magazine .style_list { margin: 30px -12px 20px; }
+#magazine .style_list .grid_wrap { overflow: hidden; }
+#magazine .style_list .grid_wrap .grid_list { float: left; width: 50%; padding: 0 0 25px; }
+#magazine .style_list .grid_wrap .grid_list a { margin: 0 12px; display: block; }
+#magazine .style_list .grid_wrap .grid_list a img { width: 100%; }
+#magazine .style_list .grid_wrap .grid_list a .thumb_etc { margin-top: 10px; }
+#magazine .style_list .grid_wrap .grid_list a .thumb_etc span { display: block; }
+#magazine .style_list .grid_wrap .grid_list a .thumb_etc span.tit { overflow: hidden; margin: 0 0 2px; padding-right: 20px; font-size: 12px; line-height: 15px; color: #111; display: -webkit-box; display: -ms-flexbox; display: box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+#magazine .style_list .grid_wrap .grid_list a .thumb_etc span.date { font-size: 10px; color: #999; }
+#magazine .style_list .grid_wrap .grid_list a .thumb_etc span.brand { font-size: 10px; color: #999; padding-bottom: 2px; }
+#magazine .story_list { margin: 0 1.7% }
+#magazine .story_list img { width: 100%; }
+#magazine .story_list ul li { margin-bottom: 30px; }
+#magazine .story_list ul li p { margin: 16px 4px; }
+#magazine .story_list ul li p span { display: block; }
+#magazine .story_list ul li p span.type { font-size: 12px; font-weight: 700; text-underline-position: under; text-decoration: underline; }
+#magazine .story_list ul li p span.tit { font-family: 'Open Sans', Apple SD Gothic Neo, sans-serif; font-size: 1.8em; font-weight: 700; padding: 10px 0; letter-spacing: -0.02em; line-height: 1.2 }
+#magazine .story_list ul li p span.word1 { font-family: 'Open Sans', 'Apple SD Gothic Neo', 'Nanum Gothic'; font-size: 4.2vw; line-height: 1.5em; letter-spacing: -0.03em }
+#magazine .lookbook_list img { width: 100%; }
+#magazine .lookbook_list ul li { margin-bottom: 30px; }
+#magazine .lookbook_list ul li p { margin: 8px 4px; }
+#magazine .lookbook_list ul li p span { display: block; }
+#magazine .lookbook_list ul li p span.tit { font-size: 14px; font-weight: bold; margin-bottom: 4px; }
+#magazine .lookbook_list ul li p span.date { font-size: 12px; color: #999; }
+#magazine .lookbook_wrap h3 { border-top: 1px solid #ddd; padding: 16px 4.7%; font-size: 15px; text-align: center; margin-top: -1px; }
+#magazine .lookbook_wrap .season { padding: 15px 4.7% 13px; }
+#magazine .lookbook_wrap .season .selector { min-width: 100%; }
+#magazine .lookbook_wrap .season .selector span { min-width: 100%; }
+#magazine .lookbook_wrap .lookbook_conts img { width: 100%; }
+#magazine .lookbook_wrap .lookbook_conts ul li { position: relative; margin-top: 30px; }
+#magazine .lookbook_wrap .lookbook_conts ul li.template1 { padding: 0 4.7%; }
+#magazine .lookbook_wrap .lookbook_conts .season_banner { position: relative; text-align: center; }
+#magazine .lookbook_wrap .lookbook_conts .season_banner .txts { position: absolute; top: 50%; left: 50%; margin: -30px 0 0 -52px; color: #fff; }
+#magazine .lookbook_wrap .lookbook_conts .season_banner .txts > p { font-family: "Open Sans", sans-serif; font-size: 24px; font-weight: 300; line-height: 30px; letter-spacing: 2px; }
+#magazine .lookbook_wrap .lookbook_conts .season_banner .txts > p span { display: block; font-weight: 300; }
+#magazine .lookbook_wrap .lookbook_conts .season_banner .txts > span { display: block; margin-top: 5px; font-size: 10px; }
+#magazine .lookbook_view .bx-viewport > ul > li { overflow: hidden; }
+#magazine .lookbook_view .swiper-wrapper .swiper-slide a.vod_cover { position: absolute; /* 20180125 added */ }
+#magazine .lookbook_view img { width: 100%; }
+#magazine .lookbook_view .movie { position: relative; }
+#magazine .lookbook_view .movie .youtube-movie { position: relative; height: 0; padding-bottom: 56.25%; }
+#magazine .lookbook_view .movie .youtube-movie iframe { position: absolute; width: 100%; height: 100%; left: 0; }
+#magazine .lookbook_view .movie .vod_cover { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; z-index: 1; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+#magazine .lookbook_view + .view_wrap .prd_with_list { margin-top: 0; border-top: 0 none; }
+#magazine .lookbook_view + .view_wrap .prd_with_list.off { display: none; }
+#magazine .instagram { margin-top: -1px; border-top: 1px solid #ddd; }
+#magazine .instagram img { width: 100%; }
+#magazine .instagram .info { position: relative; display: table; width: 100%; min-height: 80px; margin: 30px 0; padding-left: 110px; }
+#magazine .instagram .info:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 80px; height: 80px; background: url("/m/front/img/ssts/common/img_instagram.png") no-repeat 0 0; background-size: 80px auto; vertical-align: top; }
+#magazine .instagram .info > div { display: table-cell; vertical-align: middle; }
+#magazine .instagram .info > div span { display: block; }
+#magazine .instagram .info > div span.tit { margin-bottom: 7px; font-size: 12px; }
+#magazine .instagram .info > div span.txt { margin-bottom: 2px; font-size: 10px; color: #666; line-height: 13px; }
+#magazine .instagram .info > div a { font-size: 10px; font-weight: bold; text-decoration: underline; }
+#magazine .instagram .list { overflow: hidden; margin-bottom: 45px; }
+#magazine .instagram .list li { float: left; width: 50%; margin-bottom: 5px; }
+#magazine .instagram .list li:nth-child(even) { padding-left: 2.5px; }
+#magazine .instagram .list li:nth-child(odd) { padding-right: 2.5px; clear: both; /* 20171228 added */ }
+#magazine .instagram .instagram_conts { padding: 26px 4.7%; font-size: 11px; line-height: 15px; }
+#magazine .instagram .instagram_conts > a { color: #003569; letter-spacing: -0.2px; }
+#magazine .instagram .prd_with_list { margin-top: 0; padding-bottom: 20px; border-bottom: 0 none; }
+#magazine .instagram .prd_with_list .bx-pager { bottom: 0; }
+#magazine .story_wrap h3 { border-top: 1px solid #ddd; padding: 16px 4.7%; font-size: 15px; text-align: center; margin-top: -1px; }
+#magazine .story_wrap .story_conts b { font-weight: bold; }
+#magazine .story_wrap .story_conts ul li.template { padding: 0 4.7%; position: relative; margin-top: 40px; }
+#magazine .story_wrap .story_conts ul li.template img { width: 100%; }
+#magazine .story_wrap .story_conts ul li.template .cut + .cut { margin-top: 20px; }
+
+
+
+/*# sourceMappingURL=magazine.css.map */

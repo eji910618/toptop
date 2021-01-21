@@ -1,0 +1,201 @@
+#customer {padding-top: 46px;}
+#customer .search_select .selector { min-width: 100%; height: 35px; line-height: 35px; border: 1px solid #ddd; }
+#customer .search_select .selector span { min-width: 100%; background: #fff; color: #000; line-height: 35px; }
+#customer .search_select .selector span:before { content: ''; display: block; width: 6px; height: 4px; background: url("/m/front/img/ziozia/common/spr_order.png") -100px -25px no-repeat; background-size: 250px; position: absolute; top: 50%; right: 8px; margin-top: -2px; border: none; transform: rotate(0deg); }
+#customer .search_wrap { position: relative; padding: 15px 4.7%; border-bottom: 1px solid #ddd; background: #eee; }
+#customer .search_wrap .search_select { position: absolute; top: 15px; left: 4.7%; width: 80px; }
+#customer .search_wrap .search_engine .sch-engine { margin: 0; border: 1px solid #ddd; background: #fff; }
+#customer .search_wrap .search_engine .sch-engine button { top: 0; right: 0; width: 33px; height: 33px; background: #fff; }
+#customer .search_wrap .search_engine .sch-engine button i { width: 13px; height: 13px; background-position: -126px -46px; }
+#customer .search_wrap.notice .search_engine { padding-left: 85px; }
+#customer .repair { position: relative; }
+#customer .repair h3 { margin-bottom: 66px; }
+#customer .repair .search_wrap { position: absolute; top: 61px; left: -5.1%; right: -5.1%; height: 66px; }
+#customer .nodata { padding: 20px 0 50px; text-align: center; color: #999; }
+#customer .customer_list { margin-top: 30px; }
+#customer .customer_list ul { border-top: 1px solid #111; }
+#customer .customer_list ul li { border-top: 1px solid #ddd; }
+#customer .customer_list ul li:first-child { border-top: 0 none; }
+#customer .customer_list ul li.on .view_wrap { display: block; }
+#customer .customer_list ul li .list_wrap { position: relative; }
+#customer .customer_list ul li .list_wrap a { padding: 10px 10px 10px 0; display: block; }
+#customer .customer_list ul li .list_wrap a > span { position: absolute; top: 10px; left: 0; width: 40px; text-align: center; }
+#customer .customer_list ul li .list_wrap a > div { padding-left: 50px; }
+#customer .customer_list ul li .list_wrap a > div span { display: block; line-height: 17px; }
+#customer .customer_list ul li .list_wrap a > div span.tit { overflow: hidden; display: -webkit-box; display: -ms-flexbox; display: box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+#customer .customer_list ul li .list_wrap a > div span.date { color: #999; }
+#customer .customer_list ul li .view_wrap { display: none; background: #f8f8f8; padding: 15px; font-size: 11px; line-height: 16px; color: #666; }
+#customer .customer_list ul li .view_wrap > a { color: #111; text-decoration: underline; }
+#customer .faq_wrap .customer_list { margin-top: 0; }
+#customer .faq_wrap .customer_list h3 { padding: 20px 0 15px; font-weight: bold; }
+#customer .faq_wrap .customer_list ul li .list_wrap a > div { padding-left: 40px; }
+#customer .faq_wrap .customer_list .nodata { padding-top: 50px; }
+#customer .faq_wrap .faq_tab { overflow: hidden; }
+#customer .faq_wrap .faq_tab li { float: left; width: 33.3333%; background: #f8f8f8; border-bottom: 1px solid #ddd; border-left: 1px solid #ddd; text-align: center; }
+#customer .faq_wrap .faq_tab li a { display: block; line-height: 43px; height: 42px; overflow: hidden; font-weight: bold; color: #999; /* 20180125 added */ }
+#customer .faq_wrap .faq_tab li:nth-child(3n+1) { border-left: 0 none; }
+#customer .faq_wrap .faq_tab li.active { background: #fff; }
+#customer .faq_wrap .faq_tab li.active a { color: #111; }
+#customer .nomember > p { padding: 25px 0; font-weight: bold; line-height: 17px; text-align: center; }
+#customer .nomember .frm-cont .ipt-row { margin-bottom: 10px; padding: 9px 0; border: 1px solid #ccc; }
+#customer .nomember .frm-cont .ipt-row input { width: 100%; height: 15px; border: 0 none; vertical-align: top; line-height: inherit; }
+#customer .nomember .frm-cont button { margin-top: 20px; }
+#customer .guide_wrap { padding-top: 15px; }
+#customer .guide_wrap h3 { padding: 28px 0 15px; font-weight: bold; color: #000; }
+#customer .guide_wrap .bt { border-top: 1px solid #eee; }
+#customer .guide_wrap .bt + .bt { margin-top: 28px; }
+#customer .guide_wrap .tc { text-align: center; }
+#customer .guide_wrap .guide_info { position: relative; padding: 28px 0; }
+#customer .guide_wrap .guide_info > p { padding-right: 86px; line-height: 17px; letter-spacing: -1px; }
+#customer .guide_wrap .guide_info button { position: absolute; top: 30px; right: 0; width: 81px; height: 30px; padding: 0; font-size: 11px; line-height: 30px; }
+#customer .guide_wrap .guide_txt li { padding-left: 10px; font-size: 11px; color: #666; line-height: 16px; text-indent: -8px; }
+#customer .guide_wrap .guide_txt li:before { content: ''; display: inline-block; width: 3px; height: 3px; margin: 6px 5px 0 0; background: #666; border-radius: 50%; vertical-align: top; }
+#customer .guide_wrap .guide_txt li em { color: #df4738; /* 20171228 added */ }
+#customer .guide_wrap .single_txt { font-size: 11px; color: #666; line-height: 16px; }
+#customer .guide_wrap .single_txt + table { margin-top: 12px; }
+#customer .guide_wrap .benefit_wrap { overflow: hidden; }
+#customer .guide_wrap .benefit_wrap > div { float: left; width: 50%; margin-bottom: 5px; }
+#customer .guide_wrap .benefit_wrap > div span { display: block; padding: 10px 0 12px 15px; background: #f6f6f6; font-size: 11px; line-height: 16px; }
+#customer .guide_wrap .benefit_wrap > div span:before { content: ''; display: block; background: url("/m/front/img/ziozia/common/spr_customer.png") 0 0 no-repeat; background-size: 250px auto; width: 29px; height: 31px; margin-bottom: 5px; vertical-align: top; }
+#customer .guide_wrap .benefit_wrap > div:nth-child(1) { padding-right: 2.5px; }
+#customer .guide_wrap .benefit_wrap > div:nth-child(1) span:before { background-position: 0 0; }
+#customer .guide_wrap .benefit_wrap > div:nth-child(2) { padding-left: 2.5px; }
+#customer .guide_wrap .benefit_wrap > div:nth-child(2) span:before { background-position: -50px 0; }
+#customer .guide_wrap .benefit_wrap > div:nth-child(3) { padding-right: 2.5px; }
+#customer .guide_wrap .benefit_wrap > div:nth-child(3) span:before { background-position: -100px 0; }
+#customer .guide_wrap .benefit_wrap > div:nth-child(4) { padding-left: 2.5px; }
+#customer .guide_wrap .benefit_wrap > div:nth-child(4) span:before { background-position: -150px 0; }
+#customer .guide_wrap table thead th { padding: 10px 0; background: #f6f6f6; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; font-size: 10px; line-height: 14px; }
+#customer .guide_wrap table thead th > span { font-size: 9px; color: #999; }
+#customer .guide_wrap table tbody th { border-bottom: 1px solid #ddd; font-size: 11px; font-weight: bold; }
+#customer .guide_wrap table tbody td { padding: 20px 7px; border-left: 1px solid #ddd; border-bottom: 1px solid #ddd; font-size: 11px; color: #666; line-height: 16px; }
+#customer .guide_wrap table tbody td strong { color: #111; }
+#customer .guide_wrap table tbody td .btn_normal { display: block; width: 115px; margin-top: 8px; padding: 5px 0; border: 1px solid #ddd; font-size: 11px; text-align: center; letter-spacing: -0.5px; }
+#customer .guide_wrap table.table_row { border-top: 1px solid #ddd; }
+#customer .guide_wrap table.table_row tbody th { background: #f8f8f8; }
+#customer .guide_wrap table.benefit thead th { padding: 3px 0; }
+#customer .guide_wrap table.benefit tbody th { padding: 8px 0 8px 10px; font-size: 10px; line-height: 25px; text-align: left; }
+#customer .guide_wrap table.benefit tbody th span { position: relative; padding-left: 30px; }
+#customer .guide_wrap table.benefit tbody th span:before { content: ''; display: block; position: absolute; top: -5px; left: 0; background: url("/m/front/img/ziozia/common/spr_customer.png") 0 0 no-repeat; background-size: 250px auto; width: 25px; height: 25px; vertical-align: top; }
+#customer .guide_wrap table.benefit tbody th span.vip:before { background-position: 0 -50px; }
+#customer .guide_wrap table.benefit tbody th span.gold:before { background-position: -50px -50px; }
+#customer .guide_wrap table.benefit tbody th span.silver:before { background-position: -100px -50px; }
+#customer .guide_wrap table.benefit tbody th span.welcome:before { background-position: -150px -50px; }
+#customer .guide_wrap table.cost tbody tr td:first-child { border-left: 0 none; color: #111; }
+#customer .guide_wrap table.cost tbody tr td:first-child + td { text-align: center; }
+#customer .guide_wrap table + .guide_txt { margin-top: 18px; }
+#customer .guide_wrap .process { padding-bottom: 25px; }
+#customer .guide_wrap .process > div { position: relative; overflow: hidden; padding-bottom: 40px; }
+#customer .guide_wrap .process > div > div { float: left; width: 50%; }
+#customer .guide_wrap .process > div > div:first-child { position: relative; padding-right: 2.5px; }
+#customer .guide_wrap .process > div > div:first-child:before { content: ''; display: block; width: 10px; height: 10px; border-right: 2px solid #bababa; border-bottom: 2px solid #bababa; position: absolute; bottom: -22px; left: 50%; margin-left: -5px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+#customer .guide_wrap .process > div > div:first-child + div { padding-left: 2.5px; }
+#customer .guide_wrap .process > div .step { display: block; background: #eee; font-size: 11px; font-weight: bold; color: #666; text-align: center; line-height: 35px; border-radius: 4px; }
+#customer .guide_wrap .process > div .step + .step { margin-top: 10px; }
+#customer .guide_wrap .process > div.end { padding-bottom: 0; }
+#customer .guide_wrap .process > div.end .step { background: #111; color: #fff; }
+#customer .guide_wrap .process > div.end > div:before { content: none; }
+#customer .guide_wrap .process > div .txt { display: block; padding: 10px 0 0 10px; font-size: 11px; line-height: 16px; letter-spacing: -0.6px; }
+#customer .guide_wrap .process > div .txt em { display: block; font-size: 10px; color: #999; }
+#customer .guide_wrap .process > div .txt strong { display: block; margin-bottom: 5px; font-size: 10px; font-weight: bold; }
+#customer .guide_wrap .process.delivery { position: relative; }
+#customer .guide_wrap .process.delivery > div.start:after { content: ''; display: block; width: 31px; height: 1px; background: #eee; position: absolute; bottom: 20px; right: 50%; margin-right: -33px; }
+#customer .guide_wrap .process.delivery > div.ing:after { content: ''; display: block; width: 31px; height: 1px; background: #eee; position: absolute; bottom: 20px; right: 50%; margin-right: -33px; }
+#customer .guide_wrap .process.delivery > div.ing .txt { padding-top: 35px; }
+#customer .guide_wrap .process.delivery:before { content: ''; display: block; width: 1px; height: 39px; background: #eee; position: absolute; top: 55px; left: 50%; margin-left: 32px; }
+#customer .guide_wrap .process.delivery:after { content: ''; display: block; width: 1px; height: 39px; background: #eee; position: absolute; bottom: 104px; left: 50%; margin-left: 32px; }
+#customer .guide_wrap .process_step { background: #f6f6f6; }
+#customer .guide_wrap .process_step > div { position: relative; display: table; width: 100%; padding: 0 20px 0 84px; }
+#customer .guide_wrap .process_step > div > div { display: table-cell; vertical-align: middle; }
+#customer .guide_wrap .process_step > div > div strong { display: block; font-size: 11px; line-height: 16px; }
+#customer .guide_wrap .process_step > div > div span { font-size: 10px; color: #999; }
+#customer .guide_wrap .process_step > div + div { margin-top: 10px; }
+#customer .guide_wrap .process_step > div + div:after { content: ''; display: block; width: 10px; height: 10px; border-right: 2px solid #bababa; border-bottom: 2px solid #bababa; position: absolute; top: -15px; left: 35px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+#customer .guide_wrap .process_step > div:before { content: ''; display: block; position: absolute; top: 50%; left: 23px; width: 37px; height: 35px; margin-top: -17px; background: url("/m/front/img/ziozia/common/spr_customer.png") 0 0 no-repeat; background-size: 250px auto; vertical-align: top; }
+#customer .guide_wrap .process_step > div:nth-child(1) { height: 75px; }
+#customer .guide_wrap .process_step > div:nth-child(1):before { background-position: 0 -100px; }
+#customer .guide_wrap .process_step > div:nth-child(2) { height: 75px; }
+#customer .guide_wrap .process_step > div:nth-child(2):before { background-position: -50px -100px; }
+#customer .guide_wrap .process_step > div:nth-child(3) { height: 72px; }
+#customer .guide_wrap .process_step > div:nth-child(3):before { background-position: -100px -100px; }
+#customer .guide_wrap .process_step > div:nth-child(4) { height: 65px; }
+#customer .guide_wrap .process_step > div:nth-child(4):before { background-position: -150px -100px; }
+#customer .guide_wrap .process_step > div:nth-child(5) { height: 78px; }
+#customer .guide_wrap .process_step > div:nth-child(5):before { background-position: -200px -100px; }
+#customer .guide_wrap .process_step.change > div:before { left: 18px; width: 47px; }
+#customer .guide_wrap .process_step.change > div:nth-child(1):before { background-position: 0 -150px; }
+#customer .guide_wrap .process_step.change > div:nth-child(2):before { background-position: -50px -150px; }
+#customer .guide_wrap .process_step.change > div:nth-child(3):before { background-position: -100px -150px; }
+#customer .guide_wrap .process_step.change > div:nth-child(4):before { background-position: -150px -150px; }
+#customer .guide_wrap .process_step.change > div:nth-child(5):before { background-position: -200px -150px; }
+#customer .tab_wrap { margin-top: 30px; }
+#customer .tab_wrap .tab { overflow: hidden; border-left: 1px solid #ddd; }
+#customer .tab_wrap .tab li { display: table; float: left; width: 50%; text-align: center; border: 1px solid #ddd; border-left: 0 none; background: #f8f8f8; }
+#customer .tab_wrap .tab li a { display: table-cell; height: 37px; font-size: 12px; font-weight: bold; color: #999; line-height: 13px; vertical-align: middle; }
+#customer .tab_wrap .tab li.active { background: #fff; border-bottom: 0 none; }
+#customer .tab_wrap .tab li.active a { color: #111; }
+#customer .tab_wrap .tab_conts > div { display: none; }
+#customer .tab_wrap .tab_conts > div.active { display: block; }
+#customer .tab_wrap .tab_conts > div.gift .guide_info button { width: 90px; }
+#customer .toggle_wrap { margin-top: 30px; border-top: 1px solid #eee; }
+#customer .toggle_wrap > div { border-bottom: 1px solid #eee; }
+#customer .toggle_wrap > div a { display: block; padding: 15px 0; }
+#customer .toggle_wrap > div a h4 { position: relative; font-weight: bold; }
+#customer .toggle_wrap > div a h4:before { content: ''; display: block; width: 13px; height: 1px; background: #111; position: absolute; top: 50%; right: 10px; }
+#customer .toggle_wrap > div a h4:after { content: ''; display: block; width: 1px; height: 13px; background: #111; position: absolute; top: 50%; right: 16px; margin-top: -6px; transition-duration: 0.3s; }
+#customer .toggle_wrap > div.open h4:after { -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); }
+#customer .toggle_wrap .conts { display: none; padding-bottom: 30px; }
+#customer .toggle_wrap .conts h5 { padding: 22px 0 12px; font-size: 11px; font-weight: bold; }
+#customer .store_list .nodata { padding-top: 50px; }
+#customer .store_list ul li { padding: 12px 0; }
+#customer .store_list ul li a { position: relative; display: block; padding-right: 45px; }
+#customer .store_list ul li a span { display: block; font-size: 10px; color: #666; line-height: 15px; }
+#customer .store_list ul li a span.store { margin-bottom: 5px; font-size: 12px; font-weight: bold; color: #111; }
+#customer .store_list ul li a .service { overflow: hidden; margin-top: 5px; }
+#customer .store_list ul li a .service span { float: left; }
+#customer .store_list ul li a .service span + span { float: right; }
+#customer .store_list ul li a:after { content: ''; display: block; position: absolute; top: 50%; right: 10px; width: 13px; height: 19px; margin-top: -10px; background: url("/m/front/img/ziozia/common/spr_common.png") -50px -25px no-repeat; background-size: 250px auto; vertical-align: top; }
+#customer .store_list ul li + li { border-top: 1px solid #e5e5e5; }
+#customer .group_order { padding-top: 27px; }
+#customer .group_order .selector { display: block; height: 35px; line-height: 35px; margin: 0; color: #111; }
+#customer .group_order .selector span { line-height: 33px; min-width: 100%; max-width: 100%; background-color: #fff; border: 1px solid #ddd; }
+#customer .group_order .selector span:before { width: 9px; height: 5px; border: 0; margin: -2px 0 0; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); background: url("/m/front/img/ziozia/common/spr_form.png") -300px 0 no-repeat; background-size: 350px 350px; }
+#customer .group_order h5 { font-size: 11px; color: #666; margin-bottom: 15px; }
+#customer .group_order ul { border-top: 1px solid #eee; padding-top: 20px; }
+#customer .group_order ul li { margin-bottom: 20px; padding-left: 93px; position: relative; }
+#customer .group_order ul li strong { display: block; font-size: 12px; width: 93px; height: 35px; line-height: 35px; position: absolute; top: 0; left: 0; }
+#customer .group_order ul li strong em { color: #df4738; }
+#customer .group_order ul li > div, #customer .group_order ul li input[type=text], #customer .group_order ul li input[type=password], #customer .group_order ul li input[type=number] { width: 100%; }
+#customer .group_order ul li input[type=text], #customer .group_order ul li input[type=password], #customer .group_order ul li input[type=number] { border-color: #ddd; }
+#customer .group_order ul li input[type=text]:read-only, #customer .group_order ul li input[type=password]:read-only, #customer .group_order ul li input[type=number]:read-only { border: 1px solid #ddd; background-color: #f6f6f6; }
+#customer .group_order ul li.line2 { padding-left: 0; }
+#customer .group_order ul li.line2 strong { position: static; line-height: 100%; height: auto; margin-bottom: 10px; }
+#customer .group_order ul li.line2.mail { padding-right: 140px; }
+#customer .group_order ul li.line2.mail .selector { display: block; width: 135px !important; position: absolute; bottom: 0; right: 0; }
+#customer .group_order ul li.line2.mail .selector span { width: auto !important; }
+#customer .group_order ul li.line2 .is-phone:after { display: block; clear: both; content: ''; }
+#customer .group_order ul li.line2 .is-phone .selector { float: left; min-width: 30%; max-width: 30%; }
+#customer .group_order ul li.line2 .is-phone .selector span { min-width: 100%; max-width: 100%; }
+#customer .group_order ul li.line2 .is-phone .inputor { position: relative; padding-left: 13px; float: left; width: 35%; }
+#customer .group_order ul li.line2 .is-phone .inputor > span { display: block; position: absolute; top: 0; left: 0; line-height: 35px; text-align: center; width: 13px; }
+#customer .group_order ul li textarea { width: 100%; height: 134px; border: 1px solid #ddd; padding: 10px; }
+#customer .group_order ul.company .search_product { position: relative; padding-right: 75px; }
+#customer .group_order ul.company .search_product button { display: block; width: 70px; height: 35px; line-height: 35px; background-color: #666; color: #fff; font-size: 12px; text-align: center; position: absolute; top: 0; right: 0; }
+#customer .group_order ul.company .ipt_area { position: relative; padding: 0; height: 35px; overflow: hidden; }
+#customer .group_order ul.company .ipt_area input { position: relative; z-index: 2; background: none; text-indent: 9px; height: 33px; vertical-align: top; padding-top: 1px; }
+#customer .group_order ul.company .ipt_area:before { position: absolute; top: 50%; right: 4px; content: ''; display: block; background: url("/m/front/img/ziozia/common/spr_mypage.png") -5px -5px no-repeat; background-size: 250px auto; width: 15px; height: 14px; margin-top: -7px; z-index: 1; }
+#customer .group_order ul.notice { border-top: none; padding: 0; margin-bottom: 17px; }
+#customer .group_order ul.notice li { padding-left: 10px; font-size: 11px; color: #666; margin-bottom: 0; word-break: keep-all; position: relative; line-height: 16px; }
+#customer .group_order ul.notice li:before { content: ''; display: block; width: 4px; height: 4px; background-color: #666; position: absolute; top: 5px; left: 0; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+#customer .group_order .btn { display: block; width: 100%; }
+#customer .policy { padding: 30px 4.7%; color: #666; line-height: 1.5; }
+
+.layer_store { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #fff; z-index: 100; }
+.layer_store .store_tit { min-height: 70px; padding: 16px 4.7%; }
+.layer_store .store_tit span { display: block; font-size: 10px; color: #666; line-height: 15px; }
+.layer_store .store_tit span:first-child { margin-bottom: 5px; font-size: 12px; font-weight: bold; color: #111; }
+.layer_store .map_wrap { height: 100%; background: #eee; }
+.layer_store .btn_close { position: absolute; top: 8px; right: 5px; width: 33px; height: 33px; font-size: 0; }
+.layer_store .btn_close:before { content: ''; display: block; background: url("/m/front/img/ziozia/common/spr_common.png") -75px -25px no-repeat; background-size: 250px auto; width: 13px; height: 13px; margin: 10px 0 0 10px; }
+
+/*# sourceMappingURL=customer.css.map */

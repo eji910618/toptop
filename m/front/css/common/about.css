@@ -1,0 +1,34 @@
+#about { /* store_list 20171208 edit */ }
+#about .brand_wrap > img { width: 100%; }
+#about .brand_wrap .brand { padding-top: 50px; text-align: center; }
+#about .brand_wrap .brand > img { height: 25px; }
+#about .brand_wrap .brand .txt { margin-top: 46px; text-align: left; }
+#about .brand_wrap .brand .txt p { font-size: 13px; line-height: 18px; font-weight: bold; }
+#about .brand_wrap .brand .txt span { display: block; margin: 15px 0; padding-right: 15px; font-size: 11px; line-height: 16px; color: #666; }
+#about .brand_wrap .brand .txt strong { display: block; font-size: 11px; color: #111; }
+#about .select_wrap { overflow: hidden; padding: 15px 4.7%; }
+#about .select_wrap > div { float: left; width: 50%; }
+#about .select_wrap > div .selector { min-width: 100%; }
+#about .select_wrap > div .selector span { min-width: 100%; }
+#about .select_wrap > div:nth-child(even) { padding-left: 2.5px; }
+#about .select_wrap > div:nth-child(odd) { padding-right: 2.5px; }
+#about .store_list { border-top: 1px solid #111; }
+#about .store_list ul { margin-bottom: 50px; }
+#about .store_list ul li { padding: 12px 0; border-bottom: 1px solid #e5e5e5; }
+#about .store_list ul li a { position: relative; display: block; padding-right: 45px; }
+#about .store_list ul li a span { display: block; font-size: 10px; color: #666; line-height: 15px; }
+#about .store_list ul li a span.store { margin-bottom: 5px; font-size: 12px; font-weight: bold; color: #111; }
+#about .store_list ul li a .service { overflow: hidden; margin-top: 5px; }
+#about .store_list ul li a .service span { float: left; }
+#about .store_list ul li a .service span + span { float: right; }
+#about .store_list ul li a:after { content: ''; display: block; position: absolute; top: 50%; right: 10px; width: 13px; height: 19px; margin-top: -10px; background: url("/m/front/img/andz/common/spr_common.png") -50px -25px no-repeat; background-size: 250px auto; vertical-align: top; }
+
+.layer_store { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #fff; z-index: 100; }
+.layer_store .store_tit { min-height: 70px; padding: 16px 4.7%; }
+.layer_store .store_tit span { display: block; font-size: 10px; color: #666; line-height: 15px; }
+.layer_store .store_tit span:first-child { margin-bottom: 5px; font-size: 12px; font-weight: bold; color: #111; }
+.layer_store .map_wrap { height: 100%; background: #eee; }
+.layer_store .btn_close { position: absolute; top: 8px; right: 5px; width: 33px; height: 33px; font-size: 0; }
+.layer_store .btn_close:before { content: ''; display: block; background: url("/m/front/img/andz/common/spr_common.png") -75px -25px no-repeat; background-size: 250px auto; width: 13px; height: 13px; margin: 10px 0 0 10px; }
+
+/*# sourceMappingURL=about.css.map */
