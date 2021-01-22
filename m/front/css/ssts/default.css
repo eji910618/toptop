@@ -1,3 +1,26 @@
+/*header { position: relative; z-index: 3; width: 100%; height: 51px; overflow: hidden; border-bottom: 1px solid #ddd; background-color: #fff; !* 20171123 logo edit start *! !* 20171123 logo edit end *! }*/
+/*header:after { display: block; clear: both; content: ''; }*/
+/*header h1 { width: 210px; position: absolute; top: 0; left: 40%; margin-left: -65px; }*/
+/*header h1 a { display: block; width: 100%; height: 50px; position: relative; overflow: hidden; text-indent: -9999px; }*/
+/*header h1 a::before { position: absolute; top: 20px; left: 40%; content: ''; display: block; background: url("/m/front/img/ssts/common/logo.png") no-repeat; background-size: 190px auto; margin-left: -73px; width: 190px; height: 12px; overflow: hidden; }*/
+/*header .util { height: 50px; float: left; margin-left: 4.7%; }*/
+/*header .util.util-r { float: right; margin-right: 4.7%; }*/
+/*header .util.util-r li:first-child { margin: 0; }*/
+/*header .util.util-r li:last-child { margin-right: -7px; }*/
+/*header .util li { float: left; !* cart 20171128 edit *! !* 20171013 added start *! !* 20171013 added end *! }*/
+/*header .util li a { display: block; position: relative; line-height: 500px; overflow: hidden; width: 30px; height: 50px; }*/
+/*header .util li a::before { position: absolute; left: 50%; top: 50%; margin: -8px 0 0 -7px; width: 15px; height: 17px; content: ' '; overflow: hidden; background: url("/m/front/img/ssts/common/spr_layout.png") -155px 0 no-repeat; background-size: 250px auto; background-position: -155px -110px; }*/
+/*header .util li:first-child { margin-left: -7px; }*/
+/*header .util li.search a::before { width: 17px; margin-left: -8px; background: url("/m/front/img/ssts/common/spr_layout.png") -171px 0 no-repeat; background-size: 250px auto; background-position: -171px -110px; }*/
+/*header .util li.cart a { overflow: visible; line-height: 11px; }*/
+/*header .util li.cart a::before { width: 15px; background: url("/m/front/img/ssts/common/spr_layout.png") -188px 0 no-repeat; background-size: 250px auto; background-position: -188px -110px; }*/
+/*header .util li.cart a small { position: absolute; top: 37px; left: 50%; margin-left: -15px; width: 30px; display: block; font-size: 8px; color: #c69c6d; text-align: center; }*/
+/*header .util li.my a::before { width: 14px; margin-left: -7px; background: url("/m/front/img/ssts/common/spr_layout.png") -203px 0 no-repeat; background-size: 250px auto; background-position: -203px -110px; }*/
+/*header .util li.mypage a::before { width: 14px; margin-left: -7px; background: url("/m/front/img/ssts/common/spr_layout.png") -203px 0 no-repeat; background-size: 250px auto; background-position: -203px -110px; }*/
+/*header .util li.allbrand a { overflow: visible; line-height: 11px; }*/
+/*header .util li.allbrand a::before { width: 18px; height: 18px; margin-left: -9px; background: url("/m/front/img/ssts/common/spr_layout.png") -221px -109px no-repeat; background-size: 250px auto; }*/
+/*header .util li.allbrand a small { position: absolute; top: 37px; left: 50%; margin-left: -15px; width: 30px; display: block; font-size: 7px; color: #999; text-align: center; }*/
+
 /*.footer-scrl-btns a { left: 0; bottom: 70px; z-index: 1; display: block; margin-left: 4.7%; position: fixed; width: 40px; height: 40px; }*/
 /*.footer-scrl-btns a i { border: 1px solid #ddd; width: 40px; height: 40px; position: absolute; top: 0; left: 0; opacity: .9; filter: alpha(opacity=90); background-color: #fff; line-height: 500px; overflow: hidden; }*/
 /*.footer-scrl-btns a::before { content: ''; display: block; width: 10px; height: 10px; border-right: 2px solid #000; border-bottom: 2px solid #000; position: absolute; top: 50%; right: 12px; margin: -5px 0 0 0; -webkit-transform: rotate(135deg); -moz-transform: rotate(135deg); -ms-transform: rotate(135deg); -o-transform: rotate(135deg); transform: rotate(135deg); z-index: 3; }*/
