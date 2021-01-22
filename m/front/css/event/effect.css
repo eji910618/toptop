@@ -1,0 +1,30 @@
+.effect.active {-webkit-transition: all ease .5s 0s; transition: all ease .5s 0s;}
+.effect.active.d5 {-webkit-transition-duration:.5s; transition-delay:.5s;}
+.effect.active.d10 {-webkit-transition-duration:1s; transition-delay:1s;}
+.effect.active.d15 {-webkit-transition-duration:1.5s; transition-delay:1.5s;}
+.effect.active.d20 {-webkit-transition-duration:2s; transition-delay:2s;}
+.effect.active.s10 {-webkit-transition-duration:1s; transition-duration:1s;}
+.effect.active.s15 {-webkit-transition-duration:1.5s; transition-duration:1.5s;}
+.effect.active.s20 {-webkit-transition-duration:2s; transition-duration:2s;}
+.effect.active.s25 {-webkit-transition-duration:2.5s; transition-duration:2.5s;}
+.effect.active.s30 {-webkit-transition-duration:3s; transition-duration:3s;}
+
+.fade-in {opacity:0;}
+.fade-in.active {opacity:1;}
+
+.fade-out {opacity:1;}
+.fade-out.active {opacity:0;}
+
+.into.left {transform: translate(40px, 0);}
+.into.right {transform: translate(-40px, 0);}
+.into.up {transform: translate(0, 30px);}
+.into.down {transform: translate(0, -30px);}
+.into.left2 {transform: translate(80px, 0);}
+.into.right2 {transform: translate(-80px, 0);}
+.into.up2 {transform: translate(0, 60px);}
+.into.down2 {transform: translate(0, -60px);}
+.into.left-up {transform: translate(40px, 30px);}
+.into.left-down {transform: translate(40px, -30px);}
+.into.right-up {transform: translate(-40px, 30px);}
+.into.right-down {transform: translate(-40px, -30px);}
+.into.active {transform: translate(0, 0);}

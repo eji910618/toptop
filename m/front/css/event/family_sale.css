@@ -1,0 +1,59 @@
+@import "//fonts.googleapis.com/earlyaccess/notosanskr.css";
+
+#familySale img { width: 100%; height: auto; }
+#familySale .fs_banner {margin-bottom: 6vw; }
+#familySale .fs_brand_simbol {width: 102%; height: 36vw; }
+#familySale .fs_brand_simbol ul li {width: 29vw; position: relative; float: left; margin: 0 1.8vw 2vw 0; }
+#familySale .fs_main_div {height: 106vw;}
+#familySale .fs_main_div ul.fs_main li {width: 100%; height: 100%;}
+#familySale .fs_main_div ul.fs_main li { margin-bottom: 3vw; width: 49%;}
+#familySale .fs_main_div ul.fs_main li:nth-child(2n+1) {float: left;}
+#familySale .fs_main_div ul.fs_main li:nth-child(2n) {float: right;}
+#familySale ul.fs_brand li {margin-bottom: 3vw;}
+#familySale ul.fs_brand.slide{height: 140vw; overflow: hidden; margin-bottom: 1vw;}
+#familySale ul.fs_brand.slide li {display: none; margin-bottom: 2vw; overflow: hidden;}
+#familySale ul.fs_brand.slide li img {height: 100%;}
+#familySale ul.fs_brand.slide li.on {display: block;}
+#familySale ul.fs_brand.slide li.man {height: 33.5vw;}
+#familySale ul.fs_brand.slide li.casual {height: 45.3333vw;}
+#familySale ul.fs_brand.slide li.kids {height: 69vw;}
+#familySale ul.fs_banner li {margin-bottom: 3vw;}
+
+
+#familySale .title_h2 { padding: 40px 0 25px; font-size: 16px; line-height: 13px; text-align: center; margin-bottom: 3vw;}
+#familySale .title_h2 ul { position: relative; display: inline-block; padding: 0 5px; background: #fff; z-index: 2; }
+#familySale .title_h2 ul li { display: inline; }
+#familySale .title_h2 ul li a { display: inline-block; margin: 0 10px; vertical-align: top; border-bottom: 1px solid #fff; color: #999; }
+#familySale .title_h2 ul li a.on { border-color: #111; color: #111; padding-bottom: 2px;}
+#familySale .title_h2.h2_add span {font-weight: bold; position: relative; display: inline-block; padding: 0px 15px; background: #fff; z-index: 2;}
+#familySale .title_h2.h2_add:after {content: ''; display: block; position: relative; bottom: 8px; width: 100%; height: 1px; background: #111; z-index: 1;}
+
+
+/* brand */
+#familySale img.fs_intro_img {margin-bottom: 6vw;}
+
+/* price */
+#familySale ul.fs_price li {margin-bottom: 3vw;}
+
+/* list */
+#familySale ul.fs_list li {margin-bottom: 3vw;}
+
+
+#footer_img img {width: 100%; margin-bottom: 3vw;}
+#footer_img a:first-child img {margin-top: 3vw;}
+
+
+/* clock */
+.flip-clock-wrapper {margin-top: 9vw; margin-bottom: 2vw;}
+.flip-clock-wrapper ul {width: 9.3vw; height: 14vw; margin: 2vw 0.5vw;}
+.flip-clock-wrapper ul li {line-height: 14.5vw;}
+.flip-clock-wrapper ul li a div.up:after {top: 6.7vw;}
+.flip-clock-wrapper ul li a div div.inn {font-size: 9vw;}
+.flip-clock-divider {width: 4vw; height: 10vw;}
+.flip-clock-dot {width: 1.5vw; height: 1.5vw;}
+.flip-clock-dot.bottom {bottom: 3vw;}
+.flip-clock-dot.top {top: 10vw;}
+.flip-clock-divider .flip-clock-label {right: -14.6vw; font-weight: bold; font-size: 3.5vw;}
+.flip-clock-divider.hours .flip-clock-label {right: -15vw; }
+.flip-clock-divider.minutes .flip-clock-label {right: -16.8vw;}
+.flip-clock-divider.seconds .flip-clock-label {right: -17.3vw;}

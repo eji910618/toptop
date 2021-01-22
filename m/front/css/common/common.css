@@ -225,6 +225,233 @@ button.btn.w100p { width: 100%; }
 .ps-container:hover > .ps-scrollbar-y-rail { opacity: 1; }
 .ps-container:hover > .ps-scrollbar-y-rail:hover { background-color: none; opacity: 1; }
 .ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y { background-color: #5dcae7; }
+header {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 42px;
+    overflow: hidden;
+    border-bottom: 1px solid #c9c9c9;
+    background-color: #fff;
+    padding: 0 20px;
+}
+header:after { display: block; clear: both; content: ''; }
+header h1.header-symbol {
+    float: left;
+}
+header h1.header-symbol a {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    overflow: hidden;
+    text-indent: -99999px;
+    font-size: 0;
+    height: 42px;
+}
+header h1.header-symbol a::before {
+    content: '';
+    display: block;
+    background: url("/m/front/img/ssts/common/logo.png") 0 center no-repeat;
+    -webkit-background-size: auto 10px;
+    background-size: auto 10px;
+    width: 182px;
+    height: 42px;
+    overflow: hidden;
+}
+header .header-brand__toggle {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    text-indent: -99999px;
+    height: 42px;
+    width: 24px;
+    -webkit-transition: transform .3s ease-in-out;
+    -moz-transition: transform .3s ease-in-out;
+    -o-transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+}
+header .header-brand__toggle.active {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+header .header-brand__toggle span {
+    position: relative;
+    display: block;
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+header .header-brand__toggle span:before,
+header .header-brand__toggle span:after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 1px;
+    background: #111;
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition-duration: 0.3s;
+}
+header .header-brand__toggle span:after {
+    right: 2px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+header .util.util-r { float: right; padding-top: 9px; }
+header .util.util-r li:last-child { margin-right: -5px; }
+header .util li { float: left; /* cart 20171128 edit */ /* 20171013 added start */ /* 20171013 added end */ }
+header .util li a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 24px;
+    height: 24px;
+    text-indent: -99999px;
+    font-size: 0;
+}
+/*header .util li a::before { position: absolute; left: 50%; top: 50%; margin: -8px 0 0 -7px; width: 15px; height: 17px; content: ' '; overflow: hidden; background: url("/m/front/img/ssts/common/spr_layout.png") -155px 0 no-repeat; background-size: 250px auto; background-position: -155px -110px; }*/
+header .util li:first-child { margin-left: -7px; }
+header .util li.search {
+    margin-right: 18px;
+    background: transparent url(/m/front/img/common/layout/icon-search.png) 0 0 no-repeat;
+    background-size: 24px auto;
+}
+header .util li.cart a { overflow: visible; line-height: 11px; }
+header .util li.cart a {
+    background: url(/m/front/img/common/layout/icon-basket.png) 0 0 no-repeat;
+    background-size: 24px auto;
+}
+header .util li.cart a small { position: absolute; top: 37px; left: 50%; margin-left: -15px; width: 30px; display: block; font-size: 8px; color: #c69c6d; text-align: center; }
+header .util li.my a::before { width: 14px; margin-left: -7px; background: url("/m/front/img/ssts/common/spr_layout.png") -203px 0 no-repeat; background-size: 250px auto; background-position: -203px -110px; }
+header .util li.mypage a::before { width: 14px; margin-left: -7px; background: url("/m/front/img/ssts/common/spr_layout.png") -203px 0 no-repeat; background-size: 250px auto; background-position: -203px -110px; }
+header .util li.allbrand a { overflow: visible; line-height: 11px; }
+header .util li.allbrand a::before { width: 18px; height: 18px; margin-left: -9px; background: url("/m/front/img/ssts/common/spr_layout.png") -221px -109px no-repeat; background-size: 250px auto; }
+header .util li.allbrand a small { position: absolute; top: 37px; left: 50%; margin-left: -15px; width: 30px; display: block; font-size: 7px; color: #999; text-align: center; }
+
+.header_container .header-brand__list {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 40px);
+    z-index: 4;
+    background-color: #fff;
+    padding: 20px 15px;
+}
+.header_container .header-brand__list.active {
+    display: block;
+}
+.header_container .header-brand__list:after,
+.header_container .header-brand__list:before {
+    content: "";
+    display: table;
+}
+.header_container .header-brand__list:after {
+    clear: both;
+}
+.header_container .header-brand__list .header-brand__item {
+    position: relative;
+    width: 50%;
+    height: 64px;
+    padding: 5px;
+    float: left;
+}
+.header_container .header-brand__list .header-brand__item:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+.header_container .header-brand__list .header-brand__item.header-brand__1:before {
+    width: 94px;
+    height: 24px;
+    background: transparent url(/m/front/img/topten/common/spr_layout.png) -37px -130px no-repeat;
+    background-size: 300px auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__2:before {
+    width: 86px;
+    height: 14px;
+    background: transparent url(/m/front/img/polham/common/logo.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__3:before {
+    width: 77px;
+    height: 17px;
+    background: url(/m/front/img/andz/common/spr_layout.png) 0 0 no-repeat;
+    background-size: 250px auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__4:before {
+    width: 123px;
+    height: 24px;
+    background: url(/m/front/img/projectm/common/spr_layout.png) -33px -125px no-repeat;
+    background-size: 280px auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__5:before {
+    width: 84px;
+    height: 16px;
+    background: url(/m/front/img/olzen/common/logo.png) center no-repeat;
+    background-size: 100% auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__6:before {
+    width: 82px;
+    height: 15px;
+    background: url(/m/front/img/ziozia/common/spr_layout.png) 0 0 no-repeat;
+    background-size: 220px auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__7:before {
+    width: 100px;
+    height: 14px;
+    background: url(/m/front/img/edition/common/spr_layout.png) 0 0 no-repeat;
+    background-size: 194px auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__8:before {
+    width: 66px;
+    height: 24px;
+    background: url(/m/front/img/wml/common/spr_layout.png) -2px 0 no-repeat;
+    background-size: 290px auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__9:before {
+    width: 100px;
+    height: 16px;
+    background: url(/m/front/img/toptenkids/common/spr_layout.png) 0 -75px no-repeat;
+    background-size: 175px auto;
+}
+.header_container .header-brand__list .header-brand__item.header-brand__10:before {
+    width: 84px;
+    height: 24px;
+    background: url(/m/front/img/polhamkids/common/logo.png) center no-repeat;
+    background-size: 100% auto;
+}
+.header_container .header-brand__list .header-brand__link {
+    display: block;
+    height: 100%;
+    text-indent: -9999999px;
+    font-size: 0;
+    border: 1px solid #000;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
 
 #gnb { float: left; }
 #gnb > ul:after { display: block; clear: both; content: ''; }
