@@ -1106,7 +1106,7 @@ been positioned yet */ top: 0; width: 7px; }
 
 
 /* 20171013 edit end */
-#container { background-color: #fff; position: relative; z-index: 1; margin-top: 42px; }
+#container { background-color: #fff; position: relative; z-index: 1; margin-top: 43px; }
 #container:after { display: block; clear: both; content: ''; }
 #container .inner { padding: 0 1.7%; }
 #container #shop .inner { min-height: 425px; }
