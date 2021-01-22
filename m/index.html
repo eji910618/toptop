@@ -89,6 +89,36 @@
         <input type="hidden" id="instagramLayerPartnerNo" value="1"/>
         <!-- container// -->
         <section id="container">
+            <!-- main-nav -->
+            <nav class="main-nav swiper-container">
+                <ul class="swiper-wrapper main-nav__wrap">
+                    <li class="swiper-slide main-nav__item">
+                        <a href="" class="main-nav__link">20메리세일</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="" class="main-nav__link">남성</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="" class="main-nav__link">여성</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="" class="main-nav__link">아동</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="" class="main-nav__link">아울렛</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="" class="main-nav__link">악세사리</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="" class="main-nav__link">매거진</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="" class="main-nav__link">이벤트</a>
+                    </li>
+                </ul>
+            </nav>
+
             <!-- main_rolling -->
             <section class="main_rolling swiper-container">
                 <div class="bxslider main_visual swiper-wrapper">
@@ -2024,4 +2054,127 @@
 <script type="text/javascript" src="/m/kr/front/djs/memberJS.js"></script>
 <script type="text/javascript" src="/m/front/js/libs/swiper.min.js"></script>
 <script type="text/javascript" src="https://imgp.topten10mall.com/com/product/js/custom.js?v=1"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        recomIdAddCookie();
+
+        var mainNavSwiper = new Swiper('.main-nav', {
+            freeMode: true,
+            slidesPerView: 'auto'
+        });
+
+        // 20180125 edit
+        var swiper1 = new Swiper('.main_rolling', {//메인 슬라이더
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            loop: true,
+        });
+
+//            var swiper2 = new Swiper('.main_mall .swiper-container', {//메인 슬라이더
+//              autoplay: {
+//             	delay: 5000,
+//              },
+//              pagination: {
+//                el: '.swiper-pagination',
+//              },
+//              loop: true,
+//            });
+
+        //Hash Tag 슬라이드 start
+        var featureSlider3 = $('.main_hash_tag .thumbnail-list ul').bxSlider({
+            slideWidth: 75,
+            minSlides: 4,
+            maxSlides: 4,
+            slideMargin: 12,
+            infiniteLoop: false,
+            pager: false,
+            controls: false
+        });
+
+        //New, Best, MD’s pick 슬라이드 start
+        var featureSlider = $('.main_feature .man .thumbnail-list ul').bxSlider({
+            auto: true,
+            slideWidth: 233,
+            minSlides: 2,
+            maxSlides: 4,
+            slideMargin: 10,
+            pager: false,
+            infiniteLoop: true,
+            controls: false,
+            speed: 800,
+            hideControlOnEnd: true,
+            autoHover: true,
+            onSlideAfter: function($slideElement, oldIndex, newIndex){
+                featureSlider.stopAuto();
+                featureSlider.startAuto();
+            }
+        });
+
+        var featureSlider1 = $('.main_feature .casual .thumbnail-list ul').bxSlider({
+            auto: true,
+            slideWidth: 233,
+            minSlides: 2,
+            maxSlides: 4,
+            slideMargin: 10,
+            pager: false,
+            infiniteLoop: true,
+            controls: false,
+            speed: 800,
+            hideControlOnEnd: true,
+            autoHover: true,
+            onSlideAfter: function($slideElement, oldIndex, newIndex){
+                featureSlider1.stopAuto();
+                featureSlider1.startAuto();
+            }
+        });
+        //New, Best, MD’s pick 슬라이드 end
+
+        // 인스타그램
+        var userId = "${instagramVo.data.userId}";
+        var clientId = "${instagramVo.data.clientId}";
+        var accessToken = "${instagramVo.data.accessToken}";
+        var siteNo = "${instagramVo.data.siteNo}";
+        var partnerNo = "${instagramVo.data.partnerNo}";
+        var instagramAct = "${instagramVo.data.instagramAct}";
+        var articleCnt = 4;
+        if(accessToken == ""){
+            $('.main_instagram').remove();
+        }else{
+            Instagram.create(instagramAct, userId, clientId, accessToken, siteNo, partnerNo, articleCnt);
+        }
+    });
+
+    function recomIdAddCookie(){
+        var url = decodeURIComponent(location.href);
+        var params = url.substring(url.indexOf('?')+1, url.length);
+        params = params.split("&");
+        var size = params.length;
+        var key, value;
+        for(var i=0; i<size; i++){
+            key = params[i].split("=")[0];
+            value = params[i].split("=")[1];
+            if(key == "recomId"){
+                setCookie('RECOM_ID', value, '', '.topten10mall.com');
+            }
+        }
+    }
+
+    var moveOrderList = function() {
+        if(loginYn){
+            location.href = Constant.dlgtMallUrl + '/front/order/orderList.do';
+        } else {
+            Storm.LayerUtil.confirm('<spring:message code="biz.exception.lng.loginConfirm" />',
+                function() {
+                    var returnUrl = window.location.pathname+window.location.search;
+                    location.href= Constant.dlgtMallUrl + "/front/login/viewLogin.do?returnUrl="+returnUrl;
+                },''
+            );
+        }
+    };
+
+</script>
 </html>

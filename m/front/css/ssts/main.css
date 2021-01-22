@@ -29,6 +29,35 @@
 .main_hash_tag .swiper-wrapper ul li img { border-radius: 37%; width: 67px; margin-bottom: 5px; }
 .main_hash_tag .swiper-wrapper ul li div { text-align: center; font-size: 1em; margin-top: 0px; font-family: Noto Sans KR, sans-serif; font-weight: 400; }
 
+.header_container header {
+    border-bottom: none;
+}
+
+/* 메인 상단 Nav */
+.main-nav {
+    padding: 10px 20px 0;
+    border-bottom: 1px solid #c9c9c9;
+    background-color: #fff;
+}
+.main-nav .main-nav__item {
+    width: auto;
+
+    font-family: 'Apple SD Gothic Neo', 'SamsungOne', 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif;
+}
+.main-nav .main-nav__link {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 13px 9px;
+}
+.main-nav .main-nav__item:first-child .main-nav__link {
+    margin-left: -9px;
+}
+.main-nav .main-nav__item:last-child .main-nav__link {
+    margin-right: -9px;
+}
+
 /* 메인 상단 롤링 */
 .main_rolling { z-index: 1; position: relative; }
 .main_rolling .main_visual { /* 20180125 edit */ }
