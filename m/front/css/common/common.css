@@ -1054,19 +1054,40 @@ footer#footer .sns a:first-child {
     bottom: 40px;
 }
 #stickySide .stickySide-wrap {
-    display: none;
+    position: relative;
 }
-#stickySide .stickySide-wrap.active {
-    display: block;
+#stickySide .stickySide-wrap .stickySide__btn:not(.stickySide__toggle) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    -webkit-transition: bottom .3s cubic-bezier(.215, .61, .355, 1), opacity .4s ease-in-out;
+    -moz-transition: bottom .3s cubic-bezier(.215, .61, .355, 1), opacity .4s ease-in-out;
+    -o-transition: bottom .3s cubic-bezier(.215, .61, .355, 1), opacity .4s ease-in-out;
+    transition: bottom .3s cubic-bezier(.215, .61, .355, 1), opacity .4s ease-in-out;
+    margin-top: 0;
+    opacity: 0;
 }
-#stickySide .stickySide-wrap.active + .stickySide__toggle {
+#stickySide .stickySide-wrap.active .stickySide__btn.stickySide__alert {
+    bottom: calc(100% + 6px);
+    opacity: 1;
+}
+#stickySide .stickySide-wrap.active .stickySide__btn#happytalk-chat-button {
+    bottom: calc(200% + 12px);
+    opacity: 1;
+}
+#stickySide .stickySide-wrap.active .stickySide__btn#plusfriend-chat-button-new {
+    bottom: calc(300% + 18px);
+    opacity: 1;
+}
+#stickySide .stickySide-wrap.active .stickySide__toggle {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
-#stickySide .stickySide-wrap.active + .stickySide__toggle.label:after {
+#stickySide .stickySide-wrap.active .stickySide__toggle.label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
