@@ -319,13 +319,13 @@ header .util li.allbrand a small { position: absolute; top: 37px; left: 50%; mar
 .header_container .header-brand__list {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 49px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 40px);
+    height: calc(100vh - 49px);
     z-index: 4;
     background-color: #fff;
-    padding: 20px 15px;
+    padding: 30px 15px 20px;
 }
 .header_container .header-brand__list.active {
     display: block;
@@ -341,7 +341,6 @@ header .util li.allbrand a small { position: absolute; top: 37px; left: 50%; mar
 .header_container .header-brand__list .header-brand__item {
     position: relative;
     width: 50%;
-    height: 64px;
     padding: 5px;
     float: left;
 }
@@ -357,66 +356,76 @@ header .util li.allbrand a small { position: absolute; top: 37px; left: 50%; mar
 .header_container .header-brand__list .header-brand__item.header-brand__1:before {
     width: 94px;
     height: 24px;
-    background: transparent url(/m/front/img/topten/common/spr_layout.png) -37px -130px no-repeat;
-    background-size: 300px auto;
+    background: transparent url(/m/front/img/topten/common/logo.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__2:before {
     width: 86px;
     height: 14px;
     background: transparent url(/m/front/img/polham/common/logo.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
     background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__3:before {
     width: 77px;
     height: 17px;
-    background: url(/m/front/img/andz/common/spr_layout.png) 0 0 no-repeat;
-    background-size: 250px auto;
+    background: url(/m/front/img/andz/common/logo.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__4:before {
     width: 123px;
     height: 24px;
-    background: url(/m/front/img/projectm/common/spr_layout.png) -33px -125px no-repeat;
-    background-size: 280px auto;
+    background: url(/m/front/img/projectm/common/logo.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__5:before {
     width: 84px;
     height: 16px;
     background: url(/m/front/img/olzen/common/logo.png) center no-repeat;
+    -webkit-background-size: 100% auto;
     background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__6:before {
     width: 82px;
     height: 15px;
-    background: url(/m/front/img/ziozia/common/spr_layout.png) 0 0 no-repeat;
-    background-size: 220px auto;
+    background: url(/m/front/img/ziozia/common/logo.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__7:before {
     width: 100px;
     height: 14px;
-    background: url(/m/front/img/edition/common/spr_layout.png) 0 0 no-repeat;
-    background-size: 194px auto;
+    background: url(/m/front/img/edition/common/logo.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__8:before {
     width: 66px;
     height: 24px;
-    background: url(/m/front/img/wml/common/spr_layout.png) -2px 0 no-repeat;
-    background-size: 290px auto;
+    background: url(/m/front/img/wml/common/logo.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__9:before {
     width: 100px;
     height: 16px;
-    background: url(/m/front/img/toptenkids/common/spr_layout.png) 0 -75px no-repeat;
-    background-size: 175px auto;
+    background: url(/m/front/img/toptenkids/common/logo.png) 0 0 no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__item.header-brand__10:before {
     width: 84px;
     height: 24px;
     background: url(/m/front/img/polhamkids/common/logo.png) center no-repeat;
+    -webkit-background-size: 100% auto;
     background-size: 100% auto;
 }
 .header_container .header-brand__list .header-brand__link {
     display: block;
-    height: 100%;
+    height: 64px;
     text-indent: -9999999px;
     font-size: 0;
     border: 1px solid #000;
