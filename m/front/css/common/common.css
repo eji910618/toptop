@@ -280,38 +280,10 @@ header .header-brand__toggle.active {
 header .header-brand__toggle span {
     position: relative;
     display: block;
-    margin-left: 4px;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #000;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-}
-header .header-brand__toggle span:before,
-header .header-brand__toggle span:after {
-    content: "";
-    display: block;
-    width: 6px;
-    height: 1px;
-    background: #111;
-    position: absolute;
-    top: 50%;
-    right: 6px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    transition-duration: 0.3s;
-}
-header .header-brand__toggle span:after {
-    right: 2px;
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -o-transform: rotate(135deg);
-    transform: rotate(135deg);
+    width: 24px;
+    height: 24px;
+    background: transparent url(/m/front/img/common/layout/icon-chevron-down-circle.png) 0 0 no-repeat;
+    background-size: 100% auto;
 }
 header .util.util-r { float: right; padding-top: 9px; }
 header .util.util-r li:last-child { margin-right: -5px; }
