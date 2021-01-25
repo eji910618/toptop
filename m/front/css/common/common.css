@@ -1040,6 +1040,7 @@ footer#footer .sns a:first-child {
 
 #stickySide {
     position: fixed;
+    bottom: 85px;
     bottom: calc(constant(safe-area-inset-bottom) + 85px);
     bottom: calc(env(safe-area-inset-bottom) + 85px);
     right: 13px;
@@ -1050,7 +1051,7 @@ footer#footer .sns a:first-child {
     transition: bottom .4s cubic-bezier(.215, .61, .355, 1);
 }
 #stickySide.active-down {
-    bottom: 15px;
+    bottom: 40px;
 }
 #stickySide .stickySide-wrap {
     display: none;
@@ -1086,6 +1087,7 @@ footer#footer .sns a:first-child {
     -o-background-size: 100% auto;
     background-size: 100% auto;
     z-index: 2;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 #stickySide .stickySide__btn.stickySide__top {
     height: 0;
@@ -1179,6 +1181,7 @@ footer#footer .sns a:first-child {
     background: #f9f9f9;
     width: 100%;
     padding-top: 9px;
+    padding-bottom: 12px;
     padding-bottom: calc(constant(safe-area-inset-bottom) + 12px);
     padding-bottom: calc(env(safe-area-inset-bottom) + 12px);
     bottom: 0;
@@ -1190,6 +1193,7 @@ footer#footer .sns a:first-child {
     font-family: 'Apple SD Gothic Neo', 'SamsungOne', 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif;
 }
 #bottom_bar.active {
+    bottom: -70px;
     bottom: calc(-70px - constant(safe-area-inset-bottom));
     bottom: calc(-70px - env(safe-area-inset-bottom));
 }
