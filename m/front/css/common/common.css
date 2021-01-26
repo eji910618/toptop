@@ -1041,8 +1041,6 @@ footer#footer .sns a:first-child {
 #stickySide {
     position: fixed;
     bottom: 85px;
-    bottom: calc(constant(safe-area-inset-bottom) + 85px);
-    bottom: calc(env(safe-area-inset-bottom) + 85px);
     right: 13px;
     z-index: 2;
     -webkit-transition: bottom .4s cubic-bezier(.215, .61, .355, 1);
@@ -1203,8 +1201,6 @@ footer#footer .sns a:first-child {
     width: 100%;
     padding-top: 9px;
     padding-bottom: 12px;
-    padding-bottom: calc(constant(safe-area-inset-bottom) + 12px);
-    padding-bottom: calc(env(safe-area-inset-bottom) + 12px);
     bottom: 0;
     z-index: 2;
     -webkit-transition: bottom .4s cubic-bezier(.215, .61, .355, 1);
@@ -1215,8 +1211,6 @@ footer#footer .sns a:first-child {
 }
 #bottom_bar.active {
     bottom: -70px;
-    bottom: calc(-70px - constant(safe-area-inset-bottom));
-    bottom: calc(-70px - env(safe-area-inset-bottom));
 }
 #bottom_bar .bottomBar-item {
     width: 20%;
