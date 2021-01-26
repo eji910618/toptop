@@ -376,7 +376,7 @@ header .util li.allbrand a small { position: absolute; top: 37px; left: 50%; mar
 }
 .header_container .header-brand__list .header-brand__item.header-brand__4:before {
     width: 123px;
-    height: 24px;
+    height: 30px;
     background: url(/m/front/img/projectm/common/logo.png) 0 0 no-repeat;
     -webkit-background-size: 100% auto;
     background-size: 100% auto;
