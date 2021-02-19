@@ -164,7 +164,10 @@
                     <div class="search_close"></div>
                     <div class="search">
                         <div class="sch-engine">
-                            <input type="text" id="searchWord" placeholder="검색어를 입력하세요." onkeydown="if(event.keyCode == 13){$('#btn_search').click();}" onfocus="javascript:init_focus();" value="">
+                            <input type="text" id="searchWord" placeholder="검색어를 입력하세요."
+                                   onkeyup="headerInputKeyup(this);"
+                                   onkeydown="if(event.keyCode == 13){$('#btn_search').click();}"
+                                   onfocus="javascript:init_focus(this);" value="">
                             <input type="hidden" id="searchLink" value="">
                             <button type="button" id="btn_search"><i>search</i></button>
                         </div>
@@ -172,21 +175,99 @@
 
                     <!-- search -->
                     <div class="util-search-detail">
-                        <div class="word-engine">
-                            <div class="word-wr">
-                                <b>인기 검색어</b>
-                                <ul></ul>
-                            </div>
+                        <div class="word-engine search-input__before">
                             <div class="word-wr">
                                 <b>최근 검색어</b>
-                                <ul id="ulLatelyWord"></ul>
+                                <ul id="ulLatelyWord">
+                                    <li>
+                                        <a href="" class="del" onclick="RatelyWordUtil.deleteCookie('ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ')">삭제</a>
+                                        <a href="" onclick="view_searchWord(this);" data-search-word="ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ">ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="del" onclick="RatelyWordUtil.deleteCookie('asd')">삭제</a>
+                                        <a href="" onclick="view_searchWord(this);" data-search-word="asd">asd</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="del" onclick="RatelyWordUtil.deleteCookie('박서준')">삭제</a>
+                                        <a href="" onclick="view_searchWord(this);" data-search-word="박서준">박서준</a>
+                                    </li>
+                                </ul>
                             </div>
-
+                            <div class="word-wr">
+                                <b>인기 검색어</b>
+                                <ul>
+                                    <li><a href="#">1. 롱패딩</a></li>
+                                    <li><a href="#">2. 롱패딩</a></li>
+                                    <li><a href="#">3. 롱패딩</a></li>
+                                    <li><a href="#">4. 롱패딩</a></li>
+                                    <li><a href="#">5. 롱패딩</a></li>
+                                    <li><a href="#">6. 롱패딩</a></li>
+                                    <li><a href="#">7. 롱패딩</a></li>
+                                    <li><a href="#">8. 롱패딩</a></li>
+                                    <li><a href="#">9. 롱패딩</a></li>
+                                    <li><a href="#">10. 핀스트라이프 셔츠</a></li>
+                                </ul>
+                            </div>
                             <div class="word-wr">
                                 <b>최근 본 상품</b>
-                                <ul id="searchLatelyGoods"></ul>
+                                <ul id="searchLatelyGoods">
+                                    <li>
+                                        <a href="javascript:goods_detail('BLB1TR1001IV');">
+                                            <img src="https://imgp.topten10mall.com/ssts/image/goods/BLB1TR1001IV_MDL1_L?AR=0&RS=60X82">
+                                            <div class="goods_info">
+                                                <span class="partner_nm">AND Z</span>
+                                                <span class="goods_nm">럭키N러브 콜라보 오버핏 맨투맨</span>
+                                                <span class="sale_price comma">AND Z원 </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:goods_detail('AEA4FP1104BK');">
+                                            <img src="https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=60X82">
+                                            <div class="goods_info">
+                                                <span class="partner_nm">ZIOZIA</span>
+                                                <span class="goods_nm">히든 슬릿 구스다운 코트</span>
+                                                <span class="sale_price comma">ZIOZIA원 </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
 
+                        </div>
+                        <!-- 연관검색어 -->
+                        <div class="word-engine search-input__after hidden">
+                            <div class="clearfix">
+                                <div class="word-wr">
+                                    <ul>
+                                        <li><a href="#"><span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">에디션 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">지오지아 슬림핏 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">탑텐 여성 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">폴햄 린넨 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">앤드지 베이직 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">탑텐 여성 와이드 <span class="text-primary">슬랙스</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="word-wr">
+                                    <ul>
+                                        <li><a href="#">프로젝트엠 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">올젠 가을 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">남자 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">남성 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">여성 <span class="text-primary">슬랙스</span> 팬츠</a></li>
+                                        <li><a href="#">여자 <span class="text-primary">슬랙스</span></a></li>
+                                        <li><a href="#">탑텐 공용 <span class="text-primary">슬랙스</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="search-word__category">
+                                <b><span class="text-primary">슬랙스</span> 추천 카테고리</b>
+                                <ul>
+                                    <li><a href="#">남성 > 하의 > 긴바지 > <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">텐텐데이 > 1+1 > 팬츠 > <span class="text-primary">슬랙스</span></a></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="btn-util-wrap">
                             <a href="#" class="btn-util-close">닫기</a>
@@ -2178,9 +2259,9 @@
 <script type="text/javascript" src="/desktop/js/instagram.js"></script>
 <script type="text/javascript" src="/desktop/js/youtube.js"></script>
 <script type="text/javascript" src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" src="/kr/front/djs/linkJS.js?v=6"></script>
-<script type="text/javascript" src="/kr/front/djs/memberJS.js?v=1"></script>
-<script type="text/javascript" src="/kr/front/djs/jsVar.js?v=1"></script>
+<script type="text/javascript" src="/desktop/kr/js/linkJS.js"></script>
+<!--<script type="text/javascript" src="/desktop/kr/js/memberJS.js"></script>-->
+<!--<script type="text/javascript" src="/desktop/kr/js/jsVar.js"></script>-->
 <!--<script type="text/javascript" src="https://imgp.topten10mall.com/com/product/js/custom.js?v=1"></script>-->
 <script>
     // google GTM í¥ìë ì ì ìê±°ëë¥¼ ìí í´ë¦­ ì´ë²¤í¸

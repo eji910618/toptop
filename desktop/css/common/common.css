@@ -329,30 +329,112 @@ header .h1 .search_area .search .sch-engine { border-bottom: 1px solid #111; hei
 header .h1 .search_area .search .sch-engine input { border: 0; font-size: 14px; width: 100%; height: 20px; padding-left: 0; vertical-align: top; background: transparent; }
 header .h1 .search_area .search .sch-engine button { position: absolute; right: 12px; top: 15px; }
 header .h1 .search_area .search .sch-engine button i { display: block; background: url("/desktop/img/ssts/common/spr_search.png") no-repeat 0 0; width: 21px; height: 20px; line-height: 500px; overflow: hidden; }
-header .h1 .search_area .util-search-detail { position: absolute; height: 390px; background: #ffffff; border: solid 1px; top: 69px; right: 0; display: none; }
+header .h1 .search_area .util-search-detail { position: absolute; height: 390px; background: #ffffff; border: solid 1px; top: 69px; right: 0; display: none; font-family: 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif; }
 header .h1 .search_area .util-search-detail .sch-engine { border-bottom: 1px solid #111; height: 48px; padding: 13px 45px 0 20px; position: relative; }
 header .h1 .search_area .util-search-detail .sch-engine input { border: 0; font-size: 16px; width: 100%; height: 20px; padding-left: 0; vertical-align: top; }
 header .h1 .search_area .util-search-detail .sch-engine button { position: absolute; right: 13px; top: 14px; }
 header .h1 .search_area .util-search-detail .sch-engine button i { display: block; background: url("/desktop/img/ssts/common/spr_search.png") no-repeat 0 0; width: 21px; height: 20px; line-height: 500px; overflow: hidden; }
 header .h1 .search_area .util-search-detail .word-engine { margin-top: 24px; }
-header .h1 .search_area .util-search-detail .word-engine .word-wr { float: left; width: 290px; height: 330px; margin-right: -1px; border-right: 1px solid #e5e5e5; line-height: 20px; overflow: hidden; }
+header .h1 .search_area .util-search-detail .word-engine .word-wr,
+header .h1 .search_area .util-search-detail .word-engine .search-word__category { float: left; width: 290px; height: 330px; margin-right: -1px; border-right: 1px solid #e5e5e5; line-height: 20px; overflow: hidden; }
 header .h1 .search_area .util-search-detail .word-engine .word-wr:last-child { border-right: none; }
-header .h1 .search_area .util-search-detail .word-engine .word-wr b { display: block; margin: 0 20px; font-size: 14px; border-bottom: solid 2px; padding-bottom: 6px; font-weight:900;font-family:NanumGothic;}
-header .h1 .search_area .util-search-detail .word-engine .word-wr ul { line-height: 16px; margin: 0 20px; margin-top: 10px; color: #666; }
-header .h1 .search_area .util-search-detail .word-engine .word-wr ul li + li { margin-top: 8px; }
-header .h1 .search_area .util-search-detail .word-engine .word-wr ul a { color: #666; font-size: 14px; }
-header .h1 .search_area .util-search-detail .word-engine .word-wr ul a.del { float: left; width: 11px; height: 11px; background: url("/desktop/img/ssts/common/spr_search.png") no-repeat -25px -4px; line-height: 500px; overflow: hidden; margin: 4px 5px 0 0; }
+header .h1 .search_area .util-search-detail .word-engine .word-wr b,
+header .h1 .search_area .util-search-detail .word-engine .search-word__category b {
+    display: block;
+    margin: 0 20px;
+    font-size: 14px;
+    border-bottom: solid 2px;
+    padding-bottom: 6px;
+    font-weight: bold;
+}
+header .h1 .search_area .util-search-detail .word-engine .word-wr ul,
+header .h1 .search_area .util-search-detail .word-engine .search-word__category ul { line-height: 16px; margin: 10px 20px; color: #111; }
+header .h1 .search_area .util-search-detail .word-engine .word-wr ul li:after,
+header .h1 .search_area .util-search-detail .word-engine .word-wr ul li:before {
+    content: " ";
+    display: table;
+}
+header .h1 .search_area .util-search-detail .word-engine .word-wr ul li:after {
+    clear: both;
+}
+header .h1 .search_area .util-search-detail .word-engine .word-wr ul li {
+    *zoom: 1;
+}
+header .h1 .search_area .util-search-detail .word-engine .word-wr ul li + li,
+header .h1 .search_area .util-search-detail .word-engine .search-word__category li + li { margin-top: 8px; }
+header .h1 .search_area .util-search-detail .word-engine .word-wr ul a { color: #111; font-size: 14px; }
+header .h1 .search_area .util-search-detail .word-engine .word-wr ul a.del {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background: url(/desktop/img/ssts/common/btn-util-close.png) center no-repeat;
+    -webkit-background-size: 14px;
+    background-size: 14px;
+    text-indent: -999999px;
+    font-size: 0;
+}
 header .h1 .search_area .util-search-detail .word-engine .word-wr #searchLatelyGoods li { height: 88px; border-bottom: 1px solid #e5e5e5; padding-bottom: 4px; }
 header .h1 .search_area .util-search-detail .word-engine .word-wr #searchLatelyGoods li img { width: 60px; float: left; margin-right: 8px; }
 header .h1 .search_area .util-search-detail .word-engine .word-wr #searchLatelyGoods li .goods_info span { display: block; font-size: 12px; }
-header .h1 .search_area .util-search-detail .word-engine .word-wr #searchLatelyGoods li .goods_info .partner_nm {  }
-header .h1 .search_area .util-search-detail .word-engine .word-wr #searchLatelyGoods li .goods_info .goods_nm { max-height: 32px; }
-header .h1 .search_area .util-search-detail .btn-util-wrap { position: absolute; height: 0; bottom: 30px; right: 10px; }
-header .h1 .search_area .util-search-detail .btn-util-wrap a { display: block; font-size: 0px; color: transparent; line-height: 0; background: url(/desktop/img/ssts/common/btn-util-close.png) 0 0 no-repeat; width: 16px; height: 16px; float: right; }
+header .h1 .search_area .util-search-detail .word-engine .word-wr #searchLatelyGoods li .goods_info .partner_nm,
+header .h1 .search_area .util-search-detail .word-engine .word-wr #searchLatelyGoods li .goods_info .sale_price {
+    color: #999;
+}
+header .h1 .search_area .util-search-detail .word-engine .word-wr #searchLatelyGoods li .goods_info .goods_nm {
+    max-height: 32px;
+    margin: 5px 0 4px;
+}
+header .h1 .search_area .util-search-detail .word-engine.search-input__after .word-wr {
+    height: 220px;
+}
+header .h1 .search_area .util-search-detail .word-engine.search-input__after .word-wr ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+header .h1 .search_area .util-search-detail .word-engine.search-input__after .word-wr li + li {
+    margin-top: 14px;
+}
+header .h1 .search_area .util-search-detail .word-engine .search-word__category {
+    font-size: 14px;
+    margin-top: 20px;
+    float: none;
+    width: 100%;
+    height: auto;
+}
+header .h1 .search_area .util-search-detail .word-engine .search-word__category ul a:before {
+    content: 'ㄴ';
+    display: inline-block;
+    margin-right: 5px;
+    color: #989898;
+}
+header .h1 .search_area .util-search-detail .btn-util-wrap { position: absolute; bottom: 20px; right: 20px; }
+header .h1 .search_area .util-search-detail .btn-util-wrap a {
+    display: block;
+    font-size: 0;
+    text-indent: -9999999px;
+    background: url(/desktop/img/ssts/common/btn-util-close.png) 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+    float: right;
+}
 header .h1 .search_area.active .search_close { display: block; }
 header .h1 .search_area.active .search .sch-engine { background: #ffffff; }
 header .h1 .search_area.active .util-search-detail { display: block; }
 
+.text-primary {
+   color: #ff3500 !important;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
 
 #container { padding-top: 187px; background-color: #fff; }
 #container .inner { width: 1140px; margin: 0 auto; position: relative; }

@@ -292,46 +292,46 @@ var RightQuickMenu = function() {
 };
 
 // 최근 검색어 조회
-var RatelyWordUtil = {
-    srchRatelyWord:function() {
-        var wordList = getCookie('LATELY_WORD');
-        var items = wordList ? wordList.split(/::/) : new Array();//검색어 구분
-        var itemsCnt = items.length;
-        var html = "";
-
-        for(var i=0; i<itemsCnt; i++){
-            var attr = items[i];//검색어 구분
-            var tempHtml = '';
-            tempHtml += '<li>';
-            tempHtml += '    <a href="#none" class="del" onclick="RatelyWordUtil.deleteCookie(\'' + attr + '\')">삭제</a>';
-            tempHtml += '    <a href="#none" onclick="view_searchWord(this);" data-search-word="' + attr + '">' + attr + '</a>';
-            tempHtml += '</li>';
-            html +=tempHtml;
-        }
-        $("#ulLatelyWord").html(html);
-    }
-    , deleteCookie:function(name) {
-        var wordList = getCookie('LATELY_WORD');
-        var items = wordList ? wordList.split(/::/) : new Array();//검색어 구분
-        var itemsCnt = items.length;
-        var refreshWord = '';
-
-        for(var i=0; i<itemsCnt; i++){
-            var tempItem = items[i];//검색어 구분
-            if(tempItem !== name) {
-                refreshWord += tempItem + "::";
-            }
-        }
-
-        // replace 시키기 위해 일부러 마지막에 한번더 붙인다
-        if(itemsCnt > 0 && refreshWord != '') {
-            refreshWord += "::";
-        }
-        setCookie('LATELY_WORD', refreshWord.replace(/::::/gi, ''));
-
-        RatelyWordUtil.srchRatelyWord();
-    }
-};
+// var RatelyWordUtil = {
+//     srchRatelyWord:function() {
+//         var wordList = getCookie('LATELY_WORD');
+//         var items = wordList ? wordList.split(/::/) : new Array();//검색어 구분
+//         var itemsCnt = items.length;
+//         var html = "";
+//
+//         for(var i=0; i<itemsCnt; i++){
+//             var attr = items[i];//검색어 구분
+//             var tempHtml = '';
+//             tempHtml += '<li>';
+//             tempHtml += '    <a href="#none" class="del" onclick="RatelyWordUtil.deleteCookie(\'' + attr + '\')">삭제</a>';
+//             tempHtml += '    <a href="#none" onclick="view_searchWord(this);" data-search-word="' + attr + '">' + attr + '</a>';
+//             tempHtml += '</li>';
+//             html +=tempHtml;
+//         }
+//         $("#ulLatelyWord").html(html);
+//     }
+//     , deleteCookie:function(name) {
+//         var wordList = getCookie('LATELY_WORD');
+//         var items = wordList ? wordList.split(/::/) : new Array();//검색어 구분
+//         var itemsCnt = items.length;
+//         var refreshWord = '';
+//
+//         for(var i=0; i<itemsCnt; i++){
+//             var tempItem = items[i];//검색어 구분
+//             if(tempItem !== name) {
+//                 refreshWord += tempItem + "::";
+//             }
+//         }
+//
+//         // replace 시키기 위해 일부러 마지막에 한번더 붙인다
+//         if(itemsCnt > 0 && refreshWord != '') {
+//             refreshWord += "::";
+//         }
+//         setCookie('LATELY_WORD', refreshWord.replace(/::::/gi, ''));
+//
+//         RatelyWordUtil.srchRatelyWord();
+//     }
+// };
 
 //즐겨찾기 추가
 function add_favorite(){
