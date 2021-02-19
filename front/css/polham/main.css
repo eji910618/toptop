@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/* main_rolling */
+.main_rolling { max-width: 1920px; min-width: 1200px; margin: 0 auto; overflow: hidden; }
+.main_rolling .main_visual li { overflow: hidden; }
+.main_rolling .main_visual li > a { display: block; }
+.main_rolling .main_visual li > span { position: relative; display: block; height: 600px; }
+.main_rolling .main_visual li > span .img_wrap { position: relative; z-index: 50; }
+.main_rolling .main_visual li > span .mov_cont { position: absolute; left: 0; top: 0; width: 100%; height: 600px; }
+.main_rolling .main_visual li > span .mov_cont iframe { width: 100%; height: 600px; }
+.main_rolling .main_visual li > span .btn_play { position: absolute; left: 50%; bottom: 270px; width: 60px; height: 60px; margin-left: -30px; background: url("/front/img/toptenkids/common/spr_slider.png") -140px 0 no-repeat; text-indent: -9999px; z-index: 50; }
+.main_rolling .main_visual .img_wrap { height: 600px; background-repeat: no-repeat; background-position: center top; }
+.main_rolling .main_visual li.black .img_wrap .title > span { color: #111; }
+.main_rolling .bx-wrapper .bx-controls-direction a { position: absolute; top: 50%; width: 65px; height: 66px; margin-top: -20px; background: url("/front/img/ssts/common/spr_slider.png?v=5") 0 0 no-repeat; text-indent: -9999px; z-index: 100; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-prev { left: 240px; background-position: 0 -116px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-next { right: 240px; background-position: -73px -116px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-prev:hover { background-position: 0 -190px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-next:hover { background-position: -73px -190px; }
+
+/* bx-wrapper */
+.bx-wrapper { position: relative; }
+.bx-wrapper .bx-controls-direction a { position: absolute; top: 50%; width: 21px; height: 38px; margin-top: -19px; background: url("/front/img/toptenkids/common/spr_slider.png") 0 0 no-repeat; text-indent: -9999px; z-index: 100; }
+.bx-wrapper .bx-controls-direction a.disabled { display: none; }
+.bx-wrapper .bx-controls-direction a.bx-prev { left: 150px; }
+.bx-wrapper .bx-controls-direction a.bx-next { right: 150px; background-position: -40px 0; }
+.bx-wrapper .bx-pager { position: absolute; bottom: 30px; width: 100%; height: 12px; text-align: center; z-index: 100; }
+.bx-wrapper .bx-pager .bx-pager-item { display: inline-block; margin: 0 5px; }
+.bx-wrapper .bx-pager .bx-pager-item a { display: block; width: 12px; height: 12px; background: url("/front/img/toptenkids/common/spr_slider.png") 0 0 no-repeat; text-indent: -9999px; }
+.bx-wrapper .bx-pager .bx-pager-item a.bx-pager-link { background-position: -20px -80px; }
+.bx-wrapper .bx-pager .bx-pager-item a.active { background-position: 0 -80px; }
+
+.title_h2 { padding: 26px 0 36px; font-family: "Montserrat", sans-serif; text-align: center; }
+.title_h2 > span { position: relative; display: inline-block; line-height: 26px; font-weight: bold; padding: 0 24px; background: #fff; z-index: 2; }
+.title_h2:after { content: ''; display: block; position: relative; bottom: 17px; width: 100%; height: 1px; background: #111; z-index: 1; }
+
+.main_suggest { overflow: hidden; width: 1200px; margin: 55px auto 0; }
+.main_suggest > div { float: left; width: 590px; }
+.main_suggest > div + div { margin-left: 20px; }
+.main_suggest .img img { width: 100%; }
+.main_suggest .suggest { padding-bottom: 34px; border: 1px solid #e4e4e4; border-top: 0 none; }
+.main_suggest .suggest .tit { padding: 21px 0 16px; text-align: center; }
+.main_suggest .suggest .tit strong { display: block; margin-bottom: 7px; font-family: "Open Sans", sans-serif; font-size: 30px; }
+.main_suggest .suggest .tit span { font-size: 16px; color: #666; }
+.main_suggest .suggest .thumbnail-list { margin-bottom: 0; padding: 0 29px; }
+.main_suggest .suggest .thumbnail-list ul li { width: 160px; height: auto; margin: 0 0 0 25px; height: 320px; }
+.main_suggest .suggest .thumbnail-list ul li:first-child { margin: 0; }
+.main_suggest .suggest .thumbnail-list ul li .prd-img { overflow: hidden; height: 218px; }
+
+.main_feature { overflow: hidden; width: 1200px; margin: 35px auto 0; }
+.main_feature .title_h2 { padding: 40px 0 33px; font-family: "Montserrat", sans-serif; font-size: 26px; font-weight: bold; text-align: center; }
+.main_feature .rolling { text-align: center; margin-bottom: 30px;}
+.main_feature .rolling ul { position: relative; display: inline-block; padding: 0 30px; background: #fff; z-index: 2; }
+.main_feature .rolling li { display: inline; }
+.main_feature .rolling li a { position: relative; display: inline-block; margin: 0 10px; color: #999; vertical-align: top; font-size: 18px; font-weight: bold; }
+.main_feature .rolling li a::before { position: absolute; position: absolute; bottom: 0; left: 0; width: 100%; width: 0; height: 1px; background-color: #fff; content: ' '; overflow: hidden; -webkit-transition: all ease-in-out 0.3s; -moz-transition: all ease-in-out 0.3s; -ms-transition: all ease-in-out 0.3s; -o-transition: all ease-in-out 0.3s; transition: all ease-in-out 0.3s; }
+.main_feature .rolling li a.on { color: #111; }
+.main_feature .rolling li a.on::before { width: 100%; background-color: #111; }
+
+.main_magazine {width: 1200px; margin: 55px auto 0;}
+.main_magazine h2 { font-family: "Montserrat", sans-serif; font-size: 26px; font-weight: bold; text-align: center; }
+.main_magazine ul { overflow: hidden; }
+.main_magazine li { position: relative; width: 592px; height: 505px; float: left; border: 1px solid #e4e4e4;}
+.main_magazine li + li {margin-left: 16px;}
+.main_magazine li a img { width: 100%;}
+.main_magazine li .txts { position: absolute; bottom: 30px; left: 0; width: 100%; font-family: "Open Sans", sans-serif; font-size: 18px; line-height: 24px; color: black; text-align: center; letter-spacing: -0.5px; }
+.main_magazine li .txts span { font-size: 24px; font-weight: bold; display: block; margin-bottom: 15px; }
+
+.event_banner {max-width: 1200px; margin: 67px auto 0;}
+.event_banner .banner {position: relative;}
+.event_banner .banner a { display: block; position: relative; overflow: hidden; }
+.event_banner .banner .txts { position: absolute; top: 50px; left: 200px; color: #fff; }
+.event_banner .banner .txts > p { font-family: "Playfair Display", serif; font-size: 40px; line-height: 42px; letter-spacing: 2px; }
+.event_banner .banner .txts > p span { display: block; }
+.event_banner .banner .txts > span { display: inline-block; margin-top: 18px; font-family: "Open Sans", sans-serif; font-size: 20px; }
+
+.main_video { clear: both; max-width: 1200px; margin: 67px auto 0; overflow: hidden; }
+.main_video h2 { text-align: center; font-size: 20px; padding-bottom: 55px; }
+.main_video h2 * { display: block; }
+.main_video h2 b { font-family: "Open Sans", sans-serif; font-weight: 600; }
+.main_video h2 i { font-size: 14px; color: #666; margin-top: 8px; }
+.main_video .movie { position: relative; height: 674px; width: 1200px; overflow: hidden; }
+.main_video .movie a.vod_cover { display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.main_video .movie a.vod_cover .vod_btn { display: block; position: absolute; left: 50%; top: 50%; margin: -30px 0 0 -30px; width: 60px; height: 60px; overflow: hidden; line-height: 500px; background: url("/front/img/ziozia/common/spr_slider.png") -140px 0 no-repeat; }
+
+.youtube-movie { position: relative; height: 0; padding-bottom: 56.25%; height: 100%; }
+.youtube-movie iframe { position: absolute; width: 100%; height: 100%; left: 0; }
+
+/* instagram */
+.main_instagram {width: 1200px; margin: 0 auto; position: relative;}
+.main_instagram .title_h2 span { padding: 69px 24px 15px; font-family: "Montserrat", sans-serif; font-size: 26px; font-weight: bold; text-align: center; }
+.main_instagram .title_h2 i { font-size: 12px; display: block; }
+.main_instagram .title_h2 i a { display: inline-block; height: 26px; background: url(/front/img/ssts/main/icon_instagram.png) no-repeat 0 0; padding-left: 35px; }
+.main_instagram .title_h2:after { bottom: 55px;}
+.main_instagram ul { overflow: hidden; }
+.main_instagram ul li { float: left; width: 232px; }
+.main_instagram ul li img { width: 100%; height: 210px;}
+.main_instagram ul li + li { margin-left: 10px; }
+.main_instagram .more { text-align: center; padding-top: 35px; }
+.main_instagram .more a { font-size: 14px; font-weight: bold; line-height: 20px; display: inline-block; border-bottom: 1px solid #111; }
+
+/*# sourceMappingURL=main.css.map */

@@ -2213,7 +2213,7 @@ Hammer.defaults = {
      */
     cssProps: {
         /**
-         * Disables text selection to improve the dragging gesture. Mainly for desktop browsers.
+         * Disables text selection to improve the dragging gesture. Mainly for front browsers.
          * @type {String}
          * @default 'none'
          */
@@ -2243,7 +2243,7 @@ Hammer.defaults = {
         contentZooming: 'none',
 
         /**
-         * Specifies that an entire element should be draggable instead of its contents. Mainly for desktop browsers.
+         * Specifies that an entire element should be draggable instead of its contents. Mainly for front browsers.
          * @type {String}
          * @default 'none'
          */

@@ -1,0 +1,507 @@
+#product_detail:after { display: block; clear: both; content: ''; }
+#product_detail section { padding-top: 40px; float: left; width: 780px; border-right: 1px solid #e5e5e5; position: relative; /* detail_slider 20171117 edit */ /* detail_tab 20171117 edit */ }
+#product_detail section .back { display: block; height: 17px; line-height: 17px; font-family: "Open Sans", sans-serif; font-size: 14px; position: absolute; top: 57px; left: 0; padding-left: 20px; text-transform: uppercase; }
+#product_detail section .back:before { content: ''; display: block; width: 9px; height: 17px; background: url("/front/img/ziozia/common/spr_product_pc.png") 0 0 no-repeat; position: absolute; top: 0; left: 0; }
+#product_detail section .detail_slider { padding: 0 49px 0px 90px; position: relative; /* control_wrap 20171212 edit */ /* slide-pager 20171212 edit */ }
+#product_detail section .detail_slider #slideshow-wrapper { position: relative; height: 874px; overflow: hidden; }
+#product_detail section .detail_slider #slideshow { position: relative; z-index: 1; }
+#product_detail section .detail_slider #slideshow button { cursor: url(/front/img/ziozia/product/cursor.png), pointer; }
+#product_detail section .detail_slider #slideshow button img { width: 100%; }
+#product_detail section .detail_slider .bx-controls-direction a { display: block; overflow: hidden; text-indent: -9999px; width: 22px; height: 39px; background: url("/front/img/ziozia/common/spr_product_pc.png") -50px 0 no-repeat; position: absolute; top: 50%; left: 0; margin-top: -20px; z-index: 2; }
+#product_detail section .detail_slider .bx-controls-direction a.bx-next { background-position: -100px 0; left: auto; right: 0; }
+#product_detail section .detail_slider .control_wrap { position: absolute; top: 70px; left: 0; width: 51px; }
+#product_detail section .detail_slider .control_wrap > button { display: block; float: left; width: 19px; height: 68px; overflow: hidden; text-indent: -9999px; background-color: #aaa; position: relative; }
+#product_detail section .detail_slider .control_wrap > button:before { position: absolute; top: 4px; left: 0; content: ''; display: block; width: 100%; height: 60px; background: url("/front/img/ziozia/common/spr_product_pc.png") -462px 0 no-repeat; overflow: hidden; }
+#product_detail section .detail_slider .control_wrap #slide-pager_next { float: right; }
+#product_detail section .detail_slider .control_wrap #slide-pager_next:before { background-position: right 0; }
+#product_detail section .detail_slider #slide-pager ul li { margin-bottom: 4px; }
+#product_detail section .detail_slider #slide-pager ul li a { display: block; position: relative; }
+#product_detail section .detail_slider #slide-pager ul li a:before { content: ''; display: block; width: 100%; height: 100%; border: 1px solid #000; opacity: .14; position: absolute; top: 0; left: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#product_detail section .detail_slider #slide-pager ul li a img { width: 51px; height: 69px; }
+#product_detail section .detail_slider #slide-pager ul li a.active:before { opacity: 1; border: 4px solid #fff; }
+#product_detail section .detail_slider #slide-pager ul li a.active:after { content: ''; display: block; width: 100%; height: 100%; border: 2px solid #000; position: absolute; top: 0; left: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#product_detail section .detail_tab { width: 100%; position: relative;border-top: 1px solid #e5e5e5; z-index: 100; background-color: #fff; }
+#product_detail section .detail_tab.fixed { position: fixed; top: 0; left: 50%; width: 779px; margin-left: -570px; }
+#product_detail section .detail_tab ul { display: table; width: 100%; }
+#product_detail section .detail_tab ul li { display: table-cell; width: 25%; border-bottom: 1px solid #e5e5e5; text-align: center; vertical-align: middle; }
+#product_detail section .detail_tab ul li a { display: block; font-weight: bold; font-size: 15px; color: #999; line-height: 95px; height: 95px; overflow: hidden; }
+#product_detail section .detail_tab ul li.active, #product_detail section .detail_tab ul li:hover { border-bottom: 1px solid #111; }
+#product_detail section .detail_tab ul li.active a, #product_detail section .detail_tab ul li:hover a { color: #111; }
+#product_detail section .detail_tab_contents { width: 740px; }
+#product_detail section .detail_tab_contents .title { font-size: 16px; font-weight: bold; line-height: 100%; margin-bottom: 28px; }
+#product_detail section .detail_tab_contents .section { padding-top: 40px; }
+#product_detail section .detail_tab_contents .section.tip .title, #product_detail section .detail_tab_contents .section.info .title { border-bottom: 2px solid #000; padding-bottom: 5px; margin: 0; }
+#product_detail section .detail_tab_contents .section img { width: 100%; }
+#product_detail section .detail_tab_contents .section table { border-top: 1px solid #e5e5e5; }
+#product_detail section .detail_tab_contents .section table th { background-color: #f8f8f8; height: 55px; vertical-align: middle; text-align: left; color: #111; padding-left: 30px; /* border-right: 1px solid #e5e5e5; */ border-bottom: 1px solid #e5e5e5; /* border-left: 1px solid #e5e5e5; */ line-height: 20px; }
+#product_detail section .detail_tab_contents .section table td { background-color: #fff; vertical-align: middle; text-align: center; color: #666; border-bottom: 1px solid #e5e5e5; line-height: 20px; }
+#product_detail section .detail_tab_contents .section table td.active { color: #000; text-align: left; padding: 17px 0 17px 30px; }
+#product_detail section .detail_tab_contents .section table tr th:first-child { /* border-right: 1px solid #e5e5e5; */ }
+#product_detail section .detail_tab_contents .section table tr td:first-child { background-color: #f8f8f8; /* border-right: 1px solid #e5e5e5; border-left: 1px solid #e5e5e5; */ color: #111; }
+#product_detail section .detail_tab_contents .section table.tal th, #product_detail section .detail_tab_contents .section table.tal td { text-align: left; padding: 17px 0 17px 30px; }
+#product_detail section .detail_tab_contents .section table.hor th { height: 40px; border-right: none; border-left: none; font-size: 11px; color: #111; text-align: center; padding-left: 0; }
+#product_detail section .detail_tab_contents .section table.hor th:first-child { /* border-left: 1px solid #e5e5e5; */ }
+#product_detail section .detail_tab_contents .section table.hor th:last-child { /* border-right: 1px solid #e5e5e5; */ }
+#product_detail section .detail_tab_contents .section table.hor td { height: 40px; border-bottom: 1px solid #e5e5e5; text-align: center; font-size: 13px; color: #666; }
+#product_detail section .detail_tab_contents .section.mov { padding-top: 0; }
+#product_detail section .detail_tab_contents .section.mov .movie { position: relative; }
+#product_detail section .detail_tab_contents .section.mov .youtube-movie { position: relative; height: 0; padding-bottom: 56.25%; }
+#product_detail section .detail_tab_contents .section.mov .youtube-movie iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+#product_detail section .detail_tab_contents .section.mov a.vod_cover { display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+#product_detail section .detail_tab_contents .section.mov a.vod_cover .vod_btn { display: block; position: absolute; left: 50%; top: 50%; margin: -30px 0 0 -30px; width: 60px; height: 60px; overflow: hidden; line-height: 500px; background: url("/front/img/ziozia/common/spr_slider.png") -140px 0 no-repeat; }
+#product_detail section .detail_tab_contents .review .selector { display: inline-block; height: 35px; line-height: 35px; position: relative; vertical-align: top; text-align: left; width: auto !important; margin-right: 10px; }
+#product_detail section .detail_tab_contents .review .selector span { padding: 0 21px 0 12px; display: block; height: 100%; width: 145px !important; line-height: 33px; border: 1px solid #ddd; font-size: 13px; background-color: #fbfbfb; }
+#product_detail section .detail_tab_contents .review .selector span:before { content: ''; display: block; width: 9px; height: 5px; background: url("/front/img/ziozia/common/spr_product_pc.png") -200px -50px no-repeat; position: absolute; top: 50%; right: 12px; margin-top: -3px; }
+#product_detail section .detail_tab_contents .review .selector select { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; opacity: 0; z-index: 1; box-sizing: border-box; }
+#product_detail section .detail_tab_contents .review .selector select option { font-size: 13px; }
+#product_detail section .detail_tab_contents .review .title { text-align: right; font-size: 0; padding-bottom: 20px; border-bottom: 1px solid #111; margin-bottom: 0; }
+#product_detail section .detail_tab_contents .review .title h2 { float: left; font-size: 16px; font-weight: bold; height: auto; line-height: 35px; }
+#product_detail section .detail_tab_contents .review .review_list { border-bottom: 1px solid #111; margin-bottom: 56px; }
+#product_detail section .detail_tab_contents .review .review_list li { border-bottom: 1px solid #e5e5e5; }
+#product_detail section .detail_tab_contents .review .review_list li:last-child { border-bottom: none; }
+#product_detail section .detail_tab_contents .review .review_list li .head { height: 72px; line-height: 72px; display: table; width: 100%; cursor: pointer; }
+#product_detail section .detail_tab_contents .review .review_list li .head > div { display: table-cell; }
+#product_detail section .detail_tab_contents .review .review_list li .head .rate { width: 112px; }
+#product_detail section .detail_tab_contents .review .review_list li .head .rate .rate_outer { display: block; width: 85px; height: 14px; background: url(/front/img/ziozia/common/bg_rate.png) 0 0 no-repeat; }
+#product_detail section .detail_tab_contents .review .review_list li .head .rate .rate_outer .rate_inner { display: block; width: 85px; height: 14px; background: url(/front/img/ziozia/common/bg_rate.png) 0 bottom no-repeat; }
+#product_detail section .detail_tab_contents .review .review_list li .head .review_title { font-size: 13px; }
+#product_detail section .detail_tab_contents .review .review_list li .head .review_title.photo:after { content: ''; display: inline-block; width: 18px; height: 15px; background: url("/front/img/ziozia/common/spr_product_pc.png") -150px -50px no-repeat; vertical-align: text-bottom; margin-left: 10px; }
+#product_detail section .detail_tab_contents .review .review_list li .head .member_id { width: 95px; color: #999; }
+#product_detail section .detail_tab_contents .review .review_list li .head .date { width: 60px; color: #999; }
+#product_detail section .detail_tab_contents .review .review_list li .body { display: none; position: relative; padding: 0 60px 0 112px; line-height: 20px; color: #666; padding-bottom: 30px; }
+#product_detail section .detail_tab_contents .review .review_list li .body .review_text { margin-bottom: 26px; }
+#product_detail section .detail_tab_contents .review .review_list li .body img { display: block; margin-bottom: 30px; }
+#product_detail section .detail_tab_contents .review .review_list li .body .del { display: block; color: #666; text-decoration: underline; font-size: 11px; position: absolute; bottom: 26px; right: 0; }
+#product_detail section .detail_tab_contents .review .review_list li .body .del.layer_open_modify { right: 64px; }
+#product_detail section .detail_tab_contents .review .review_list li.active .body { display: block; }
+#product_detail section .detail_tab_contents .review .pagination { margin-bottom: 96px; }
+#product_detail section .detail_tab_contents .review .nodata { height: 246px; border-bottom: 1px solid #e5e5e5; padding-top: 100px; margin-bottom: 100px; }
+#product_detail section .detail_tab_contents .review .nodata strong, #product_detail section .detail_tab_contents .review .nodata span { display: block; text-align: center; line-height: 100%; }
+#product_detail section .detail_tab_contents .review .nodata strong { font-size: 16px; font-weight: bold; margin-bottom: 20px; }
+#product_detail section .detail_tab_contents .review .nodata span { color: #666; }
+#product_detail section .detail_tab_contents .size_info:after { display: block; clear: both; content: ''; }
+#product_detail section .detail_tab_contents .size_info .left { float: left; width: 360px; }
+#product_detail section .detail_tab_contents .size_info .left .title { margin-bottom: 22px; }
+#product_detail section .detail_tab_contents .size_info .left li { line-height: 26px; font-size: 0; }
+#product_detail section .detail_tab_contents .size_info .left li strong { display: inline-block; vertical-align: top; font-size: 12px; color: #111; }
+#product_detail section .detail_tab_contents .size_info .left li span { display: inline-block; vertical-align: top; font-size: 12px; color: #666; }
+#product_detail section .detail_tab_contents .size_info .right { float: left; }
+#product_detail section .detail_tab_contents .size_info .right img { display: block; }
+#product_detail section .detail_tab_contents .size_detail p { display: block; width: 100%; color: #666; line-height: 100%; text-align: right; margin-bottom: 10px; }
+#product_detail section .detail_tab_contents .size_detail p.bottom { margin-top: 20px; color: #999; text-align: left; }
+#product_detail section .detail_tab_contents .delivery_tab { overflow: hidden; height: 50px; position: relative; margin-bottom: 60px; }
+#product_detail section .detail_tab_contents .delivery_tab:after { content: ''; display: block; clear: both; width: 100%; height: 1px; border-bottom: 1px solid #e5e5e5; position: absolute; bottom: 0; left: 0; }
+#product_detail section .detail_tab_contents .delivery_tab li { float: left; margin-right: -1px; position: relative; z-index: 1; }
+#product_detail section .detail_tab_contents .delivery_tab li button { width: 193px; height: 50px; line-height: 48px; border: 1px solid #e5e5e5; color: #999; font-size: 14px; background-color: #f8f8f8; }
+#product_detail section .detail_tab_contents .delivery_tab li button.active { background-color: #fff; border-bottom-color: #fff; color: #111; }
+#product_detail section .detail_tab_contents .delivery_tab li button:hover { color: #111; }
+#product_detail section .detail_tab_contents .delivery_tab_content { display: none; }
+#product_detail section .detail_tab_contents .delivery_tab_content.active { display: block; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step { font-size: 0; padding-top: 46px; margin-bottom: 63px; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li { display: inline-block; width: 116px; margin-right: 40px; text-align: center; vertical-align: top; position: relative; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li:before { content: ''; display: block; width: 46px; height: 35px; background: url("/front/img/ziozia/common/spr_product_pc.png") 0 -100px no-repeat; margin: 0 auto 10px; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li:after { content: ''; display: block; width: 14px; height: 27px; position: absolute; top: 35px; right: -26px; background: url("/front/img/ziozia/common/spr_product_pc.png") -250px -100px no-repeat; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li:last-child { margin-right: 0; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li:last-child:after { display: none; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li p { color: #111; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li:nth-child(2):before { background-position: -50px -100px; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li:nth-child(3):before { background-position: -100px -100px; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li:nth-child(4):before { background-position: -150px -100px; }
+#product_detail section .detail_tab_contents .delivery_tab_content .step li:nth-child(5):before { background-position: -200px -100px; }
+#product_detail section .detail_tab_contents .delivery_tab_content .mb13 { margin-bottom: 13px; }
+#product_detail section .detail_tab_contents .delivery_tab_content p { line-height: 20px; font-size: 12px; color: #666; }
+#product_detail section .detail_tab_contents .delivery_tab_content ol li { line-height: 20px; font-size: 12px; color: #666; position: relative; padding-left: 17px; }
+#product_detail section .detail_tab_contents .delivery_tab_content ol li span { display: block; position: absolute; top: -1px; left: 0; }
+#product_detail aside { float: right; width: 320px; /* 20171024 edit start */ /* 20171024 edit end */ }
+#product_detail aside .title, .select_prmt_target_goods .popup.detail .content_wrap .title { /* border-bottom: 1px solid #111;*/ padding-top: 55px; /* padding-bottom: 37px;*/ }
+#product_detail aside .title p, .select_prmt_target_goods .popup.detail .content_wrap .title p { font-family: "Open Sans", sans-serif; font-size: 13px; color: #999; margin-bottom: 12px; }
+#product_detail aside .title p strong, .select_prmt_target_goods .popup.detail .content_wrap .title p strong { color: #111; font-weight: bold}
+#product_detail aside .title h2, .select_prmt_target_goods .popup.detail .content_wrap .title h2 { font-size: 17px; line-height: 26px; }
+#product_detail aside .info_wrap, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap { /* border-bottom: 1px solid #e5e5e5; */ padding-top: 31px; /* 20171024 edit start */ /* 20171024 edit end */ }
+#product_detail aside .info_wrap.price_info, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap.price_info { border-bottom: 1px solid #111; padding: 34px 0 13px; /* 20171024 edit start */ /* 20171024 edit end */ }
+#product_detail aside .info_wrap.price_info ui li, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap.price_info ui li { padding-bottom: 5px; }
+#product_detail aside .info_wrap > ul > li, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li { line-height: 30px; font-size: 0; position: relative; }
+#product_detail aside .info_wrap > ul > li strong, #product_detail aside .info_wrap > ul > li span, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li strong, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li span { display: inline-block; vertical-align: top; }
+#product_detail aside .info_wrap > ul > li strong, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li strong { color: #111; font-size: 13px; width: 83px; }
+#product_detail aside .info_wrap > ul > li strong .pack_popup { /* 20171115 added */ display: inline-block; width: 20px; height: 20px; overflow: hidden; text-indent: -9999px; background: url("/front/img/ziozia/common/spr_product_pc.png") -400px 0 no-repeat; vertical-align: top; margin: 5px 0 0 1px; }
+#product_detail aside .info_wrap > ul > li > em, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li em { color: #999; font-size: 11px; display: inline-block; /* padding-left: 15px; */ line-height: 29px; }
+#product_detail aside .info_wrap > ul > li span, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li span { font-size: 16px; color: #111; text-decoration: line-through; }
+#product_detail aside .info_wrap > ul > li span em, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li span em { font-size: 11px; color: #999; }
+#product_detail aside .info_wrap > ul > li span.selling_price, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li span.selling_price { font-weight: bold; font-size: 20px; text-decoration: none; }
+#product_detail aside .info_wrap > ul > li span.selling_price em, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li span.selling_price em { color: crimson; font-size: 16px; font-weight: bold; letter-spacing: -0.2px; }
+#product_detail aside .info_wrap > ul > li > button:not(.btnShareBlack) { display: block; font-size: 11px; color: #666; text-decoration: underline; position: absolute; top: 0; right: 0; }
+#product_detail aside .info_wrap > ul > li > button.download { padding-left: 17px; }
+#product_detail aside .info_wrap > ul > li > button.download:before { content: ''; display: block; width: 11px; height: 11px; background: url("/front/img/ziozia/common/spr_product_pc.png") -150px 0 no-repeat; position: absolute; top: 50%; left: 0; margin-top: -5px; }
+#product_detail aside .info_wrap > ul > li div, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div { display: inline-block; vertical-align: top; width: 175px;  /* 20171024 added start */ /* 20171024 added end */ }
+#product_detail aside .info_wrap > ul > li div ul, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div ul { margin-right: -5px; overflow: hidden; }
+#product_detail aside .info_wrap > ul > li div ul li, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div ul li { float: left; margin-right: 5px; margin-bottom: 5px; width: 27px; height: 27px; position: relative; }
+#product_detail aside .info_wrap > ul > li div ul li input[type=radio], .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div ul li input[type=radio] { display: block; width: inherit; height: inherit; position: absolute; top: 0; left: 0; opacity: 0; cursor: pointer; }
+#product_detail aside .info_wrap > ul > li div ul li input[type=radio] + label, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div ul li input[type=radio] + label { display: block; width: inherit; height: inherit; text-align: center; }
+#product_detail aside .info_wrap > ul > li div ul li input[type=radio] + label:hover, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div ul li input[type=radio] + label:hover { /* 20180112 add */ cursor: pointer; }
+#product_detail aside .info_wrap > ul > li div ul li input[type=radio] + label img, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div ul li input[type=radio] + label img { display: block; width: 25px; height: 25px; }
+#product_detail aside .info_wrap > ul > li div ul li.colorchip_img { width: 43px; height: 43px; overflow: hidden;}
+#product_detail aside .info_wrap > ul > li div ul li.colorchip_img.chip_02 input[type=radio] + label img { width: 130px; height: 177px; transform: translateX(-44px) translateY(-63px); }
+#product_detail aside .info_wrap > ul > li div ul li.colorchip_img.chip_03 input[type=radio] + label img { width: 200px; height: 272px; transform: translateX(-100px) translateY(-90px); }
+#product_detail aside .info_wrap > ul > li div ul li.colorchip_img.chip_04 input[type=radio] + label img { width: 43px; height: 43px; }
+
+#product_detail aside .info_wrap > ul > li div.size ul li input[type=radio]:checked + label, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div.size ul li input[type=radio]:checked + label {color : white; background-color : black;}
+/* #product_detail aside .info_wrap > ul > li div.color ul li input[type=radio]:checked + label:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 25px; height: 25px; background: url("/front/img/ziozia/common/spr_product_pc.png") -250px 0 no-repeat; } */
+#product_detail aside .info_wrap > ul > li div.color ul li input[type=radio]:checked + label:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 27px; height: 27px; background: url("/front/img/ziozia/common/spr_product_pc.png") no-repeat -198px -46px / 1500% 1500%; border: 0; opacity: 1; }
+#product_detail aside .info_wrap > ul > li div.color ul li input[type=radio]:checked.black + label:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 25px; height: 25px; background: url("/front/img/ziozia/common/spr_product_pc.png") no-repeat -183px -23px / 1500% 1500%; border: 1px solid #ddd; }
+#product_detail aside .info_wrap > ul > li div ul li.colorchip_img input[type=radio]:checked + label:before { background: none; }
+#product_detail aside .info_wrap > ul > li div ul li input[type=radio]:disabled + label:hover { /* 20180112 add */ cursor: default; }
+#product_detail aside .info_wrap > ul > li div ul li input[type=radio]:disabled + label:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 25px; height: 25px; background: #ddd url("/front/img/ziozia/common/spr_product_pc.png") -138px -155px no-repeat; cursor: default; opacity: 0.5 !important; border: 1px solid #aaa !important; }
+#product_detail aside .info_wrap > ul > li div.amount button:before { position: absolute; top: 50%; left: 50%; margin: -5px 0 0 -6px; }
+#product_detail aside .info_wrap > ul > li div.color ul li input[type=radio] + label { position: relative; }
+#product_detail aside .info_wrap > ul > li div.color ul li input[type=radio] + label:before { position: absolute; top: 0; left: 0; content: ''; display: block; width: 25px; height: 25px; border: 1px solid #000; opacity: 0.1;}
+#product_detail aside .info_wrap > ul > li div.color ul li.colorchip_img input[type=radio] + label:before { width: 41px; height: 41px; z-index: 2; }
+#product_detail aside .info_wrap > ul > li div.color ul li.colorchip_img input[type=radio]:checked + label:before { width: 39px; height: 39px; border: 2px solid #111; box-shadow: inset 0 0 0px 2px #fff; }
+#product_detail aside .info_wrap > ul > li div.color ul li.colorchip_img input[type=radio]:disabled + label:before { width: 41px; height: 41px; background: #ddd url("/front/img/ziozia/common/spr_product_pc.png") -188px -212px / 1700% 1700% no-repeat; opacity: 0.5; }
+#product_detail aside .info_wrap > ul > li div.size li, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div.size li { border: 1px solid #ccc; }
+#product_detail aside .info_wrap > ul > li div.size li input[type=radio] + label, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div.size li input[type=radio] + label { font-size: 11px; line-height: 23px; margin: -0.5px 0 0 -1px; }
+#product_detail aside .info_wrap > ul > li div.size li input[type=radio]:checked + label:before, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div li input[type=radio]:checked + label:before { top: -1px; left: -1px; }
+#product_detail aside .info_wrap > ul > li div.size li input[type=radio]:disabled, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div li input[type=radio]:disabled { cursor: default; }
+#product_detail aside .info_wrap > ul > li div.size li input[type=radio]:disabled + label, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div li input[type=radio]:disabled + label { cursor: default; opacity: 0.3; background: #ddd url(/front/img/ziozia/common/spr_product_pc.png) -138px -155px no-repeat; width: inherit; height: inherit; margin: -1px 0 0 -1px;}
+#product_detail aside .info_wrap > ul > li div.size li input[type=radio]:disabled + label:before, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div li input[type=radio]:disabled + label:before { display: none; }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools { width: 11px; }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_draggerContainer { width: 100%; }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_draggerContainer .mCSB_dragger { width: 100%; }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_draggerContainer .mCSB_dragger .mCSB_dragger_bar { width: 100%; }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_draggerContainer .mCSB_draggerRail { width: 100%; }
+#product_detail aside .info_wrap > ul > li div .mCSB_inside > .mCSB_container { margin-right: 0; }
+#product_detail aside .info_wrap > ul > li div .mCustomScrollBox { overflow: visible; }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools { width: 4px; right: 0; }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_draggerRail { width: 4px; background-color: rgba(0, 0, 0, 0.1); }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { background-color: #000; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+#product_detail aside .info_wrap > ul > li div .mCSB_scrollTools, #product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, #product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_buttonUp, #product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_buttonDown, #product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_buttonLeft, #product_detail aside .info_wrap > ul > li div .mCSB_scrollTools .mCSB_buttonRight { transition: opacity 0s ease-in-out, background-color 0s ease-in-out; }
+#product_detail aside .info_wrap .color { overflow: hidden; width:235px}
+#product_detail aside .info_wrap .color.mCustomScrollbar { max-height: 120px; }
+#product_detail aside .info_wrap.set > ul > li > button { top: 70px; }
+#product_detail aside .info_wrap.set > ul > li div .set_info { /* padding-top: 15px; */ }
+#product_detail aside .info_wrap.set > ul > li div .set_info p { font-size: 11px; color: #c69c6d; line-height: 100%; margin-bottom: 12px; }
+#product_detail aside .info_wrap.set > ul > li div .set_info strong, #product_detail aside .info_wrap.set > ul > li div .set_info span, #product_detail aside .info_wrap.set > ul > li div .set_info em { display: block; line-height: 100%; width: 237px; }
+#product_detail aside .info_wrap.set > ul > li div .set_info strong { margin-bottom: 7px; font-size: 12px; color: #0f0f0f; }
+#product_detail aside .info_wrap.set > ul > li div .set_info span { margin-bottom: 12px; font-size: 11px; color: #999; text-decoration: none; }
+#product_detail aside .info_wrap.set > ul > li div .set_info em { margin-bottom: 19px; font-size: 12px; color: #111; }
+#product_detail aside .info_wrap.set.bundle > ul > li div > button { top: 108px; }
+#product_detail aside .info_wrap.bundle > ul > li { position: relative; padding-left: 30px; }
+#product_detail aside .info_wrap.bundle > ul > li:after { display: block; clear: both; content: ''; }
+#product_detail aside .info_wrap.bundle > ul > li .input_button { position: absolute; top: 14px; left: 0; }
+#product_detail aside .info_wrap.bundle > ul > li strong { display: block; width: 70px; margin-right: 12px; float: left; }
+#product_detail aside .info_wrap.bundle > ul > li .size { width: 208px; float: left; }
+#product_detail aside .info_wrap.bundle > ul > li div { position: relative; }
+#product_detail aside .info_wrap.bundle > ul > li div .set_info { padding-top: 15px; }
+#product_detail aside .info_wrap.bundle > ul > li div .set_info strong, #product_detail aside .info_wrap.bundle > ul > li div .set_info span, #product_detail aside .info_wrap.bundle > ul > li div .set_info em { display: block; line-height: 100%; width: 100%; }
+#product_detail aside .info_wrap.bundle > ul > li div .set_info strong { margin-bottom: 7px; font-size: 12px; color: #0f0f0f; }
+#product_detail aside .info_wrap.bundle > ul > li div .set_info span { margin-bottom: 12px; font-size: 11px; color: #999; }
+#product_detail aside .info_wrap.bundle > ul > li div .set_info em { margin-bottom: 19px; font-size: 12px; color: #111; }
+#product_detail aside .info_wrap.bundle > ul > li div > ul { width: 120px; }
+#product_detail aside .info_wrap.bundle > ul > li div > button { display: block; font-size: 11px; color: #666; text-decoration: underline; position: absolute; top: 83px; right: 0; }
+#product_detail aside .info_wrap.bundle > ul > li div > button.download { padding-left: 17px; }
+#product_detail aside .info_wrap.bundle > ul > li div > button.download:before { content: ''; display: block; width: 11px; height: 11px; background: url("/front/img/ziozia/common/spr_product_pc.png") -150px 0 no-repeat; position: absolute; top: 50%; left: 0; margin-top: -5px; }
+#product_detail aside .info_wrap.option_info > ul > li { margin-bottom: 17px; }
+#product_detail aside .text_info { padding: 40px 0 36px; }
+#product_detail aside .text_info h3 { font-size: 16px; line-height: 100%; font-weight: bold; margin-bottom: 12px; }
+#product_detail aside .text_info p { line-height: 20px; color: #666; }
+#product_detail aside .text_info p span { color: #f00; }
+#product_detail aside .text_info p strong { color: #111; }
+#product_detail aside .bundle_text { background-color: #f9f9f9; line-height: 20px; padding: 15px 20px; }
+#product_detail aside .bundle_text span { color: #f00; }
+#product_detail aside .bundle_text.one_plus { margin: 20px 0 16px; }
+#product_detail aside .selected_bundle { padding: 37px 0 20px; border-bottom: 1px solid #e5e5e5; }
+#product_detail aside .selected_bundle h3 { color: #666; font-size: 12px; margin-bottom: 13px; }
+#product_detail aside .selected_bundle ul li { position: relative; padding: 0 115px 0 30px; }
+#product_detail aside .selected_bundle ul li .del { display: block; overflow: hidden; text-indent: -9999px; width: 19px; height: 19px; position: absolute; top: 5px; left: 0; background: url("/front/img/ziozia/common/spr_product_pc.png") -100px -50px no-repeat; }
+#product_detail aside .selected_bundle ul li .set_info { padding-top: 7px; }
+#product_detail aside .selected_bundle ul li .set_info strong, #product_detail aside .selected_bundle ul li .set_info span, #product_detail aside .selected_bundle ul li .set_info em { display: block; line-height: 100%; width: 100%; }
+#product_detail aside .selected_bundle ul li .set_info strong { margin-bottom: 7px; font-size: 12px; color: #0f0f0f; line-height: 16px; }
+#product_detail aside .selected_bundle ul li .set_info span { margin-bottom: 12px; font-size: 11px; color: #999; }
+#product_detail aside .selected_bundle ul li .set_info em { margin-bottom: 19px; font-size: 12px; color: #111; }
+#product_detail aside .selected_bundle ul li .amount { position: absolute; top: 0; right: 0; }
+#product_detail aside #prmt_guide { margin-bottom: 15px; }
+#product_detail aside #prmt_guide span { background-color: #111; color: #fff; width: 70px; margin-right: 13px; display: inline-block; text-align: center; }
+#product_detail aside #prmt_guide_area .bg { border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.6); position: fixed; }
+#product_detail aside #prmt_guide_area .movie_area { z-index: 300; position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
+#product_detail aside #prmt_guide_area .movie_area .movie { position: relative; top: 80px; width: 40%; height: 80%; margin: 0 auto; }
+#product_detail aside #prmt_guide_area .movie_area video { position: absolute; width: 100%; height: 100%; }
+#product_detail aside .total_price { border-bottom: 1px solid #111; }
+#product_detail aside .total_price .price { font-size: 0; height: 70px; }
+#product_detail aside .total_price .price strong, #product_detail aside .total_price .price span { line-height: 70px; display: inline-block; vertical-align: top; width: 50%; }
+#product_detail aside .total_price .price strong { color: #111; font-size: 17px; font-weight: bold; }
+#product_detail aside .total_price .price span { font-weight: bold; font-size: 23px; text-align: right; }
+#product_detail aside .offline_shop { font-size: 0; padding: 20px 0 36px; position: relative; }
+#product_detail aside .offline_shop .input_button { margin-right: 5px; /* 20171115 edit */ }
+#product_detail aside .offline_shop .input_button label { font-size: 12px; padding-left: 30px; }
+#product_detail aside .offline_shop .info_popup { display: inline-block; width: 20px; height: 20px; overflow: hidden; text-indent: -9999px; background: url("/front/img/ziozia/common/spr_product_pc.png") -400px 0 no-repeat; vertical-align: top; }
+#product_detail aside .offline_shop .select_shop { position: relative; padding-top: 12px; display: none; }
+#product_detail aside .offline_shop .select_shop.active { display: block; }
+#product_detail aside .offline_shop .select_shop .reset { font-size: 11px; color: #666; text-decoration: underline; position: absolute; top: -19px; right: 0; }
+#product_detail aside .offline_shop .select_shop p { font-size: 12px; color: #999; line-height: 18px; margin-bottom: 17px; }
+#product_detail aside .offline_shop .select_shop ul li { background-color: #f4f4f4; margin-bottom: 1px; position: relative; padding: 16px 20px; }
+#product_detail aside .offline_shop .select_shop ul li h3 { font-size: 12px; color: #111; margin-bottom: 13px; }
+#product_detail aside .offline_shop .select_shop ul li p { color: #666; margin-bottom: 0; }
+#product_detail aside .offline_shop .select_shop ul li button { position: absolute; top: 17px; right: 20px; font-size: 11px; color: #666; text-decoration: underline; }
+#product_detail aside .gift_banner { margin: 20px 0 0; }
+#product_detail aside .btn_group { margin-bottom: 50px; margin-top: -1px; background-color: #fff; }
+#product_detail aside .btn_group .item3 { font-size: 0; }
+#product_detail aside .btn_group .item3 button { vertical-align: top; width: 105px; /* margin-left: 2px; */ font-size: 18px; background-color: #959595; }
+#product_detail aside .btn_group .item3 button:first-child { margin-left: 0; width: 106px; }
+#product_detail aside .btn_group .item3 button.favorite {background :#959595 url(/front/img/ziozia/common/spr_product_pc.png) no-repeat -270px -117px / 550% 650%;}
+#product_detail aside .btn_group .bigger { font-size: 20px; }
+#product_detail aside .btn_group.pre_order { font-size: 0; }
+#product_detail aside .btn_group.pre_order button { background-color: #959595; font-size: 14px; width: 105px; }
+#product_detail aside .btn_group.pre_order .black { width: 80%; background-color: #111; font-size: 18px; }
+#product_detail aside .btn_group.pre_order button.favorite { width: 18%; background: #959595 url(/front/img/ziozia/common/spr_product_pc.png) no-repeat -270px -117px / 550% 650%; }
+#product_detail aside .btn_group.soldout button { font-size: 14px; }
+#product_detail aside .exhibition { position: relative; width: 100%; height: 50px; margin-bottom: 30px; z-index: 1; }
+#product_detail aside .exhibition > div { background-color: #fff; position: absolute; top: 0; left: 0; width: 100%; min-height: 50px; border: 1px solid #ccc; }
+#product_detail aside .exhibition > div:hover { border-color: #666; }
+#product_detail aside .exhibition > div:hover ul { border-top: 1px solid #ddd; max-height: 800px; padding: 8px 20px; opacity: 1; }
+#product_detail aside .exhibition p { height: 48px; line-height: 48px; position: relative; padding-left: 20px; }
+#product_detail aside .exhibition p:before { content: ''; display: block; width: 17px; height: 9px; background: url("/front/img/ziozia/common/spr_product_pc.png") 0 -50px no-repeat; position: absolute; top: 50%; right: 10px; margin-top: -4px; }
+#product_detail aside .exhibition ul { width: 100%; overflow: hidden; -webkit-transition: all ease-in-out 0.1s; -moz-transition: all ease-in-out 0.1s; -ms-transition: all ease-in-out 0.1s; -o-transition: all ease-in-out 0.1s; transition: all ease-in-out 0.1s; max-height: 0; padding: 0 20px; opacity: 0; }
+#product_detail aside .exhibition ul li { font-size: 13px; }
+#product_detail aside .exhibition ul li a { line-height: 24px; color: #999; }
+#product_detail aside .exhibition ul li a:hover { color: #111; text-decoration: underline; }
+#product_detail .recommend_area { border-top: 1px solid #e5e5e5; clear: both; position: relative; height: 605px; padding-top: 91px; }
+#product_detail .recommend_area .recommend_tab { font-size: 0; text-align: center; }
+#product_detail .recommend_area .recommend_tab li { display: inline-block; position: relative; padding: 0 30px; }
+#product_detail .recommend_area .recommend_tab li:before { content: ''; display: block; width: 1px; height: 25px; background-color: #ddd; position: absolute; top: 1px; left: 0; }
+#product_detail .recommend_area .recommend_tab li:first-child:before { display: none; }
+#product_detail .recommend_area .recommend_tab li button { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 20px; line-height: 32px; border-bottom: 1px solid #fff; text-transform: uppercase; }
+#product_detail .recommend_area .recommend_tab li button.active, #product_detail .recommend_area .recommend_tab li button:hover { border-bottom: 1px solid #111; }
+#product_detail .recommend_area .items { position: absolute; top: 174px; left: 0; width: 100%; opacity: 0; pointer-events: none; z-index: -1; /* 20171025 added */ }
+#product_detail .recommend_area .items.active { z-index: 2; /* 20171025 added */ opacity: 1; pointer-events: auto; }
+#product_detail .recommend_area .items .bx-controls-direction a { display: block; overflow: hidden; text-indent: -9999px; width: 22px; height: 39px; background: url("/front/img/ziozia/common/spr_product_pc.png") -50px 0 no-repeat; position: absolute; top: 131px; left: 0; }
+#product_detail .recommend_area .items .bx-controls-direction a.bx-next { background-position: -100px 0; left: auto; right: 0; }
+
+/*# sourceMappingURL=product.css.map */
+
+/* 180706 add */
+#product_detail aside .evt_coupon{margin-top:35px;margin-bottom:35px;}
+#product_detail aside .evt_coupon a{display:block}
+#product_detail aside .evt_coupon a+a{margin-top:5px}
+#product_detail aside .evt_coupon a img{max-width:100%;display:block;margin:0 auto;}
+#product_detail aside .spc_scroll{margin:30px 0}
+#product_detail aside .spc_scroll b{display:block;font-weight:700}
+#product_detail aside .spc_scroll .spc{margin-top:5px;max-height:80px;border-top:1px solid #111}
+#product_detail aside .spc_scroll .spc a{display:block;line-height:22px;position:relative;padding-right:10px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+#product_detail aside .spc_scroll .spc a:before{position:absolute;right:0;top:50%;width:6px;height:12px;margin-top:-6px;display:block;content:' ';overflow:hidden;background:url(/front/img/ssts/product/arrow.png) no-repeat}
+#product_detail aside .spc_scroll .mCSB_inside>.mCSB_container{padding:9px 0 0}
+#product_detail aside .spc_scroll .mCustomScrollbar .mCSB_scrollTools{width:12px;opacity:1}
+#product_detail aside .spc_scroll .mCustomScrollbar .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,#product_detail aside .spc_scroll .mCustomScrollbar .mCSB_scrollTools .mCSB_draggerRail{width:100%;border-radius:0;background-color:#f3f3f3}
+#product_detail aside .spc_scroll .mCustomScrollbar .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{background-color:#3b3b3b;border:1px solid #f3f3f3}
+
+/* 190610 add */
+#product_detail aside form .prmt_list{display:inline-block}
+#prmt_inform { margin-bottom: 5px; padding-left: 83px; color: #aaa; font-size: 12px; }
+#prmt_select { margin-bottom: 10px; }
+#prmt_select .benefit_word { display: inline-block; background-color: #dd0000; color: white; width: 70px; height: 30px; margin-right: 13px; vertical-align: top; line-height: 30px; text-align: center; }
+.prmt_select_dtl { display:inline-block; }
+.prmt_select_dtl .prmt_list_dtl { padding: 0 10px; width: 237px; border: 1px solid #ccc; position: absolute; background-color: #fff; z-index: 1; }
+.prmt_select_dtl .prmt_list_dtl p.promotion { font-weight: bold; font-family: "Lato", "Open Sans", sans-serif; font-size: 14px; width: 40%; display: inline-block; margin-top: 5px; margin-right: 10px; }
+.prmt_select_dtl .prmt_list_dtl p.blank { width: 55%; border-bottom: 2px solid #000; display: inline-block; line-height: 0px; }
+.prmt_select_dtl .prmt_list_dtl .prmt_dtl { display: inline-block; width: 100%; height: 31px; margin: 11px 0; }
+.prmt_select_dtl .prmt_list_dtl .prmt_dtl p { display: -webkit-inline-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; -webkit-box-pack: center; width: 73%; vertical-align: middle; height: inherit; font-weight: bold; }
+.prmt_select_dtl .prmt_list_dtl .prmt_dtl p.dis { color: #ccc; background-color: #fff; }
+.prmt_select_dtl .prmt_list_dtl .prmt_dtl button { width: 25%; font-size: 11px; background-color: #bbb; color: #fff; font-weight: bold; height: inherit; }
+.prmt_select_dtl .prmt_list_dtl .prmt_dtl button.black { background-color: #111; }
+.prmt_select_dtl .prmt_list_dtl .prmt_dtl button.active { background-color: #ff7f00; }
+#appliable_prmt_select{margin:-1px 0; display:inline-block; width:237px !important; height:30px; padding-left:5px}
+/* #appliable_prmt_select span{display: block; height: 100%; line-height: 38px; border: 1px solid #ccc; padding: 0 18px 0 14px; font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; width:320px !important} */
+/* #product_detail .dis{background-color:#ddd} */
+
+#product_detail .bottom_bar .option_group .prmt_list_dtl { bottom: 116px; }
+
+
+/* 190617 */
+.promotion_name { background-color: #ff7f00; color: #fff; font-size: 14px; padding: 3px 0px 3px 5px; margin-bottom: 4px; }
+.promotion_notice b{font-weight:bold;}
+.promotion_notice .bundle { margin-bottom: 10px; }
+.promotion_type_goods {position: relative; margin-bottom: 5px;}
+.promotion_type_goods h2 {font-size: 14px; font-weight: bold; line-height: 29px; margin-right: 85px; padding-bottom: 5px;}
+.promotion_type_goods .bot {position: absolute; top: 0px; right: 0; text-align: center;}
+.promotion_type_goods .bot .btn {line-height: normal; height: 29px; padding: 0 13px; font-size: 12px; border: 1px solid #ccc; color: #111; background-color: #f7f7f7; white-space: nowrap; }
+.promotion_type_freebie {position: relative; margin-bottom: 5px;}
+.promotion_type_freebie h2 {font-size: 14px; font-weight: bold; line-height: 29px; margin-right: 100px; padding-bottom: 5px;}
+.promotion_type_freebie .bot {position: absolute; top: 0px; right: 0; text-align: center;}
+.promotion_type_freebie .bot .btn {line-height: normal; height: 29px; padding: 0 13px; font-size: 12px; border: 1px solid #ccc; color: #111; background-color: #f7f7f7; white-space: nowrap; }
+
+.select_prmt_target_goods .popup{margin-top: -300px !important}
+.select_prmt_target_goods .popup .body{padding: 0 30px 0;}
+.promotion_type_bundle{padding-bottom: 20px;}
+#ctrl_div_prmt_target_search .type2 h2{height: 43px; font-size: 14px; font-weight: bold; line-height: 43px;}
+#ctrl_ul_prmt_target_set_goods {overflow: hidden;}
+#ctrl_ul_prmt_target_set_goods li{position: relative; height: 290px; width: 128px; float: left; text-align: center;}
+#ctrl_ul_prmt_target_set_goods li img{display: block; width: 110px; margin: 0 auto;}
+#ctrl_ul_prmt_target_set_goods li .bot{position: absolute; bottom: 20px; left: 0; width: 100%;}
+#ctrl_ul_prmt_target_set_goods li .bot .btn{line-height: normal; height: 29px; padding: 0 23px; font-size: 12px; border: 1px solid #ccc; color: #111; background-color: #f7f7f7;}
+#ctrl_ul_prmt_target_set_goods li .bot .soldout{color: #df4738; line-height: 29px;}
+#ctrl_ul_prmt_target_set_goods li .text p b{display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+#ctrl_ul_prmt_target_set_goods li .text p em{display: block; color: #999}
+#ctrl_ul_prmt_target_set_goods li .text p.price{padding-top: 4px}
+
+/* #selected_prmt_goods table{border-top: 1px solid #ddd;} */
+#selected_prmt_goods th.first, #selected_prmt_goods td.first{border-left: 0}
+#selected_prmt_goods table .product{text-align: left}
+#selected_prmt_goods table .product img{width: 60px; float:left}
+#selected_prmt_goods table .product .text p b { display: block; }
+#selected_prmt_goods table .product .text p em { display: block; color: #999; }
+#selected_prmt_goods table .product .text p.price { padding-top: 4px; }
+#selected_prmt_goods table td { text-align: center; }
+#selected_prmt_goods table .option { text-align: left; }
+#selected_prmt_goods table .option > span { display: block; float: left; width: 64px; height: 29px; line-height: 29px; font-size: 12px; }
+#selected_prmt_goods table .option .selector { width: 94px !important; height: 29px; }
+#selected_prmt_goods table .option .selector span { width: auto !important; line-height: 27px; }
+#selected_prmt_goods table td button.btn { line-height: normal; height: 29px; padding: 0 13px; font-size: 12px; border: 1px solid #ccc; color: #666; background-color: #fff; white-space: nowrap; }
+
+.applied_prmt_goods{border-top: 1px solid #e5e5e5;}
+.applied_prmt_goods.active{height:120px}
+.applied_prmt_goods.active .product{height:100%}
+.applied_prmt_goods .product img{width: 80px; float:left; margin-right: 5px;}
+.applied_prmt_goods .product .text{padding: 10px 15px 0 0 ;}
+.applied_prmt_goods .product .text p b { display: block; }
+.applied_prmt_goods .product .text p em { display: block; color: #999; }
+.applied_prmt_goods .product .text p.price { padding-top: 5px; }
+.applied_prmt_goods .product button{ display: block; width: 14px; height: 14px; overflow: hidden; text-indent: -9999px; background: url(/front/img/ssts/common/spr_product.png) -50px -50px no-repeat; position: absolute; right: 0; margin-top: 10px; }
+.applied_prmt_goods .product .size {display: inline-block; vertical-align: top; width: 235px; padding-top: 10px;}
+.applied_prmt_goods .product .size ul {margin-right: -5px; overflow: hidden;}
+.applied_prmt_goods .product .size ul li {border: 1px solid #ccc;float: left; margin-right: 5px; margin-bottom: 5px; width: 25px; height: 25px; position: relative;}
+.applied_prmt_goods .product .size ul li input[type=radio] { display: block; width: inherit; height: inherit; position: absolute; top: 0; left: 0; opacity: 0; cursor: pointer; }
+.applied_prmt_goods .product .size ul li input[type=radio] + label {font-size: 11px; line-height: 23px; display: block; width: inherit; height: inherit; text-align: center; }
+.applied_prmt_goods .product .size ul li input[type=radio] + label:hover { /* 20180112 add */ cursor: pointer; }
+.applied_prmt_goods .product .size ul li input[type=radio] + label img { display: block; width: 25px; height: 25px; }
+/* .applied_prmt_goods .product .size ul li input[type=radio]:checked + label:before {top: -1px; left: -1px; content: ''; display: block; position: absolute; width: 25px; height: 25px; background: url("/front/img/ziozia/common/spr_product_pc.png") -250px 0 no-repeat; } */
+.applied_prmt_goods .product .size ul li input[type=radio]:checked + label { color: white; background-color: black;}
+.applied_prmt_goods .product .size ul li input[type=radio]:disabled {cursor: default;}
+.applied_prmt_goods .product .size ul li input[type=radio]:disabled + label{ cursor: default; opacity: 0.5; background: #ddd url(/front/img/ziozia/common/spr_product_pc.png) -138px -155px no-repeat; }
+
+.applied_prmt_freebie{border-top: 1px solid #e5e5e5;}
+.applied_prmt_freebie.active{border-top: 1px solid #e5e5e5; height:105px}
+.applied_prmt_freebie.active .product{height:100%}
+.applied_prmt_freebie .product img{width: 80px; float:left; margin-right: 5px;}
+.applied_prmt_freebie .product .text{padding-top: 10px;}
+.applied_prmt_freebie .product .text p b { display: block; }
+.applied_prmt_freebie .product .text p em { display: block; color: #999; }
+.applied_prmt_freebie .product .text p.price { padding-top: 5px; }
+.applied_prmt_freebie .product button{ display: block; width: 14px; height: 14px; overflow: hidden; text-indent: -9999px; background: url(/front/img/ssts/common/spr_product.png) -50px -50px no-repeat; position: absolute; right: 0; margin-top: 10px; }
+.applied_prmt_freebie .product .size {display: inline-block; vertical-align: top; width: 235px; padding-top: 10px;}
+.applied_prmt_freebie .product .size ul {margin-right: -5px; overflow: hidden;}
+.applied_prmt_freebie .product .size ul li {border: 1px solid #ccc;float: left; margin-right: 5px; margin-bottom: 5px; width: 25px; height: 25px; position: relative;}
+.applied_prmt_freebie .product .size ul li input[type=radio] { display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; opacity: 0; cursor: pointer; }
+.applied_prmt_freebie .product .size ul li input[type=radio] + label {font-size: 11px; line-height: 23px; display: block; width: 100%; height: 100%; text-align: center; }
+.applied_prmt_freebie .product .size ul li input[type=radio] + label:hover { /* 20180112 add */ cursor: pointer; }
+.applied_prmt_freebie .product .size ul li input[type=radio] + label img { display: block; width: 25px; height: 25px; }
+.applied_prmt_freebie .product .size ul li input[type=radio]:checked + label:before {top: -1px; left: -1px; content: ''; display: block; position: absolute; width: 25px; height: 25px; background: url("/front/img/ziozia/common/spr_product_pc.png") -250px 0 no-repeat; }
+.applied_prmt_freebie .product .size ul li input[type=radio]:disabled {cursor: default;}
+.applied_prmt_freebie .product .size ul li input[type=radio]:disabled + label{background-color: #ccc; color: #fff; cursor: default;}
+
+/* 팝업 검색란 */
+#ctrl_div_prmt_target_search .popup_search_box{position: absolute; right: 0; top: 0; margin-top: 10px; border-bottom: 1px solid #111;}
+#ctrl_div_prmt_target_search .popup_search_box .popup_search_word{height: 30px; border: 0px; width: 200px;}
+#ctrl_div_prmt_target_search .popup_search_box .popup_search_btn i{display: block; background: url(/front/img/ssts/common/spr_search.png) no-repeat 0 0; width: 21px; height: 20px; line-height: 500px; overflow: hidden;}
+
+#goods_form .info_wrap .amount.disabled{border: 1px solid #eee;}
+#goods_form .info_wrap .amount.disabled:before{content: ''; display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(246, 246, 246, 0.8); z-index: 1;}
+
+#product_detail aside .addBenefit {margin-bottom : 15px; color: #777;}
+#product_detail aside #divMiniBanner {margin-bottom : 20px;}
+#product_detail aside #divMiniBanner .miniBannerFrame {display : table; width :320px; height :50px; padding-bottom : 2px; cursor: pointer; margin-bottom : 2px;}
+#product_detail aside #divMiniBanner .miniBannerLeft {display : table-cell; vertical-align: middle; width :50%; height :100%; padding-left : 15px; font-family : NanumGothic;}
+#product_detail aside #divMiniBanner .miniBannerRight {display : table-cell; vertical-align: middle; width :50%; height :100%; padding-right : 15px; text-align :right; font-family : 'Open Sans', 'sans-serif'; font-weight: bold; font-size : 17px;}
+#product_detail aside #divMiniBanner .miniBannerRight span{font-weight: 700; letter-spacing : -0.5px;}
+#product_detail aside table.addInfo tr td {padding : 5px 5px 5px 0; color: #777;}
+#product_detail aside table.addInfo tr td button {text-decoration : underline; font-size: 11px; float: right;}
+
+#product_detail .btnShareBlack{width: 26px; height: 29px; float : right; background: url(/front/img/ziozia/common/spr_product_pc.png) no-repeat -238px -59px / 1500% 1500%; zoom: 0.8; }
+
+#product_detail .bottom_bar{width : 1140px; }
+#product_detail .bottom_bar .basic_group{position : fixed; bottom : 0; width: inherit; height: 50px; text-align: right; border-top: 1px solid #e5e5e5; background-color : #fff; z-index: 2; }
+#product_detail .bottom_bar .basic_group .text_info{display: inline; line-height: 50px;}
+#product_detail .bottom_bar .basic_group .text_info h3 { font-size: 16px; line-height: 100%; font-weight: bold; margin-bottom: 12px; }
+#product_detail .bottom_bar .basic_group .text_info em{color: #aaa;}
+#product_detail .bottom_bar .basic_group .text_info span{margin-left: 30px; font-size: 17px; font-weight: bold;}
+#product_detail .bottom_bar .basic_group .text_info span.totalPrice{margin-left: 15px; margin-right: 20px; font-size: 20px; }
+#product_detail .bottom_bar .basic_group .btn_group{display: inline; float: right;}
+#product_detail .bottom_bar .basic_group .btn_group button {border-left: 1px solid #fff; float: left;}
+#product_detail .bottom_bar .basic_group .btn_group .basket{width : 130px;}
+#product_detail .bottom_bar .basic_group .btn_group .favorite{width: 50px; height: 50px; background: url(/front/img/ziozia/common/spr_product_pc.png) no-repeat -266px -114px / 630% 630%;}
+#product_detail .bottom_bar .basic_group .btn_group .btnShareWhite{width: 50px; height: 50px; background: url(/front/img/ziozia/common/spr_product_pc.png) no-repeat -250px -15px / 870% 870%;}
+#product_detail .bottom_bar .basic_group .btn_group.pre_order .btn_pre_order { width: 260px; }
+#product_detail .bottom_bar .basic_group .sns_wrap { position: absolute; bottom: 49px; right: 10px; padding-bottom: 5px; }
+
+#product_detail .bottom_bar .option_group { display:none; position : fixed; bottom : 50px; width: inherit; border-top: 1px solid #e5e5e5; background-color : #fff; padding: 32px 0 24px 0; z-index: 1; }
+#product_detail .bottom_bar .option_group button.btn_close { display: block; width: 14px; height: 14px; overflow: hidden; text-indent: -9999px; background: url(/front/img/topten/common/spr_product.png) -50px -50px no-repeat; position: absolute; top: 15px; right: 15px; }
+#product_detail .bottom_bar .option_group > div {display: inline-block; }
+#product_detail .bottom_bar .option_group strong {color: #111; font-size: 14px; font-weight: bold; margin-right: 15px;}
+#product_detail .bottom_bar .option_group ul { margin-right: -5px; overflow: hidden; }
+#product_detail .bottom_bar .option_group ul li { float: left; margin-right: 5px; margin-bottom: 5px; width: 27px; height: 27px; position: relative; }
+#product_detail .bottom_bar .option_group ul li input[type=radio] { display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; opacity: 0; cursor: pointer; }
+#product_detail .bottom_bar .option_group div ul li input[type=radio] + label { display: block; width: 100%; height: 100%; text-align: center; }
+#product_detail .bottom_bar .option_group div ul li input[type=radio]:disabled + label:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 23px; height: 23px; background: #ddd url(/front/img/ziozia/common/spr_product_pc.png) -138px -155px no-repeat; cursor: default; opacity: 0.5 !important; border: 1px solid #aaa !important; }
+
+#product_detail .bottom_bar .option_group .color {display: inline-block; vertical-align: top; width: 250px; margin-right: 15px; }
+#product_detail .bottom_bar .option_group .color .colorText { display: inline-block; vertical-align: top;}
+#product_detail .bottom_bar .option_group .color .colorList { display: inline-block; overflow: hidden; width: 187px; }
+#product_detail .bottom_bar .option_group .color .colorList ul li input[type=radio] + label { position: relative; }
+#product_detail .bottom_bar .option_group .color .colorList ul li input[type=radio] + label:before { position: absolute; top: 0; left: 0; content: ''; display: block; width: 25px; height: 25px; border: 1px solid #000; cursor: pointer; opacity: 0.1;}
+#product_detail .bottom_bar .option_group .color .colorList ul li input[type=radio]:checked + label:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 27px; height: 27px; background: url("/front/img/ziozia/common/spr_product_pc.png") no-repeat -198px -46px / 1500% 1500%; opacity: 1; border: 0; }
+#product_detail .bottom_bar .option_group .color .colorList ul li input[type=radio]:checked.black + label:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 25px; height: 25px; background: url("/front/img/ziozia/common/spr_product_pc.png") no-repeat -183px -23px / 1500% 1500%; border: 1px solid #ddd; opacity: 1; }
+#product_detail .bottom_bar .option_group .color .colorList ul li.colorchip_img input[type=radio] + label:before { width: 41px; height: 41px; z-index: 2; }
+#product_detail .bottom_bar .option_group .color .colorList ul li.colorchip_img input[type=radio]:checked + label:before { width: 39px; height: 39px; border: 2px solid #111; box-shadow: inset 0 0 0px 2px #fff; }
+#product_detail .bottom_bar .option_group .color .colorList ul li.colorchip_img input[type=radio]:disabled + label:before { width: 41px; height: 41px; background: #ddd url("/front/img/ziozia/common/spr_product_pc.png") -188px -212px / 1700% 1700% no-repeat ; opacity: 0.5; }
+#product_detail .bottom_bar .option_group .color .colorList ul li.colorchip_img { width: 43px; height: 43px; overflow: hidden;}
+#product_detail .bottom_bar .option_group .color .colorList ul li.colorchip_img.chip_02 input[type=radio] + label img { width: 130px; height: 177px; transform: translateX(-44px) translateY(-63px); }
+#product_detail .bottom_bar .option_group .color .colorList ul li.colorchip_img.chip_03 input[type=radio] + label img { width: 200px; height: 272px; transform: translateX(-100px) translateY(-90px); }
+#product_detail .bottom_bar .option_group .color .colorList ul li.colorchip_img.chip_04 input[type=radio] + label img { width: 43px; height: 43px; }
+
+
+#product_detail .bottom_bar .option_group .sizeNcrema {display: inline-block; vertical-align: top; width: 283px; margin-right: 17px;}
+#product_detail .bottom_bar .option_group .sizeNcrema .size {display: block; margin-bottom: 10px; }
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeText { display: inline-block; vertical-align: top;}
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeList { display: inline-block; width: 78%; }
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeList li { border: 1px solid #ccc; }
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeList li input[type=radio] + label { font-size: 11px; line-height: 23px; }
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeList ul li input[type=radio]:checked + label { color: white; background-color: black; }
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeList li input[type=radio]:checked + label:before { top: -1px; left: -1px; }
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeList li input[type=radio]:disabled { cursor: default; }
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeList li input[type=radio]:disabled + label { cursor: default; opacity: 0.3; background: #ddd url(/front/img/ziozia/common/spr_product_pc.png) -138px -155px no-repeat; width: inherit; height: inherit; margin: -1px 0 0 -1px; }
+#product_detail .bottom_bar .option_group .sizeNcrema .size .sizeList li input[type=radio]:disabled + label:before { display: none; }
+#product_detail .bottom_bar .option_group .sizeNcrema .crema {display: block;}
+#product_detail .bottom_bar .option_group .quantity { width: 150px; margin-right: 15px; vertical-align: top;}
+#product_detail .bottom_bar .option_group .quantity > div { display: inline-block; }
+#product_detail .bottom_bar .option_group .pre_order_info h3 { font-size: 16px; line-height: 100%; font-weight: bold; margin-bottom: 12px; }
+#product_detail .bottom_bar .option_group .pre_order_info p { line-height: 20px; color: #666; }
+#product_detail .bottom_bar .option_group .pre_order_info p span { color: #f00; }
+
+#product_detail .bottom_bar .option_group .soldout_info_text{font-size: 13px;}
+
+#product_detail .bottom_bar .option_group .bottom_prmt_list .bottom_benefit_word {display: inline-block; background-color: #dd0000; color: white; width: 70px; height: 30px; margin-right: 13px; vertical-align: middle; line-height: 30px; padding: 0 7px; font-size: 14px;}
+#product_detail .bottom_bar .option_group .bottom_prmt_list #bottom_appliable_prmt_select { margin: -1px 0; display: inline-block; width: 237px !important; height: 30px; padding: 0 18px 0 10px; appearance:none; -webkit-appearance:none; -moz-appearance:none; }
+#product_detail .bottom_bar .option_group .bottom_prmt_list #bottom_prmt_guide {display: block; margin-top: 10px;}
+#product_detail .bottom_bar .option_group .bottom_prmt_list #bottom_prmt_guide span {background-color: #111; color: #fff; margin-right: 13px; width: 70px; display: inline-block; text-align: center; }
+
+#layer_prmt_list {background-color: #ffffff ; width: 350px; bottom: 50px; position: fixed; right: 20%; border: 1px solid #e5e5e5;}
+#layer_prmt_list #layer_appliable_prmt_select { margin: -1px 0; display: inline-block; width: 100%; height: 30px; padding-left: 5px; }
+#layer_prmt_guide {display: block; margin-top: 10px;}
+#layer_prmt_guide span {background-color: #111; color: #fff; padding: 0 10px; margin-right: 10px;}
+#layer_ctrl_div_prmotion_notice { margin-top: 2px; }
+
+#product_detail .bottom_bar .option_group .bottom_set_option img { vertical-align: top; }
+#product_detail .bottom_bar .option_group .bottom_set_option span, #product_detail .bottom_bar .option_group .bottom_set_option em { display: block; }
+#product_detail .bottom_bar .option_group .bottom_set_option .goodsNm { margin-bottom: 7px; font-size: 12px; color: #0f0f0f; }
+#product_detail .bottom_bar .option_group .bottom_set_option .goodsNo { margin-bottom: 12px; font-size: 11px; color: #999; }
+#product_detail .bottom_bar .option_group .bottom_set_option .price { margin-bottom: 9px; font-size: 12px; color: #111; }
+#product_detail .bottom_bar .option_group .bottom_set_option ul li { float: left; margin-right: 5px; margin-bottom: 5px; width: 25px; height: 25px; position: relative; border: 1px solid #ccc; }
+#product_detail .bottom_bar .option_group .bottom_set_option ul li input[type=radio] + label { font-size: 11px; line-height: 23px; }
+#product_detail .bottom_bar .option_group .bottom_set_option ul li input[type=radio]:checked + label { color: white; background-color: black; }
+#product_detail .bottom_bar .option_group div.bottom_set_option { margin-right: 50px; }
+#product_detail .bottom_bar .option_group .bottom_set_option ul li input[type=radio]:disabled + label:before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 23px; height: 23px; background: #ddd url(/front/img/ziozia/common/spr_product_pc.png) -138px -155px no-repeat; cursor: default; opacity: 0.5 !important; border: 1px solid #aaa !important; margin: -1px 0 0 -1px; }
+#product_detail .bottom_bar .option_group .bottom_set_option .size { display: inline-block; }
+
+.select_arrow { position: absolute; top: 44px; right: 87px; pointer-events: none; border-style: solid; border-width: 6px 3px 0 3px; border-color: #000 transparent transparent transparent; transform: rotate(180deg); }
+
+
+
+
+
