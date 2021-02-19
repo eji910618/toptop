@@ -314,7 +314,7 @@ var RatelyWordUtil = {
             tempHtml += '</li>';
             html +=tempHtml;
         }
-        $("#ulLatelyWord").html(html);
+        // $("#ulLatelyWord").html(html);
     }
     , deleteCookie:function(name) {
         var wordList = getCookie('LATELY_WORD');

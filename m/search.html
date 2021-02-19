@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>TOPTEN MALL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link rel="icon" href="/image/favicon/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="title" content="TOPTEN MALL" />
+    <meta name="author" content="신성통상" />
+    <!-- <meta property="og:image" content=""/> -->
+    <meta property="og:image" content="https://www.topten10mall.com/m/front/img/ssts/event/kakao.png">
+    <meta property="groobee:member_id" content=""/>
+    <meta property="groobee:member_grade" content=""/>
+    <meta name="_csrf" content="7b850009-b577-4e61-8022-4059c6f5d5ec"/>
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf_header" content="X-CSRF-TOKEN"/>
+    <meta name="naver-site-verification" content="f94fd8adb97c5cd8867c590251bf50badcc6af42"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/m/front/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="/m/front/css/common/common.css">
+    <link rel="stylesheet" type="text/css" href="/m/front/css/ssts/default.css">
+    <link rel="stylesheet" type="text/css" href="/m/front/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/m/front/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="/m/front/css/custom.css">
+    <script type="text/javascript" src="/m/front/js/libs/jquery.min.js"></script>
+    <script type="text/javascript">
+        var HTTP_SERVER_URL = 'http://www.topten10mall.com',
+            HTTPS_SERVER_URL = 'https://www.topten10mall.com',
+            HTTPX_SERVER_URL = 'https://www.topten10mall.com';
+    </script>
+</head>
+<body>
+<div id="ssts-wrapper-wr"><!-- 20171013 ssts-wrapper/GNB/MY/All Brand 를 감싸는 ssts-wrapper-wr 영역 추가 -->
+    <div id="ssts-wrapper">
+        <!-- header// -->
+        <script>
+            $(document).ready(function() {
+                if(loginYn){
+                    $('#loginHeader').hide();
+                    $('#logoutHeader').show();
+                }else{
+                    $('#loginHeader').show();
+                    $('#logoutHeader').hide();
+                }
+
+                //띠배너 쿠키 확인
+                var lineBannerCloseCookie = getCookie("lineBannerCloseCookie");
+                if(lineBannerCloseCookie || $('.mainTopLineBanner .lineBannerArea li').size() < 1){
+                    return;
+                }
+
+                for(var j=0; j<$('.mainTopLineBanner .lineBannerArea li').size(); j++){
+
+                    //닫기 버튼 색상 계산
+                    var colorSize = $(".mainTopLineBanner .lineBannerArea li:nth-child("+(j+1)+") a.clslider").data('bg');
+                    var colorArr = [];
+                    if(colorSize.length == 7){
+                        for(var i=0; i<6; i++){
+                            if(colorSize.charCodeAt([i+1]) > 47 && colorSize.charCodeAt([i+1]) < 58){
+                                colorArr[i] = colorSize.split('')[i+1];
+                            }else if(colorSize.charCodeAt([i+1]) > 64 && colorSize.charCodeAt([i+1]) < 71){
+                                colorArr[i] = colorSize.charCodeAt([i+1]) - 54;
+                            }else if(colorSize.charCodeAt([i+1]) > 96 && colorSize.charCodeAt([i+1]) < 103){
+                                colorArr[i] = colorSize.charCodeAt([i+1]) - 86;
+                            }
+                        }
+                        if(colorArr[0]*10 + colorArr[1]*1 + colorArr[2]*10 + colorArr[3]*1 + colorArr[4]*10 + colorArr[5]*1 < 200){
+                            $(".mainTopLineBanner li:nth-child("+(j+1)+") a.clslider").addClass('clslider2');
+                        }
+                    }
+                }
+
+                $(".mainTopLineBanner .lineBannerArea li").show();
+                lineBannerLoad();
+            });
+
+            function lineBannerLoad(){
+                var topBanSlide = '',
+                    topBanSetting = {
+                        auto: true,
+                        stopAutoOnClick: true,
+                        pause: 3500,
+                        controls: false,
+                        infiniteLoop: true,
+                        touchEnabled: false,
+                        pager: false,
+                        mode: 'fade'
+                    };
+
+                if ($('.mainTopLineBanner').length > 0) {//메인 상단 띠배너가 있으면
+                    topBanSlide = $('.mainTopLineBanner .lineBannerArea').bxSlider(topBanSetting);//메인 상단 띠배너 load
+                }
+
+                var interval = setInterval(function(){
+                    if($('.mainTopLineBanner').height() != 0){
+                        var lineBannerHeight = $('.mainTopLineBanner').height();
+                        $('.header-util-title').css('margin-top', lineBannerHeight + 51);
+                        $('#container').css('margin-top', lineBannerHeight + 51);
+                        clearInterval(interval);
+                    }
+                },20);
+
+                $('.mainTopLineBanner a.clslider').click(function(){//메인 상단 띠배너 닫기
+                    $('#ssts-wrapper .header-util-detail').css({ marginTop: 0 });
+                    $('.mainTopLineBanner').slideUp(400);
+
+                    // 띠배너 쿠키 설정
+                    setCookie('lineBannerCloseCookie', 'Y', '', cookieServerName);
+
+                    setTimeout(function(){
+                        topBanSlide.destroy();//메인 상단 띠배너 destroy
+                    }, 400);
+
+                    // 검색창 높이 조절
+                    $('.header-util-search').css('padding-top', '30px');
+
+                    // 헤더 높이 조절
+                    $('.header-util-title').css('margin-top', '');
+                    $('#container').css('margin-top', '');
+
+                    return false;
+                });
+            }
+        </script>
+        <div class="header_container">
+            <div class="mainTopLineBanner">
+            </div>
+            <!-- //180629 추가 -->
+
+            <header>
+                <h1 class="header-symbol">
+                    <a href="/m/kr/front/viewMain.do">topten10mall</a>
+                    <button type="button" class="header-brand__toggle"><span>모든 브랜드</span></button>
+                </h1>
+                <ul class="util util-r" id="loginHeader">
+                    <li class="search"><a href="javascript:move_page('searchForm')">SEARCH</a></li>
+                    <li class="cart"><a href="https://www.topten10mall.com/m/kr/front/basket/basketList.do"></a></li>
+                </ul>
+                <ul class="util util-r" id="logoutHeader" style="display: none;">
+                    <li class="search"><a href="javascript:move_page('searchForm')">SEARCH</a></li>
+                    <li class="cart"><a href="https://www.topten10mall.com/m/kr/front/basket/basketList.do"></a></li>
+                </ul>
+            </header>
+
+            <div class="header-brand__list">
+                <div class="header-brand__item header-brand__1">
+                    <a href="//topten.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">탑텐</a>
+                </div>
+                <div class="header-brand__item header-brand__2">
+                    <a href="//polham.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">폴햄</a>
+                </div>
+                <div class="header-brand__item header-brand__3">
+                    <a href="//andz.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">앤드지</a>
+                </div>
+                <div class="header-brand__item header-brand__4">
+                    <a href="//projectm.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">프로젝트엠</a>
+                </div>
+                <div class="header-brand__item header-brand__5">
+                    <a href="//olzen.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">올젠</a>
+                </div>
+                <div class="header-brand__item header-brand__6">
+                    <a href="//ziozia.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">지오지아</a>
+                </div>
+                <div class="header-brand__item header-brand__7">
+                    <a href="//edition.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">에디션</a>
+                </div>
+                <div class="header-brand__item header-brand__8">
+                    <a href="https://wml.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">WML</a>
+                </div>
+                <div class="header-brand__item header-brand__9">
+                    <a href="//toptenkids.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">탑텐키즈</a>
+                </div>
+                <div class="header-brand__item header-brand__10">
+                    <a href="//polhamkids.topten10mall.com/m/kr/front/viewMain.do" class="header-brand__link">폴햄키즈</a>
+                </div>
+            </div>
+        </div>
+        <!-- SEARCH/LOGIN// -->
+        <div class="header-util-op"></div>
+        <!-- //SEARCH/LOGIN --><!-- //header -->
+        <!-- container// -->
+        <section id="container">
+            <div class="search_bar">
+                <form onsubmit="return false" method="get">
+                    <div class="sch-engine" style="">
+                        <input type="text" id="searchWord" placeholder="검색어를 입력하세요." onkeydown="if(event.keyCode == 13){$('#btn_search').click();}"
+                               onkeyup="headerInputKeyup(this);"
+                               onfocus="javascript:init_focus(this);" value=""/>
+                        <input type="hidden" id="searchLink" value="">
+                        <button type="button" id="btn_search"><i>search</i></button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="word-engine">
+                <div class="search-center">
+                    <ul class="search-area">
+                        <li class="search-item">
+                            <b>최근 검색어 <button type="button" class="search__deleteAll">전체삭제</button></b>
+                            <ul id="ulLatelyWord">
+                                <li>
+                                    <a href="" onclick="view_searchWord(this);" data-search-word="ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ">ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ</a>
+                                    <a href="" class="del" onclick="deleteCookie('ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ')"></a>
+                                </li>
+                                <li>
+                                    <a href="" onclick="view_searchWord(this);" data-search-word="asd">asd</a>
+                                    <a href="" class="del" onclick="deleteCookie('asd')"></a>
+                                </li>
+                                <li>
+                                    <a href="" onclick="view_searchWord(this);" data-search-word="박서준">박서준</a>
+                                    <a href="" class="del" onclick="deleteCookie('박서준')"></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="search-item">
+                            <b>인기 검색어</b>
+                            <ul class="search-hotKeyword">
+                                <li><a href="">1. 롱패딩</a></li>
+                                <li><a href="">2. 수트</a></li>
+                                <li><a href="">3. 텐텐데이</a></li>
+                                <li><a href="">4. 청바지</a></li>
+                                <li><a href="">5. 폴햄 이벤트</a></li>
+                                <li><a href="">6. 앤드지 핫에어</a></li>
+                                <li><a href="">7. 지오지아 캐시미어 니트 지오지아 캐시미어 니트</a></li>
+                                <li><a href="">8. 이나영 쉘파</a></li>
+                                <li><a href="">9. 1+1 이벤트</a></li>
+                                <li><a href="">10. 팸데이</a></li>
+                            </ul>
+                        </li>
+                        <li class="search-item">
+                            <b>추천 상품</b>
+                            <div class="thumbnail-list">
+                                <ul id="ulList">
+                                    <li>
+                                        <a href="">
+                                            <div class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/BLB1TR1001IV_MDL1_L?AR=0&RS=290x395"
+                                                     alt="럭키N러브 콜라보 오버핏 맨투맨">
+                                            </div>
+                                            <div class="prd-info">
+                                                <div class="etc_txt">
+                                                    <span class="name">럭키N러브 콜라보 오버핏 맨투맨</span>
+                                                    <span class="price">
+                                                        <span class="p_x">79,000</span>
+                                                        <span class="p_o">39,000</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/m/kr/front/goods/goodsDetail.do?goodsNo=AEA4FP1104BK">
+                                            <div class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=290x395"
+                                                     alt="히든 슬릿 구스다운 코트">
+                                            </div>
+                                            <div class="prd-info">
+                                                <div class="etc_txt">
+                                                    <span class="name">히든 슬릿 구스다운 코트</span>
+                                                    <span class="price">
+                                                        <span class="p_x">399,000</span>
+                                                        <span class="p_o">79,000</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/BLB1TR1001IV_MDL1_L?AR=0&RS=290x395"
+                                                     alt="럭키N러브 콜라보 오버핏 맨투맨">
+                                            </div>
+                                            <div class="prd-info">
+                                                <div class="etc_txt">
+                                                    <span class="name">럭키N러브 콜라보 오버핏 맨투맨</span>
+                                                    <span class="price">
+                                                        <span class="p_x">79,000</span>
+                                                        <span class="p_o">39,000</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //제품 리스트 -->
+                        </li>
+                    </ul>
+                    <ul class="search-layer hidden">
+                        <li class="search-item">
+                            <ul>
+                                <li><a href="#"><span class="text-primary">슬랙스</span></a></li>
+                                <li><a href="#">에디션 <span class="text-primary">슬랙스</span></a></li>
+                                <li><a href="#">지오지아 슬림핏 <span class="text-primary">슬랙스</span></a></li>
+                                <li><a href="#">탑텐 여성 <span class="text-primary">슬랙스</span></a></li>
+                                <li><a href="#">폴햄 린넨 <span class="text-primary">슬랙스</span></a></li>
+                                <li><a href="#">앤드지 베이직 <span class="text-primary">슬랙스</span></a></li>
+                                <li><a href="#">탑텐 여성 와이드 <span class="text-primary">슬랙스</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="search-item">
+                            <b class="border-bottom"><strong class="text-primary">슬랙스</strong> 추천 카테고리</b>
+                            <ul>
+                                <li><a href="#">남성 > 하의 > 긴바지 > <span class="text-primary">슬랙스</span></a></li>
+                                <li><a href="#">텐텐데이 > 1+1 > 팬츠 > <span class="text-primary">슬랙스</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="search-item">
+                            <button type="button" class="search-layer__close">검색창 닫기</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section><!-- //container -->
+
+        <!-- footer // -->
+        <footer id="footer">
+            <div class="link_wrap">
+                <div id="footer_login_area" class="log_link">
+                    <a href="javascript:move_page('loginToMain')" id="a_id_footer_login">로그인</a>
+                </div>
+                <ul class="etc_link">
+                    <li><a href="#none" onclick="func_popup_init('.layer_terms_01');return false;">이용약관</a></li>
+                    <li><a href="#none" onclick="func_popup_init('.layer_terms_02');return false;"><b>개인정보처리방침</b></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h1 class="footer-symbol">TOPTEN Mall</h1>
+                <div class="inf">
+                    신성통상(주) / 대표자 : 황대규<br />
+                    <address>주소 : 서울 강동구 풍성로63길 84&nbsp;신성빌딩</address>
+                    통신판매업 신고번호 : 2015-서울강동-1890</div>
+                <div class="footer-info__box">
+                    <p>
+		        <span>
+			        사업자등록번호<br>
+			        104-81-01106</span>
+                        <a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=1048101106&openBrowser=1" class="footer-info__link" target="_blank">사업자 정보확인</a>
+                    </p>
+                    <p>
+		        <span>
+		        	<img src="/m/front/img/ssts/common/btn_usafe@2x.png" class="footer-info__img"><br>
+		        	<small>채무지급보증안내</small>
+	        	</span>
+                        <a id="btn_usafe" class="footer-info__link">서비스가입사실확인</a>
+                    </p>
+                </div>
+                <p class="copy">&copy; 2018 TOPTEN MALL. ALL RIGHTS RESERVED</p>
+            </div>
+
+            <div class="footer-bottom">
+                <h2 class="footer-bottom__title">고객센터 1600-3424</h2>
+                <table class="cs">
+                    <colgroup>
+                        <col width="22%" />
+                        <col width="3%" />
+                        <col width="*" />
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <td>상담업무시간</td>
+                        <td>|</td>
+                        <td>
+                            9:30~17:30<br>
+                            점심시간 : 12:30~13:30<br>
+                            (토/일, 공휴일 휴무)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>물류반품 주소</td>
+                        <td>|</td>
+                        <td>경기 양주시 평화로 1837&nbsp;탑텐몰 덕정물류센터</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail 주소</td>
+                        <td>|</td>
+                        <td>topten10mallcs@ssts.co.kr</td>
+                    </tr>
+                    <tr>
+                        <td>Fax 번호</td>
+                        <td>|</td>
+                        <td>031-864-4166</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </footer>
+        <!-- // #footer -->
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                if(loginYn){
+                    $('#footer_login_area').html('<a href="#" id="a_id_footer_logout">로그아웃</a>');
+                }
+
+                var now = new Date();
+
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                var day = now.getDay();
+                //var today = hour+ "" + minute;      //현재시간
+
+                var loginChk = 'N';
+                var memberNm = '';
+                var mobile = '';
+                var parameter1 = '';
+                var host = '';
+                var pathName = '';
+                var search = '';
+                memberNm = '';
+                mobile = '';
+                host = $(location).attr('host');
+                pathName = $(location).attr('pathname');
+                search = $(location).attr('search');
+
+                parameter1 = host + pathName + search;
+
+                if(loginYn){
+                    loginChk = 'Y';
+                } else {
+                    loginChk = 'N';
+                }
+
+//      var happyTalkUrl = 'https://customer.happytalk.io/public_v1/chat_v4/public_point?go=C&is_login='+loginChk+'&uid='+loginId+'&site_uid='+loginId+'&cus_extra_username='+memberNm+'&cus_extra_phone='+mobile+'&user_parameter='+parameter1+'&site_id=1000221496&category_id=99006&division_id=99007&usergb=W&title=%5B%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%83%81%EB%8B%B4%EC%B0%BD%5D';
+//      var kakaoTalkUrl = 'https://api.happytalk.io/api/kakao/chat_open?yid=%40topten10mall&is_login='+loginChk+'&uid='+loginId+'&site_uid='+loginId+'&cus_extra_username='+memberNm+'&cus_extra_phone='+mobile+'&user_parameter='+parameter1+'&site_id=1000221496&category_id=99006&division_id=99007&usergb=W';
+
+                $('#happyTalkBtn').on('click', function(){
+                    happytalk.open();
+                    return false;
+                });
+
+                /* $('#kakaoTalkBtn').on('click', function(){
+                    window.open(kakaoTalkUrl, '', 'width=350, height=500');
+                    return false;
+                }); */
+
+                /*
+                if(hour > 8 && hour < 18 && day >= 1 && day <= 5){ // 월~금 9시부터 18시까지
+                    $("#plusfriend-chat-button-new").hide();
+                    $("#happytalk-chat-button").show();
+                } else {
+                    $("#plusfriend-chat-button-new").show();
+                    $("#happytalk-chat-button").hide();
+                }
+                 */
+                // 2020-04-20 카톡 상담창 안씀
+//       $("#plusfriend-chat-button-new").hide();
+//       $("#happytalk-chat-button").show();
+
+                if(location.pathname.indexOf('/m/kr/front/goods/goodsDetail.do') == -1){
+                    $('.gotopre').remove();
+                }
+
+                // 지급보증서
+                $('#btn_usafe').on('click', function(){
+                    func_popup_init('.layer_usafe');
+                });
+
+                /* branch */
+                sdk.branch.init('key_live_mcJRNctUXHgOBZTLlZKQNndmsDidRoJC');
+            });
+
+            $(window).load(function(){
+// 	 if(navigator.userAgent.toUpperCase().indexOf('APP_SSTS') != -1 && navigator.userAgent.toUpperCase().indexOf('1.0.0.76') != -1){
+//     	 location.href = 'market://details?id=com.topten10mall.mallapp';
+//      }
+
+// 	 if(isAndroidApp && navigator.userAgent.toUpperCase().indexOf('1.0.0.87') == -1){
+//          Storm.LayerUtil.alertCallback("안정적인 서비스 사용을 위해 최신 버전으로 업데이트 해주세요.",function(){
+//              location.href = 'market://details?id=com.topten10mall.mallapp';
+//          });
+//      }
+
+                if(isApp) {
+                    $('ul.etc_link').append('<li><a href="#none" onclick="func_push_agree();return false;">알림설정</a></li>');
+
+//          if(getCookie('UPDATE_YN') != 'Y' && navigator.userAgent.toUpperCase().indexOf('1.0.0.79') == -1 && navigator.userAgent.toUpperCase().indexOf('1.1.15') == -1){
+//         	 setCookie('UPDATE_YN', 'Y', '', '.topten10mall.com');
+
+//              Storm.LayerUtil.confirm('최신 버전이 있습니다. 업데이트 이후 사용 하시겠습니까?', function(){
+//                  if(appCd == 'I'){
+//                     location.href = 'https://apps.apple.com/us/app/%ED%83%91%ED%85%90%EB%AA%B0/id1352952523';
+//                  }else if(appCd == 'A'){
+//                     location.href = 'market://details?id=com.topten10mall.mallapp';
+//                  }
+//              }, '', '업데이트', '');
+//          }
+                }
+
+                $('a[href*="openBrowser=1"]').on('click',function(e){
+                    e.preventDefault();
+                    if(isIosApp){
+                        webkit.messageHandlers.openBrowser.postMessage($(this).attr('href'));
+                    }else if(isAndroidApp){
+                        window.android.openBrowser($(this).attr('href'));
+                    }else{
+                        window.open($(this).attr('href'), '_black');
+                    }
+                });
+
+                $('a[href*="newWebview=1"]').on('click',function(e){
+                    e.preventDefault();
+                    if(isIosApp){
+                        webkit.messageHandlers.newWebview.postMessage($(this).attr('href'));
+                    }else if(isAndroidApp){
+                        window.android.newWebview($(this).attr('href'));
+                    }else{
+                        window.open($(this).attr('href'), '_self');
+                    }
+                });
+
+            });
+
+            function func_push_agree(){
+                Storm.LayerUtil.confirm('할인쿠폰, 세일, 이벤트 등의 광고성 정보(PUSH)를 받으시겠습니까?', function(){
+                    var data = "ok";
+                    if(appCd == "A") {
+                        window.android.callPushAgree(data);
+                    }else if(appCd == "I") {
+                        try {
+                            webkit.messageHandlers.pushConfirm.postMessage(data);
+                        } catch(err) {}
+                    }
+                }, function(){
+                    var data = "no";
+                    if(appCd == "A") {
+                        window.android.callPushDisagree(data);
+                    }else if(appCd == "I") {
+                        try {
+                            webkit.messageHandlers.pushConfirm.postMessage(data);
+                        } catch(err) {}
+                    }
+                }, '광고성 정보(PUSH) 수신 동의');
+                $('#div_id_confirm.active #btn_id_confirm_yes').text('동의');
+                $('#div_id_confirm.active #btn_id_confirm_no').text('거부');
+            }
+
+
+            function accessLog(){
+                var host = $(location).attr('host');
+                if(host.indexOf('-cdn.topten10mall.com') != -1 || host.indexOf('.ssts.com') != -1 ) return;
+
+                //var url = Constant.uriPrefix + '/front/accessLogger/insert.do';
+                var url = 'https://www-ssts.topten10mall.com/m/kr/front/accessLogger/insert.do';
+                var path = window.location.href;
+                var referer = document.referrer;
+
+                var paramMemberNo = memberNo;
+                var paramPartnerNo = '0';
+                var siteNo = '1';
+
+                if(host.indexOf('ziozia') == 0) paramPartnerNo =  '1'; if(host.indexOf('andz') == 0) paramPartnerNo =  '2';
+                if(host.indexOf('olzen') == 0) paramPartnerNo =  '3'; if(host.indexOf('edition') == 0) paramPartnerNo =  '4';
+                if(host.indexOf('toptenkids') == 0) paramPartnerNo =  '5'; if(host.indexOf('topten') == 0) paramPartnerNo =  '6';
+                if(host.indexOf('polham') == 0) paramPartnerNo =  '7'; if(host.indexOf('projectm') == 0) paramPartnerNo =  '8';
+                if(host.indexOf('polhamkids') == 0) paramPartnerNo =  '9'; if(host.indexOf('ex2o2') == 0) paramPartnerNo =  '10';
+                if(host.indexOf('male24365') == 0) paramPartnerNo =  '11'; if(host.indexOf('cnts') == 0) paramPartnerNo =  '12';
+
+                var gaId = getCookie('_ga');
+                var paramJsessionid = jsessionid;
+                var paramServerName = serverName;
+
+                var param = {url:path, referer:referer, paramMemberNo:paramMemberNo, paramPartnerNo:paramPartnerNo, siteNo:siteNo, gaId:gaId, paramJsessionid:paramJsessionid, paramServerName:paramServerName};
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    data: param,
+                    async: true
+                });
+            }
+        </script>
+        <!--
+        <div class="footer-scrl-btns">
+            <a href="#" class="gotopre"><i>PREV</i></a>
+            <a href="#" class="gototop"><i>TOP</i></a>
+
+            <div id="plusfriend-chat-button-new" style="display: none;">
+                <a href="javascript:;" id="kakaoTalkBtn" target="_blank"><img style="width: 100%;" src="/m/front/img/ssts/common/kakaoNewIconM.png"></a>
+            </div>
+
+            <div id="happytalk-chat-button" style="display: none;">
+            <!-- <a href="javascript:;" onclick="window.open('https://customer.happytalk.io/public_v1/chat_v4/public_point?go=C&is_login=N&uid=&site_id=1000221496&category_id=99006&division_id=99007&usergb=W&title=%5B%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%83%81%EB%8B%B4%EC%B0%BD%5D', '', 'width=350, height=500'); return false;"><img style="width: 100%;" src="//happytalk.io/assets/main/img/btn-chat.png"></a> -->
+        <!--<a href="javascript:;" id="happyTalkBtn" target="_blank"><img style="width: 100%;" src="/m/front/img/ssts/common/Mobile_talk_new_2.png?v=1"></a>
+        </div>
+    </div>
+    -->
+        <!-- #stickySide -->
+        <aside id="stickySide">
+            <div class="stickySide-wrap active">
+                <!-- <div id="plusfriend-chat-button-new" class="stickySide__btn" >
+                    <a href="javascript:;" id="kakaoTalkBtn" target="_blank">
+                        <img src="/m/front/img/ssts/common/kakaoNewIconM.png" class="img-responsive">
+                    </a>
+                </div> -->
+                <div id="happytalk-chat-button" class="stickySide__btn" >
+                    <a href="javascript:;" id="happyTalkBtn" target="_blank">
+                        <img src="/m/front/img/common/layout/icon-talk-circle-fill.png" class="img-responsive">
+                    </a>
+                </div>
+                <!--                 <a href="#" class="stickySide__btn stickySide__alert label">알림</a>    안읽은 푸쉬알림 있을때 label class 추가 -->
+                <!--                 <button type="button" class="stickySide__btn stickySide__toggle label">더보기</button>   안읽은 푸쉬알림 있을때 label class 추가 -->
+            </div>
+            <button type="button" class="stickySide__btn stickySide__top">위로</button>
+        </aside>
+        <!-- // #stickySide -->
+
+        <!-- #bottom_bar -->
+        <div id="bottom_bar">
+            <div class="bottomBar-item bottomBar-gnb">
+                <button type="button">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-cate@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">카테고리</span>
+                </button>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/interest/interestList.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-like@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">관심상품</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/viewMain.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-home@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">탑텐몰</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/search/latelyGoodsList.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-recent@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">히스토리</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/member/mypage.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-mypage@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">MY</span>
+                </a>
+            </div>
+        </div>
+        <!-- // #bottom_bar -->
+        <!--
+           <div class="item"><a href="#" onclick="javascript:move_page('loginToMain');">
+                   <span class="icon"><img src="/m/front/img/ssts/main/img_bottom_4.png"></span>
+                   <span class="txt">MY</span>
+               </a></div>
+
+       -->
+
+        <!--
+        <script>
+        var lastPoint = 0;
+        var direction = 0;
+        $(window).scroll(function() {
+            direction = lastPoint - $(this).scrollTop();
+            if(direction < 0) {
+                $('#bottom_bar').removeClass('on');
+            }else{
+                $('#bottom_bar').addClass('on');
+            }
+            lastPoint = $(this).scrollTop();
+        });
+        function myPageMove(){
+
+            if(loginYn){
+                $('header > ul.util.util-r > li.my > a').trigger('click');
+            }else{
+                move_page('loginToMain');
+            }
+        }
+        </script>
+        -->
+
+        <t:putAttribute name="popupLayer">
+            <div class="layer layer_usafe">
+                <div class="popup">
+                    <div class="head">
+                        <h1>서비스가입사실확인</h1>
+                        <button type="button" name="button" class="btn_close popup_btn_close">close</button>
+                    </div>
+                    <div class="body">
+                        <div class="usafe_conts">
+                            <img style="width: 100%;" src="/front/img/ssts/common/img_usafe.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t:putAttribute>
+
+        <t:putAttribute name="cafe24">
+
+            <!-- canonical SEO 2018/08/17 -->
+            <link rel="canonical" href="https://www.topten10mall.com">
+            <span itemscope="" itemtype="http://schema.org/Organization">
+<link itemprop="url" href="https://www.topten10mall.com">
+<a itemprop="sameAs" href="https://www.facebook.com/topten10mall">
+</a>
+</span>
+
+            <script async="async">
+                window.__ht_wc = window.__ht_wc || {};
+                window.__ht_wc.host = 'design.happytalkio.com';
+                window.__ht_wc.site_id = '1000221496'; // site_id
+                window.__ht_wc.site_name = '신성통상(주)'; // 회사 이름
+                window.__ht_wc.category_id = '99006'; // 대분류 id
+                window.__ht_wc.division_id = '99007'; // 중분류 id
+
+                // 고정 및 Custom 파라미터 추가 영역, 파라미터가 여러개인 경우 ,(콤마)로 구분
+                // window.__ht_wc.params = 'site_uid=abcd1234,parameter1=param1';
+                // 앱 개발시, 웹뷰 Local Storage 사용가능하도록 처리
+
+                (function() {
+                    var ht = document.createElement('script');
+                    ht.type = 'text/javascript';
+                    ht.async = true;
+                    ht.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + window.__ht_wc.host + '/web_chatting/tracking.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ht, s);
+                })();
+            </script>
+
+            <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+            <script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
+            <script type="text/javascript">
+                if (!wcs_add) var wcs_add={};
+                wcs_add["wa"] = "s_40b6465d4f90";
+                if (!_nasa) var _nasa={};
+                wcs.inflow("topten10mall.com");
+                wcs_do(_nasa);
+            </script>
+
+            <!-- Facebook Pixel Code -->
+            <script>
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                    n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t,s)}(window, document,'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '589840528045600');
+                fbq('track', 'PageView');
+            </script>
+
+            <noscript>
+                <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=589840528045600&ev=PageView&noscript=1"/>
+            </noscript>
+            <!-- End Facebook Pixel Code -->
+
+            <!-- Return script start -->
+            <div id="return_panel"></div>
+            <script type="text/javascript">
+                var shop_id = "topten10mall";
+                var shop_domain = "topten10mall.com";
+                var shop_pr = "etc";
+                var shop_etc = {"prod_link":"/m/kr/front/goods/goodsDetail.do?goodsNo=", "img":"image1"};
+                function return_panel_init(){
+                    $("#return_panel").RETURNPanel({});
+                }
+                function return_panel_start(){
+                    var url = "//blackhole.hearina.com/return/gid/"+shop_domain;
+                    var xmlhttp = new createCORSRequest('GET',url);
+                    xmlhttp.withCredentials = true;
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var jsonObj = JSON.parse(this.responseText);
+                            if( jsonObj.use == "true" ){
+                                window.globalRETURN = new HEARINA();
+                                globalRETURN.jsInit(shop_id, shop_domain, shop_pr, jsonObj.gid, shop_etc, false);
+                            }
+                        }
+                    };
+                    xmlhttp.open("GET", url, true);
+                    xmlhttp.send();
+                }
+                function createCORSRequest(method, url) {
+                    var xhr = new XMLHttpRequest();
+                    if ("withCredentials" in xhr) {
+                        xhr.open(method, url, true);
+                    } else if (typeof XDomainRequest != "undefined") {
+                        xhr = new XDomainRequest();
+                        xhr.open(method, url);
+                    } else {
+                        xhr = null;
+                    }
+                    return xhr;
+                }
+                try {
+                    var now = new Date();
+                    var script = document.createElement('script');
+                    var url = "//cdn.hearina.com/js/return_hearina.v.1.5.js?ver=2&req="+ now.getFullYear() + now.getMonth() + now.getDate();
+                    var head = document.getElementsByTagName("head")[0] || document.body;
+                    script.async = true;
+                    script.src = url;
+                    script.onreadystatechange = function () {
+                        if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                            try {
+                                return_panel_start();
+                            }catch(e){}
+                        }
+                    };
+                    script.onload = function () {
+                        try{
+                            return_panel_start();
+                        }catch(e){}
+                    };
+                    head.appendChild(script);
+                } catch(e){}
+            </script>
+            <!-- Return script end -->
+
+            <!-- Return script end -->
+            <!-- BS CTS TRACKING SCRIPT FOR SETTING ENVIRONMENT V.20 / FILL THE VALUE TO SET. -->
+            <!-- COPYRIGHT (C) 2002-2018 BIZSPRING INC. L4AD ALL RIGHTS RESERVED. -->
+            <script type="text/javascript">
+                _L_LACD = ".toptenmall.com";
+            </script>
+            <!-- END OF ENVIRONMENT SCRIPT -->
+
+            <!-- BS CTS TRACKING SCRIPT V.20 / 14240 : CTS / DO NOT ALTER THIS SCRIPT. -->
+            <!-- COPYRIGHT (C) 2002-2018 BIZSPRING INC. L4AD ALL RIGHTS RESERVED. -->
+            <script type="text/javascript">
+                (function(b,s,t,c,k){b[k]=s;b[s]=b[s]||function(){(b[s].q=b[s].q||[]).push(arguments)};  var f=t.getElementsByTagName(c)[0],j=t.createElement(c);j.async=true;j.src='//fs.bizspring.net/fs4/l4cts.v4.2.js';f.parentNode.insertBefore(j,f);})(window,'_tcts_m',document,'script','BSAnalyticsObj');
+                _tcts_m('14240','SJCOMM');
+            </script><!-- END OF BS CTS TRACKING SCRIPT -->
+
+            <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+            <script type="text/javascript">
+                kakaoPixel('1221914281330557110').pageView();
+            </script>
+
+        </t:putAttribute>
+
+        <!-- //footer --><!-- //footer -->
+    </div>
+
+    <!-- GNB/MY// -->
+    <!-- GNB// -->
+    <div class="header-util-detail header-util-gnb">
+        <p class="logo">
+            <a href="https://www.topten10mall.com/m/kr/front/viewMain.do">TOPTEN MALL</a>
+        </p>
+        <nav class="ttkids_head">
+            <div class="tab_items">
+                <button type="button" name="button">브랜드</button>
+                <button type="button" name="button" class="active">카테고리</button>
+            </div>
+            <div class="tab_content">
+                <div class="header-util__brand">
+                    <dl>
+                        <dt><a href="//ziozia.topten10mall.com/m/kr/front/viewMain.do">ZIOZIA</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//andz.topten10mall.com/m/kr/front/viewMain.do">AND Z</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//olzen.topten10mall.com/m/kr/front/viewMain.do">OLZEN</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//edition.topten10mall.com/m/kr/front/viewMain.do">EDITION</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//topten.topten10mall.com/m/kr/front/viewMain.do">TOPTEN10</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//polham.topten10mall.com/m/kr/front/viewMain.do">POLHAM</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//projectm.topten10mall.com/m/kr/front/viewMain.do">PROJECT M</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//toptenkids.topten10mall.com/m/kr/front/viewMain.do">TOPTEN KIDS</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//polhamkids.topten10mall.com/m/kr/front/viewMain.do">POLHAM KIDS</a></dt>
+                    </dl>
+                </div>
+                <div class="header-util__brand">
+                    <dl>
+                        <dt><a href="https://topten.topten10mall.com/kr/front/event/eventView.do?dispBannerNo=15039">BALANCE</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://wml.topten10mall.com">WML</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://olzen.topten10mall.com/kr/front/event/eventView.do?dispBannerNo=12094">OLIVER</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://topten.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1720">EX2O2</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://www.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1940">CNTS</a></dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="tab_content active">
+                <dl>
+                    <dt>
+                        <button type="button" name="button">스프링스테이</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=19269">전체보기</a>
+                    </dd>
+                    <dd>
+                        <button>봄 아우터</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21850">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21856">코트</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21857">점퍼</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21858">자켓</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>봄 상의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21851">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21861">스웨터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21862">가디건/집업</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21863">티셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21864">셔츠</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>봄 팬츠</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21852">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21866">치노/슬랙스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21865">데님</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21867">기타팬츠</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>봄 키즈</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21853">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21869">아우터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21870">상의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21871">하의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21872">기타웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21873">ACC</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>아울렛</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21854">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21875">봄 아울렛</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21874">겨울 아울렛</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21876">키즈 아울렛</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">남성</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1001">전체보기</a>
+                    </dd>
+                    <dd>
+                        <button>상의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1005">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1026">셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1027">티셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1028">니트/스웨터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1029">가디건</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>하의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1006">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1031">반바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1030">긴바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1032">청바지</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>정장</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1007">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1033">상의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1034">하의</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=5366">셋업</a>
+                    </dd>
+                    <dd>
+                        <button>아우터</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1004">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1021">자켓</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1022">다운/패딩</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1023">점퍼</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1024">코트</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1025">가죽 & 퍼</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>이너웨어</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1010">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1043">여름용</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1044">겨울용</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1045">라운지 웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1046">언더웨어</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>악세서리</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1008">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1035">벨트</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1036">넥타이</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1037">양말</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1038">신발</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1039">가방</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1040">잡화</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">여성</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1002">전체보기</a>
+                    </dd>
+                    <dd>
+                        <button>상의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1012">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1051">티셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1052">셔츠/블라우스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1053">니트 / 스웨터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1054">가디건 / 집업</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>하의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1013">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1055">긴바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1056">반바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1057">청바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1058">스커트</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>원피스</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1014">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1059">롱 원피스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1060">미니 원피스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=10796">스커트</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>아우터</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1011">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1047">다운/패딩</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1048">점퍼</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1049">코트</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1050">자켓</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>이너웨어</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1017">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1067">라운지웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1068">쿨에어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1069">온에어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1070">언더웨어</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>악세서리</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1015">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1061">양말</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1062">신발</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1063">가방</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1064">잡화</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">아동</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1003">전체보기</a>
+                    </dd>
+                    <dd>
+                        <button>남아</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1018">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1072">셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1073">티셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1074">니트/가디건</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1071">아우터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1075">하의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1076">셋업</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1077">라운지웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1078">스윔웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1079">온에어</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>여아</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1019">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1082">티셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1081">셔츠/블라우스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1083">니트/가디건</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1080">아우터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1084">하의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1085">원피스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1086">셋업</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1087">라운지웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1088">스윔웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1089">온에어</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>악세서리</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1020">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1090">양말</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1091">모자</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1092">책가방</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1093">가방</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1094">스티커</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1095">헤어악세서리</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1096">기타</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">아울렛</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=3000">전체보기</a>
+                    </dd>
+                    <dd>
+                        <button>남성</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3001">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3005">상의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3006">하의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3007">정장</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3004">아우터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3009">스윔웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3010">이너웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3008">악세서리</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>여성</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3002">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3012">상의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3013">하의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3014">원피스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3011">아우터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3016">스윔웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3017">이너웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3015">악세서리</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>아동</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3003">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3018">남아</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3019">여아</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3020">악세서리</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">매거진</button>
+                    </dt>
+                    <dd><a href="https://www.topten10mall.com/m/kr/front/magazine/storyList.do">스토리즈</a></dd>
+                    <dd><a href="/m/kr/front/magazine/styleList.do">스타일</a></dd>
+                    <dd><a href="/m/kr/front/magazine/lookbookList.do">룩북</a></dd>
+                    <dd><a href="/m/kr/front/magazine/newsList.do">뉴스</a></dd>
+                </dl>
+                <dl class="header-util__event">
+                    <dt>
+                        <button type="button" name="button">이벤트</button>
+                    </dt>
+                    <dd><a href="/m/kr/front/special/specialList.do">기획전</a></dd>
+                    <dd><a href="/m/kr/front/event/eventList.do">이벤트</a></dd>
+                    <dd><a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=8552">베스트 리뷰</a></dd>
+                </dl>
+
+            </div>
+
+
+        </nav>
+        <a href="#" class="btn-cls">CLOSE</a>
+    </div>
+    <!-- //GNB --></div>
+<!-- //GNB/MY -->
+<!-- Layer// -->
+<!-- 회원등급별 혜택보기// -->
+<div class="layer layer_benefit">
+    <div class="popup">
+        <div class="head">
+            <h1>회원등급별 혜택보기</h1>
+            <button type="button" name="button" class="btn_close popup_btn_close">close</button>
+        </div>
+        <div class="body">
+            <div class="benefit_conts" style="padding-top: 15px;">
+
+                <div style="background-color: #f2f2f2;padding-top: 12px;padding-bottom: 12px; margin-bottom: 25px;">
+                </div>
+
+                <table>
+                    <colgroup>
+                        <col style="width: 30%;">
+                        <col style="width: 26%;">
+                        <col style="width: 39%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <p style="padding-bottom:5px;">※ 해당 등급혜택은 5월 1일부터 적용됩니다.</p>
+                        <th scope="col">회원등급</th>
+                        <th scope="col">등급조건<br><span>(6개월 누적금액)</span></th>
+                        <th scope="col">혜택</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row"><span class="wr"><i class="ico vip">V</i>VIP</span></th>
+                        <td>50만원 이상</td>
+                        <td>
+                            <ul class="guide_txt">
+                                <li>4만원이상 : 4,000원</li>
+                                <li>5만원이상 : 5,000원<br><span style="color: crimson;"> └ 앱전용 쿠폰</span></li>
+                                <li>7만원이상 : 7,000원</li>
+                                <li>9만원이상 : 9,000원</li>
+                                <li>12만원이상 : 12,000원</li>
+                                <li>생일 10,000포인트</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="wr"><i class="ico gold">G</i>GOLD</span></th>
+                        <td>30만원 이상<br>50만원 미만</td>
+                        <td>
+                            <ul class="guide_txt">
+                                <li>4만원이상 : 4,000원</li>
+                                <li>5만원이상 : 5,000원<br><span style="color: crimson;"> └ 앱전용 쿠폰</span></li>
+                                <li>7만원이상 : 7,000원</li>
+                                <li>9만원이상 : 9,000원</li>
+                                <li>생일 10,000포인트</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="wr"><i class="ico silver">S</i>SILVER</span></th>
+                        <td>10만원 이상<br>30만원 미만</td>
+                        <td>
+                            <ul class="guide_txt">
+                                <li>4만원이상 : 4,000원</li>
+                                <li>5만원이상 : 5,000원<br><span style="color: crimson;"> └ 앱전용 쿠폰</span></li>
+                                <li>7만원이상 : 7,000원</li>
+                                <li>생일 10,000포인트</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="wr"><i class="ico welcome">W</i>WELCOME</span></th>
+                        <td>신규 회원가입</td>
+                        <td>
+                            <ul class="guide_txt">
+                                <li>10% 할인 / 3만원이상<br>(최대 7천원)</li>
+                                <li>재구매 할인 쿠폰<br>3천원 할인 / 3만원이상<br><span style="color: crimson;">└ 앱전용 쿠폰</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <th colspan="3">
+                        * 상세 내용 PC버전 확인 [고객센터>회원혜택]<br>
+                        * 회원등급은 6개월간 누적 구매금액을 바탕으로 산정되며 매월 1일 변경됩니다.<br>
+                        <!--                                 * 포인트 사용에 따른 구매액은 누적 구매금액에 포함되지 않습니다.<br> -->
+                        * 누적 구매금액은 구매완료(구매확정)된 금액을 대상으로 합니다.<br>
+                        * 할인쿠폰은 매월 발급되며 중복할인 가능합니다.<br>
+                        * 생일 포인트는 정식 회원 대상 혜택이며, 간편가입 ID는 지급제외됩니다.<br><br>
+                    </th>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //회원등급별 혜택보기 --><div class="layer layer_terms_01">
+    <div class="popup">
+        <div class="head">
+            <h1>이용약관</h1>
+            <button type="button" name="button" class="btn_close popup_btn_close">close</button>
+        </div>
+        <div class="body">
+            <div class="policy-cnts">
+                <font size="3" color="#111111">제1조 (목적)</font>
+                <br/>
+                <br/><p>
+                <br/>이 약관은 신성통상 주식회사(이하 “회사”라 한다)가 운영하는 TOPTEN MALL 온라인 사이트 (이하 “사이트”라 한다)에서 당사 상품 및 타사 입점 상품의 매매 관련 서비스와 기타 정보 제공 서비스(이하 “서비스” 라고 한다)의 이용조건 및 이용에 관한 제반 사항, “회사”와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+                <br/></p>
+                <br/>
+                <br/>
+                <br/><p>
+                <br/><font size="3" color="#111111">제2조 (정의) </font>
+                <br/></p>
+                <br/><p>
+                <br/>1. "사이트"란 "회사"가 재화 또는 용역(이하 “재화 등”이라 한다)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신 설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장  (제1조의 TOPTEN MALL 온라인 사이트)을 말하며, 아울러 사이트를 운영하는 사업자의 의미로도 사용합니다.
+                <br/></p>
+                <br/><p>2. "탑텐몰 온라인 ID"란 "사이트"에서 동일 ID, 비밀번호로 로그인 할 수 있으며 각 "사이트" 의 적립금(포인트)을 통합 운영하는 회원을 위한 통합제도를 말합니다.</p>
+                <br/><p>3. "이용자" 란 "사이트" 에 접속하여 이 약관에 따라 "사이트" 가 제공하는 서비스를 받는 회원 및 비회원을 말합니다. </p>
+                <br/><p>4. "회원" 이라 함은 "사이트" 에 개인정보를 제공하여 회원등록을 한 자로서, "사이트" 의 정보를 지속적으로 제공받으며, "사이트" 가 제공하는 서비스를 계속적으로 이용할 수 있는 자를 말합니다. </p>
+                <br/><p>5. "비회원"이라 함은 회원에 가입하지 않고 "사이트"에서 제공하는 서비스를 이용하는 자를 말합니다. </p>
+                <br/><p>6. "탑텐몰 멤버쉽 스타 포인트" 란 회원이 "사이트" 에서 상품 및 서비스를 추천 또는 구매할 경우 이에 부수하여 일정 적립률에 따라 현금대체 결제 수단으로 사용할 수 있는 사이버머니를 의미하며, 회사의 정책에 따라 고객 서비스를 변경하여 제공할 수 있습니다.</p>
+                <br/>
+                <br/>
+                <br/><p>
+                <br/><font size="3" color="#111111">제3조 (약관등의 명시와 설명 및 개정) </font>
+                <br/></p>
+                <br/><p>1. "사이트" 는 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호, 모사전송번호, 전자우편주소, 사업자등록번호, 통신판매업신고번호, 개인정보관리책임자 등을 이용자가 쉽게 알 수 있도록 "사이트" 의 초기 서비스화면(전면)에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.</p>
+                <br/><p>2. "사이트" 는 이용자가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 청약철회, 배송책임, 환불조건 등과 같은 중요한 내용을 이용자가 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 이용자의 확인을 구하여야 합니다. </p>
+                <br/><p>3. "사이트" 는 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제에 관한 법률, 전자거래기본법, 전자서명법, 정보통신망이용촉진 등에 관한 법률, 방문판매 등에 관한 법률, 소비자보호법, 개인정보보호법 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다. </p>
+                <br/><p>4. "사이트" 가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행 약관과 함께 몰의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다. <br>다만, 이용자에게 불리하게 약관내용을 변경하는 경우에는 최소한 30일 이상의 사전 유예기간을 두고 공지합니다. 이 경우 "사이트" 는 개정전 내용과 개정후 내용을 명확하게 비교하여 이용자가 알기 쉽도록 표시합니다. </p>
+                <br/><p>5. "사이트" 가 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정전의 약관조항이 그대로 적용됩니다. </p>
+                <br/><p>6. 회원이 개정된 약관에 동의하지 않을 경우, 회원은 회원탈퇴(이용계약의 해지)를 “사이트”에 요청할 수 있으며, 회사가 제4항에 따라 회원에게 공지하면서 공지 혹은 고지일로부터 개정약관 시행일 7일 후까지 거부의사를 표시하지 아니하면 승인한 것으로 본다는 뜻을 명확하게 고지하였음에도 회원의 의사표시가 없는 경우에는 변경된 약관을 승인한 것으로 간주합니다. </p>
+                <br/>
+                <br/>
+                <br/><p>
+                <br/><font size="3" color="#111111">제4조 (서비스의 제공 및 변경) </font>
+                <br/></p>
+                <br/><p>
+                <br/>1. "사이트" 는 다음과 같은 업무를 수행합니다. <br>
+                <br/>가. 재화 또는 용역에 대한 정보 제공 및 구매계약의 체결 <br>
+                <br/>나. 구매계약이 체결된 재화 또는 용역의 배송 <br>
+                <br/>다. 기타 "사이트" 가 정하는 업무
+                <br/></p>
+                <br/><p>2. "사이트" 는 재화 또는 용역의 품절 또는 기술적 사양의 변경 등의 경우에는 장차 체결되는 계약에 의해 제공할 재화 또는 용역의 내용을 변경할 수 있습니다. 이 경우에는 변경된 재화 또는 용역의 내용 및 제공일자를 명시하여 현재의 재화 또는 용역의 내용을 게시한 곳에 즉시 공지합니다.</p>
+                <br/><p>3. "사이트" 가 제공하기로 이용자와 계약을 체결한 서비스의 내용을 재화 등의 품절 또는 기술적 사양의 변경 등의 사유로 변경할 경우에는 그 사유를 이용자에게 통지 가능한 주소로 즉시 통지합니다.</p>
+                <br/><p>4. 전 항의 경우 "사이트" 는 이로 인하여 이용자가 입은 손해를 배상합니다. 다만, "사이트" 이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다. </p>
+                <br/>
+                <br/>
+                <br/><p>
+                <br/><font size="3" color="#111111">제5조 (서비스의 중단) </font>
+                <br/></p>
+                <br/><p>
+                <br/>1. "사이트"는 컴퓨터 등 정보통신설비의 보수점검, 교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.
+                <br/></p>
+                <br/><p>2. "사이트"는 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 이용자 또는 제3자가 입은 손해에 대하여 배상합니다. 단, "사이트"가 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다. </p>
+                <br/><p>3. 사업종목의 전환, 사업의 포기, 업체간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 "사이트"는 제8조에 정한 방법으로 이용자에게 통지하고 당초 "사이트"에서 제시한 조건에 따라 소비자에게 보상합니다. 다만, "사이트"가 보상기준 등을 고지하지 아니한 경우에는 이용자들의 포인트 또는 적립금 등을 "사이트"에서 통용되는 통화가치에 상응하는 현물 또는 현금으로 이용자에게 지급합니다.</p>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제6조 (회원가입) </font></p>
+                <br/><p>1. 이용자는 "사이트" 가 정한 가입 양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로서 회원가입을 신청합니다.</p>
+                <br/><p>
+                <br/>2. "사이트" 는 제1항과 같이 회원으로 가입할 것을 신청한 이용자 중 다음 각호에 해당하지 않는 한 회원으로 등록합니다. <br>
+                <br/>가. 가입신청자가 이 약관 제7조 제3항에 의하여 이전에 회원자격을 상실한 적이 있는 경우, 다만 제7조 제3항에 의한 회원자격 상실후 3년이 경과한 자로서 "사이트" 의 회원재가입 승낙을 얻은 경우에는 예외로 한다. <br>
+                <br/>나. 등록 내용에 허위, 기재누락, 오기가 있는 경우 <br>
+                <br/>다. 기타 "회원"으로 등록하는 것이 "사이트" 의 기술상 현저히 지장이 있다고 판단되는 경우 <br>
+                <br/>라. 만 14세 미만의 자의 경우
+                <br/></p>
+                <br/><p>3. 회원가입계약의 성립시기는 "사이트" 의 승낙이 회원에게 도달한 시점으로 합니다. </p>
+                <br/><p>4. 회원은 제15조 제1항에 의한 등록사항에 변경이 있는 경우, 즉시 전자우편 또는 기타 방법으로 "사이트" 에 대하여 그 변경사항을 알려야 합니다. </p>
+                <br/><p>5. 회원은 "사이트" 를 통한 회원가입시 발급된 ID 하나로 제1조에 명시된 모든 사이트의 서비스를 이용할 수 있습니다. 단, 일부 사이트의 특정 서비스는 별도의 가입절차를 통하여 이용할 수 있으며, 이 경우 해당 사이트의 이용시에는 해당 사이트의 특정서비스에 대한 이용약관이 이 약관보다 우선 적용됩니다. </p>
+                <br/><p>6. 이용자는 제1항에 의거하여 "몰"의 정식 회원가입 절차를 통하여 가입한 이후에는 간편 로그인(카카오, 네이버 등)을 통해서도 로그인할 수 있습니다. 이 경우 회원은 로그인의 경로와 관계없이 동일하게 회원 본인의 구매내역 확인, 포인트 및 쿠폰 등의 사용이 가능합니다. [신설 2020.7.22]</p>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제7조 (회원 탈퇴 및 자격 상실 등) </font></p>
+                <br/>1. 다음의 경우 회원탈퇴가 가능합니다. <br>
+                <br/>가. 회원은 "사이트" 에 언제든지 탈퇴를 요청할 수 있으며 "사이트" 는 즉시 회원탈퇴를 처리합니다. <br>
+                <br/>나. 관련 법령으로 정한 기간동안 이용실적이 없는 경우, 자동으로 탈퇴처리됩니다. <br>
+                <br/>다. 사이트가 폐쇄되는 경우, 자동으로 탈퇴처리됩니다. <br>
+                <br/>라. 회원은 제6조 제2항 나. 항목의 경우, 회원탈퇴를 처리합니다.
+                <br/>
+                <br/>2. 회원의 개인정보는 원칙적으로 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다. <br>
+                <br/>가. 신성통상 원아이디(One ID)로 사이트 내부 방침에 의한 정보 보유 사유 <br><table class="mt5 mb10"><colgroup><col width="37%"><col width="*"><col width="25%"></colgroup><thead><tr><th scope="col" class="first">항목</th><th scope="col">보존 이유</th><th scope="col" class="last">보존 기간</th></tr></thead><tbody><tr><td>부정 이용 기록</td><td>부정 이용 방지</td><td>1년</td></tr></tbody></table>
+                <br/>
+                <br/>나. 관련법령에 의한 정보 보유 사유 <br>
+                <br/>상법, 전자상거래 등에서의 소비자보호에 관한 법률 등 관계법령의 규정에 의하여 보존할 필요가 있는 경우 당사는 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다. 이 경우 당사는 보관하는 정보를 그 보관의 목적으로만 이용하며 보존기간은 아래와 같습니다. <br><table class="mt5"><colgroup><col width="37%"><col width="*"><col width="25%"></colgroup><thead><tr><th scope="col" class="first">항목</th><th scope="col">보존 이유</th><th scope="col" class="last">보존 기간</th></tr></thead><tbody><tr><td>계약 또는 청약철회 등에 관한 기록</td><td>전자상거래 등에서의 소비자 보호에 관한 법률</td><td>5년 </td></tr><tr><td>대금 결제 및 재화 등의 공급에 관한 기록</td><td>전자상거래 등에서의 소비자 보호에 관한 법률</td><td>5년</td></tr><tr><td>소비자의 불만 또는 분쟁 처리에 관한 기록</td><td>전자상거래 등에서의 소비자 보호에 관한 법률</td><td>6개월</td></tr><tr><td>본인 확인에 관한 기록</td><td>정보통신망 이용 촉진 및 정보 보호 등에 관한 법률</td><td>3년</td></tr><tr><td>방문에 관한 기록</td><td>통신비밀보호법</td><td>3년</td></tr></tbody></table><br>
+                <br/>
+                <br/>3. 회원이 다음 각호의 사유에 해당하는 경우, "사이트" 는 회원자격을 제한 및 정지시킬 수 있습니다. <br>
+                <br/>가. 가입 신청시에 타인의 정보 또는 허위 내용을 등록한 경우 <br>
+                <br/>나. "사이트" 를 이용하여 구입한 재화 등의 대금, 기타 "사이트" 이용에 관련하여 회원이 부담하는 채무를 기일에 지급하지 않는 경우 <br>
+                <br/>다. 다른 사람의 "사이트" 이용을 방해하거나 그 정보를 도용하는 등 전자상거래 질서를 위협하는 경우 <br>
+                <br/>라. 부정한 방법으로 포인트를 적립하거나 포인트를 부정 사용하는 등 포인트 서비스 제도운영을 방해한 경우 <br>
+                <br/>마. "사이트" 를 이용하여 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우
+                <br/>
+                <br/>4. "사이트" 가 회원 자격을 제한, 정지 시킨후, 동일한 행위가 2 회이상 반복되거나 30일이내에 그 사유가 시정되지 아니하는 경우 "사이트" 는 회원자격을 상실시킬 수 있습니다.
+                <br/>
+                <br/>5. "사이트" 가 회원자격을 상실시키는 경우에는 회원등록을 말소합니다. 이 경우 회원에게 이를 통지하고, 회원등록 말소전에 최소한 30일 이상의 기간을 정하여 소명할 기회를 부여합니다.
+                <br/><br>
+                <br/>
+                <br/><p><font size="3" color="#111111">제8조 (회원에 대한 통지) </font></p>
+                <br/>1. "사이트" 가 회원에 대한 통지를 하는 경우, 회원이 "사이트" 와 미리 약정하여 지정한 전자우편 주소로 할 수 있습니다. <br>
+                <br/>2. "사이트" 는 불특정다수 회원에 대한 통지의 경우 1주일이상 "사이트" 게시판에 게시함으로서 개별 통지에 갈음할 수 있습니다. 다만, 회원 본인의 거래와 관련하여 중대한 영향을 미치는 사항에 대하여는 개별통지를 합니다.
+                <br/><br>
+                <br/>
+                <br/><p><font size="3" color="#111111">제9조 (구매신청) </font></p>
+                <br/>"사이트" 이용자는 "사이트" 상에서 다음 또는 이와 유사한 방법에 의하여 구매를 신청하며, "사이트" 는 이용자가 구매신청을 함에 있어서 다음의 각 내용을 알기 쉽게 제공하여야 합니다. 단, 회원인 경우 제2호 내지 제4호의 적용을 제외할 수 있습니다. <br>
+                <br/>가. 재화등의 검색 및 선택 <br>
+                <br/>나. 성명, 주소, 전화번호, 전자우편주소(또는 이동전화번호) 등의 입력 <br>
+                <br/>다. 약관내용, 청약철회권이 제한되는 서비스, 배송료 등의 비용부담과 관련한 내용에 대한 확인 <br>
+                <br/>라. 이 약관에 동의하고 위 3.호의 사항을 확인하거나 거부하는 표시(예, 마우스 클릭) <br>
+                <br/>마. 재화 등의 구매신청 및 이에 관한 확인 또는 "사이트" 의 확인에 대한 동의 <br>
+                <br/>바. 결제방법의 선택
+                <br/><br>
+                <br/>
+                <br/><p><font size="3" color="#111111">제10조 (계약의 성립) </font></p>
+                <br/>1. "사이트" 는 제9조와 같은 구매신청에 대하여 다음 각호에 해당하면 승낙하지 않을 수 있습니다. <br>
+                <br/>가. 신청 내용에 허위, 기재누락, 오기가 있는 경우 <br>
+                <br/>나. 기타 구매신청에 승낙하는 것이 "사이트" 기술상 현저히 지장이 있다고 판단하는 경우 <br>
+                <br/>
+                <br/>2. "사이트" 의 승낙이 제12조제1항의 수신확인 통지형태로 이용자에게 도달한 시점에 계약이 성립한 것으로 봅니다. <br>
+                <br/>
+                <br/>3. "사이트" 의 승낙의 의사표시에는 이용자의 구매 신청에 대한 확인 및 판매가능 여부, 구매신청의 정정 취소 등에 관한 정보등을 포함하여야 합니다.
+                <br/><br>
+                <br/>
+                <br/><p><font size="3" color="#111111">제11조 (지급방법) </font></p>
+                <br/>"사이트" 에서 구매한 재화 또는 용역에 대한 대금지급방법은 다음 각호의 방법중 가용한 방법으로 할 수 있습니다. 단, "사이트" 는 이용자의 지급방법에 대하여 재화 등의 대금에 어떠한 명목의 수수료도 추가하여 징수할 수 없습니다. <br>
+                <br/>가. 폰뱅킹, 인터넷뱅킹, 메일 뱅킹 등의 각종 계좌이체 <br>
+                <br/>나. 선불카드, 직불카드, 신용카드 등의 각종 카드 결제 <br>
+                <br/>다. 온라인 무통장 입금 <br>
+                <br/>라. 전자화폐에 의한 결제 <br>
+                <br/>마. 수령시 대금지급 <br>
+                <br/>바. "사이트" 가 지급한 포인트에 의한 결제 <br>
+                <br/>사. "사이트" 와 계약을 맺었거나 "사이트" 가 인정한 상품권에 의한 결제 <br>
+                <br/>아. 기타 전자적 지급 방법에 의한 대금 지급 등
+                <br/><br>
+                <br/>
+                <br/><p><font size="3" color="#111111">제12조 (수신확인통지,구매신청 변경 및 취소) </font></p>
+                <br/>1. "사이트" 는 이용자의 구매신청이 있는 경우 이용자에게 수신확인 통지를 합니다. <br>
+                <br/>
+                <br/>2. 수신확인통지를 받은 이용자는 의사표시의 불일치등이 있는 경우에는 수신확인 통지를 받은 후 즉시 구매신청 변경 및 취소를 요청할 수 있고 "사이트" 는 배송전에 이용자의 요청이 있는 경우에는 지체없이 그 요청에 따라 처리하여야 합니다.
+                <br/>다만 이미 대금을 지불한 경우에는 제15조의 청약철회 등에 관한 규정에 따릅니다.<br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제13조 (재화등의 공급) </font></p>
+                <br/>1. "사이트" 는 이용자와 재화등의 공급시기에 관하여 별도의 약정이 없는 이상, 이용자가 청약을 한 날부터 7일 이내에 재화 등을 배송할 수 있도록 주문제작, 포장 등 기타의 필요한 조치를 취합니다. 다만, "사이트" 가 이미 재화 등의 대금의 전부 또는 일부를 받은 경우에는 대금의 전부 또는 일부를 받은 날부터 3 영업일 이내에 조치를 취합니다. 이때 "사이트" 는 이용자가 재화등의 공급 절차 및 진행 사항을 확인할 수 있도록 적절한 조치를 합니다. <br>
+                <br/>
+                <br/>2. "사이트" 는 이용자가 구매한 재화에 대해 배송수단, 수단별 배송비용 부담자, 수단별 배송기간 등을 명시합니다. 만약 "사이트" 가 약정 배송기간을 초과한 경우에는 그로 인한 이용자의 손해를 배상하여야 합니다. 다만 "사이트" 가 고의나 과실이 없음을 입증한 경우에는 그러하지 아니합니다.<br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제14조 (환급) </font></p>
+                <br/>"사이트" 는 이용자가 구매신청한 재화 등이 품절 등의 사유로 인도 또는 제공을 할 수 없을 때에는 지체없이 그 사유를 이용자에게 통지하고 사전에 재화 등의 대금을 받은 경우에는 대금을 받은 날부터 3영업일 이내에 환급하거나 환급에 필요한 조치를 취합니다.
+                <br/><br>
+                <br/>
+                <br/><p><font size="3" color="#111111">제15조 (청약철회 등) </font></p>
+                <br/>1. "사이트" 와 재화 등의 구매에 관한 계약을 체결한 이용자는 수신확인의 통지를 받은 날부터 7일 이내에는 청약의 철회를 할 수 있습니다.<br>
+                <br/>
+                <br/>2. 이용자는 재화 등을 배송받은 경우 다음 각호의 1에 해당하는 경우에는 반품 및 교환을 할 수 없습니다. <br>
+                <br/>
+                <br/>가. 이용자에게 책임 있는 사유로 재화 등이 멸실 또는 훼손된 경우
+                <br/>      (다만, 재화 등의 내용을 확인하기 위하여 포장 등을 훼손한 경우에는 청약철회를 할 수 있습니다) <br>
+                <br/>나. 이용자의 사용 또는 일부 소비에 의하여 재화 등의 가치가 현저히 감소한 경우 <br>
+                <br/>다. 시간의 경과에 의하여 재판매가 곤란할 정도로 재화등의 가치가 현저히 감소한 경우 <br>
+                <br/>
+                <br/>3. 제2항 제2호 내지 제4호의 경우에 "사이트" 가 사전에 청약철회 등이 제한되는 사실을 소비자가 쉽게 알 수 있는 곳에 명기하거나 시용상품을 제공하는 등의 조치를 하지 않았다면 이용자의 청약철회 등이 제한되지 않습니다. <br>
+                <br/>
+                <br/>4. 이용자는 제1항 및 제2항의 규정에 불구하고 재화 등의 내용이 표시•광고 내용과 다르거나 계약내용과 다르게 이행된 때에는 당해 재화 등을 공급받은 날부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회 등을 할 수 있습니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제16조 (청약철회 등의 효과) </font></p>
+                <br/>1. "사이트" 는 이용자로부터 재화 등을 반환 받은 경우 3영업일 이내에 이미 지급받은 재화 등의 대금을 환급합니다. 이 경우 "사이트" 가 이용자에게 재화 등의 환급을 지연한 때에는 그 지연기간에 대하여 「전자상거래등에서의 소비자보호에 관한 법률 시행령」이 정하는 지연이자율을 곱하여 산정한 지연이자를 지급합니다. <br>
+                <br/>
+                <br/>2. "사이트" 는 위 대금을 환급함에 있어서 이용자가 신용카드 또는 전자화폐 등의 결제수단으로 재화 등의 대금을 지급한 때에는 지체없이 당해 결제수단을 제공한 사업자로 하여금 재화 등의 대금의 청구를 정지 또는 취소하도록 요청합니다. <br>
+                <br/>
+                <br/>3. 청약철회 등의 경우 공급받은 재화 등의 반환에 필요한 비용은 이용자가 부담합니다. "사이트" 는 이용자에게 청약철회 등을 이유로 위약금 또는 손해배상을 청구하지 않습니다. 다만 재화 등의 내용이 표시•광고 내용과 다르거나 계약내용과 다르게 이행되어 청약철회 등을 하는 경우 재화 등의 반환에 필요한 비용은 "사이트" 가 부담합니다.<br>
+                <br/>
+                <br/>4. 이용자가 재화 등을 제공받을 때 발송비를 부담한 경우에 "사이트" 는 청약철회시 그 비용을 누가 부담하는지를 이용자가 알기 쉽도록 명확하게 표시합니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제17조 (개인정보보호) </font></p>
+                <br/>1. "사이트" 는 이용자의 정보수집시 구매계약 이행에 필요한 최소한의 정보를 수집합니다. 다음 사항을 필수사항으로 하며 그 외 사항은 선택사항으로 합니다. <br>
+                <br/>
+                <br/>가. 성명 <br>
+                <br/>나. 생년월일 <br>
+                <br/>다. 성별 <br>
+                <br/>라. 통신사 <br>
+                <br/>마. 핸드폰번호 <br>
+                <br/>바. 희망ID(회원의 경우) <br>
+                <br/>사. 비밀번호(회원의 경우) <br>
+                <br/>아. e-mail주소 <br>
+                <br/>
+                <br/>2. "사이트" 가 이용자의 개인식별이 가능한 개인정보를 수집하는 때에는 반드시 당해 이용자의 동의를 받습니다. <br>
+                <br/>
+                <br/>3. 제공된 개인정보는 당해 이용자의 동의없이 목적외의 이용이나 제3자에게 제공할 수 없으며, 이에 대한 모든 책임은 "사이트" 가 집니다.<br>
+                <br/>   다만, 다음의 경우에는 예외로 합니다. <br>
+                <br/>가. 배송업무상 배송업체에게 배송에 필요한 최소한의 이용자의 정보(성명, 주소, 전화번호)를 알려주는 경우 <br>
+                <br/>나. 통계작성, 학술연구 또는 시장조사를 위하여 필요한 경우로서 특정 개인을 식별할 수 없는 형태로 제공하는 경우 <br>
+                <br/>다. 재화 등의 거래에 따른 대금정산을 위하여 필요한 경우 <br>
+                <br/>라. 도용방지를 위하여 본인확인에 필요한 경우 <br>
+                <br/>마. 법률의 규정 또는 법률에 의하여 필요한 불가피한 사유가 있는 경우 <br>
+                <br/>
+                <br/>4. "사이트" 가 제2항과 제3항에 의해 이용자의 동의를 받아야 하는 경우에는 개인정보관리 책임자의 신원(소속, 성명 및 전화번호, 기타 연락처), 정보의 수집목적 및 이용목적, 제3자에 대한 정보제공 관련사항(제공받은자, 제공목적 및 제공할 정보의 내용) 등 정보통신망이용촉진등에관한법률 제22조 제2항이 규정한 사항을 미리 명시하거나 고지해야 하며 이용자는 언제든지 이 동의를 철회할 수 있습니다. <br>
+                <br/>
+                <br/>5. 이용자는 언제든지 "사이트" 가 가지고 있는 자신의 개인정보에 대해 열람 및 오류정정을 요구할 수 있으며 "사이트" 는 이에 대해 지체없이 필요한 조치를 취할 의무를 집니다.
+                <br/>이용자가 오류의 정정을 요구한 경우에는 "사이트" 는 그 오류를 정정할 때까지 당해 개인정보를 이용하지 않습니다. <br>
+                <br/>
+                <br/>6. "사이트" 는 개인정보 보호를 위하여 관리자를 한정하여 그 수를 최소화하며 신용카드, 은행계좌 등을 포함한 이용자의 개인정보의 분실, 도난, 유출, 변조 등으로 인한 이용자의 손해에 대하여 모든 책임을 집니다. <br>
+                <br/>
+                <br/>7. "사이트" 또는 그로부터 개인정보를 제공받은 제3자는 개인정보의 수집목적 또는 제공받은 목적을 달성한 때에는 당해 개인정보를 지체없이 파기합니다.<br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제18조 ( "사이트" 의 의무) </font></p>
+                <br/>1. "사이트" 는 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고, 안정적으로 재화와 용역을 제공하는데 최선을 다하여야 합니다.<br>
+                <br/>
+                <br/>2. "사이트" 는 이용자가 안전하게 인터넷 서비스를 이용할 수 있도록 이용자의 개인정보(신용정보 포함)보호를 위한 보안 시스템을 갖추어야 합니다. <br>
+                <br/>
+                <br/>3. "사이트" 가 상품이나 용역에 대하여 「표시 광고의 공정화에 관한 법률」 제3조 소정의 부당한 표시 광고행위를 함으로써 이용자가 손해를 입은 때에는 이를 배상할 책임을 집니다.<br>
+                <br/>
+                <br/>4. "사이트" 는 이용자가 원하지 않는 영리목적의 광고성 전자우편을 발송하지 않습니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제19조 (회원의 ID 및 비밀번호에 대한 의무) </font></p>
+                <br/>1. 제17조의 경우를 제외한 ID와 비밀번호에 관한 관리책임은 회원에게 있습니다. <br>
+                <br/>
+                <br/>2. 회원은 자신의 ID 및 비밀번호를 제3자에게 이용하게 해서는 안됩니다. <br>
+                <br/>
+                <br/>3. 회원이 자신의 ID 및 비밀번호를 도난당하거나 제3자가 사용하고 있음을 인지한 경우에는 바로 "사이트" 에 통보하고 "사이트" 의 안내가 있는 경우에는 그에 따라야 합니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제20조 (이용자의 의무) </font></p>
+                <br/>이용자는 다음 행위를 하여서는 안됩니다. <br>
+                <br/>
+                <br/>가. 신청 또는 변경시 허위 내용의 등록 <br>
+                <br/>나. 타인의 정보 도용 <br>
+                <br/>다. "사이트" 에 게시된 정보의 변경 <br>
+                <br/>라. "사이트" 이 정한 정보 이외의 정보(컴퓨터 프로그램 등) 등의 송신 또는 게시 <br>
+                <br/>마. "사이트" 기타 제3자의 저작권 등 지적재산권에 대한 침해 <br>
+                <br/>바. "사이트" 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위 <br>
+                <br/>사. 외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 몰에 공개 또는 게시하는 행위
+                <br/><br>
+                <br/>
+                <br/><p><font size="3" color="#111111">제21조 (포인트 적립) </font></p>
+                <br/>1. "사이트" 는 특정제품이나 서비스를 구입하는 경우 회원에게 탑텐몰 멤버쉽 포인트(이하 "포인트" )의 적립기회를 각 부여할 수 있습니다. 단, 포인트 적립의 구체적인 방법은 사이트의 운영정책에 따르며, 쿠폰사용 기타 할인을 적용한 제품을 구매한 경우에는 포인트 적립이 제한됩니다.<br>
+                <br/>
+                <br/>2. 회원의 상품구매 실적이 회원의 선량한 구매의도가 아닌 부정구매로 판단될 시 회원의 구매실적을 취소할 수 있으며, 이때 포인트의 누적을 제한할 수 있습니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제22조 (포인트 전환 및 사용) </font></p>
+                <br/>1. 제21조 및 제22조의 포인트 적립, 사용방법은 사이트의 운영정책에 따라 변경될 수 있으며, 구체적인 적립, 사용에 관하여는 사이트에서 회원이 알아보기 쉽도록 명시합니다. <br>
+                <br/>
+                <br/>2. 회원은 포인트를 타회원 또는 타인에게 양도하거나 담보로 제공할 수 없습니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제23조 (포인트 정정 및 취소, 소멸) </font></p>
+                <br/>1. 포인트 적립에 오류가 있는 경우 회원은 오류 발생 시점으로부터 60일 이내에 "사이트" 에 정정 신청을 하여야 하며, "사이트" 는 회원의 정정 신청일로부터 2개월 이내에 조정할 수 있습니다. 단, 회원은 이를 증명할 수 있는 포인트 매출 영수증 등을 제시하여야 합니다. <br>
+                <br/>
+                <br/>2. "사이트" 는 회원에게 부여한 포인트를 관리하고 운영하는 역할을 담당합니다. "사이트" 를 이용한 회원에게 발생한 포인트는 회사에서 인정한 후에 부여되는 것입니다. 따라서, 적립된 포인트라 할지라도 교환, 취소, 반품, 부정적립, 시스템의 오류 등에 의한 비정상적립 등 비인정사유가 발생한 것이 확인되는 경우 "사이트" 는 해당 포인트를 취소할 수 있습니다. <br>
+                <br/>
+                <br/>3. 전항과 관련하여 회원이 해당 포인트를 이미 사용한 때에는, 회원의 기적립된 포인트에서 사용분 만큼 차감됩니다. 만약, 회원의 기적립된 잔여 포인트가 부족한 경우 "사이트" 는 회원에게 반환을 요구할 수 있으며, 회원은 "사이트" 에게 취소된 포인트 상당의 금액을 현금으로 지급할 의무가 있습니다. <br>
+                <br/>
+                <br/>4. 포인트는 적립월로부터 24개월간 유효하며 유효기간 종료일까지 회원이 포인트를 이용한 실적이 없을 경우 적립된 포인트는 자동으로 소멸합니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제24조 (탈퇴, 자격상실 회원의 포인트)</font></p>
+                <br/>탈퇴(자격상실 포함)를 하고자 하는 회원은 탈퇴 요청일(또는 자격상실 효력발생일) 전까지 기 적립된 포인트를 사용하여야 하며, 탈퇴 요청일(또는 자격상실 효력발생일) 전까지 사용되지 않은 포인트는 자동 소멸합니다.
+                <br/><br>
+                <br/>
+                <br/><p><font size="3" color="#111111">제25조 (지급된 쿠폰의 사용, 소멸) </font></p>
+                <br/>1. 회원가입시 지급 쿠폰이나 생일 및 이벤트 당첨 그리고 고객 보상 성격으로 지급된 쿠폰은 발급일로부터 명시된 사용기일까지만 사용할 수 있으며, 정해진 기간 내 사용되지 않은 쿠폰은 자동 소멸합니다. <br>
+                <br/>
+                <br/>2. 기간이 경과된 쿠폰은 사용 및 쿠폰 재발급이 불가합니다. <br>
+                <br/>
+                <br/>3. 쿠폰소멸 이후 "사이트" 귀책에 의한 반품일 경우 환불일로부터 3일이내 재사용 가능합니다.<br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제26조 (연결 "사이트" 과 피연결 "사이트" 간의 관계) </font></p>
+                <br/>1. 상위 "사이트" 와 하위 "사이트" 가 하이퍼 링크(예: 하이퍼 링크의 대상에는 문자, 그림 및 동화상 등이 포함됨)방식 등으로 연결된 경우, 전자를 연결 "사이트" (웹사이트)이라고 하고 후자를 피연결 "사이트" (웹사이트)이라고 합니다. <br>
+                <br/>
+                <br/>2. 연결 "사이트" 는 피연결 "사이트" 이 독자적으로 제공하는 재화 등에 의하여 이용자와 행하는 거래에 대해서 보증책임을 지지 않는다는 뜻을 연결 "사이트" 의 초기화면 또는 연결되는 시점의 팝업화면으로 명시한 경우에는 그 거래에 대한 보증책임을 지지 않습니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제27조 (저작권의 귀속 및 이용제한) </font></p>
+                <br/>1. "사이트"가 작성한 저작물에 대한 저작권, 기타 지적재산권은 "사이트"에 귀속합니다. <br>
+                <br/>2. 이용자는 "사이트"를 이용함으로써 얻은 정보를 "사이트"의 사전 승낙없이 복제, 송신, 출판, 배포, 방송 기타 방법에 의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 안됩니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제28조 (분쟁해결) </font></p>
+                <br/>1. "사이트" 는 이용자가 제기하는 정당한 의견이나 불만을 반영하고 그 피해를 보상처리하기 위하여 고객센터를 설치,운영합니다.<br>
+                <br/>
+                <br/>2. "사이트" 는 이용자로부터 제출되는 불만사항 및 의견은 우선적으로 그 사항을 처리합니다. 다만, 신속한 처리가 곤란한 경우에는 이용자에게 그 사유와 처리일정을 즉시 통보해 드립니다. <br>
+                <br/>
+                <br/>3. "사이트" 와 이용자간에 발생한 전자상거래 분쟁과 관련하여 이용자의 피해구제신청이 있는 경우에는 공정거래위원회 또는 시•도지사가 의뢰하는 분쟁조정기관의 조정에 따를 수 있습니다.<br>
+                <br/>
+                <br/>4. 고객센터의 운영시간은 아래와 같습니다. <br><table class="left mt5"><colgroup><col width="25%"><col width="*"></colgroup><tbody><tr><th scope="row" class="first row">운영시간</th><td>평일 오전 10시 ~ 오후 5시 (토/일/공휴일 휴무)</td></tr><tr><th scope="row" class="first row">연락처</th><td>1600-3424</td></tr><tr><th scope="row" class="first row">팩스</th><td>0504-340-3424</td></tr></tbody></table>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">제29조 (재판권 및 준거법)</font></p>
+                <br/>1. "사이트" 와 이용자간에 발생한 전자상거래 분쟁에 관한 소송은 제소 당시의 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. <br>
+                <br/>다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다. <br>
+                <br/>
+                <br/>2. "사이트" 와 이용자간에 제기된 전자상거래 소송에는 한국법을 적용합니다. <br>
+                <br/>
+                <br/>
+                <br/>
+                <br/><p><font size="3" color="#111111">부칙</font></p>
+                <br/>이 약관은 2018년 1월 29일부터 적용됩니다. <br>
+                <br/>(공고일자 : 2018년 1월 29일 / 시행일자 : 2018년 1월 29일)
+                <br/><p><br></p></div>
+        </div>
+    </div>
+</div>
+<div class="layer layer_terms_02">
+    <div class="popup">
+        <div class="head">
+            <h1>개인정보 처리방침</h1>
+            <button type="button" name="button" class="btn_close popup_btn_close">close</button>
+        </div>
+        <div class="body">
+            <div class="policy-cnts">
+                신성통상 주식회사(이하 '회사'라고 함)는 회사가 운영하는 인터넷 사이트(www.topten10mall.com, www.topten10mall.co.kr, 이하 “사이트”라 함)를 이용하는 고객의 개인정보 및 권익을 보호하고 이와 관련된 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 개인정보처리방침을 두고 있습니다. 회사는 본 개인정보처리방침을 개정하는 경우 해당 웹사이트 공지사항(또는 개별공지)을 통해 변경내용을 공지 하겠습니다. <br/><br><br/><p><br/><font size="3" color="#111111">제1조. 개인정보의 수집 및 이용목적 </font><br/></p><br/><p><br/>회사는 개인정보를 다음 각 호의 목적을 위해 수집합니다. 수집한 개인정보는 다음의 목적 이외의 용도로는 사용되지 않으며 이용 목적이 변경될 시에는 개인정보 보호법 등 관련 법령에 따라 고객으로부터 별도의 사전 동의를 구할 예정입니다. <br><br/><br/>(1) 회원가입 및 관리(회원가입을 통한 계약의 성립) <br><br/>회원제 서비스 이용에 따른 본인확인, 개인 식별, 불량회원의 부정이용 방지, 가입의사 확인, 가입 및 가입횟수 제한, 회원자격 유지 관리, 서비스 부정이용 방지, 각종 고지 통지, 고충처리, 분쟁 조정을 위한 기록 보존, 불만처리, 민원 처리, 고지사항 전달 등 목적 <br><br/><br/>(2) 비회원 구매 서비스 제공 <br><br/>상품구매 및 결제, 물품배송 등 서비스 제공 목적 <br><br/><br/>(3) 서비스 및 재화 제공 <br><br/>물품배송, 오프라인 매장 방문 상품수령 서비스 제공, 청구서 발송, TOPTEN MALL 멤버쉽&nbsp;포인트 결제/적립, 구매, 기부, 콘텐츠 제공, 신상품 및 이벤트 정보 안내, 신규서비스, 맞춤서비스 제공, 본인인증, 연령인증, 요금결제 정산, 채권추심, 기타 입력 등 목적 <br><br/><br/>(4) 마케팅 및 광고 활용 <br><br/>당사의 상품 서비스 소개 , 고객 사은 행사 및 판촉 행사, 인구통계학적 특성에 따른 서비스 제공 및 광고 게재, 접속빈도 파악 또는 회원의 서비스 이용에 대한 통계, 제휴 서비스 안내. 이벤트 및 광고성 정보 제공 및 참여기회 제공 목적 <br><br/><br/>(5) 주문내역/고객 조회 및 매장 방문을 통한 구매상품 수령시 응대 목적<br> <br/><br/>(6) A/S 처리 : 구매 상품의 A/S 접수, 이력관리를 위한 목적 <br/><br><br/></p><br/><p><br/><font size="3" color="#111111">제2조. 수집하는 개인정보의 항목 및 수집 방법</font><br/></p><br/>(1) 개인정보 수집항목 <br><br/>1) 회사는 회원가입, 원활한 고객상담, 각종 서비스의 제공을 위해 아래와 같은 개인정보를 수집하고 있습니다. <br><table class="mt5 mb10"><colgroup><col width="21%"><col width="*"><col width="32%"></colgroup><thead><tr><th scope="col" class="first">구분</th><th scope="col">필수항목</th><th scope="col" class="last">선택항목</th></tr></thead><tbody><tr><td>TOPTEN MALL 회원</td><td class="ta_l">성명, 아이디, 생년월일, 성별, <br/>비밀번호, 휴대전화번호, E-MAIL,<br/>본인확인기관에서 제공하는 본인인증 결과값(CI/DI)<br/></td><td class="ta_l">일반전화번호, 선호브랜드, 주소, 키, 몸무게, 평소사이즈 등</td></tr><br/><tr><td>비회원</td><td class="ta_l">&nbsp;</td><td class="ta_l">성명, 주소, 전화번호, E-MAIL, <br/>결제정보, 비회원 결제 비밀번호, <br/>은행계좌 정보<br/></td></tr></tbody></table><br/>*네이버 간편회원 가입 시<br>[필수항목] 이용자 고유 식별자, 이름, 이메일<br>[선택항목] 성별, 생일, 연령대, 프로필사진, 별명<br/><br>*카카오 간편회원 가입 시<br>[필수항목] 프로필 정보(닉네임/프로필 사진), 성별, 카카오계정(전화번호), 출생 연도, 플러스친구 추가 상태 및 내역, 생일<br>[선택항목] 카카오계정(이메일), 연령대<br/><br>※네이버/카카오로부터 제공받은 정보는 회원가입 단계에만 이용하며, 회원가입이 진행되지 않은 경우 즉시 파기합니다. (당사는 회원가입 절차를 통해 고객이 동의한 경우에 한하여 개인정보를 보관합니다.)<br/><br><br/>2) 서비스 이용과정 또는 처리 과정에서 아래와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다. <br><br/>- 서비스 이용기록, 접속로그, 쿠키, 접속 IP정보, 디바이스 아이디, 앱아이디, 앱버전, 앱 인스톨날짜, 앱 업데이트 날짜, 디바이스명, OS명, OS 버전, <br/>네트워크 사업자 코드, 국가코드, 사용하는 언어 등 <br><br/><br/>3) 제품의 구매/물품배송 및 상담과정에서 아래와 같은 정보들이 생성/수집될 수 있습니다. <br><br/>- 구매, 교환, 환불, 수선, 상담이력, 배송의뢰인 및 수령인 성명, 전화번호, 휴대전화 번호, 주소 등 <br><br/>- 결제정보 : 은행계좌 정보, 신용카드 정보, 상품권정보 <br><br/><br/>(2) 수집 방법 <br><br/>- 온라인 및 모바일 홈페이지를 통한 회원가입 및 서비스 이용 <br><br/>- 기타 서면, 전화, 전자우편, 이벤트 응모 등<br/><br><br/><br/><p><br/><font size="3" color="#111111">제3조. 개인정보의 보유 및 이용 기간</font><br/></p><br/>회사는 고객의 개인정보 수집시, 동의 받은 기간 내에서 개인정보를 보유 및 이용합니다. 다만, 관계 법령의 규정에 따라 보존할 필요성이 있는 경우에는 관계법령에 따라 보존합니다. <br><br/><br/>(1) 고객으로 부터 동의 받은 개인정보의 처리 및 보유기간<br><table class="mt5 mb10"><colgroup><col width="40%"><col width="*"></colgroup><thead><tr><th scope="col" class="first">구분</th><th scope="col" class="last">개인정보의 처리 및 보유기간</th></tr></thead><tbody><tr><td>온라인 및 멤버십 회원 가입</td><td class="ta_l"><p>TOPTEN MALL 회원 <br><br/>- 회원탈퇴 후 6개월 까지 (부정이용 회원 재발 방지) <br><br/>- 관련 법령에 따라 1년간 이용실적이 없는 경우 휴면계정 처리 실시 <br></p></td></tr><tr><td>재화 또는 서비스의 제공</td><td class="ta_l">재화 또는 서비스의 공급 완료 및 요금결제 정산 완료 시 까지</td></tr><tr><td>고충 처리를 위한 내부 방침에 의한 정보 보유</td><td class="ta_l">AS, 수선, 반품, 심의, 예약판매 <br><br/>보존기간 : 3년<br/></td></tr><tr><td>부정 방지를 위한 내부 방침에 의한 정보 보유</td><td class="ta_l">이용약관에 따라 회원자격 상실 및 부정 이용 기록<br><br/>보존기간 : 5년<br/></td></tr></tbody></table><br/><br/>(2) 관련 법령에서 요구하는 개인정보 보유기간 <br><br/>상법 등 관련 법령의 규정에 의하여 보존할 필요가 있는 경우, 회사는 법령에서 정한 기간 동안 회원 정보를 보관합니다. <br/>이 경우 그 보관의 목적으로만 이용하며, 보존기간은 아래와 같습니다. <br><table class="mt5"><colgroup><col width="39%"><col width="*"><col width="15%"></colgroup><thead><tr><th scope="col" class="first">구분</th><th scope="col">보존근거</th><th scope="col" class="last">보존기간 </th></tr></thead><tbody><tr><td>표시/광고에 관한 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률 제6조 및 시행령 제6조<br/></td><td>6개월</td></tr><tr><td>계약 또는 청약철회 등에 관한 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률 제6조 및 시행령 제6조</td><td>5년</td></tr><tr><td>대금결제 및 재화 등의 공급에 관한 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률 제6조 및 시행령 제6조</td><td>5년</td></tr><tr><td>소비자의 불만 또는 분쟁처리에 관한 기록 </td><td>전자상거래 등에서의 소비자보호에 관한 법률 제6조 및 시행령 제6조</td><td>3년</td></tr><tr><td>접속에 관한 기록보존</td><td>통신비밀보호법 제15조의2 및 시행령 제41조 </td><td>3개월</td></tr><tr><td>거래기록 등을 보관해야 하는 경우</td><td>국세기본법</td><td>10년</td></tr></tbody></table><br/><br/><p><br/><font size="3" color="#111111">제4조. 개인정보 처리위탁 </font><br/></p><br/>회사는 원활하고 신속한 서비스 제공을 위해 필요한 경우 외부업체가 고객의 개인정보를 수집, 보관, 처리, 이용, 제공, 관리, 파기 등을 할 수 있도록 아래와 같이 개인정보업무를 외부에 위탁하여 운영하고 있습니다. <br><table class="mt5"><colgroup><col width="*"><col width="40%"></colgroup><thead><tr><th scope="col" class="first">수탁업체 위탁하는 업무내용</th><th scope="col" class="last">위탁업체</th></tr></thead><tbody><tr><td class="ta_l">결제정보전송(카카오 알림톡 및 SMS), 결제대행업무</td><td>㈜KG이니시스</td></tr><tr><td class="ta_l">본인인증 서비스, 아이핀 서비스</td><td>NICE평가정보㈜</td></tr><tr><td class="ta_l">물류서비스</td><td>㈜한진</td></tr><tr><td class="ta_l">문자메시지 발송</td><td>㈜LG U+<br>미디어로그㈜</td></tr><tr><td class="ta_l">콜센터 호 처리 및 녹취 파일 관리</td><td>에스케이브로드밴드주식회사</td></tr><tr><td class="ta_l">상품판매처리 및 배송을 위한 물류 대행</td><td>㈜에이션패션<br>㈜씨앤티스</td></tr><tr><td class="ta_l">상품배송완료 후 리뷰작성 서비스, 고객 맞춤형 상품/사이즈 추천서비스</td><td>㈜크리마팩토리</td></tr><tr><td class="ta_l">고객 상담</td><td>㈜미래휴넷시스템<br>엠비아이솔루션㈜</td></tr></tbody></table><br/><br/><p><br/><font size="3" color="#111111">제5조. 개인정보의 제 3자 제공</font><br/></p><br/>회사는 별도의 동의를 한 회원에 대하여 보다 더 높은 서비스 제공을 위해 아래와 같이 개인정보를 제공하고 있습니다.<br><table class="mt5"><colgroup><col width="40%"><col width="*"></colgroup><thead><tr><th scope="col" class="first">구분</th><th scope="col" class="last">개인정보 제공 내역</th></tr></thead><tbody><tr><td>개인정보 제공 받는자</td><td class="ta_l">제4조 개인정보 처리위탁 수탁업체</td></tr><tr><td>개인정보 제공 받는자의 이용 목적</td><td class="ta_l">제휴사 서비스 정보 제공, 사은행사, 판촉행사, 광고물 발송, 각종 마케팅 활동 및 통신 생활 서비스 상품 판매, TM, 이메일, SMS, 알림톡 활용</td></tr><tr><td>제공하는 개인정보 항목</td><td class="ta_l">성명, 주소, 연락처, e-mail</td></tr><tr><td>보유 및 이용기간</td><td class="ta_l">회원 탈퇴 후 6개월까지 <br><br/>* 다만, 아래의 경우에는 예외로 합니다. <br><br/>- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우<br/></td></tr></tbody></table><br/><br/><p><br/><font size="3" color="#111111">제6조. 개인정보 열람청구</font><br/></p><br/>고객은 개인정보 보호법 제35조에 따른 개인정보의 열람, 제공, 정정을 요구할 수 있습니다. <br><br/>(1) 회사가 가지고 있는 이용자의 개인정보 <br><br/>(2) 이용자 개인정보의 이용 및 제3자 제공 현황 <br><br/>(3) 회사에게 개인정보 수집 이용 제공 등의 동의를 한 현황 <br><br/>고객의 개인정보 열람 등 청구 업무가 신속하게 처리되도록 노력 하겠습니다. <br><br/><br/>개인정보 열람 관련 문의<br><table class="mt5"><colgroup><col width="40%"><col width="*"></colgroup><thead><tr><th scope="col" class="first">구분</th><th scope="col" class="last">상세</th></tr></thead><tbody><tr><td>담당부서</td><td>C/S 팀</td></tr><tr><td>대표번호</td><td>1600-3424 (유료)</td></tr><tr><td>전자우편</td><td>privacy@ssts.co.kr</td></tr></tbody></table><br/><p><br/><font size="3" color="#111111">제7조. 개인정보 자동 수집 장치의 설치•운영 및 그 거부에 관한 사항</font><br/></p><br/>(1) 회사는 이용자를 식별하고 회원의 로그인 상태를 유지하며, 이용자 개인별 맞춤 서비스를 제공하기 위해 이용자의 정보를 저장하고 수시로 불러오는 쿠키(Cookie)를 사용합니다. 쿠키는 웹사이트 서버가 이용자의 웹 브라우저에 전송하는 소량의 정보로서, 이용자의 컴퓨터 하드디스크에 저장됩니다. 이용자는 쿠키 설치에 대한 선택권을 가지고 있습니다. 이용자는 웹 브라우저의 설정을 통해 모든 쿠키를 허용/거부하거나, 쿠키가 저장될 때마다 확인을 거치도록 할 수 있습니다. 단, 쿠키의 저장을 거부할 경우에는 개인 맞춤서비스 등 회사가 제공하는 일부 서비스는 이용이 어려울 수 있습니다. <br><br/><br/>(2) 쿠키 설정 거부 방법은 다음과 같습니다. (Internet Explorer 기준) <br><br/>① [도구] 메뉴에서 [인터넷 옵션]을 선택합니다. <br><br/>② [개인정보 탭]을 클릭합니다. <br><br/>③ [개인정보취급 수준]을 설정하시면 됩니다.<br/><br><br/><br/><p><br/><font size="3" color="#111111">제8조. 개인정보의 파기 절차 및 방법</font><br/></p><br/>회사는 개인정보의 수집 및 이용목적이 달성되거나 보유기간 만료시 해당 개인정보를 파기합니다. 파기절차 및 방법은 다음과 같습니다. 단, 다른 법령에 의하여 해당 개인정보를 보존하여야 하는 경우는 예외로 합니다. <br><br/><br/>(1) 파기절차 <br><br/>이용자가 입력한 정보는 목적 달성 후 내부 방침 및 기타 관련 법령에 따라 일정기간 저장된 후 혹은 즉시 파기됩니다. 해당 개인정보는 법령에 의한 경우가 아니고서는 다른 목적으로 이용되지 않습니다. <br><br/><br/>(2) 파기기한 <br><br/>이용자의 개인정보는 개인정보의 보유기간이 경과된 경우에는 보유기간의 종료일로부터 5영업일 이내에, 개인정보의 처리 목적 달성, 해당 서비스의 폐지, 사업의 종료 등 그 개인정보가 불필요하게 되었을 때에는 개인정보의 처리가 불필요한 것으로 인정되는 날로부터 5영업일 이내에 그 개인정보를 파기합니다. <br><br/><br/>(3) 파기방법 <br><br/>전자적 파일 형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용합니다. 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다. <br/><br><br/><p><br/><font size="3" color="#111111">제9조. 개인정보의 안정성 확보 조치 </font><br/></p><br/>회사는 개인정보보호법 제29조에 따라 다음과 같이 안전성 확보에 필요한 기술적/관리적 및 물리적 조치를 하고 있습니다. <br><table class="mt5"><colgroup><col width="27%"><col width="*"></colgroup><thead><tr><th scope="col" class="first">항목</th><th scope="col" class="last">기술적/관리적 및 물리적 조치 내역</th></tr></thead><tbody><tr><td>개인정보 취급</td><td class="ta_l">직원의 최소화 및 교육 개인정보를 취급하는 직원을 지정하고 담당자에 한정시켜 최소화 하여 개인정보를 관리하는 대책을 시행하고 있습니다.<br/></td></tr><tr><td>정기적인 자체 감사 실시</td><td class="ta_l">개인정보 취급 관련 안정성 확보를 위해 정기적으로 자체 감사를 실시하고 있습니다.<br/></td></tr><tr><td>내부관리계획의 수립 및 시행</td><td class="ta_l">개인정보의 안전한 처리를 위하여 내부관리계획을 수립하고 시행하고 있습니다.<br/></td></tr><tr><td>개인정보의 암호화</td><td class="ta_l">이용자의 개인정보는 비밀번호는 암호화 되어 저장 및 관리되고 있어, 본인만이 알 수 있으며 중요한 데이터는 파일 및 전송 데이터를 암호화 하거나 파일 잠금 기능을 사용하는 등의 별도 보안기능을 사용하고 있습니다.<br/></td></tr><tr><td>해킹 등에 대비한 기술적 대책</td><td class="ta_l">회사는 해킹이나 컴퓨터 바이러스 등에 의한 개인정보 유출 및 훼손을 막기 위하여 보안프로그램을 설치하고 주기적인 갱신 점검을 하며 외부로부터 접근이 통제된 구역에 시스템을 설치하고 기술적/물리적으로 감시 및 차단하고 있습니다. </td></tr><tr><td>개인정보에 대한 접근 제한</td><td class="ta_l">개인정보를 처리하는 데이터베이스시스템에 대한 접근 권한의 부여,변경,말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다. </td></tr><tr><td>접속기록의 보관 및 위•변조 방지</td><td class="ta_l">개인정보처리시스템에 접속한 기록을 최소 6개월 이상 보관, 관리하고 있으며, 접속 기록이 위•변조 및 도난, 분실되지 않도록 보안기능 사용하고 있습니다. </td></tr><tr><td>문서보안을 위한 잠금장치 사용</td><td class="ta_l">개인정보가 포함된 서류, 보조저장매체 등을 잠금장치가 있는 안전한 장소에 보관하고 있습니다. </td></tr><tr><td>비인가자에 대한 출입 통제</td><td class="ta_l">개인정보를 보관하고 있는 물리적 보관 장소를 별도로 두고 이에 대해 출입통제 절차를 수립, 운영하고 있습니다. </td></tr><tr><td>개인정보 유효기간 제도</td><td class="ta_l">회사는 정보통신망 이용촉진 및 정보보호 등에 관한 법률 등 관계법령에 따라 장기간(1년)서비스 미이용자의 개인정보보호를 위하여 다른 이용자의 개인정보와 분리 및 휴면계정으로 전환하여 별도 관리합니다, 회사는 휴면계정 전환 30일 전에 전자우편 등을 통해 해당 이용자에게 관련내용을 공지합니다. 휴면계정으로 전환된 미이용자 개인정보는 해당 이용자의 요청시 그 목적에 맞게 제공될 수 있습니다 (사이트 접속 후 로그인시 계정 활성화).</td></tr></tbody></table><br/><br/><p><br/><font size="3" color="#111111">제10조. 개인정보보호책임자</font><br/></p><br/>이용자는 회사의 서비스를 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 처리하기 위하여 아래와 같이 개인정보보호책임자와 담당자를 지정하고 있습니다.<br><table class="mt5"><colgroup><col width="21%"><col width="*"><col width="37%"></colgroup><thead><tr><th scope="col" class="first">구분</th><th scope="col">개인정보보호 책임자(CPO)</th><th scope="col" class="last">개인정보보호 담당자</th></tr></thead><tbody><tr><td>성명</td><td>김영로</td><td><p>정재호</p></td></tr><tr><td>직책</td><td>경영기획실장(본부장) </td><td><p>E-Biz 운영팀장 </p></td></tr><tr><td>전화</td><td>1600-3424</td><td>1600-3424</td></tr><tr><td>전자우편</td><td>privacy@ssts.co.kr</td><td>privacy@ssts.co.kr</td></tr></tbody></table><br/><br/><p><br/><font size="3" color="#111111">제 11조. 권익침해 구제방법 </font><br/></p><br/>이용자는 아래의 기관에 대해 개인정보 침해에 대한 피해구제, 상담 등을 문의하실 수 있습니다. (당사의 자체적인 개인정보 불만처리, 피해구제 결과에 만족하지 못하시거나 보다 자세한 도움이 필요하신 경우 이용하여 주시기 바랍니다)<br><table class="mt5"><colgroup><col width="40%"><col width="*"></colgroup><thead><tr><th scope="col" class="first">문의처</th><th scope="col" class="last">업무내용 및 연락처</th></tr></thead><tbody><tr><td><p>개인정보보호 종합지원 포털(행정안전부)</p><br/><p>&nbsp;(한국인터넷진흥원 위탁운영)</p></td><td class="ta_l">- 소관업무 : 개인정보 침해사실 신고문의&nbsp;<br><br/>- 홈페이지 : http://www.privacy.go.kr <br><br/>- 전화번호 : (국번없이) 118</td></tr><tr><td>개인정보침해 신고센터(한국인터넷진흥원 운영)</td><td class="ta_l">- 소관업무 : 개인정보 침해사실 신고, 상담 신청 <br><br/>- 홈페이지 : https://privacy.kisa.or.kr <br><br/>- 전화번호 : (국번없이) 118<br/></td></tr><tr><td>경찰청 사이버안전국</td><td class="ta_l"><p>- 소관업무 : 개인정보 침해 관련 형사사건 문의 및 신고 <br><br/>- 홈페이지 : http://cyberbureau.police.go.kr/index.do <br><br/>- 전화번호 : (경찰민원 콜센터) 182</p></td></tr></tbody></table><p><font size="3" color="#111111"><br></font></p><br/><p><font size="3" color="#111111">제12조. 개인정보 처리방침 변경 고지</font><br/></p><br/>(1) 개인정보 처리방침은 정부의 정책, 법령, 회사의 필요에 의하여 변경될 수 있으며, 내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전에 홈페이지 게시, 전자우편 등을 통해 사전 공지하고, 사전 공지가 곤란한 경우 최대한 빠른 시간 내 공지할 것입니다. <br><br/>(2) 이전의 개인정보 처리방침은 아래에서 확인하실 수 있습니다. <br/><br><br><div><p><br/>- 시행일자 : 2020년 10월 07일</p><br/><p><br></p></div><br/>◈&nbsp;<a href="https://www.topten10mall.com/kr/front/customer/noticeView.do?lettNo=100" target="_blank">이전 개인정보 처리방침 보기 (개인정보처리방침 변경일자 : 2020.10.07)</a><br><br/>◈&nbsp;<a href="https://www.topten10mall.com/kr/front/customer/noticeView.do?lettNo=89" target="_blank">이전 개인정보 처리방침 보기 (개인정보처리방침 변경일자 : 2020.01.01)</a><br><br/>◈&nbsp;<a href="https://www.topten10mall.com/kr/front/customer/noticeView.do?lettNo=87" target="_blank">이전 개인정보 처리방침 보기 (개인정보처리방침 변경일자 : 2019.12.11)</a><br><br/>◈&nbsp;<a href="https://www.topten10mall.com/kr/front/customer/noticeView.do?lettNo=79" target="_blank">이전 개인정보 처리방침 보기 (개인정보처리방침 변경일자 : 2019.04.01)</a><br><br/>◈&nbsp;<a href="https://www.topten10mall.com/kr/front/customer/noticeView.do?lettNo=74" target="_blank">이전 개인정보 처리방침 보기 (개인정보처리방침 변경일자 : 2019.03.01)</a><br><br/>◈&nbsp;<a href="https://www.topten10mall.com/kr/front/customer/noticeView.do?lettNo=73" target="_blank">이전 개인정보 처리방침 보기 (개인정보처리방침 변경일자 : 2019.01.01)</a><br><br/>◈&nbsp;<a href="https://www.topten10mall.com/kr/front/customer/noticeView.do?lettNo=66" target="_blank">이전 개인정보 처리방침 보기 (개인정보처리방침 변경일자 : 2018.01.29)</a><p><br></p><br/><p><br></p></div>
+        </div>
+    </div>
+</div><!-- //Layer -->
+</body>
+<script type="text/javascript" src="/m/front/js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/m/front/js/libs/jquery.uniform.js"></script>
+<script type="text/javascript" src="/m/front/js/libs/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="/m/front/js/libs/jquery.bxslider.min.js"></script>
+
+<script type="text/javascript" src="/m/front/js/libs/jquery.mask.min.js"></script>
+<script type="text/javascript" src="/m/front/js/libs/jquery.form.min.js"></script>
+<script type="text/javascript" src="/m/front/js/libs/jquery.blockUI.js"></script>
+<script type="text/javascript" src="/m/front/js/libs/jquery/validation-Engine-2.6.2/js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="/m/front/js/libs/jquery/validation-Engine-2.6.2/js/languages/jquery.validationEngine-ko.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type="text/javascript" src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="/m/front/js/cookie.js?v=2"></script>
+<script type="text/javascript" src="/m/front/js/common.js?v=3"></script>
+<script type="text/javascript" src="/m/front/js/storm.js?v=2"></script>
+<script type="text/javascript" src="/m/front/js/custom.js?v=2"></script>
+<script type="text/javascript" src="/m/front/js/layer.js?v=3"></script>
+<script type="text/javascript" src="/m/front/js/ssts.js?v=2"></script>
+<script type="text/javascript" src="/m/front/js/sdk.js?v=3"></script>
+<script type="text/javascript" src="/m/front/js/paging.js?v=2"></script>
+<script type="text/javascript" src="/m/front/js/datepicker.js?v=2"></script>
+<script type="text/javascript" src="/m/front/js/libs/instagram/instafeed.min.js"></script>
+<script type="text/javascript" src="/m/front/js/instagram.js"></script>
+<script type="text/javascript" src="/m/kr/front/djs/jsVar.js?v=1"></script>
+<script type="text/javascript" src="/m/kr/front/djs/linkJS.js?v=6"></script>
+<script type="text/javascript" src="/m/kr/front/djs/memberJS.js?v=2"></script>
+<script type="text/javascript" src="/m/front/js/libs/swiper.min.js?v=1"></script>
+<!--<script type="text/javascript" src="https://imgp.topten10mall.com/com/product/js/custom.js?v=1"></script>-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        srchRatelyWord();
+        // $('ul.search-area').bxSlider({
+        //     infiniteLoop: false,
+        //     responsive: false,
+        //     slideWidth: 300,
+        //     minSlides: 1,
+        //     maxSlides: 3,
+        //     pager: false,
+        //     controls: false
+        // });
+    });
+
+    function srchRatelyWord(){
+        var wordList = getCookie('LATELY_WORD');
+        var items = wordList ? wordList.split(/::/) : new Array();//검색어 구분
+        var itemsCnt = items.length;
+        var html = "";
+
+        for(var i=0; i < itemsCnt; i++){
+            var attr = items[i];//검색어 구분
+            var tempHtml = '';
+            tempHtml += '<li>';
+            tempHtml += '    <a href="#none" onclick="view_searchWord(this);" data-search-word="' + attr + '">' + attr + '</a>';
+            tempHtml += '    <a href="#none" class="del" onclick="deleteCookie(\'' + attr + '\')"></a>';
+            tempHtml += '</li>';
+            html +=tempHtml;
+        }
+        // $("#ulLatelyWord").html(html);
+    }
+
+    function deleteCookie(name) {
+        var wordList = getCookie('LATELY_WORD');
+        var items = wordList ? wordList.split(/::/) : new Array();//검색어 구분
+        var itemsCnt = items.length;
+        var refreshWord = '';
+
+        for(var i=0; i<itemsCnt; i++){
+            var tempItem = items[i];//검색어 구분
+            if(tempItem !== name.replace(/\</g, "&lt;").replace(/\>/g, "&gt;")) {
+                refreshWord += tempItem + "::";
+            }
+        }
+
+        // replace 시키기 위해 일부러 마지막에 한번더 붙인다
+        if(itemsCnt > 0 && refreshWord != '') {
+            refreshWord += "::";
+        }
+        setCookie('LATELY_WORD', refreshWord.replace(/::::/gi, ''), '', cookieServerName);
+
+        srchRatelyWord();
+    }
+</script></html>

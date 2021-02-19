@@ -116,6 +116,9 @@ jQuery(document).ready(function(){
         $('#form_id_order_info').submit();
     });
 
+    $('.search-center .search-layer .search-layer__close').on('click', function () {
+        searchLayerBeforeFunc();
+    });
 });
 
 // magazine, store 상단 브랜드 텝 제어
@@ -131,10 +134,32 @@ function logout(){
     Storm.FormUtil.submit(Constant.dlgtMallUrl + '/front/login/logout.do', {});
 }
 
+var searchLayerBefore = $('.search-center .search-area'),
+    searchLayerAfter = $('.search-center .search-layer');
+function searchLayerBeforeFunc() {    // 최근 검색어, 인기검색어, 최근본상품 레이어 오픈
+    searchLayerAfter.addClass('hidden');
+}
+function searchLayerAfterFunc() {   // 관련검색어 추천 카테고리 레이어 오픈
+    searchLayerAfter.removeClass('hidden');
+}
+function headerInputKeyup(target) { // 검색 단어 입력 시 함수
+    var $this = $(target);
+    var thisValLen = $this.val().length;
+    if ( thisValLen > 0 ) {
+        searchLayerAfterFunc();
+    } else {
+        searchLayerBeforeFunc();
+    }
+}
 //상단 상품검색 SearchWord 초기화
-function init_focus() {
+function init_focus(target) {   // 검색 창 포커스 함수
+    var headerSearchInputValLen = $(target).val().length;
     $('#searchWord').val('');
     $('#searchLink').val('');
+
+    if ( headerSearchInputValLen > 0 ) {
+        searchLayerAfterFunc();
+    }
 }
 
 //상단 인기검색어
