@@ -1,0 +1,44 @@
+@import "//fonts.googleapis.com/earlyaccess/notosanskr.css";
+#container.aside .aside_wrap.event aside nav { margin-bottom: 86px; }
+
+#event > h2 { font-family: "Open Sans", sans-serif; font-size: 22px; color: #111; font-weight: 600; height: 115px; line-height: 115px; }
+#event > h2.bdb { border-bottom: 1px solid #e5e5e5; }
+#event .rolling_wrap { margin: 0; }
+#event .event_list { border-bottom: 1px solid #e5e5e5; }
+#event .event_list:last-child { border: none; }
+#event .event_list:last-child .pagination { /* 20180116 add */ padding-bottom: 0; }
+#event .event_list h4 { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 24px; line-height: 100%; text-align: center; padding: 94px 0 57px; }
+#event .event_list .pagination { /* 20180116 add */ padding: 24px 0 86px; box-sizing: content-box; }
+#event .special_list { overflow: hidden; margin-right: -45px; }
+#event .special_list:after { display: block; clear: both; content: ''; }
+#event .special_list li { position: relative; width: 374px; margin-right: 12px; float: left; margin-bottom: 97px; }
+#event .special_list li img { display: block; width: 100%; margin-bottom: 27px; }
+#event .special_list li ul.tagList { position: absolute; top: 15px; }
+#event .special_list li ul.tagList li { width: auto; float: left; padding: 3px 9px; margin: 0 0 0 15px; color: white; font-size: 15px; }
+#event .special_list li ul.tagList li + li { margin-left: 8px; }
+#event .special_list li p { /* 20180212 edit */ }
+#event .special_list li p strong { display: block; font-size: 14px; margin-bottom: 9px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 20px; }
+#event .special_list li p span { display: block; font-size: 12px; color: #999; }
+
+.event .family_brand h3 { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 20px; color: #222; }
+.event .family_brand div { font-size: 0; }
+.event .family_brand div a { display: inline-block; width: 296px; }
+.event .family_brand div a.center { margin: 0 11px; }
+
+.cal_area .head { overflow: hidden; padding-top: 55px; margin-bottom: 34px; }
+.cal_area .head h4 { font-family: "Open Sans", sans-serif; font-weight: 700; font-size: 40px; line-height: 40px; float: left; }
+.cal_area .head .today { float: right; text-align: right; font-size: 0; }
+.cal_area .head .today p { font-size: 14px; display: inline-block; margin-right: 30px; line-height: 40px; vertical-align: top; }
+.cal_area .head .today p span { color: #c69c6d; }
+.cal_area .head .today button { display: inline-block; vertical-align: top; }
+.cal_area table { table-layout: fixed; border-collapse: collapse; }
+.cal_area table th { border-top: 6px solid #111; position: relative; height: 52px; font-family: "Open Sans", sans-serif; font-weight: 700; font-size: 16px; }
+.cal_area table th:after { content: ''; display: block; width: 1px; height: 6px; background-color: #fff; position: absolute; top: -6px; right: 0; }
+.cal_area table td { border: 1px solid #e5e5e5; height: 152px; vertical-align: top; }
+.cal_area table td span { display: block; font-family: "Open Sans", sans-serif; font-weight: 700; font-size: 24px; line-height: 100%; padding: 16px 0 7px 20px; }
+.cal_area table td img { display: block; margin: 0 auto; }
+.cal_area .event_notice { padding-bottom: 96px; margin: 36px 0 60px 0; border-bottom: 1px solid #e5e5e5; }
+.cal_area .event_notice li { line-height: 20px; position: relative; padding-left: 41px; color: #666; }
+.cal_area .event_notice li:before { display: block; content: '.'; position: absolute; top: -7px; left: 30px; font-size: 20px; }
+
+/*# sourceMappingURL=event.css.map */

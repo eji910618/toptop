@@ -1,0 +1,33 @@
+#about { /* brand_wrap 20171219 edit */ }
+#about .brand_wrap { margin-top: -31px; }
+#about .brand_wrap .brand { overflow: hidden; }
+#about .brand_wrap .brand > div { float: left; width: 50%; }
+#about .brand_wrap .brand > div.img .andz { padding: 140px 190px 82px; }
+#about .brand_wrap .brand > div.img .edition { padding: 182px 145px 82px; }
+#about .brand_wrap .brand > div.img .wml { padding: 110px 190px 82px }
+#about .brand_wrap .brand > div.img .male24365, #about .brand_wrap .brand > div.img .olzen { padding: 182px 185px 82px; }
+#about .brand_wrap .brand > div.img .polham, #about .brand_wrap .brand > div.img .polhamkids, #about .brand_wrap .brand > div.img .projectm { padding: 125px 184px 82px; }
+#about .brand_wrap .brand > div.img .topten, #about .brand_wrap .brand > div.img .toptenkids { padding: 149px 215px 82px; }
+#about .brand_wrap .brand > div.img .ziozia { padding: 182px 190px 82px; }
+#about .brand_wrap .brand > div.txt { padding-top: 92px; }
+#about .brand_wrap .brand > div.txt p { font-size: 18px; color: #111; line-height: 30px; }
+#about .brand_wrap .brand > div.txt div { margin: 25px 0 0; color: #666; line-height: 20px; }
+#about .brand_wrap .brand > div.txt strong { color: #111; display: block; }
+#about .store_wrap { position: relative; margin-top: -4px; }
+#about .store_wrap .txt_total { font-size: 16px; }
+#about .store_wrap .txt_total span { color: #ff0000; }
+#about .store_wrap .sort { top: -6px; }
+#about .store_wrap .sort .dropdown { width: 120px; /* 20171025 added */ }
+#about .store_wrap .sort .dropdown.group2 > button { min-width: 118px; }
+#about .store_list { margin-top: 28px; margin-bottom: 96px; border-top: 1px solid #111; }
+#about .store_list ul li { border-bottom: 1px solid #e5e5e5; }
+#about .store_list ul li .txt_wrap { position: relative; padding: 30px; }
+#about .store_list ul li .txt_wrap a { display: inline-block; }
+#about .store_list ul li .txt_wrap span { display: block; color: #666; line-height: 20px; }
+#about .store_list ul li .txt_wrap span.store { margin-bottom: 10px; font-size: 14px; color: #111; }
+#about .store_list ul li .txt_wrap span.store:after { content: ''; display: inline-block; width: 12px; height: 16px; margin-left: 10px; margin-top: 3px; background: url("/front/img/andz/common/spr_common.png") -100px -50px no-repeat; vertical-align: top; }
+#about .store_list ul li .txt_wrap .service { position: absolute; top: 50%; right: 55px; width: 175px; margin-top: -20px; }
+#about .store_list ul li .map_wrap { display: none; overflow: hidden; height: 450px; background: #eee; margin-bottom: 30px; }
+#about .store_list ul li.on .map_wrap { display: block; }
+
+/*# sourceMappingURL=about.css.map */

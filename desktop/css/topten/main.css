@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* 인트로 */
+body.intro_active { overflow: hidden; }
+
+.intro_rolling { position: fixed; top: 0; left: 0; width: 100%; overflow: hidden; z-index: 100; }
+.intro_rolling .intro_visual { position: relative; overflow: hidden; z-index: 1; }
+.intro_rolling .intro_visual .bx-wrapper { overflow: hidden; }
+.intro_rolling .intro_visual .bx-viewport { z-index: 10; }
+.intro_rolling .intro_visual .bx-viewport ul { height: 100%; overflow: hidden; }
+.intro_rolling .intro_visual .bx-viewport ul li { height: 100%; overflow: hidden; overflow: hidden; z-index: 1; float: left; width: 100%; }
+.intro_rolling .intro_visual .bx-pager { bottom: 116px; }
+.intro_rolling .intro_visual .visual { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: -1; }
+.intro_rolling .intro_visual .txt_area { position: relative; top: 50%; margin-top: -50px; text-align: center; z-index: 100; }
+.intro_rolling .intro_visual .txt_area p { display: block; margin-bottom: 50px; }
+.intro_rolling .intro_visual .txt_area a { display: inline-block; font-family: "Montserrat", sans-serif; font-size: 20px; color: #fff; }
+.intro_rolling .intro_visual .txt_area a:after { content: ''; display: block; width: 100%; height: 1px; margin-top: 3px; background: #fff; }
+.intro_rolling .intro_movie { overflow: hidden; height: 100%; }
+.intro_rolling .intro_movie .movier .intro_cover { background-repeat: no-repeat; background-position: center center; background-size: cover; width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 5; }
+.intro_rolling .intro_movie .movier .btn_play { position: absolute; left: 50%; top: 50%; width: 60px; height: 60px; margin-left: -30px; margin-top: -30px; background: url("/front/img/toptenkids/common/spr_slider.png") -140px 0 no-repeat; text-indent: -9999px; }
+.intro_rolling .intro_movie .movier .background_video { position: absolute; left: 50%; }
+.intro_rolling .bx-wrapper .bx-controls-direction { position: static; left: 0; top: 0; margin: 0; }
+.intro_rolling .bx-wrapper .bx-controls-direction a { top: 50%; margin-top: -18px; }
+.intro_rolling .bx-wrapper .bx-controls-direction a.bx-prev { left: 40px; }
+.intro_rolling .bx-wrapper .bx-controls-direction a.bx-next { right: 40px; }
+@media (min-width: 1470px) { .intro_rolling .bx-wrapper .bx-controls-direction { width: auto; margin-left: 0; } }
+.intro_rolling .intro_close { position: absolute; bottom: 55px; left: 0; width: 100%; text-align: center; z-index: 100; }
+.intro_rolling .intro_close a { color: #fff; border-bottom: 1px solid #fff; display: inline-block; font-size: 13px; line-height: 20px; letter-spacing: -1px; }
+.intro_rolling .intro_sec_close { position: absolute; top: 30px; right: 30px; background: url("/front/img/toptenkids/common/spr_common.png") -250px 0 no-repeat; display: block; width: 36px; height: 37px; overflow: hidden; line-height: 500px; z-index: 7; }
+.intro_rolling.fadeout { -webkit-transition: all 400ms cubic-bezier(0.6, 0, 0.735, 0.045); /* older webkit */ -webkit-transition: all 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045); -moz-transition: all 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045); -o-transition: all 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045); transition: all 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045); /* easeInBack */ -webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.735, 0.045); /* older webkit */ -webkit-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); -moz-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); -o-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); /* easeInBack */ opacity: 0; top: -200px; pointer-events: none; }
+
+/* main_rolling */
+.main_rolling { max-width: 1920px; min-width: 1200px; margin: 0 auto; overflow: hidden; }
+.main_rolling .main_visual li { overflow: hidden; }
+.main_rolling .main_visual li > a { display: block; }
+.main_rolling .main_visual li > span { position: relative; display: block; height: 600px; }
+.main_rolling .main_visual li > span .img_wrap { position: relative; z-index: 50; }
+.main_rolling .main_visual li > span .mov_cont { position: absolute; left: 0; top: 0; width: 100%; height: 600px; }
+.main_rolling .main_visual li > span .mov_cont iframe { width: 100%; height: 600px; }
+.main_rolling .main_visual li > span .btn_play { position: absolute; left: 50%; bottom: 270px; width: 60px; height: 60px; margin-left: -30px; background: url("/front/img/toptenkids/common/spr_slider.png") -140px 0 no-repeat; text-indent: -9999px; z-index: 50; }
+.main_rolling .main_visual .img_wrap { height: 600px; background-repeat: no-repeat; background-position: center top; }
+.main_rolling .bx-wrapper .bx-controls-direction a { position: absolute; top: 50%; width: 65px; height: 66px; margin-top: -20px; background: url("/front/img/ssts/common/spr_slider.png?v=5") 0 0 no-repeat; text-indent: -9999px; z-index: 100; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-prev { left: 240px; background-position: 0 -116px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-next { right: 240px; background-position: -73px -116px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-prev:hover { background-position: 0 -190px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-next:hover { background-position: -73px -190px; }
+
+/* bx-wrapper */
+.bx-wrapper { position: relative; }
+.bx-wrapper .bx-controls-direction a { position: absolute; top: 50%; width: 21px; height: 38px; margin-top: -19px; background: url("/front/img/toptenkids/common/spr_slider.png") 0 0 no-repeat; text-indent: -9999px; z-index: 100; }
+.bx-wrapper .bx-controls-direction a.disabled { display: none; }
+.bx-wrapper .bx-controls-direction a.bx-prev { left: 150px; }
+.bx-wrapper .bx-controls-direction a.bx-next { right: 150px; background-position: -40px 0; }
+.bx-wrapper .bx-pager { position: absolute; bottom: 30px; width: 100%; height: 12px; text-align: center; z-index: 100; }
+.bx-wrapper .bx-pager .bx-pager-item { display: inline-block; margin: 0 5px; }
+.bx-wrapper .bx-pager .bx-pager-item a { display: block; width: 12px; height: 12px; background: url("/front/img/toptenkids/common/spr_slider.png") 0 0 no-repeat; text-indent: -9999px; }
+.bx-wrapper .bx-pager .bx-pager-item a.bx-pager-link { background-position: -20px -80px; }
+.bx-wrapper .bx-pager .bx-pager-item a.active { background-position: 0 -80px; }
+
+.title_h2 { padding: 26px 0 36px; font-family: "Open Sans", sans-serif; text-align: center; }
+.title_h2 > span { position: relative; display: inline-block; line-height: 26px; font-weight: bold; padding: 0 24px; background: #fff; z-index: 2; }
+.title_h2:after { content: ''; display: block; position: relative; bottom: 17px; width: 100%; height: 1px; background: #111; z-index: 1; }
+
+.main_suggest { overflow: hidden; width: 1200px; margin: 55px auto 0; }
+.main_suggest > div { float: left; width: 590px; }
+.main_suggest > div + div { margin-left: 20px; }
+.main_suggest .img img { width: 100%; }
+.main_suggest .suggest { padding-bottom: 14px; border: 1px solid #e4e4e4; border-top: 0 none; }
+.main_suggest .suggest .tit { padding: 20px 0 28px; text-align: center; letter-spacing: -0.06vw; }
+.main_suggest .suggest .tit strong { display: block; margin-bottom: 6px; font-family: "Open Sans", Apple SD Gohic Neo, sans-serif; font-size: 25px; }
+.main_suggest .suggest .tit span { font-size: 16px; font-family: "Open Sans", Apple SD Gohic Neo, sans-serif; color: #666; }
+.main_suggest .suggest .thumbnail-list { margin-bottom: 0; padding: 0 29px; }
+.main_suggest .suggest .thumbnail-list ul li { width: 160px; height: auto; margin: 0 0 0 25px; height: 320px; }
+.main_suggest .suggest .thumbnail-list ul li:first-child { margin: 0; }
+.main_suggest .suggest .thumbnail-list ul li .prd-img { overflow: hidden; height: 218px; }
+
+.main_feature { overflow: hidden; width: 1200px; margin: 35px auto 0; }
+.main_feature .title_h2 { padding: 40px 0 33px; font-size: 26px; font-weight: bold; text-align: center; }
+.main_feature .rolling { text-align: center; margin-bottom: 30px;}
+.main_feature .rolling ul { position: relative; display: inline-block; padding: 0 30px; background: #fff; z-index: 2; }
+.main_feature .rolling li { display: inline; }
+.main_feature .rolling li a { position: relative; display: inline-block; margin: 0 10px; color: #999; vertical-align: top; font-size: 18px; font-weight: bold; }
+.main_feature .rolling li a::before { position: absolute; position: absolute; bottom: 0; left: 0; width: 100%; width: 0; height: 1px; background-color: #fff; content: ' '; overflow: hidden; -webkit-transition: all ease-in-out 0.3s; -moz-transition: all ease-in-out 0.3s; -ms-transition: all ease-in-out 0.3s; -o-transition: all ease-in-out 0.3s; transition: all ease-in-out 0.3s; }
+.main_feature .rolling li a.on { color: #111; }
+.main_feature .rolling li a.on::before { width: 100%; background-color: #111; }
+
+.main_magazine {width: 1200px; margin: 80px auto 0;}
+.main_magazine h2 { font-size: 26px; font-weight: bold; text-align: center; }
+.main_magazine ul { overflow: hidden; }
+.main_magazine li { position: relative; width: 592px; height: 505px; float: left; border: 1px solid #e4e4e4; margin-bottom: 50px;}
+.main_magazine li:nth-child(2n) { margin-left: 16px; }
+.main_magazine li a img { width: 100%;}
+.main_magazine li .txts { position: absolute; bottom: -14px; left: 0; width: 100%; font-family: "Open Sans", Apple SD Gothic Neo, sans-serif; font-size: 18px; line-height: 31px; color: black; letter-spacing: -0.05px; padding-left: 2vw; }
+.main_magazine li .txts span { font-size: 24px; font-weight: 600; display: block; }
+.main_magazine li .txts2 { right: 0px; float: right; font-size: 13px; bottom: 20px; margin-top: 54px; margin-right: 22px; }
+
+.event_banner {max-width: 1200px; margin: 67px auto 0;}
+.event_banner .banner {position: relative;}
+.event_banner .banner + .banner { margin-top: 20px; }
+.event_banner .banner a { display: block; position: relative; overflow: hidden; }
+.event_banner .banner .txts { position: absolute; top: 50px; left: 200px; color: #fff; }
+.event_banner .banner .txts > p { font-family: "Playfair Display", serif; font-size: 40px; line-height: 42px; letter-spacing: 2px; }
+.event_banner .banner .txts > p span { display: block; }
+.event_banner .banner .txts > span { display: inline-block; margin-top: 18px; font-family: "Open Sans", sans-serif; font-size: 20px; }
+
+.main_video { clear: both; max-width: 1200px; margin: 67px auto 0; overflow: hidden; }
+.main_video h2 { font-size: 26px; font-weight: bold; text-align: center; padding-bottom: 0; }
+.main_video h2 b { font-family: "Open Sans", sans-serif; font-weight: 600; }
+.main_video h2 i { font-size: 14px; color: #666; margin-top: 8px; font-family: "Open Sans", sans-serif; }
+.main_video .movie { position: relative; height: 674px; width: 1200px; overflow: hidden; }
+.main_video .movie a.vod_cover { display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.main_video .movie a.vod_cover .vod_btn { display: block; position: absolute; left: 50%; top: 50%; margin: -30px 0 0 -30px; width: 60px; height: 60px; overflow: hidden; line-height: 500px; background: url("/front/img/ziozia/common/spr_slider.png") -140px 0 no-repeat; }
+
+.youtube-movie { position: relative; height: 0; padding-bottom: 56.25%; height: 100%; }
+.youtube-movie iframe { position: absolute; width: 100%; height: 100%; left: 0; }
+
+/* instagram */
+.main_instagram {width: 1200px; margin: 0 auto; position: relative;}
+.main_instagram .title_h2 span { padding: 69px 24px 15px; font-size: 26px; font-weight: bold; text-align: center; }
+.main_instagram .title_h2 i { font-size: 12px; display: block; }
+.main_instagram .title_h2 i a { display: inline-block; height: 26px; background: url(/desktop/img/ssts/main/icon_instagram.png) no-repeat 0 0; padding-left: 35px; }
+.main_instagram .title_h2:after { bottom: 55px;}
+.main_instagram ul { overflow: hidden; }
+.main_instagram ul li { float: left; width: 232px; }
+.main_instagram ul li img { width: 100%; height: 210px;}
+.main_instagram ul li + li { margin-left: 10px; }
+.main_instagram .more { text-align: center; padding-top: 35px; }
+.main_instagram .more a { font-size: 14px; font-weight: bold; line-height: 20px; display: inline-block; border-bottom: 1px solid #111; }
+
+/*# sourceMappingURL=main.css.map */

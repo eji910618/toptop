@@ -1,0 +1,37 @@
+#magazine > h2 { width: 1140px; margin: 0 auto; }
+#magazine > h2.tit_h2 { position: relative; z-index: 2; background-color: #fff; width: 1140px; height: 65px; overflow: hidden; border: 0; }
+#magazine > h2.tit_h2::before { width: 1140px; margin: 0 auto; content: 'NEWS'; display: block; height: 65px; border-bottom: 1px solid #e5e5e5; }
+
+#container .inner { width: auto; }
+#container .view_wrap { position: relative; z-index: 1; }
+#container .view_wrap .cont_area { position: relative; z-index: 1; }
+#container .sub_title { width: 1140px; margin: 0 auto; position: relative; z-index: 1; background-color: #fff; width: auto; }
+#container .sub_title .back { left: 50%; margin-left: -570px; }
+
+#container .prd_with_list { width: 1140px; margin: 0 auto; }
+#container .view_nav { width: 1140px; margin: 0 auto; }
+
+.aside_next_slide { float: center; position: relative; }
+.aside_next_slide .bx-controls-direction a { display: block; overflow: hidden; text-indent: -9999px; width: 22px; height: 39px; background: url("/front/img/olzen/web/common/spr_product.png") -50px 0 no-repeat; background-image: url(https://www.topten10mall.com/front/img/olzen/common/spr_product.png); position: absolute; top: 50%; left: 50px; margin-top: -20px; z-index: 2; }
+.aside_next_slide .bx-controls-direction a.bx-next { background-position: -100px 0; left: auto; right: 50px; }
+/*.aside_next_slide .bx-wrapper { height: 700px; }*/
+.aside_next_slide .bx-wrapper .bx-viewport ul { text-align: center; }
+.aside_next_slide .bx-wrapper .bx-pager { position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; }
+.aside_next_slide .bx-wrapper .bx-pager .bx-pager-item { display: inline; }
+.aside_next_slide .bx-wrapper .bx-pager .bx-pager-item a { display: inline-block; margin: 0 4px; line-height: 500px; overflow: hidden; width: 10px; height: 10px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 1px solid #111; background: none; }
+.aside_next_slide .bx-wrapper .bx-pager .bx-pager-item a.active { background-color: #111; }
+
+/* news 정의 */
+.overflow_hidden {overflow: hidden;}
+.hover_megascope img {transition: 2s;} .hover_megascope:hover img {transform:scale(1.1);}
+.hover_change img.hover_img_show {display: none;} .hover_change:hover img.hover_img_show {display: inline;} .hover_change img.hover_img_hide {display: inline;} .hover_change:hover img.hover_img_hide {display: none;}
+
+/* 이미지 슬라이드 임시 */
+.img_move_left { position: relative; -webkit-animation: ani_move_left 15s infinite; -webkit-animation-timing-function: linear; animation: ani_move_left 15s infinite; animation-timing-function: linear;}
+@-webkit-keyframes ani_move_left {from {right: 0vw;} to {right: 7630px;}}
+@keyframes ani_move_left {from {right: 0vw;} to {right: 7630px;}}
+
+ul.img_transition {position: relative;}
+ul.img_transition li {position: absolute; display: inline; opacity: 0; transition: opacity 1s;} ul.img_transition li.action {opacity: 1;}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,173 @@
+@charset "UTF-8";
+/* 인트로 */
+body.intro_active { overflow: hidden; }
+
+/* 20171023 edit start */
+.intro_rolling { position: fixed; top: 0; left: 0; width: 100%; overflow: hidden; z-index: 100; }
+.intro_rolling .intro_visual { position: relative; overflow: hidden; z-index: 1; }
+.intro_rolling .intro_visual .bx-wrapper { overflow: hidden; }
+.intro_rolling .intro_visual .bx-viewport { z-index: 10; }
+.intro_rolling .intro_visual .bx-viewport ul { height: 100%; overflow: hidden; }
+.intro_rolling .intro_visual .bx-viewport ul li { height: 100%; overflow: hidden; overflow: hidden; z-index: 1; float: left; width: 100%; }
+.intro_rolling .intro_visual .bx-pager { bottom: 116px; }
+.intro_rolling .intro_visual .visual { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: -1; }
+.intro_rolling .intro_visual .txt_area { position: relative; top: 50%; margin-top: -50px; text-align: center; z-index: 100; }
+.intro_rolling .intro_visual .txt_area p { display: block; margin-bottom: 50px; }
+.intro_rolling .intro_visual .txt_area a { display: inline-block; font-family: "Cantata One", serif; font-size: 20px; color: #fff; }
+.intro_rolling .intro_visual .txt_area a:after { content: ''; display: block; width: 100%; height: 1px; margin-top: 3px; background: #fff; }
+.intro_rolling .intro_movie { overflow: hidden; height: 100%; }
+.intro_rolling .intro_movie .movier .intro_cover { background-repeat: no-repeat; background-position: center center; background-size: cover; width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 5; }
+.intro_rolling .intro_movie .movier .btn_play { position: absolute; left: 50%; top: 50%; width: 60px; height: 60px; margin-left: -30px; margin-top: -30px; background: url("/front/img/ziozia/common/spr_slider.png") -140px 0 no-repeat; text-indent: -9999px; }
+.intro_rolling .intro_movie .movier .background_video { position: absolute; left: 50%; }
+.intro_rolling .bx-wrapper .bx-controls-direction { position: static; left: 0; top: 0; margin: 0; }
+.intro_rolling .bx-wrapper .bx-controls-direction a { top: 50%; margin-top: -18px; }
+.intro_rolling .bx-wrapper .bx-controls-direction a.bx-prev { left: 40px; }
+.intro_rolling .bx-wrapper .bx-controls-direction a.bx-next { right: 40px; }
+@media (min-width: 1470px) { .intro_rolling .bx-wrapper .bx-controls-direction { width: auto; margin-left: 0; } }
+.intro_rolling .intro_close { /*position: absolute;
+left: 50%;
+bottom: 40px;
+width: 37px;
+height: 20px;
+@include bg_spr_slider(-80px);
+margin-left: -19px;
+text-indent: -9999px;
+cursor: pointer;
+z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-align: center; z-index: 100; }
+.intro_rolling .intro_close a { color: #fff; border-bottom: 1px solid #fff; display: inline-block; font-size: 13px; line-height: 20px; letter-spacing: -1px; }
+.intro_rolling .intro_sec_close { position: absolute; top: 30px; right: 30px; background: url("/front/img/ziozia/common/spr_common.png") -250px 0 no-repeat; display: block; width: 36px; height: 37px; overflow: hidden; line-height: 500px; z-index: 7; }
+.intro_rolling.fadeout { -webkit-transition: all 400ms cubic-bezier(0.6, 0, 0.735, 0.045); /* older webkit */ -webkit-transition: all 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045); -moz-transition: all 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045); -o-transition: all 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045); transition: all 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045); /* easeInBack */ -webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.735, 0.045); /* older webkit */ -webkit-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); -moz-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); -o-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); /* easeInBack */ opacity: 0; top: -200px; pointer-events: none; }
+
+/* 20171023 edit end */
+/* 메인 상단 롤링 */
+.main_rolling { overflow: hidden; }
+.main_rolling .main_visual li { overflow: hidden; }
+.main_rolling .main_visual li > a { display: block; }
+.main_rolling .main_visual li > span { position: relative; display: block; height: 600px; }
+.main_rolling .main_visual li > span .img_wrap { position: relative; z-index: 50; }
+.main_rolling .main_visual li > span .mov_cont { position: absolute; left: 0; top: 0; width: 100%; height: 600px; }
+.main_rolling .main_visual li > span .mov_cont iframe { width: 100%; height: 600px; }
+.main_rolling .main_visual li > span .btn_play { position: absolute; left: 50%; bottom: 270px; width: 60px; height: 60px; margin-left: -30px; background: url("/front/img/ziozia/common/spr_slider.png") -140px 0 no-repeat; text-indent: -9999px; z-index: 50; }
+.main_rolling .main_visual .img_wrap { height: 600px; background-repeat: no-repeat; background-position: center top; }
+.main_rolling .bx-wrapper .bx-controls-direction a { position: absolute; top: 50%; width: 65px; height: 66px; margin-top: -20px; background: url("/front/img/ssts/common/spr_slider.png?v=5") 0 0 no-repeat; text-indent: -9999px; z-index: 100; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-prev { left: 240px; background-position: 0 -116px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-next { right: 240px; background-position: -73px -116px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-prev:hover { background-position: 0 -190px; }
+.main_rolling .bx-wrapper .bx-controls-direction a.bx-next:hover { background-position: -73px -190px; }
+
+.bx-wrapper { position: relative; }
+.bx-wrapper .bx-controls-direction { position: absolute; left: 50%; top: 50%; max-width: 1920px; width: 100%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); z-index: 60; }
+.bx-wrapper .bx-controls-direction a { position: absolute; top: 0; width: 20px; height: 37px; background: url("/front/img/ziozia/common/spr_slider.png") 0 0 no-repeat; text-indent: -9999px; z-index: 100; }
+.bx-wrapper .bx-controls-direction a.disabled { display: none; }
+.bx-wrapper .bx-controls-direction a.bx-prev { left: 150px; }
+.bx-wrapper .bx-controls-direction a.bx-next { right: 150px; background-position: -40px 0; }
+.bx-wrapper .bx-pager { position: absolute; bottom: 28px; width: 100%; text-align: center; z-index: 100; }
+.bx-wrapper .bx-pager .bx-pager-item { display: inline-block; margin: 0 5px; }
+.bx-wrapper .bx-pager .bx-pager-item a { display: block; width: 13px; height: 13px; background: url("/front/img/ziozia/common/spr_slider.png") 0 0 no-repeat; text-indent: -9999px; }
+.bx-wrapper .bx-pager .bx-pager-item a.bx-pager-link { background-position: -20px -60px; }
+.bx-wrapper .bx-pager .bx-pager-item a.active { background-position: 0 -60px; }
+
+.main_suggest { width: 1140px; margin: 40px auto 0; }
+.main_suggest a { float: left; width: 550px; height: 620px; overflow: hidden; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+.main_suggest a .wrp { width: 550px; height: 620px; display: table-cell; vertical-align: middle; text-align: center; }
+.main_suggest a .wrp * { display: block; }
+.main_suggest a .wrp b { font-family: "Cantata One", serif; font-size: 40px; line-height: 1; margin: 0 140px; }
+.main_suggest a .wrp i { font-size: 20px; margin: 40px 100px 0; }
+.main_suggest a + a { margin-left: 40px; }
+.main_suggest a.wt .wrp { color: #fff; }
+.main_suggest:after { display: block; clear: both; content: ''; }
+
+.main_online { width: 1140px; margin: 150px auto 0; position: relative; }
+.main_online h2 { text-align: center; font-size: 20px; padding-bottom: 55px; }
+.main_online h2 * { display: block; }
+.main_online h2 b { font-family: "Open Sans", sans-serif; font-weight: 600; }
+.main_online h2 i { font-size: 14px; color: #666; margin-top: 8px; }
+.main_online .thumbnail-only { float: left; width: 640px; height: 820px; overflow: hidden; color: #fff; position: relative; text-align: center; /* 20171023 edited start */ /* 20171023 edited end */ }
+.main_online .thumbnail-only h3 { width: 640px; height: 820px; display: table-cell; vertical-align: middle; font-family: "Cantata One", serif; font-size: 40px; }
+.main_online .thumbnail-only h3 * { display: block; margin: 0 120px; }
+.main_online .thumbnail-only h3 i { font-family: "Open Sans", sans-serif; font-size: 16px; font-weight: 400; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.main_online .thumbnail-only h3 b { /* 20171023 edited */ margin-top: 10px; line-height: 54px; max-height: 270px; overflow: hidden; }
+.main_online .thumbnail-only .h3_etc { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
+.main_online .thumbnail-only .h3_etc a { display: block; width: 100%; height: 100%; background-color: transparent; line-height: 200%; color: transparent; }
+.main_online .thumbnail-list { width: auto; height: 820px; margin: 0 0 0 680px; overflow: visible; }
+.main_online .thumbnail-list ul li { margin: 0 0 0 10px; }
+.main_online:after { display: block; clear: both; content: ''; }
+
+.main_feature { margin-top: 108px; }
+.main_feature:after { display: block; clear: both; content: ''; }
+.main_feature ul.title-list { text-align: center; }
+.main_feature ul.title-list li { display: inline; }
+.main_feature ul.title-list li a { font-family: "Open Sans", sans-serif; font-size: 20px; font-weight: 600; line-height: 25px; display: inline-block; margin: 0 10px; vertical-align: top; position: relative; }
+.main_feature ul.title-list li a::before { position: absolute; position: absolute; bottom: 0; left: 0; width: 100%; width: 0; height: 1px; background-color: #fff; content: ' '; overflow: hidden; -webkit-transition: all ease-in-out 0.3s; -moz-transition: all ease-in-out 0.3s; -ms-transition: all ease-in-out 0.3s; -o-transition: all ease-in-out 0.3s; transition: all ease-in-out 0.3s; }
+.main_feature ul.title-list li a.on::before { width: 100%; background-color: #111; }
+.main_feature ul.title-list li + li::before { display: inline-block; content: ' '; width: 1px; height: 25px; background-color: #ddd; vertical-align: top; margin-right: 15px; margin-left: 11px; }
+.main_feature .thumbnail-list { width: 1140px; margin: 0 auto; overflow: hidden; padding-top: 45px; /*&.l-group {
+	display: none;
+}*/ /*.bx-wrapper .bx-pager {
+	bottom: auto;
+	top: 0;
+	.bx-pager-item {
+		margin: 0;
+	}
+}*/ }
+.main_feature .thumbnail-list ul { width: 1150px; margin-right: 0; }
+.main_feature .thumbnail-list ul li { margin-right: 10px; }
+.main_feature .thumbnail-list.l-group:first-child { display: block; }
+
+.main_movie { clear: both; max-width: 1400px; margin: 100px auto 0; overflow: hidden; }
+.main_movie h2 { text-align: center; font-size: 20px; padding-bottom: 55px; }
+.main_movie h2 * { display: block; }
+.main_movie h2 b { font-family: "Open Sans", sans-serif; font-weight: 600; }
+.main_movie h2 i { font-size: 14px; color: #666; margin-top: 8px; }
+.main_movie .movie { position: relative; height: 567px; width: 1400px; left: 50%; margin-left: -700px; overflow: hidden; }
+.main_movie .movie .youtube-movie iframe { margin-top: -110px; }
+.main_movie .movie a.vod_cover { display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+.main_movie .movie a.vod_cover .vod_btn { display: block; position: absolute; left: 50%; top: 50%; margin: -30px 0 0 -30px; width: 60px; height: 60px; overflow: hidden; line-height: 500px; background: url("/front/img/ziozia/common/spr_slider.png") -140px 0 no-repeat; }
+
+.youtube-movie { position: relative; height: 0; padding-bottom: 56.25%; }
+.youtube-movie iframe { position: absolute; width: 100%; height: 100%; left: 0; }
+
+.main_magazine { width: 1140px; margin: 150px auto 0; overflow: hidden; }
+.main_magazine:after { display: block; clear: both; content: ''; }
+.main_magazine h2 { width: 1140px; text-align: center; font-size: 20px; padding-bottom: 55px; }
+.main_magazine h2 * { display: block; }
+.main_magazine h2 b { font-family: "Open Sans", sans-serif; font-weight: 600; }
+.main_magazine h2 i { font-size: 14px; color: #666; margin-top: 8px; }
+.main_magazine ul { float: left; width: 1180px; margin-top: -40px; }
+.main_magazine ul li { float: left; width: 550px; margin: 40px 40px 0 0; }
+.main_magazine ul li a { display: block; position: relative; }
+.main_magazine ul li a img { display: block; width: 550px; height: 454px; }
+.main_magazine ul li a .txts { display: block; margin: -135px 80px 0; background-color: #fff; position: relative; padding: 40px 40px 10px; min-height: 135px; }
+.main_magazine ul li a .txts i, .main_magazine ul li a .txts b { font-family: "Open Sans", sans-serif; display: block; }
+.main_magazine ul li a .txts i { color: #999; font-size: 16px; font-weight: 400; }
+.main_magazine ul li a .txts b { font-size: 26px; font-weight: 600; line-height: 1; margin-top: 15px; }
+.main_magazine ul li a .txts span { font-size: 18px; display: block; margin-top: 10px; line-height: 24px; }
+.main_magazine ul li:first-child { width: 1140px; }
+.main_magazine ul li:first-child a img { width: 1140px; height: 450px; }
+.main_magazine ul li:first-child a .txts { margin: 0; position: absolute; right: 0; bottom: 40px; padding-bottom: 70px; min-height: 0; width: 450px; }
+.main_magazine ul li:first-child a .txts span { max-height: 72px; overflow: hidden; }
+
+.main_recommend { width: 1140px; margin: 130px auto 0; overflow: hidden; }
+.main_recommend:after { display: block; clear: both; content: ''; }
+.main_recommend h2 { text-align: center; font-size: 20px; padding-bottom: 55px; }
+.main_recommend h2 * { display: block; }
+.main_recommend h2 b { font-family: "Open Sans", sans-serif; font-weight: 600; }
+.main_recommend h2 i { font-size: 14px; color: #666; margin-top: 8px; }
+.main_recommend .thumbnail-list ul { width: 1150px; margin-right: 0; }
+.main_recommend .thumbnail-list ul li { margin-right: 10px; }
+
+.main_instagram { width: 1142px; margin: 90px auto 0; overflow: hidden; }
+.main_instagram:after { display: block; clear: both; content: ''; }
+.main_instagram h2 { text-align: center; font-size: 20px; padding-bottom: 55px; }
+.main_instagram h2 * { display: block; }
+.main_instagram h2 b { font-family: "Open Sans", sans-serif; font-weight: 600; }
+.main_instagram h2 i { font-size: 14px; color: #666; margin-top: 8px; }
+.main_instagram h2 i a { color: #666; display: inline-block; height: 26px; background: url(/front/img/ziozia/main/icon_instagram.png) no-repeat 0 0; padding-left: 35px; }
+.main_instagram ul { overflow: hidden; }
+.main_instagram ul li { float: left; width: 220px; }
+.main_instagram ul li img { width: 100%; }
+.main_instagram ul li + li { margin-left: 10px; }
+.main_instagram .more { text-align: center; padding-top: 35px; }
+.main_instagram .more a { font-size: 14px; font-weight: bold; line-height: 20px; display: inline-block; border-bottom: 1px solid #111; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,99 @@
+@charset "UTF-8";
+#etc { /* search_result 20171206 edit */ }
+#etc .search_engine { position: relative; padding: 50px 0 55px; border-bottom: 1px solid #e5e5e5; }
+#etc .search_engine h2 { position: absolute; top: 59px; left: 234px; font-family: "Open Sans", sans-serif; font-size: 22px; color: #111; font-weight: 600; }
+#etc .search_engine .engine { position: relative; width: 450px; height: 48px; margin: 0 auto; padding: 13px 45px 0 20px; border: 1px solid #111; }
+#etc .search_engine .engine input { border: 0; font-size: 16px; width: 100%; height: 20px; padding-left: 0; vertical-align: top; }
+#etc .search_engine .engine button { position: absolute; top: 14px; right: 13px; }
+#etc .search_engine .engine button i { display: block; background: url("/front/img/ziozia/common/spr_search.png") no-repeat 0 0; width: 21px; height: 20px; line-height: 500px; overflow: hidden; }
+#etc .search_engine .popular { margin-top: 27px; text-align: center; }
+#etc .search_engine .popular span { display: inline-block; margin-right: 2px; color: #666; }
+#etc .search_engine .popular a { display: inline-block; margin-left: 12px; text-decoration: underline; vertical-align: top; }
+#etc .search_result > p { margin: 56px 0 38px; font-size: 16px; text-align: center; }
+#etc .search_result > p span { text-decoration: underline; }
+#etc .search_result .result { overflow: hidden; margin-bottom: 60px; background: #f4f4f4; }
+#etc .search_result .result:after { display: block; clear: both; content: ''; }
+#etc .search_result .result > div { float: left; width: 50%; padding: 27px 30px; border-right: 1px solid #fff; }
+#etc .search_result .result > div:nth-child(2n) { border: 0; margin-left: -1px; border-left: 1px solid #fff; }
+#etc .search_result .result > div:nth-child(2n+1) { clear: both; }
+#etc .search_result .result > div > span { display: block; margin-bottom: 2px; color: #666; }
+#etc .search_result .result > div > a { display: inline-block; margin-right: 10px; font-size: 14px; vertical-align: top; }
+#etc .search_result .result > div > a:hover { text-decoration: underline; }
+#etc .search_result .search_list { margin-bottom: 20px; }
+#etc .another_result > div { position: relative; margin-top: 56px; padding-top: 53px; border-top: 1px solid #e5e5e5; /* slide_no 20171208 added */ }
+#etc .another_result > div h3 { margin-bottom: 32px; font-family: "Open Sans", sans-serif; font-size: 20px; color: #111; font-weight: 600; text-align: center; }
+#etc .another_result > div .total { position: absolute; top: 60px; left: 65px; color: #999; }
+#etc .another_result > div .total em { color: #111; }
+#etc .another_result > div .slide { position: relative; }
+#etc .another_result > div .slide .bx-wrapper { margin: 0 auto; }
+#etc .another_result > div .slide .bx-wrapper ul li img { width: 230px; height: 230px; }
+#etc .another_result > div .slide .bx-wrapper ul li span { display: block; }
+#etc .another_result > div .slide .bx-wrapper ul li span.tit { overflow: hidden; margin: 17px 0 4px; color: #373737; display: -webkit-box; display: -ms-flexbox; display: box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+#etc .another_result > div .slide .bx-wrapper ul li span.date { color: #999; }
+#etc .another_result > div .slide .bx-wrapper .bx-controls-direction a { position: absolute; top: 100px; width: 22px; height: 40px; background: url("/front/img/ziozia/common/spr_slider.png") 0 0 no-repeat; text-indent: -9999px; z-index: 100; }
+#etc .another_result > div .slide .bx-wrapper .bx-controls-direction a.disabled { display: none; }
+#etc .another_result > div .slide .bx-wrapper .bx-controls-direction a.bx-prev { left: 0; background-position: -40px -60px; }
+#etc .another_result > div .slide .bx-wrapper .bx-controls-direction a.bx-next { right: 0; background-position: -80px -60px; }
+#etc .another_result > div .slide_no { text-align: center; font-size: 16px; line-height: 1.4; color: #999; padding: 45px 0; }
+
+/* 20171019 추가 시작 */
+.etc_login_area { margin: 30px 170px 0; padding-bottom: 35px; }
+.etc_login_area:after { display: block; clear: both; content: ''; }
+.etc_login_area ul.ttl-wrap li { float: left; width: 50%; }
+.etc_login_area ul.ttl-wrap li a { display: block; font-size: 15px; font-weight: bold; line-height: 74px; color: #999; border-bottom: 1px solid #e5e5e5; text-align: center; }
+.etc_login_area ul.ttl-wrap li a.on { color: #111; border-color: #111; }
+.etc_login_area .conts-wr-l { float: left; width: 50%; margin-top: 40px; }
+.etc_login_area .conts-wr-l .conts { display: none; }
+.etc_login_area .conts-wr-l .conts.mem-conts { display: block; }
+.etc_login_area .conts-wr-l .conts .frm-cont { position: relative; margin-right: 60px; }
+.etc_login_area .conts-wr-l .conts .frm-cont .ipt-row { padding: 7px 10px; /* 20180125 edit */ border: 1px solid #ccc; margin-right: 88px; }
+.etc_login_area .conts-wr-l .conts .frm-cont .ipt-row input { padding: 0; border: 0; font-size: 12px; width: 100%; height: 20px; /* 20180125 edit */ vertical-align: top; }
+.etc_login_area .conts-wr-l .conts .frm-cont .ipt-row + .ipt-row { margin-top: 8px; }
+.etc_login_area .conts-wr-l .conts .frm-cont .chk-row { float: left; margin-top: 15px; font-size: 13px; line-height: 20px; }
+.etc_login_area .conts-wr-l .conts .frm-cont .chk-row input + label { padding-left: 30px; }
+.etc_login_area .conts-wr-l .conts .frm-cont .btn-row { position: absolute; right: 0; top: 0; }
+.etc_login_area .conts-wr-l .conts .frm-cont .btn-row button { color: #fff; background-color: #111; width: 80px; height: 80px; font-size: 14px; font-weight: bold; }
+.etc_login_area .conts-wr-l .conts .frm-cont .link-row { text-align: right; padding-top: 13px; line-height: 20px; }
+.etc_login_area .conts-wr-l .conts .frm-cont .link-row i + i::before { content: '|'; color: #ddd; margin: 0 15px 0 12px; font-size: 15px; }
+.etc_login_area .conts-wr-l .conts .frm-cont .link-row a { font-size: 11px; color: #666; text-decoration: underline; }
+.etc_login_area .conts-wr-l .conts .sal-cont { margin: 30px 60px 0 0; padding: 30px 0 0 140px; border-top: 1px solid #e5e5e5; position: relative; text-align: right; }
+.etc_login_area .conts-wr-l .conts .sal-cont span { position: absolute; left: 0; top: 30px; font-size: 13px; color: #666; line-height: 28px; }
+.etc_login_area .conts-wr-l .conts .sal-cont a.sa-bt { display: inline-block; width: 27px; height: 27px; overflow: hidden; line-height: 500px; background: url("/front/img/ziozia/common/spr_sns.png") no-repeat 0 0; }
+.etc_login_area .conts-wr-l .conts .sal-cont a.sa-bt.sa-kt { background-position: -32px 0; }
+.etc_login_area .conts-wr-l .conts .sal-cont a.sa-bt.sa-nv { background-position: -64px 0; }
+.etc_login_area .conts-wr-l .conts .sal-cont a.sa-bt.sa-gp { background-position: -96px 0; }
+.etc_login_area .conts-wr-l .conts .sal-cont a.sa-bt + a.sa-bt { margin-left: 1px; }
+.etc_login_area .conts-wr-l .conts .uli-cont { margin-top: 35px; line-height: 20px; }
+.etc_login_area .conts-wr-l .conts .uli-cont span { display: block; font-size: 13px; }
+.etc_login_area .conts-wr-l .conts .uli-cont ul { margin-top: 10px; color: #999; }
+.etc_login_area .conts-wr-l .conts .uli-cont ul li { padding-left: 10px; position: relative; }
+.etc_login_area .conts-wr-l .conts .uli-cont ul li::before { content: '.'; position: absolute; left: 0; top: -5px; font-weight: bold; }
+.etc_login_area .conts-wr-r { float: left; width: 50%; margin-top: 40px; margin-left: -1px; border-left: 1px solid #e5e5e5; padding-bottom: 15px; }
+.etc_login_area .conts-wr-r .conts { margin-left: 60px; }
+.etc_login_area .conts-wr-r .conts .ttl-tx { font-family: "Open Sans", sans-serif; font-weight: 300; font-style: noraml; font-size: 24px; line-height: 1.1; padding-top: 5px; }
+.etc_login_area .conts-wr-r .conts .ttl-tx b { font-weight: 600; display: block; }
+.etc_login_area .conts-wr-r .conts .cont-tx { margin-top: 20px; color: #666; line-height: 20px; }
+.etc_login_area .conts-wr-r .conts a.btn-tx { display: inline-block; margin-top: 40px; border-bottom: 1px solid #111; padding-bottom: 3px; font-size: 15px; }
+
+/* etc_policy_area 20180222 edit */
+.etc_policy_area { width: 900px; margin: 60px auto 0; line-height: 1.5; min-height: 550px; font-size: 13px; color: #666; }
+.etc_policy_area strong, .etc_policy_area b { font-weight: bold; }
+.etc_policy_area strong *, .etc_policy_area b * { font-weight: bold; }
+.etc_policy_area table { text-align: center; border-top: 1px solid #e5e5e5; width: 100%; }
+.etc_policy_area table.left { text-align: left; }
+.etc_policy_area table th { color: #111; background-color: #f8f8f8; }
+.etc_policy_area table th, .etc_policy_area table td { border-bottom: 1px solid #e5e5e5; padding: 8px 15px; font-size: 12px; }
+.etc_policy_area table th.first, .etc_policy_area table td.first { border-left: 1px solid #e5e5e5; }
+.etc_policy_area table th.last, .etc_policy_area table td.last { border-right: 1px solid #e5e5e5; }
+.etc_policy_area table th.row, .etc_policy_area table td.row { border-right: 1px solid #e5e5e5; }
+.etc_policy_area table thead th { font-size: 11px; }
+.etc_policy_area a { color: #666; text-decoration: underline; }
+
+/* 20171019 추가 끝 */
+/* etc_error_area 20171208 added */
+.etc_error_area { width: 900px; margin: 0 auto; padding: 45px 0 160px; }
+.etc_error_area p { font-size: 13px; line-height: 22px; margin-top: 20px; color: #666; }
+.etc_error_area p a { vertical-align: baseline; text-decoration: underline; }
+.etc_error_area p.big { font-size: 20px; line-height: 1.4; color: #111; font-weight: bold; }
+
+/*# sourceMappingURL=etc.css.map */

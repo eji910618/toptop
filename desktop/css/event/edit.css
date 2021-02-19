@@ -1,0 +1,84 @@
+.cont_area div {position: relative; width: 100%;}
+.cont_area div.inside {position: absolute; margin: 0 auto;}
+.cont_area div.center {position: absolute; margin: 0 auto; left: -50%; right: -50%;}
+.cont_area img {width: 100%;}
+
+.sub #magazine.inner { width: auto; }
+.sub #magazine .tit_h2 { border-bottom: 0 none; margin-bottom: 0; width: 1140px; margin: 0 auto; }
+.sub #magazine .sub_title { width: 1140px; margin: 0 auto; }
+.sub #magazine .prd_with_list { width: 1140px; margin: 100px auto 0; }
+.sub #magazine .view_nav { width: 1140px; margin: 0 auto; }
+
+.pointer:hover {cursor: pointer;}
+
+/* news 정의 */
+.overflow_hidden {overflow: hidden;}
+.hover_megascope img {transition: 2s;} .hover_megascope:hover img {transform:scale(1.1);}
+.hover_change img.hover_img_show {display: none;} .hover_change:hover img.hover_img_show {display: inline;} .hover_change img.hover_img_hide {display: inline;} .hover_change:hover img.hover_img_hide {display: none;}
+
+/* 이미지 슬라이드 임시 */
+.img_move_left { position: relative; -webkit-animation: ani_move_left 15s infinite; -webkit-animation-timing-function: linear; animation: ani_move_left 15s infinite; animation-timing-function: linear;}
+@-webkit-keyframes ani_move_left {from {right: 0vw;} to {right: 7630px;}}
+@keyframes ani_move_left {from {right: 0vw;} to {right: 7630px;}}
+
+.img_move_right { position: relative; -webkit-animation: ani_move_right 15s infinite; -webkit-animation-timing-function: linear; animation: ani_move_right 15s infinite; animation-timing-function: linear;}
+@-webkit-keyframes ani_move_right {from {right: 7630px;} to {right: 0vw;}}
+@keyframes ani_move_right {from {right: 7630px;} to {right: 0vw;}}
+
+.ed_board_area .ed_board {overflow: hidden; height: 0;}
+
+/* 선택영역 마우스 오버시 팝업 보이기 */
+.ed_hover_view {position: relative;}
+.ed_hover_view .ed_pop {display: none;}
+.ed_hover_view .ed_pop.active {display: block;}
+/* 선택영역 클릭시 팝업 보이기 */
+.ed_click_view {position: relative;}
+.ed_click_view .ed_pop {display: none; z-index: 1;}
+.ed_click_view .ed_pop.active {display: block;}
+.ed_click_view .ed_pop.active .ed_close {position: absolute; top: 0; right: 0; cursor: pointer;}
+
+/* retate animation */
+.ed_hover_ani_rotate {-webkit-animation: ani_rotate 1s infinite; -webkit-animation-timing-function: linear; animation: ani_rotate 1s infinite; animation-timing-function: linear;}
+@-webkit-keyframes ani_rotate { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+@keyframes ani_rotate { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+
+/* slide */
+.ed_slide { float: center; position: relative; }
+.ed_slide .bx-controls-direction a { display: block; overflow: hidden; text-indent: -9999px; width: 22px; height: 39px; background: url("/front/img/olzen/web/common/spr_product.png") -50px 0 no-repeat; background-image: url(https://www.topten10mall.com/front/img/olzen/common/spr_product.png); position: absolute; top: 50%; left: 50px; margin-top: -20px; z-index: 2; }
+.ed_slide .bx-controls-direction a.bx-next { background-position: -100px 0; left: auto; right: 50px; }
+.ed_slide .bx-wrapper .bx-viewport ul { text-align: center; }
+.ed_slide .bx-wrapper .bx-pager { position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; }
+.ed_slide .bx-wrapper .bx-pager .bx-pager-item { display: inline; }
+.ed_slide .bx-wrapper .bx-pager .bx-pager-item a { display: inline-block; margin: 0 4px; line-height: 500px; overflow: hidden; width: 10px; height: 10px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 1px solid #111; background: none; }
+.ed_slide .bx-wrapper .bx-pager .bx-pager-item a.active { background-color: #111; }
+.ed_slide.pager_out .bx-wrapper .bx-pager {bottom: -25px;}
+.ed_slide.controls_out .bx-controls-direction a.bx-prev {left: -50px;}
+.ed_slide.controls_out .bx-controls-direction a.bx-next {right: -50px;}
+.ed_slide .bx-has-controls-direction, .ed_slide .bx-controls-direction {position: unset;}
+
+/* clock */
+.cont_area .flip-clock-wrapper {width: 38%; margin: 0 auto; height: 100%;}
+.cont_area .flip-clock-wrapper .flip-clock-divider {margin: 0; height: 100%; margin-left: 1%;}
+.cont_area .flip-clock-wrapper ul {width: 13.35%; height: 100%; margin: 0 0.7%;}
+.cont_area .flip-clock-wrapper ul li {line-height: 120%;}
+.cont_area .flip-clock-wrapper ul li a div div.inn {font-size: 0.8em; font-weight: normal;}
+.cont_area .flip-clock-wrapper ul li a div.up:after {top: 98%;}
+.cont_area .flip-clock-divider .flip-clock-label {font-size: 20px; font-weight: bold; }
+.cont_area .flip-clock-divider.days .flip-clock-label {right: -103px;}
+.cont_area .flip-clock-divider.hours .flip-clock-label {right: -107px;}
+.cont_area .flip-clock-divider.minutes .flip-clock-label {right: -118px;}
+.cont_area .flip-clock-divider.seconds .flip-clock-label {right: -120px;}
+.cont_area .flip-clock-dot {width: 6px; height: 6px;}
+.cont_area .flip-clock-dot.top {top: 24%;}
+.cont_area .flip-clock-dot.bottom {bottom: 24%;}
+@media screen and (min-width: 1500px) { 
+	.cont_area .flip-clock-wrapper ul li a div div.inn { font-size: 1em; } 
+	.cont_area .flip-clock-wrapper ul li {line-height: 7vw;}
+	.cont_area .flip-clock-divider.days .flip-clock-label {right: -7vw;}
+	.cont_area .flip-clock-divider.hours .flip-clock-label {right: -6.7vw;}
+	.cont_area .flip-clock-divider.minutes .flip-clock-label {right: -7.2vw;}
+	.cont_area .flip-clock-divider.seconds .flip-clock-label {right: -7.3vw;}
+}
+.cont_area .clock-day.flip-clock-wrapper {width: 50%;}
+.cont_area .clock-day.flip-clock-wrapper ul {width: 10%;}
+.cont_area .clock-day.flip-clock-wrapper .flip-clock-divider {margin-left: 0;}

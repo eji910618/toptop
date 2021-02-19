@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.hidden {display: none;}
+.blind { position: absolute; left: -9999em; }
+.layer.layer_alert .popup, .layer.layer_confirm .popup {width: 350px; min-height: 200px; margin: -125px 0 0 -175px;}
+.layer.layer_alert .popup .body, .layer.layer_confirm .popup .body {padding : 0 30px;}
+.layer.layer_alert .popup .body .text, .layer.layer_confirm .popup .body .text {color: #666; line-height: 20px; font-size: 13px; min-height: 57px;}
+.layer.layer_alert .popup .body .btn_group, .layer.layer_confirm .popup .body .btn_group {font-size: 0; text-align: center;}

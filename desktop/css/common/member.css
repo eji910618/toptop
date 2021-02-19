@@ -1,0 +1,215 @@
+@import "//fonts.googleapis.com/earlyaccess/notosanskr.css";
+#member { min-height: 500px; }
+#member h2 { font-weight: 700; font-size: 24px; text-align: center; line-height: 100%; margin: 9px 0 60px; }
+#member h2 + .member_notice { margin-top: -46px; margin-bottom: 54px; }
+#member h2 + .member_notice + .inner .member_box { padding-bottom: 10px; }
+#member h3 { font-size: 20px; text-align: center; line-height: 100%; margin-bottom: 40px; }
+#member .step { height: 92px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; background-color: #f6f6f6; margin-bottom: 60px; }
+#member .step ul { height: 100%; font-size: 0; text-align: center; padding-top: 21px; }
+#member .step ul li { display: inline-block; font-size: 18px; padding: 0 82px 0 121px; color: #999; position: relative; text-align: left; }
+#member .step ul li span { font-family: "Open Sans", sans-serif; font-weight: 700; display: block; font-size: 15px; margin-bottom: 2px; }
+#member .step ul li:before { content: ''; display: block; width: 36px; height: 37px; background: url("/front/img/ssts/common/spr_member.png") 0 0 no-repeat; position: absolute; top: 50%; left: 70px; margin-top: -18px; }
+#member .step ul li:after { content: ''; display: block; width: 13px; height: 26px; background: url("/front/img/ssts/common/spr_member.png") -200px 0 no-repeat; position: absolute; top: 50%; right: 0; margin-top: -13px; }
+#member .step ul li:nth-child(2):before { background-position: -50px 0; }
+#member .step ul li:nth-child(3):before { background-position: -100px 0; }
+#member .step ul li:nth-child(4):before { background-position: -150px 0; }
+#member .step ul li:nth-child(4):after { display: none; }
+#member .step ul li.active { color: #111; }
+#member .step ul li.active:nth-child(1):before { background-position: 0 -50px; }
+#member .step ul li.active:nth-child(2):before { background-position: -50px -50px; }
+#member .step ul li.active:nth-child(3):before { background-position: -100px -50px; }
+#member .step ul li.active:nth-child(4):before { background-position: -150px -50px; }
+#member .terms { /* 20180119 edit */ width: 1000px; border: 1px solid #dfdfdf; margin: 0 auto 60px; position: relative; }
+#member .terms:before { content: ''; display: block; width: 1px; height: 80px; background-color: #dfdfdf; position: absolute; bottom: 35px; left: 50%; }
+#member .terms .check_all { width: 100%; height: 55px; background-color: #f6f6f6; border-bottom: 1px solid #dfdfdf; padding-left: 40px; }
+#member .terms .check_all .input_button label { height: 54px; line-height: 54px; }
+#member .terms .check_all .input_button label:before { top: 17px; }
+#member .terms .check_all .input_button label strong { font-size: 15px; color: #111; font-weight: 700; display: inline-block; margin-right: 16px; }
+#member .terms ul { padding: 36px 0; position: relative; z-index: 1; background: #fff; }
+#member .terms ul:after { display: block; clear: both; content: ''; }
+#member .terms ul li { float: left; width: 50%; padding-left: 40px; padding-right: 40px; overflow: hidden; margin-top: 21px; }
+#member .terms ul li.w100 { width: 100%; float: none; padding-bottom: 15px; margin-top: 0; }
+#member .terms ul li.w100 .input_button { float: none; }
+#member .terms ul li.w100 .body { height: 150px; border: 1px solid #eee; overflow: hidden; background: #fff; margin-top: 13px; }
+#member .terms ul li.w100 .body .mCSB_inside > .mCSB_container { margin-right: 0; }
+#member .terms ul li.w100 .body .mCSB_scrollTools { width: 4px; }
+#member .terms ul li.w100 .body .mCSB_scrollTools .mCSB_draggerRail { width: 4px; background-color: rgba(0, 0, 0, 0.1); }
+#member .terms ul li.w100 .body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { background-color: #000; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+#member .terms ul li.w100 .body .mCSB_scrollTools, #member .terms ul li.w100 .body .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, #member .terms ul li.w100 .body .mCSB_scrollTools .mCSB_buttonUp, #member .terms ul li.w100 .body .mCSB_scrollTools .mCSB_buttonDown, #member .terms ul li.w100 .body .mCSB_scrollTools .mCSB_buttonLeft, #member .terms ul li.w100 .body .mCSB_scrollTools .mCSB_buttonRight { transition: opacity 0s ease-in-out, background-color 0s ease-in-out; }
+#member .terms ul li.w100 .body .bottom_btn_group { width: calc(100% - 60px); margin: 0 auto; padding: 30px 0; font-size: 0; text-align: center; border-top: 1px solid #e5e5e5; }
+#member .terms ul li.w100 .body .bottom_btn_group button { font-size: 13px; margin: 0 5px; }
+#member .terms ul li.w100 .scroll_inner { padding: 30px; }
+#member .terms ul li:last-child { margin-bottom: 0; }
+#member .terms ul li .input_button { float: left; }
+#member .terms ul li .input_button label { height: 29px; line-height: 29px; }
+#member .terms ul li .input_button label:before { top: 5px; }
+#member .terms ul li .input_button label span { color: #df4738; }
+#member .terms ul li .btn { float: right; }
+#member .btn_wrap { text-align: center; font-size: 0; }
+#member .btn_wrap button, #member .btn_wrap a { display: inline-block; vertical-align: top; margin: 0 5px; width: 260px; }
+#member .btn_wrap p { font-size: 12px; color: #999; display: inline-block; width: auto; position: relative; padding-left: 12px; margin-top: 30px; line-height: 100%; }
+#member .btn_wrap p:before { content: ''; display: block; width: 2px; height: 2px; background-color: #999; position: absolute; top: 50%; left: 0; margin-top: -1px; }
+#member .title_text { overflow: hidden; margin-bottom: 11px; }
+#member .title_text p { float: left; font-size: 16px; line-height: 100%; }
+#member .title_text span { float: right; color: #666; }
+#member .title_text span em { color: #df4738; font-size: 15px; }
+#member table { border-top: 2px solid #111; margin-bottom: 60px; }
+#member table th { position: relative; text-align: left; font-size: 13px; border-bottom: 1px solid #eee; height: 80px; padding-left: 20px; padding-top: 32px; line-height: 100%; vertical-align: top; }
+#member table th > span { position: absolute; top: 33px; left: 10px; font-size: 15px; color: #df4738; }
+#member table td { border-bottom: 1px solid #eee; padding: 20px 0; font-size: 0; }
+#member table td p { vertical-align: top; font-size: 13px; }
+#member table td p.alert { margin-left: 20px; color: #df4738; }
+#member table td p.marketing_notice { font-size: 12px; color: #666; line-height: 100%; margin-top: 12px; }
+#member table td p.birthday_coupon { font-size: 12px; color: #666; line-height: 100%; padding-top: 11px; }
+#member table td button { margin-left: 10px; }
+#member table td .input_button { margin-right: 75px; }
+#member table td .birth input { width: 177px; margin-right: 10px; vertical-align: top; }
+#member table td .birth .selector { width: auto !important; }
+#member table td .birth .selector > span { width: 123px !important; }
+#member table td .pw_wrap button { width: 84px; margin-left: 0; }
+#member table td .pw_wrap button.cancel { display: none; }
+#member table td .pw_wrap > div { display: none; margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px; }
+#member table td .pw_wrap > div dl dt { display: inline-block; width: 136px; font-size: 13px; vertical-align: middle; }
+#member table td .pw_wrap > div dl dd { display: inline-block; width: 100%; padding-left: 136px; margin-left: -136px; margin-bottom: 20px; }
+#member table td .pw_wrap > div button { margin-left: 136px; }
+#member table td .pw_wrap.open > div { display: block; }
+#member table td .pw_wrap.open .cancel { display: block; }
+#member table td .pw_wrap.open .modify { display: none; }
+#member table ul li { margin-bottom: 10px; }
+#member table ul li:last-child { margin-bottom: 0; }
+#member table ul li span { display: inline-block; vertical-align: top; line-height: 40px; height: 40px; width: 81px; font-size: 13px; }
+#member table ul li.select_country .selector { width: auto !important; }
+#member table ul li.select_country .selector > span { width: 251px !important; }
+#member table ul li.select_country .selector option { font-size: 13px; }
+#member table ul.address_select { display: none; }
+#member table ul.address_select.active { display: block; }
+#member .done { text-align: center; font-size: 20px; line-height: 32px; margin-bottom: 33px; }
+#member .done strong { font-weight: 700; }
+#member .done_box { width: 1000px; margin: 0 auto 60px; border: 1px solid #dfdfdf; padding: 50px 0 30px; }
+#member .done_box ul { width: 300px; margin: 0 auto; }
+#member .done_box ul li { font-size: 0; margin-bottom: 20px; }
+#member .done_box ul li span, #member .done_box ul li strong { display: inline-block; font-size: 15px; line-height: 100%; }
+#member .done_box ul li span { width: 150px; padding-left: 40px; }
+#member .done_box ul li strong { font-weight: 700; }
+#member .certification { width: 1000px; margin: 0 auto; }
+#member .certification h3 { margin-bottom: 24px; }
+#member .certification .join_notice { text-align: center; font-size: 13px; color: #666; line-height: 24px; margin-bottom: 34px; }
+#member .certification .select_box { border: 1px solid #dfdfdf; width: 100%; min-height: 354px; margin-bottom: 14px; padding-bottom: 40px; background-color: #fff; }
+#member .certification .select_box .tab_select { /* 20180109 edit */ font-size: 0; display: table; table-layout: fixed; width: 100%; }
+#member .certification .select_box .tab_select li { width: 50%; display: table-cell; vertical-align: top; }
+#member .certification .select_box .tab_select li:first-child { border-right: 1px solid #dfdfdf; }
+#member .certification .select_box .tab_select li button { display: block; width: 100%; height: 55px; border-bottom: 1px solid #dfdfdf; background-color: #f6f6f6; text-align: center; }
+#member .certification .select_box .tab_select li button span { display: inline-block; font-size: 15px; line-height: 30px; font-weight: 700; }
+#member .certification .select_box .tab_select li.active button { border-bottom-color: #fff; background-color: #fff; }
+#member .certification .select_box .tab_select li.active button span { border-bottom: 2px solid #111; }
+#member .certification .select_box .tab_con { display: none; text-align: center; }
+#member .certification .select_box .tab_con.active { display: block; }
+#member .certification .select_box .tab_con.item1 ul { font-size: 0; }
+#member .certification .select_box .tab_con.item1 ul li { display: inline-block; width: 223px; padding-top: 66px; vertical-align: top; margin: 0 73px; }
+#member .certification .select_box .tab_con.item1 ul li button { width: 100%; height: 56px; font-size: 16px; color: #fff; background-color: #111; }
+#member .certification .select_box .tab_con.item1 ul li:before { content: ''; display: block; margin: 0 auto 32px; background: url("/front/img/ssts/common/spr_member.png") 0 0 no-repeat; }
+#member .certification .select_box .tab_con.item1 ul li.select_phone:before { width: 58px; height: 103px; background-position: 0 -100px; }
+#member .certification .select_box .tab_con.item1 ul li.select_ipin { padding-top: 75px; }
+#member .certification .select_box .tab_con.item1 ul li.select_ipin:before { width: 91px; height: 86px; background-position: -100px -100px; margin-bottom: 40px; }
+#member .certification .select_box .tab_con.item2 { padding-top: 56px; }
+#member .certification .select_box .tab_con.item2 > p { font-size: 13px; color: #666; margin-bottom: 28px; }
+#member .certification .select_box .tab_con.item2 .email { display: inline-block; position: relative; margin-bottom: 60px; text-align: left; vertical-align: top; }
+#member .certification .select_box .tab_con.item2 .email p { position: absolute; top: 50px; left: 0; line-height: 100%; margin-left: 0; }
+#member .certification .select_box .tab_con.item2 .input_wrap .email { margin-bottom: 25px; }
+#member .certification .select_box .tab_con.item2 button { display: block; width: 273px; height: 56px; font-size: 16px; color: #fff; background-color: #111; margin: 0 auto; }
+#member .certification .select_box .tab_con.item3 { /* 20180109 add */ padding-top: 80px; }
+#member .certification .select_box .tab_con.item3 p { font-size: 13px; color: #666; }
+#member .certification .select_box .tab_con.item3 .sns_list { display: table; table-layout: fixed; margin: 35px auto 0; }
+#member .certification .select_box .tab_con.item3 .sns_list li { float: left; margin-left: 20px; }
+#member .certification .select_box .tab_con.item3 .sns_list li:first-child { margin-left: 0; }
+#member .certification .select_box .tab_con.item3 .sns_list li.facebook a { background: url(/desktop/img/ssts/common/icon_sns_facebook.jpg) 0 0 no-repeat; }
+#member .certification .select_box .tab_con.item3 .sns_list li.kakaotalk a { background: url(/desktop/img/ssts/common/icon_sns_kakaotalk.jpg) 0 0 no-repeat; }
+#member .certification .select_box .tab_con.item3 .sns_list li.naver a { background: url(/desktop/img/ssts/common/icon_sns_naver.jpg) 0 0 no-repeat; }
+#member .certification .select_box .tab_con.item3 .sns_list li.google a { background: url(/desktop/img/ssts/common/icon_sns_google.jpg) 0 0 no-repeat; }
+#member .certification .select_box .tab_con.item3 .sns_list li a { display: block; color: transparent; font-size: 0; line-height: 0; width: 64px; height: 64px; }
+#member .certification .certification_info { margin-bottom: 54px; }
+#member .certification .certification_info li { font-size: 12px; color: #999; line-height: 24px; position: relative; padding-left: 8px; }
+#member .certification .certification_info li:before { content: ''; display: block; width: 2px; height: 2px; background-color: #999; position: absolute; top: 11px; left: 0; }
+#member .certification .benefit { width: 100%; background-color: #f6f6f6; text-align: center; padding-bottom: 30px; }
+#member .certification .benefit h4 { font-size: 20px; height: 102px; line-height: 102px; }
+#member .certification .benefit ul { font-size: 0; text-align: center; width: 100%; }
+#member .certification .benefit ul li { display: inline-block; width: 232px; height: 258px; margin: 0 2px; background-color: #fff; position: relative; padding: 40px; vertical-align: top; }
+#member .certification .benefit ul li:before { content: ''; display: block; width: 101px; height: 101px; background: url("/front/img/ssts/common/spr_member.png?v=2") right -101px no-repeat; margin: 0 auto 21px; }
+#member .certification .benefit ul li strong { font-size: 15px; font-weight: 700; display: block; margin-bottom: 7px; }
+#member .certification .benefit ul li span { font-size: 12px; color: #666; line-height: 20px; }
+#member .certification .benefit ul li:first-child:before { background-position: right 0; }
+#member .certification .benefit ul li:nth-child(3):before { background-position: right -202px; }
+#member .certification .benefit ul li:last-child:before { background-position: right -303px; }
+#member.find_wrap .step ul { padding-top: 30px; }
+#member.find_wrap .step ul li a { color: #999; }
+#member.find_wrap .step ul li:after { width: 0; height: 0; background-image: none; }
+#member.find_wrap .step ul li:first-child:after { width: 1px; height: 28px; background-color: #ccc; }
+#member.find_wrap .step ul li:nth-child(1):before { background-position: -250px 0; }
+#member.find_wrap .step ul li:nth-child(2):before { background-position: 0 0; }
+#member.find_wrap .step ul li.active a { color: #111; }
+#member.find_wrap .step ul li.active:nth-child(1):before { background-position: -250px -50px; }
+#member.find_wrap .step ul li.active:nth-child(2):before { background-position: 0 -50px; }
+#member .member_notice { margin-top: -6px; margin-bottom: 34px; font-size: 15px; line-height: 26px; text-align: center; }
+#member .member_box { width: 1000px; margin: 0 auto 60px; border: 1px solid #dfdfdf; padding: 45px 0; text-align: center; }
+#member .member_box > p { font-size: 15px; }
+#member .member_box > p strong { font-weight: bold; }
+#member .member_box > p span { display: block; color: #999; line-height: 26px; }
+#member .member_box > p + p { margin-top: 22px; font-size: 13px; }
+#nonMember_ordNo_box.member_box > p + p { font-size: 15px; }
+#member .member_box .input_wrap dl { width: 448px; }
+#member .member_box .input_wrap dl dt { width: 138px; }
+#member .member_box .input_wrap dl dd { width: 310px; padding-bottom: 20px; }
+#member .member_box + .agree_text { width: 1000px; margin: -40px auto 60px; }
+#member .member_box + .agree_text > p { display: inline-block; margin-right: 10px; font-size: 13px; }
+#member .member_box + .agree_text > p:before { content: ''; display: inline-block; width: 2px; height: 2px; margin: 8px 5px 0 0; background: #111; vertical-align: top; }
+#member .member_box + .agree_text .input_button { margin-left: 40px; }
+#member .input_wrap dl { overflow: hidden; width: 640px; margin: 0 auto; text-align: left; }
+#member .input_wrap dl > * { float: left; }
+#member .input_wrap dl dt { width: 76px; padding-top: 10px; font-size: 13px; }
+#member .input_wrap dl dd { position: relative; width: 564px; margin-left: 0; margin-bottom: 20px; }
+#member .input_wrap dl dd p { position: absolute; top: 50px; left: 0; line-height: 100%; margin-left: 0; }
+#member .input_wrap dl dd > span { font-size: 15px; font-weight: bold; line-height: 34px; }
+#member .input_wrap.pw { padding-top: 60px; border-bottom: 1px solid #eee; }
+#member .input_wrap.pw dl { width: 386px; padding-bottom: 20px; }
+#member .input_wrap.pw dl dd { width: 310px; }
+#member .input_wrap + button { margin-top: 15px; }
+#member.withdrawal h3 { font-size: 16px; margin-bottom: 15px; text-align: left; }
+#member.withdrawal .info { margin-bottom: 60px; padding: 15px 20px; border-top: 2px solid #111; border-bottom: 1px solid #eee; }
+#member.withdrawal .info ul li { padding-left: 15px; font-size: 13px; line-height: 24px; text-indent: -15px; }
+#member.withdrawal .info ul li span { display: block; margin: 5px 0 15px 15px; }
+#member.withdrawal .info ul li span a { text-indent: 0; }
+#member.withdrawal table th { padding-top: 20px; line-height: 24px; }
+#member.withdrawal table td .input_button { display: block; }
+#member.withdrawal table td .input_button + .input_button { margin-top: 5px; }
+#member.withdrawal table td textarea { width: 748px; height: 120px; border: 1px solid #ccc; font-size: 13px; }
+#member.withdrawal .reason { border-top: 2px solid #111; border-bottom: 1px solid #eee; padding: 16px 0 20px 20px; margin-bottom: 60px; }
+#member.withdrawal .reason li { line-height: 26px; }
+#member.withdrawal .reason li textarea { display: block; width: 748px; height: 120px; border-color: #ccc; margin-left: 33px; }
+#member.campaign h2:before { content: ''; display: block; width: 60px; height: 74px; margin: 0 auto 40px; background: url("/front/img/ssts/common/spr_member.png") -250px -100px no-repeat; }
+#member.campaign h2 + .member_notice { margin-bottom: 34px; }
+#member.executives h2 + .member_notice { margin-top: -6px; margin-bottom: 34px; }
+#member.executives .executives_input { width: 1000px; border: 1px solid #dfdfdf; font-size: 0; padding: 50px 0; margin: 0 auto; }
+#member.executives .executives_input li { margin-bottom: 20px; }
+#member.executives .executives_input li:last-child { margin-bottom: 0; }
+#member.executives .executives_input li > strong, #member.executives .executives_input li > em, #member.executives .executives_input li > span { display: inline-block; height: 40px; line-height: 40px; vertical-align: top; }
+#member.executives .executives_input li > strong { width: 334px; padding-left: 260px; font-size: 13px; }
+#member.executives .executives_input li > em { width: 310px; font-size: 13px; }
+#member.executives .executives_input li > em input { width: 100%; display: block; }
+#member.executives .executives_input li > em .selector { width: 100% !important; display: block; }
+#member.executives .executives_input li > em .selector span { width: auto !important; }
+#member.executives .executives_input li > em select { width: 100%; display: block; }
+#member.executives .executives_input li > span { font-size: 0; padding-left: 10px; }
+#member.executives .executives_input li > span .btn { vertical-align: top; margin-right: 20px; width: 84px; }
+#member.executives .executives_input li > span span { display: inline-block; line-height: 40px; height: 40px; vertical-align: top; color: #df4738; font-size: 12px; }
+#member.executives .executives_notice { font-size: 13px; line-height: 52px; height: 52px; margin-bottom: 40px; position: relative; margin-left: 70px; padding-left: 8px; }
+#member.executives .executives_notice:before { content: ''; display: block; width: 2px; height: 2px; background-color: #111; position: absolute; top: 25px; left: 0; }
+
+.layer_overlap .popup { width: 440px; height: 322px; }
+.layer_overlap .popup .overlap_conts { padding: 25px 30px; }
+.layer_overlap .popup .overlap_conts > p { font-size: 13px; }
+.layer_overlap .popup .overlap_conts > p.alert { font-size: 12px; color: #df4738; line-height: 20px; }
+.layer_overlap .popup .overlap_conts > div { position: relative; margin: 20px 0 5px; padding-right: 94px; }
+.layer_overlap .popup .overlap_conts > div input { width: 100%; height: 34px; }
+.layer_overlap .popup .overlap_conts > div .btn { position: absolute; top: 0; right: 0; height: 34px; line-height: 34px; }
+
+/*# sourceMappingURL=member.css.map */
