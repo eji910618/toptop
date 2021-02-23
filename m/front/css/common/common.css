@@ -255,9 +255,9 @@ header h1.header-symbol a::before {
     content: '';
     display: block;
     background: url("/m/front/img/ssts/common/logo.png") 0 center no-repeat;
-    -webkit-background-size: auto 10px;
-    background-size: auto 10px;
-    width: 182px;
+    -webkit-background-size: auto 12px;
+    background-size: auto 12px;
+    width: 218px;
     height: 49px;
     overflow: hidden;
 }
