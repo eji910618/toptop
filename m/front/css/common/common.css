@@ -1169,7 +1169,7 @@ footer#footer .sns a:first-child {
 #stickySide {
     position: fixed;
     bottom: 85px;
-    right: 13px;
+    right: calc(13/390*100vw);
     z-index: 2;
     -webkit-transition: bottom .4s cubic-bezier(.215, .61, .355, 1);
     -moz-transition: bottom .4s cubic-bezier(.215, .61, .355, 1);
@@ -1226,8 +1226,8 @@ footer#footer .sns a:first-child {
     position: relative;
     font-size: 0;
     margin-top: 6px;
-    width: 40px;
-    height: 40px;
+    width: calc(40/390*100vw);
+    height: calc(40/390*100vw);
     background: transparent center top no-repeat;
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
@@ -1248,7 +1248,7 @@ footer#footer .sns a:first-child {
     transition: height .4s cubic-bezier(.215, .61, .355, 1), opacity .4s cubic-bezier(.215, .61, .355, 1), margin-top .4s cubic-bezier(.215, .61, .355, 1);
 }
 #stickySide .stickySide__btn.stickySide__top.active {
-    height: 40px;
+    height: calc(40/390*100vw);
     margin-top: 6px;
     opacity: 1;
 }
@@ -1264,10 +1264,10 @@ footer#footer .sns a:first-child {
     display: block;
     position: absolute;
     top: 0;
-    right: 4px;
+    right: calc(4/390*100vw);
     z-index: 2;
-    width: 9px;
-    height: 9px;
+    width: calc(9/390*100vw);
+    height: calc(9/390*100vw);
     background-color: #f40b0b;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -1284,11 +1284,11 @@ footer#footer .sns a:first-child {
     content: "";
     display: block;
     position: absolute;
-    top: 8px;
-    right: 11px;
+    top: calc(8/390*100vw);
+    right: calc(11/390*100vw);
     z-index: 2;
-    width: 9px;
-    height: 9px;
+    width: calc(9/390*100vw);
+    height: calc(9/390*100vw);
     background-color: #000;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -1298,15 +1298,23 @@ footer#footer .sns a:first-child {
     content: "";
     display: block;
     position: absolute;
-    top: 10px;
-    right: 13px;
+    top: calc(10/390*100vw);
+    right: calc(13/390*100vw);
     z-index: 2;
-    width: 5px;
-    height: 5px;
+    width: calc(5/390*100vw);
+    height: calc(5/390*100vw);
     background-color: #f40b0b;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
+}
+#stickySide .stickySide__btn.stickySide__back {
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    z-index: 2;
+    margin-right: calc(282/390*100vw);
+    background-image: url(/m/front/img/common/layout/icon-back-circle-fill.png);
 }
 
 #plusfriend-chat-button a:before {display: none;}
