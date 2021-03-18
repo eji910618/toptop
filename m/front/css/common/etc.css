@@ -181,8 +181,8 @@
 .util-cont-header {
 	font-size: 16px;
 	font-weight: bold;
-	padding: 25px 0 0;
-	margin: 15px auto 0px auto;
+	/* 	padding: 25px 0 0; */
+	margin: 38px auto 0px auto;
 	width: 88%;
 }
 
@@ -204,12 +204,13 @@
 }
 
 .util-cont {
-	padding: 4px 0 0;
-	margin: 7px auto;
-	width: 88%; position : relative;
+	/* padding: 4px 0 0; */
+	margin: 8px auto 35px;
+	width: 88%;
+	position: relative;
 	text-align: left;
 	min-height: 32px;
-	border-top: 3px solid #222222;
+	border-top: 3px solid #222;
 	position: relative;
 }
 
@@ -220,6 +221,28 @@
 	margin-top: -16px;
 	font-size: 13px;
 	line-height: 32px;
+}
+
+.util-cont .util-center {
+	clear: both;
+	margin: auto;
+	color: black;
+	text-align: center;
+	display: table;
+}
+
+.util-cont .util-center p {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.util-cont .util-center button {
+	color: #fff;
+	background-color: #111;
+	height: 35px;
+	font-size: 13px;
+	font-weight: bold;
 }
 
 .util-div {
@@ -255,9 +278,11 @@
 }
 
 .etc_login_area .util-bt-div {
-	border-bottom: 1px solid #e5e5e5;
-	padding: 10px 8px 10px 8px;
+	border: 1px solid #e5e5e5;
+	padding: 8px;
 	cursor: pointer;
+	margin-bottom: 4px;
+	border-radius: 5px;
 }
 
 .etc_login_area .util-bt-div .sa-bt-text {
@@ -301,9 +326,9 @@
 }
 
 .etc_login_area .util-bt.sa-ap {
-    background: url('/m/front/img/ssts/common/apple_btn.png');
-    background-size: 30px auto;
-    background-position: -29px -59px;
+	background: url('/m/front/img/ssts/common/apple_btn.png');
+	background-size: 30px auto;
+	background-position: -29px -59px;
 }
 
 .etc_login_area .util-bt+a.sa-bt {
@@ -418,14 +443,14 @@
 }
 
 .etc_login_area .conts-wr-l .conts.mem-conts .contsbox1>div>div>p:nth-child(1)
-	{
+{
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 6px;
 }
 
 .etc_login_area .conts-wr-l .conts.mem-conts .contsbox1>div>div>p:nth-child(2)
-	{
+{
 	line-height: 18px;
 	font-size: 13px;
 }
@@ -469,7 +494,7 @@
 }
 
 .etc_login_area .conts-wr-l .conts.mem-conts .contsbox2>div>div>div>button:nth-child(2)
-	{
+{
 	color: white;
 	background-color: black;
 	width: 45%;
@@ -480,7 +505,7 @@
 }
 
 .etc_login_area .conts-wr-l .conts.mem-conts .contsbox2>div>div>div>button:nth-child(3)
-	{
+{
 	color: white;
 	background-color: gray;
 	width: 45%;
@@ -496,7 +521,7 @@
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont .login-util {
-	margin: 8px 16px 0px 16px;
+	margin: 8px 52px 0px;
 	display: flex;
 	justify-content: space-between;
 	font-size: 13px;
@@ -526,15 +551,15 @@
 	margin-top: 10px;
 }
 
-.etc_login_area .conts-wr-l .conts .frm-cont .btn-row {
-	margin-top: 20px;
+.etc_login_area .btn-row {
+	margin-top: 16px;
 }
 
-.etc_login_area .conts-wr-l .conts .frm-cont .btn-row button {
+.etc_login_area .btn-row button {
 	color: #fff;
 	background-color: #111;
 	width: 100%;
-	height: 35px;
+	height: 42px;
 	font-size: 13px;
 	font-weight: bold;
 }
@@ -546,17 +571,17 @@
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont .chk-row span.input_button
-	{
+{
 	float: left;
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont .chk-row span.input_button+.input_button
-	{
+{
 	margin-left: auto;
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont .chk-row span.input_button+.input_button+.input_button
-	{
+{
 	float: right;
 }
 
