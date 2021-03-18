@@ -201,11 +201,11 @@
                 <div class="conts-wr-l">
                     <!-- 회원 -->
                     <div class="mem-conts conts">
-                        <div class="frm-cont" style="padding-top: 35px">
+                        <div class="frm-cont">
                             <form name="loginForm" id="loginForm" method="post" role="form">
                                 <input type="hidden" name="returnUrl" id="returnUrl" value="https://www.topten10mall.com/kr" />
-                                <div class="ipt-row"><input type="text" name="loginId" id="loginId" placeholder="아이디" /></div>
-                                <div class="ipt-row"><input type="password" name="password" id="password" placeholder="비밀번호" /></div>
+                                <div class="ipt-row"><input type="text" name="loginId" id="loginId" placeholder="탑텐몰 아이디" /></div>
+                                <div class="ipt-row"><input type="password" name="password" id="password" placeholder="탑텐몰 비밀번호" /></div>
                                 <div class="chk-row pb20">
                                     <span class="input_button"><input type="checkbox" id="id_auto" name="remember-me" checked="checked"><label for="id_auto">자동로그인</label></span>
                                     <span class="input_button ml20"><input type="checkbox" id="id_save" name="checkId"><label for="id_save">아이디 저장</label></span>
@@ -214,45 +214,33 @@
                             </form>
 
                             <div class="login-util">
-                                <!-- <span><a href="javascript:move_page('member_join');">회원가입</a></span>
-                                <span><a>l</a></span> -->
-                                <span><a href="javascript:move_page('id_search');">아이디 찾기</a></span>
-                                <span><a>l</a></span>
-                                <span><a href="javascript:move_page('pass_search');">비밀번호 찾기</a></span>
+                                <div class="login-util__btns">
+                                    <span><a href="javascript:move_page('member_join');" class="login-util__btn login-util__primary">회원가입</a></span>
+                                    <span><a href="javascript:move_page('id_search');" class="login-util__btn">아이디 찾기</a></span>
+                                    <span><a href="javascript:move_page('pass_search');" class="login-util__btn">비밀번호 찾기</a></span>
+                                </div>
+                                <p class="login-util__text">탑텐몰 회원 가입 시 10% 할인쿠폰 즉시 발급!</p>
                             </div>
 
                         </div>
 
-                        <div class="util-cont-header"></div>
-                        <div class="util-cont" style="border-top: none;">
-                            <div class="util-bt-div" onclick="javascript:snsLogin('kakao');">
+                        <div class="util-cont-header">간편 로그인</div>
+                        <div class="util-cont">
+                            <div class="util-div" onclick="javascript:snsLogin('kakao');">
                                 <a class="util-bt sa-kt">kakao talk </a>
-                                <a class="util-bt-text">&nbsp;Kakao로 로그인/가입하기</a>
-                                <a class="util-bt-text">&gt;</a>
+                                <a class="util-bt-text">Kakao로 로그인&nbsp;/&nbsp;가입하기</a>
                             </div>
-                            <div class="util-bt-div" onclick="javascript:snsLogin('naver');">
+                            <div class="util-div" onclick="javascript:snsLogin('naver');">
                                 <a class="util-bt sa-nv">naver</a>
-                                <a class="util-bt-text">&nbsp;Naver로 로그인/가입하기</a>
-                                <a class="util-bt-text">&gt;</a>
+                                <a class="util-bt-text">Naver로 로그인&nbsp;/&nbsp;가입하기</a>
                             </div>
-                            <div class="util-bt-div" onclick="javascript:snsLogin('google');">
+                            <div class="util-div" onclick="javascript:snsLogin('google');">
                                 <a class="util-bt sa-gp">google+</a>
-                                <a class="util-bt-text">&nbsp;Google로 로그인/가입불가</a>
-                                <a class="util-bt-text">&gt;</a>
+                                <a class="util-bt-text">Google로 로그인&nbsp;/&nbsp;가입불가</a>
                             </div>
-                            <div class="util-bt-div apple-login" onclick="javascript:snsLogin('apple');" style="display: none;">
+                            <div class="util-div apple-login" onclick="javascript:snsLogin('apple');">
                                 <a class="util-bt sa-ap">apple</a>
-                                <a class="util-bt-text">&nbsp;Apple로 로그인</a>
-                                <a class="util-bt-text">&gt;</a>
-                            </div>
-                        </div>
-
-                        <div class="util-cont" style="border-top: none;">
-                            <div class="util-center">
-                                <p>탑텐몰 회원 가입 시 10% 할인쿠폰을<br> 즉시 발급해드립니다.</p>
-                            </div>
-                            <div class="btn-row">
-                                <button onclick="javascript:move_page('member_join');">회원가입</button>
+                                <a class="util-bt-text">Apple로 로그인&nbsp;/&nbsp;가입불가</a>
                             </div>
                         </div>
 
@@ -260,23 +248,15 @@
                         <div class="util-cont">
                             <div class="util-div" onclick="javascript:move_page('nonmemberAuth');">
                                 <a>비회원 주문조회</a>
-                                <a>></a>
                             </div>
                             <div class=util-div onclick="javascript:move_page('faq');">
                                 <a>FAQ</a>
-                                <a>></a>
                             </div>
-                            <!--                             <div class="util-div" onclick="javascript:move_page('inquiry_list');"> -->
-                            <!--                                 <a>회원전용 1:1 문의</a> -->
-                            <!--                                 <a>></a> -->
-                            <!--                             </div> -->
                             <div class="util-div" onclick="javascript:move_page('notice');">
                                 <a>공지사항</a>
-                                <a>></a>
                             </div>
                             <div class="util-div" onclick="javascript:move_page('store');">
                                 <a>매장 찾기</a>
-                                <a>></a>
                             </div>
                         </div>
                     </div>

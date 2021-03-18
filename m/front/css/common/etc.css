@@ -182,13 +182,14 @@
 	font-size: 16px;
 	font-weight: bold;
 	/* 	padding: 25px 0 0; */
-	margin: 38px auto 0px auto;
+	margin: 38px auto 0 auto;
 	width: 88%;
+	font-family: 'Apple SD Gothic Neo', 'SamsungOne', 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif;
 }
 
 .util-cont-header-with-all {
 	padding: 25px 0 0;
-	margin: 15px 8% 0px 8%;
+	margin: 15px 8% 0 8%;
 }
 
 .util-cont-header-with-all>span:nth-child(1) {
@@ -204,14 +205,13 @@
 }
 
 .util-cont {
-	/* padding: 4px 0 0; */
-	margin: 8px auto 35px;
+	padding: 0 10px;
+	margin: 8px auto 55px;
 	width: 88%;
 	position: relative;
 	text-align: left;
-	min-height: 32px;
 	border-top: 3px solid #222;
-	position: relative;
+	font-family: 'Apple SD Gothic Neo', 'SamsungOne', 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif;
 }
 
 .util-cont span {
@@ -246,22 +246,29 @@
 }
 
 .util-div {
-	border-bottom: 1px solid #e5e5e5;
-	padding: 13px 8px 13px 8px;
+	position: relative;
+	border-bottom: 1px solid #d4d4d4;
+	padding: 10px 0 9px;
 	cursor: pointer;
+	display: flex;
 }
-
-.util-div>a:nth-child(1) {
-	padding-left: 3px;
-	font-size: 13px;
-	color: #666;
+.util-div > a {
+	display: block;
+	font-size: 14px;
+	color: #292929;
+	line-height: 29px;
 }
-
-.util-div>a:nth-child(2) {
-	padding-left: 3px;
-	font-size: 13px;
-	color: #666;
-	float: right;
+.util-div:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	height: 100%;
+	width: 38px;
+	background: transparent url(/m/front/img/common/icon/icon-arrow-chevron-right.png) center no-repeat;
+	-webkit-background-size: 20px auto;
+	background-size: 20px auto;
 }
 
 /* etc_login_area 20171123 added */
@@ -277,58 +284,36 @@
 	margin: 8% 6% 0;
 }
 
-.etc_login_area .util-bt-div {
-	border: 1px solid #e5e5e5;
-	padding: 8px;
-	cursor: pointer;
-	margin-bottom: 4px;
-	border-radius: 5px;
-}
-
-.etc_login_area .util-bt-div .sa-bt-text {
-	padding-left: 3px;
-	font-size: 13px;
-	color: #666;
-}
-
-.etc_login_area .util-bt-div>a:nth-child(3) {
-	padding-left: 3px;
-	font-size: 13px;
-	color: #666;
-	float: right;
-	margin-top: 6px;
-}
-
 .etc_login_area .util-bt {
 	display: inline-block;
-	width: 32px;
-	height: 32px;
-	overflow: hidden;
-	line-height: 500px;
+	width: 29px;
+	height: 29px;
+	text-indent: -999999px;
+	font-size: 0;
+	margin-right: 10px;
 }
 
 .etc_login_area .util-bt.sa-kt {
 	background: url('/m/front/img/ssts/common/kakao_btn.png');
-	background-size: 30px auto;
-	background-position: -29px -59px;
+	background-size: 29px auto;
 }
 
 .etc_login_area .util-bt.sa-nv {
 	background: url('/m/front/img/ssts/common/naver_btn.png');
-	background-size: 30px auto;
-	background-position: -29px -59px;
+	background-size: 29px auto;
 }
 
 .etc_login_area .util-bt.sa-gp {
 	background: url('/m/front/img/ssts/common/google_btn.png');
-	background-size: 30px auto;
-	background-position: -29px -59px;
+	background-size: 29px auto;
 }
 
 .etc_login_area .util-bt.sa-ap {
 	background: url('/m/front/img/ssts/common/apple_btn.png');
-	background-size: 30px auto;
-	background-position: -29px -59px;
+	background-size: 29px auto;
+}
+.etc_login_area .util-bt-text {
+	font-size: 14px;
 }
 
 .etc_login_area .util-bt+a.sa-bt {
@@ -516,15 +501,47 @@
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont {
+	padding-top: 15px;
 	margin: 0 auto;
-	width: 88%
+	width: 88%;
+	font-family: 'Apple SD Gothic Neo', 'SamsungOne', 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif;
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont .login-util {
-	margin: 8px 52px 0px;
+	font-size: 13px;
+	margin-top: 12px;
+}
+.etc_login_area .conts-wr-l .conts .frm-cont .login-util__btns {
 	display: flex;
 	justify-content: space-between;
+	margin-right: -3px;
+	margin-left: -3px;
+}
+.etc_login_area .conts-wr-l .conts .frm-cont .login-util__btns > span {
+	display: block;
+	width: 33.3333333%;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.etc_login_area .conts-wr-l .conts .frm-cont .login-util__btn {
+	display: block;
+	line-height: 36px;
+	text-align: center;
 	font-size: 13px;
+	background-color: #e1e1e1;
+	color: #4e4e4e;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.etc_login_area .conts-wr-l .conts .frm-cont .login-util__btn.login-util__primary {
+	background-color: #cda569;
+	color: #fff;
+}
+.etc_login_area .conts-wr-l .conts .frm-cont .login-util__text {
+	font-size: 15px;
+	color: #be8837;
+	margin-top: 12px;
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont:after {
@@ -534,38 +551,43 @@
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont .ipt-row {
-	padding: 9px 0;
-	border: 1px solid #ccc;
+	border-bottom: 1px solid #e4e4e4;
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont .ipt-row input {
 	border: 0;
-	font-size: 12px;
+	padding: 8px 0;
+	font-size: 15px;
 	width: 100%;
-	height: 15px;
 	vertical-align: top;
 	line-height: inherit;
 }
+.etc_login_area .conts-wr-l .conts .frm-cont .ipt-row input::placeholder {
+	color: #cecece;
+}
 
 .etc_login_area .conts-wr-l .conts .frm-cont .ipt-row+.ipt-row {
-	margin-top: 10px;
+	margin-top: 18px;
 }
 
 .etc_login_area .btn-row {
-	margin-top: 16px;
+	margin-top: 20px;
 }
 
 .etc_login_area .btn-row button {
 	color: #fff;
 	background-color: #111;
 	width: 100%;
-	height: 42px;
-	font-size: 13px;
+	height: 51px;
+	font-size: 15px;
 	font-weight: bold;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 .etc_login_area .conts-wr-l .conts .frm-cont .chk-row {
-	margin-top: 7px;
+	margin-top: 15px;
 	font-size: 13px;
 	line-height: 20px;
 }
