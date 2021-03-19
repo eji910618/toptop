@@ -411,6 +411,31 @@ table.display-table-fmt.hor tbody td:first-child { color: #111; }
 .product-zoom-popup .expand_icon img { width: 60vw; }
 .product-zoom-popup .expand_icon p { color: #ff5400; font-weight: bold; font-size: 4vw; letter-spacing: -0.8px; position: absolute; top: 40vw; width: 100%; text-align: center; }
 
+.layer.layer_bag {
+    font-family: 'Apple SD Gothic Neo', 'SamsungOne', 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif;
+}
+.layer.layer_bag .popup .head h1 {
+    font-size: 18px;
+}
+.layer.layer_bag .thumbnail-list {
+    margin-top: 0;
+}
+.layer.layer_bag .thumbnail-list ul {
+    margin-left: -4px;
+    margin-right: -4px;
+}
+.layer.layer_bag .thumbnail-list ul li {
+    width: 33.33333333%;
+}
+.layer.layer_bag .thumbnail-list ul li .prd-info {
+    text-align: left;
+}
+.layer.layer_bag .thumbnail-list ul li .prd-info .etc_txt .brand {
+    font-size: 12px;
+}
+.layer.layer_bag .popup .body .bottom_btn_group {
+    margin-top: 0;
+}
 
 /* .scrollOff{position:fixed;overflow:hidden;height:100%;} */
 

@@ -1420,6 +1420,9 @@ footer#footer .sns a:first-child {
 .padding-t-0 {
     padding-top: 0 !important;
 }
+.padding-t-15 {
+    padding-top: 15px !important;
+}
 .padding-t-20 {
     padding-top: 20px !important;
 }
