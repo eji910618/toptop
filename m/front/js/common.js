@@ -370,6 +370,26 @@ jQuery(document).ready(function() {
         $(this).parents('.layer').removeClass('active');
         $('html, body').scrollTop($window_scrl_top);
     });
+
+    $('.carousel-freeMode.swiper-container').each(function() {
+        var $this = $(this);
+        if ( $this.hasClass('carousel__scrollbar') ) {
+            var swiperScrollbar = $this.parent().find('.swiper-scrollbar');
+            new Swiper($this, {
+                freeMode: true,
+                slidesPerView: 'auto',
+                scrollbar: {
+                    el: swiperScrollbar,
+                    draggable: true
+                }
+            });
+        } else {
+            new Swiper($this, {
+                freeMode: true,
+                slidesPerView: 'auto'
+            });
+        }
+    });
 });
 
 //팝업 열기 start
@@ -403,9 +423,9 @@ function function_popup_cls_current(lid){//팝업 닫기 20171123
 //    $('.layer').css('top', 0); // 다른 팝업들 위치 top 0으로 고정
 }
 
-jQuery(window).load(function(){
-	if(window.console!=undefined){
-		setTimeout(console.clear(),0);
-		setTimeout(console.log.bind(console,'%cTOPTEN%c.MALL','color: #111; font: bold 6em Open Sans, sans-serif;', 'font: 6em Open Sans, sans-serif;'),0);
-	}
-});
+// jQuery(window).load(function(){
+// 	if(window.console!=undefined){
+// 		setTimeout(console.clear(),0);
+// 		setTimeout(console.log.bind(console,'%cTOPTEN%c.MALL','color: #111; font: bold 6em Open Sans, sans-serif;', 'font: 6em Open Sans, sans-serif;'),0);
+// 	}
+// });
