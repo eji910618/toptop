@@ -4,7 +4,7 @@ cookieServerName = '.topten10mall.com';
 
 
 //카카오톡
-Kakao.init('5c03a6c454867348e1939c775d74230c');
+// Kakao.init('5c03a6c454867348e1939c775d74230c');
 
 jQuery(document).ready(function(){
 
