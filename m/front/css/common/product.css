@@ -437,6 +437,11 @@ table.display-table-fmt.hor tbody td:first-child { color: #111; }
     margin-top: 0;
 }
 
+.product-detail__recommend .swiper-wrapper {
+    height: auto;
+    /*height: calc(114px + 58.9743589744vw);*/
+}
+
 /* .scrollOff{position:fixed;overflow:hidden;height:100%;} */
 
 
