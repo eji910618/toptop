@@ -309,6 +309,41 @@ jQuery(document).ready(function() {
         $('#big_slider').removeClass('active');
         $('body').css('overflow', '');
     });
+
+    /* Carousel */
+    $('.swiper-container.carousel').each(function() {
+        var $this = $(this);
+        var carouselParent = $this.parent();
+        var carouselFraction = carouselParent.find('.carousel-fraction');
+        var carouselPerGroup = $this.data('carousel-pergroup');
+        var carouselNextEl = carouselParent.find('.carousel-arrows__next');
+        var carouselPrevEl = carouselParent.find('.carousel-arrows__prev');
+        var carouselOpt = {
+            slidesPerView: 'auto',
+            slidesPerGroup: carouselPerGroup === undefined ? 1 : carouselPerGroup
+        };
+        var carouselPaginationOpt = {
+            pagination: {
+                el: carouselFraction,
+                type: 'fraction'
+            }
+        };
+        var carouselNavigationOpt = {
+            navigation: {
+                nextEl: carouselNextEl,
+                prevEl: carouselPrevEl
+            }
+        };
+        if ( $this.hasClass('carousel__fraction') && $this.hasClass('carousel__navigation') ) {
+            new Swiper($this, $.extend(carouselOpt, carouselPaginationOpt, carouselNavigationOpt));
+        } else if ( $this.hasClass('carousel__fraction') ) {
+            new Swiper($this, $.extend(carouselOpt, carouselPaginationOpt));
+        } else if ( $this.hasClass('carousel__navigation') ) {
+            new Swiper($this, $.extend(carouselOpt, carouselNavigationOpt));
+        } else {
+            console.log('error');
+        }
+    });
 });
 
 
@@ -325,9 +360,9 @@ function func_popup_zindex(lid) {
 }
 
 
-jQuery(window).load(function(){
-	if(window.console!=undefined){
-		setTimeout(console.clear(),0);
-		setTimeout(console.log.bind(console,'%cTOPTEN%c.MALL','color: #111; font: bold 6em Open Sans, sans-serif;', 'font: 6em Open Sans, sans-serif;'),0);
-	}
-});
+// jQuery(window).load(function(){
+// 	if(window.console!=undefined){
+// 		setTimeout(console.clear(),0);
+// 		setTimeout(console.log.bind(console,'%cTOPTEN%c.MALL','color: #111; font: bold 6em Open Sans, sans-serif;', 'font: 6em Open Sans, sans-serif;'),0);
+// 	}
+// });

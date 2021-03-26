@@ -205,11 +205,11 @@ header h1 a { display: block; width: 100%; height: 100%; background: url(/front/
 .layer.layer_card .popup .body ul li .text h2 { font-weight: bold; font-size: 16px; margin-bottom: 10px; }
 .layer.layer_card .popup .body ul li .text p { line-height: 20px; }
 .layer.layer_card .popup .body ul li .text p span { display: block; font-size: 11px; color: #999; }
-.layer.layer_bag .popup, .layer.layer_restock .popup { width: 350px; height: 250px; margin: -125px 0 0 -175px; }
-.layer.layer_bag .popup .body, .layer.layer_restock .popup .body { padding: 0 30px; }
-.layer.layer_bag .popup .body .text, .layer.layer_restock .popup .body .text { color: #666; line-height: 20px; font-size: 13px; height: 107px; }
-.layer.layer_bag .popup .body .btn_group, .layer.layer_restock .popup .body .btn_group { font-size: 0; text-align: center; }
-.layer.layer_bag .popup .body .btn_group .btn, .layer.layer_restock .popup .body .btn_group .btn { margin: 0 5px; }
+.layer.layer_restock .popup { width: 350px; height: 250px; margin: -125px 0 0 -175px; }
+.layer.layer_restock .popup .body { padding: 0 30px; }
+.layer.layer_restock .popup .body .text { color: #666; line-height: 20px; font-size: 13px; height: 107px; }
+.layer.layer_restock .popup .body .btn_group { font-size: 0; text-align: center; }
+.layer.layer_restock .popup .body .btn_group .btn { margin: 0 5px; }
 .layer.layer_size .popup { width: 740px; margin: -304px 0 0 -225px; }
 .layer.layer_size .popup .body { padding: 0 30px; }
 .layer.layer_size .popup .body p { display: block; width: 100%; color: #666; line-height: 100%; text-align: right; margin-bottom: 10px; font-size: 11px; }

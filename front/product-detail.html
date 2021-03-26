@@ -40,6 +40,7 @@
     <link type="text/css" rel="stylesheet" href="/front/js/libs/jquery/validation-Engine-2.6.2/css/validationEngine.jquery.css" />
     <link type="text/css" rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/front/css/swiper.min.css">
     <link rel="stylesheet" href="/front/css/common/product.css?v=1">
     <link rel="stylesheet" href="/front/css/jquery.mCustomScrollbar.css">
     <style type="text/css">
@@ -148,13 +149,13 @@
         </ul>
     </div><script>
     $(document).ready(function() {
-        if(loginYn){
-            $('#loginHeader').addClass('hidden');
-            $('#logoutHeader').removeClass('hidden');
-        }else{
-            $('#loginHeader').removeClass('hidden');
-            $('#logoutHeader').addClass('hidden');
-        }
+        // if(loginYn){
+        //     $('#loginHeader').addClass('hidden');
+        //     $('#logoutHeader').removeClass('hidden');
+        // }else{
+        //     $('#loginHeader').removeClass('hidden');
+        //     $('#logoutHeader').addClass('hidden');
+        // }
 
         var len = '5';
         var i = Math.floor(Math.random()*len);
@@ -436,18 +437,16 @@
                 </ul>
             </div>
             <!-- //tab -->
-
+<!--
             <div id="goodsDetailNotice" class="detail_tab_contents">
                 <div class="section">
                     <p style="text-align: center;"><img src="/image/ssts/image/editor/2021/01/20/da7cb28896e40b3f5336d38e697cd43dea863481b18fbfe31f67fb579c4d7d36" class="txc-image" style="clear:none;float:none;"></p><p><br></p><div style="position:relative;">
-                    <iframe width="600" height="700" src="https://www.youtube-nocookie.com/embed/2t9oLKmJOOQ?ecver=2&amp;rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=2t9oLKmJOOQ&amp;vq=hd1080" style="width:100%; border: none;">
+                    <iframe width="600" height="700" src="https://www.youtube-nocookie.com/embed/2t9oLKmJOOQ?ecver=2&rel=0&autoplay=1&mute=1&loop=1&playlist=2t9oLKmJOOQ&vq=hd1080" style="width:100%; border: none;">
                     </iframe></div></div>
-            </div>
+            </div>-->
 
             <div id="detail1" class="detail_tab_contents">
                 <div class="section img">
-                    <p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE_MDL1_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE_MDL2_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE_MDL3_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE_MDL4_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE_MDL5_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE_MDL6_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE1_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE2_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE3_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE4_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE5_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE6_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE7_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE8_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE9_M"></p><br/><p align="center"><img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1CG1101BE10_M"></p><br/></div>
-
                 <!-- // 18/06/15 TIP FIT 추가 -->
                 <div class="section tip">
                     <div class="title">TIP</div>
@@ -968,6 +967,564 @@
             </form>
         </aside>
 
+        <div class="product-detail__recommend">
+            <div class="padding-t-48 padding-b-48">
+                <div class="margin-b-24 text-noto d-flex justify-content-between align-items-center">
+                    <h2 class="text-big text-bold">
+                        이 상품을 본 고객이 함께 구매한 상품
+                        <span class="badge badge-square badge-tiny badge-gold margin-l-10">
+                            <span class="badge-text text-bold">12 items</span>
+                        </span>
+                    </h2>
+                    <div class="carousel-indicator">
+                        <button type="button" class="carousel-arrows carousel-arrows__prev">
+                            <i class="icon icon-arrow-right icon-black"></i>
+                            <span class="text-hide">이전</span>
+                        </button>
+                        <div class="carousel-fraction"></div>
+                        <button type="button" class="carousel-arrows carousel-arrows__next">
+                            <i class="icon icon-arrow-right icon-black"></i>
+                            <span class="text-hide">다음</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-goods__group swiper-container carousel carousel__fraction carousel__navigation" data-carousel-pergroup="5">
+                    <div class="swiper-wrapper carousel-inner">
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">사은품</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">229,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">329,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">세트</span></span>
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">429,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">사은품</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">529,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">629,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">세트</span></span>
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">729,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">사은품</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">829,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">929,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">세트</span></span>
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">1,029,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">세트</span></span>
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">1,129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">1,229,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">세트</span></span>
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-t-48 padding-b-48">
+                <div class="margin-b-24 text-noto d-flex justify-content-between align-items-center">
+                    <h2 class="text-big text-bold">
+                        다른 고객들이 많이 구매 한 올젠 상품
+                        <span class="badge badge-square badge-tiny badge-gold margin-l-10">
+                            <span class="badge-text text-bold">24 items</span>
+                        </span>
+                    </h2>
+                    <div class="carousel-indicator">
+                        <button type="button" class="carousel-arrows carousel-arrows__prev">
+                            <i class="icon icon-arrow-right icon-black"></i>
+                            <span class="text-hide">이전</span>
+                        </button>
+                        <div class="carousel-fraction"></div>
+                        <button type="button" class="carousel-arrows carousel-arrows__next">
+                            <i class="icon icon-arrow-right icon-black"></i>
+                            <span class="text-hide">다음</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-goods__group swiper-container carousel carousel__fraction carousel__navigation" data-carousel-perGroup="5">
+                    <div class="swiper-wrapper carousel-inner">
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">사은품</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">세트</span></span>
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">사은품</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">세트</span></span>
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">사은품</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="carousel-item swiper-slide card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <p class="card-goods__option">DARK GRAY</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                                <div class="card-goods__badge badge-group">
+                                    <span class="badge"><span class="badge-text">세트</span></span>
+                                    <span class="badge"><span class="badge-text">단독</span></span>
+                                    <span class="badge"><span class="badge-text">쿠폰</span></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="bottom_bar">
             <div class="layer_prmt_list hidden" id="layer_prmt_list">
 
@@ -1198,11 +1755,11 @@
 
             parameter1 = host + pathName + search;
 
-            if(loginYn){
-                loginChk = 'Y';
-            } else {
-                loginChk = 'N';
-            }
+            // if(loginYn){
+            //     loginChk = 'Y';
+            // } else {
+            //     loginChk = 'N';
+            // }
 
 //      var happyTalkUrl = 'https://customer.happytalk.io/public_v1/chat_v4/public_point?go=C&is_login='+loginChk+'&uid='+loginId+'&site_uid='+loginId+'&cus_extra_username='+memberNm+'&cus_extra_phone='+mobile+'&user_parameter='+parameter1+'&site_id=1000221496&category_id=99006&division_id=99007&usergb=W&title=%5B%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%83%81%EB%8B%B4%EC%B0%BD%5D';
 //      var kakaoTalkUrl = 'https://api.happytalk.io/api/kakao/chat_open?yid=%40topten10mall&is_login='+loginChk+'&uid='+loginId+'&site_uid='+loginId+'&cus_extra_username='+memberNm+'&cus_extra_phone='+mobile+'&user_parameter='+parameter1+'&site_id=1000221496&category_id=99006&division_id=99007&usergb=W';
@@ -1629,7 +2186,7 @@
                     <dd>방문 예정일은 결제 진행 시에 최종적으로 선택하게 됩니다.</dd>
                     <dd>사은품은 택배배송 시에만 수령 가능합니다.</dd>
                 </dl>
-                <form id="form_id_search" action="/kr/front/goods/goodsDetail.do?goodsNo=AEB1CG1101BE&amp;trackNo=20&amp;trackDtl=AEB1CG1101" method="post" onsubmit="return false;"><input id="page" name="page" type="hidden" value="1"/><input id="rows" name="rows" type="hidden" value="10"/><div class="search_shop">
+                <form id="form_id_search" action="/kr/front/goods/goodsDetail.do?goodsNo=AEB1CG1101BE&trackNo=20&trackDtl=AEB1CG1101" method="post" onsubmit="return false;"><input id="page" name="page" type="hidden" value="1"/><input id="rows" name="rows" type="hidden" value="10"/><div class="search_shop">
                     <span>지역명(도로명)</span>
                     <input type="text" name="storeName" id="storeName" value="" placeholder="매장명 또는 지역 명을 입력 후 검색해 주세요 ">
                     <button type="button" name="button" onclick="fn_shop_popup_paging()" class="btn h35 black">검색</button>
@@ -2204,7 +2761,7 @@
 
 </script>
 <div class="layer layer_review" id="popup_review_write">
-    <form id="form_id_review" action="/kr/front/goods/goodsDetail.do?goodsNo=AEB1CG1101BE&amp;trackNo=20&amp;trackDtl=AEB1CG1101" method="post"><input type="hidden" name="mode" id="mode" value="insert"/>
+    <form id="form_id_review" action="/kr/front/goods/goodsDetail.do?goodsNo=AEB1CG1101BE&trackNo=20&trackDtl=AEB1CG1101" method="post"><input type="hidden" name="mode" id="mode" value="insert"/>
         <input type="hidden" name="bbsId" id="bbsId" value="review"/>
         <input type="hidden" name="lettNo" id="lettNo" value=""/>
         <input type="hidden" name="goodsNo" id="goodsNo" value=""/>
@@ -2627,16 +3184,16 @@
         openRestockAlarmForm : function(goodsNo) {
             RestockAlarm.clearRestockAlarmForm(goodsNo); // 입력폼 초기화
 
-            if(!loginYn) {
-                // 비로그인 사용자면 로그인 화면으로
-                Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
-                    function() {
-                        javascript:move_page('login')
-                    },''
-                );
-
-                return;
-            }
+            // if(!loginYn) {
+            //     // 비로그인 사용자면 로그인 화면으로
+            //     Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
+            //         function() {
+            //             javascript:move_page('login')
+            //         },''
+            //     );
+            //
+            //     return;
+            // }
 
             func_popup_init('#ctrl_restock_layer');
         },
@@ -2663,14 +3220,14 @@
          */
         requestRestockAlarm : function() {
 
-            if(!loginYn) {
-                // 비로그인 사용자면 로그인 화면으로
-                Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
-                    function() {
-                        move_page('login');
-                    });
-                return;
-            }
+            // if(!loginYn) {
+            //     // 비로그인 사용자면 로그인 화면으로
+            //     Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
+            //         function() {
+            //             move_page('login');
+            //         });
+            //     return;
+            // }
 
             // 휴대전화번호 검증
             var $mobile2 = $('#restock_pop_mobile02'),
@@ -2713,16 +3270,127 @@
             });
         }
     };
-</script><div class="layer small layer_bag">
+</script>
+<div class="layer small layer_bag">
     <div class="popup">
         <div class="head">
-            <h1>장바구니 담기</h1>
+            <h1 class="text-big text-bold text-noto">상품이 장바구니에 추가되었습니다.</h1>
             <button type="button" name="button" class="btn_close close">close</button>
         </div>
         <div class="body">
-            <div class="text">
-                상품이 장바구니에 추가 되었습니다.<br>장바구니로 이동하시겠습니까?
+            <div class="d-flex justify-content-center margin-b-48">
+                <div class="margin-l-30 margin-r-30">
+                    <h2 class="text-noto text-medium text-bold margin-b-12">같이 구매한 상품</h2>
+                    <div class="thumbnail-list">
+                        <ul>
+                            <li>
+                                <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS1901WWB" class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS1901WWB1_L?AR=0&RS=233x317" alt="코튼 트래블 2+1팩(반팔티+반바지)">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS1901WWB2_L?AR=0&RS=233x317" alt="코튼 트래블 2+1팩(반팔티+반바지)" class="hidden">
+                                    <span class="op"></span>
+                                </a>
+
+                                <div class="prd-info">
+                                    <div class="etc_txt">
+                                        <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS1901WWB" class="visible_tx">
+                                            <span class="brand">PROJECT M</span>
+                                            <span class="name">코튼 트래블 2+1팩(반팔티+반바지)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS1902MLT" class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS1902MLT1_L?AR=0&RS=233x317" alt="오가닉코튼 5팩 포켓 반팔 티셔츠">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS1902MLT2_L?AR=0&RS=233x317" alt="오가닉코튼 5팩 포켓 반팔 티셔츠" class="hidden">
+                                    <span class="op"></span>
+                                </a>
+
+                                <div class="prd-info">
+                                    <div class="etc_txt">
+                                        <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS1902MLT" class="visible_tx">
+                                            <span class="brand">PROJECT M</span>
+                                            <span class="name">오가닉코튼 5팩 포켓 반팔 티셔츠</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS2902MLT" class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS2902MLT1_L?AR=0&RS=233x317" alt="여성 데일리 4팩 반팔 티셔츠 패키지">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS2902MLT2_L?AR=0&RS=233x317" alt="여성 데일리 4팩 반팔 티셔츠 패키지" class="hidden">
+                                    <span class="op"></span>
+                                </a>
+
+                                <div class="prd-info">
+                                    <div class="etc_txt">
+                                        <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS2902MLT" class="visible_tx">
+                                            <span class="brand">PROJECT M</span>
+                                            <span class="name">여성 데일리 4팩 반팔 티셔츠 패키지</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="margin-l-30 margin-r-30">
+                    <h2 class="text-noto text-medium text-bold margin-b-12">추천 상품</h2>
+                    <div class="thumbnail-list">
+                        <ul>
+                            <li>
+                                <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS1901WWB" class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS1901WWB1_L?AR=0&RS=233x317" alt="코튼 트래블 2+1팩(반팔티+반바지)">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS1901WWB2_L?AR=0&RS=233x317" alt="코튼 트래블 2+1팩(반팔티+반바지)" class="hidden">
+                                    <span class="op"></span>
+                                </a>
+
+                                <div class="prd-info">
+                                    <div class="etc_txt">
+                                        <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS1901WWB" class="visible_tx">
+                                            <span class="brand">PROJECT M</span>
+                                            <span class="name">코튼 트래블 2+1팩(반팔티+반바지)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS1902MLT" class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS1902MLT1_L?AR=0&RS=233x317" alt="오가닉코튼 5팩 포켓 반팔 티셔츠">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS1902MLT2_L?AR=0&RS=233x317" alt="오가닉코튼 5팩 포켓 반팔 티셔츠" class="hidden">
+                                    <span class="op"></span>
+                                </a>
+
+                                <div class="prd-info">
+                                    <div class="etc_txt">
+                                        <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS1902MLT" class="visible_tx">
+                                            <span class="brand">PROJECT M</span>
+                                            <span class="name">오가닉코튼 5팩 포켓 반팔 티셔츠</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS2902MLT" class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS2902MLT1_L?AR=0&RS=233x317" alt="여성 데일리 4팩 반팔 티셔츠 패키지">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/EPB5TS2902MLT2_L?AR=0&RS=233x317" alt="여성 데일리 4팩 반팔 티셔츠 패키지" class="hidden">
+                                    <span class="op"></span>
+                                </a>
+
+                                <div class="prd-info">
+                                    <div class="etc_txt">
+                                        <a href="/kr/front/goods/goodsDetail.do?goodsNo=EPB5TS2902MLT" class="visible_tx">
+                                            <span class="brand">PROJECT M</span>
+                                            <span class="name">여성 데일리 4팩 반팔 티셔츠 패키지</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
             <div class="btn_group">
                 <button type="button" class="btn h35 bd close" id="btn_close_basket">계속쇼핑</button>
                 <a href="#none" class="btn h35 black" id="btn_move_basket">장바구니</a>
@@ -2900,7 +3568,7 @@
                 if(obj[i].popupGrpCd == popupGrpCd){
                     if(cookieValue != value){
                         var frmObj = document.frmPopup;
-                        var url = Constant.uriPrefix + "/front/openPopup.do";
+                        // var url = Constant.uriPrefix + "/front/openPopup.do";
                         window.open("", "mywindow"+obj[i].popupNo, specs );
                         frmPopup.action = url;
                         frmPopup.method="post";
@@ -2961,13 +3629,14 @@
 <script type="text/javascript" src="/front/js/instagram.js"></script>
 <script type="text/javascript" src="/front/js/youtube.js"></script>
 <script type="text/javascript" src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" src="/kr/front/djs/linkJS.js?v=6"></script>
-<script type="text/javascript" src="/kr/front/djs/memberJS.js?v=1"></script>
-<script type="text/javascript" src="/kr/front/djs/jsVar.js?v=1"></script>
+<script type="text/javascript" src="/front/kr/js/linkJS.js"></script>
+<script type="text/javascript" src="/front/kr/js/memberJS.js"></script>
+<script type="text/javascript" src="/front/kr/js/jsVar.js"></script>
 <script type="text/javascript" src="https://imgp.topten10mall.com/com/product/js/custom.js?v=1"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 <script src="/front/js/libs/jquery.uniform.js"></script>
 <script src="/front/js/libs/jquery.bxslider.min.js"></script>
+<script src="/front/js/libs/swiper.min.js"></script>
 <script src="/front/js/libs/jquery.lazyload.min.js" type="text/javascript"></script>
 <!-- <script src="/front/js/libs/jquery.cycle.all.js"></script> -->
 <!-- <script src="/front/js/libs/cycle-carousel-plugins.js"></script> -->
@@ -3114,7 +3783,7 @@
                 checkColorCalc($bottom);
             }
 
-            location.replace(Constant.uriPrefix + "/front/goods/goodsDetail.do?goodsNo="+goodsNo + trackParam);
+            // location.replace(Constant.uriPrefix + "/front/goods/goodsDetail.do?goodsNo="+goodsNo + trackParam);
         });
 
         // 하단바에서 색상 클릭시 상품 이동
@@ -3129,7 +3798,7 @@
             checkColorCalc($(this));
             checkColorCalc($aside);
 
-            location.replace(Constant.uriPrefix + "/front/goods/goodsDetail.do?goodsNo="+goodsNo + trackParam);
+            // location.replace(Constant.uriPrefix + "/front/goods/goodsDetail.do?goodsNo="+goodsNo + trackParam);
         });
 
         //장바구니등록
@@ -3146,25 +3815,25 @@
                 }else if(Promotion.prmtList.length > 0 && Promotion.prmtInfo.prmtNo == null){
                     // 적용가능한 프로모션 있지만 선택 안했을 때
                     Storm.LayerUtil.confirm('적용가능한 프로모션이 있습니다.<br>이대로 진행 하시겠습니까?<br>(프로모션 적용은 장바구니에서도 가능합니다.)', function (){
-                        var url = Constant.uriPrefix + '/front/basket/insertBasket.do';
-
-                        console.log('goodsSetYn  == {}' + goodsSetYn);
-                        ItemArrSetUtil.setGoodsJsonInfo('basket');
-                        console.log('itemArr  == {}' + $('.itemArr').val());
-
-                        var param = {basketJSON : $('.itemArr').val()};
-                        console.log('param : ', param);
-                        Storm.AjaxUtil.getJSON(url, param, function(result) {
-                            if(result.success){
-                                // reLoadQuickCnt();
-                                func_popup_init('.layer_bag');
-
-                                // google GTM 장바구니 담기 이벤트
-                                commonGtmAddtoCartEvent();
-                            }
-                        });
-
-                        addToCart();
+                        // var url = Constant.uriPrefix + '/front/basket/insertBasket.do';
+                        func_popup_init('.layer_bag');
+                        // console.log('goodsSetYn  == {}' + goodsSetYn);
+                        // ItemArrSetUtil.setGoodsJsonInfo('basket');
+                        // console.log('itemArr  == {}' + $('.itemArr').val());
+                        //
+                        // var param = {basketJSON : $('.itemArr').val()};
+                        // console.log('param : ', param);
+                        // Storm.AjaxUtil.getJSON(url, param, function(result) {
+                        //     if(result.success){
+                        //         // reLoadQuickCnt();
+                        //         func_popup_init('.layer_bag');
+                        //
+                        //         // google GTM 장바구니 담기 이벤트
+                        //         commonGtmAddtoCartEvent();
+                        //     }
+                        // });
+                        //
+                        // addToCart();
                     }, function (){
                         if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
                             optionGroupOn();
@@ -3173,25 +3842,26 @@
                     } , '프로모션 미선택');
                 }else{
                     // 적용가능한 프로모션 없을때(일반)
-                    var url = Constant.uriPrefix + '/front/basket/insertBasket.do';
-
-                    console.log('goodsSetYn  == {}' + goodsSetYn);
-                    ItemArrSetUtil.setGoodsJsonInfo('basket');
-                    console.log('itemArr  == {}' + $('.itemArr').val());
-
-                    var param = {basketJSON : $('.itemArr').val()};
-                    console.log('param : ', param);
-                    Storm.AjaxUtil.getJSON(url, param, function(result) {
-                        if(result.success){
-                            // reLoadQuickCnt();
-                            func_popup_init('.layer_bag');
-
-                            // google GTM 장바구니 담기 이벤트
-                            commonGtmAddtoCartEvent();
-                        }
-                    });
-
-                    addToCart();
+                    func_popup_init('.layer_bag');
+                    // var url = Constant.uriPrefix + '/front/basket/insertBasket.do';
+                    //
+                    // console.log('goodsSetYn  == {}' + goodsSetYn);
+                    // ItemArrSetUtil.setGoodsJsonInfo('basket');
+                    // console.log('itemArr  == {}' + $('.itemArr').val());
+                    //
+                    // var param = {basketJSON : $('.itemArr').val()};
+                    // console.log('param : ', param);
+                    // Storm.AjaxUtil.getJSON(url, param, function(result) {
+                    //     if(result.success){
+                    //         // reLoadQuickCnt();
+                    //         func_popup_init('.layer_bag');
+                    //
+                    //         // google GTM 장바구니 담기 이벤트
+                    //         commonGtmAddtoCartEvent();
+                    //     }
+                    // });
+                    //
+                    // addToCart();
                 }
             } else {
                 if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
@@ -3212,45 +3882,45 @@
 
         //장바구니이동
         $('#btn_move_basket').on('click', function(){
-            location.href = Constant.dlgtMallUrl + "/front/basket/basketList.do";
+            // location.href = Constant.dlgtMallUrl + "/front/basket/basketList.do";
         });
 
         //관심상품등록 호출
-        $('#btn_favorite_go').on('click', function(){
-            // var memberNo =  '';
-            if(!loginYn) {
-                Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
-                    function() {
-                        move_page('login');
-                    },''
-                );
-            } else {
-                var url = Constant.uriPrefix + '/front/interest/insertInterest.do';
-                var param = {goodsNo : 'AEB1CG1101BE'}
-                Storm.AjaxUtil.getJSON(url, param, function(result) {
-                    if(result.success) {
-                        // reLoadQuickCnt();
-                        Storm.LayerUtil.confirm('관심상품으로 이동 하시겠습니까?', function() {
-                            location.href= Constant.dlgtMallUrl + "/front/interest/interestList.do";
-                        })
-                    }
-                });
-
-                /* branch */
-                var event_and_custom_data = {
-                    "currency":"KRW"
-                };
-                var content_items = [
-                    {
-                        "$sku":"AEB1CG1101BE",
-                        "$product_name":"카라 히든 버튼 맥코트",
-                        "$price":79000.0,
-                        "$product_brand":"ZIOZIA"
-                    }
-                ];
-                sdk.branch.logEvent("ADD_TO_WISHLIST", event_and_custom_data, content_items);
-            }
-        });
+        // $('#btn_favorite_go').on('click', function(){
+        //     // var memberNo =  '';
+        //     if(!loginYn) {
+        //         Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
+        //             function() {
+        //                 move_page('login');
+        //             },''
+        //         );
+        //     } else {
+        //         var url = Constant.uriPrefix + '/front/interest/insertInterest.do';
+        //         var param = {goodsNo : 'AEB1CG1101BE'}
+        //         Storm.AjaxUtil.getJSON(url, param, function(result) {
+        //             if(result.success) {
+        //                 // reLoadQuickCnt();
+        //                 Storm.LayerUtil.confirm('관심상품으로 이동 하시겠습니까?', function() {
+        //                     location.href= Constant.dlgtMallUrl + "/front/interest/interestList.do";
+        //                 })
+        //             }
+        //         });
+        //
+        //         /* branch */
+        //         var event_and_custom_data = {
+        //             "currency":"KRW"
+        //         };
+        //         var content_items = [
+        //             {
+        //                 "$sku":"AEB1CG1101BE",
+        //                 "$product_name":"카라 히든 버튼 맥코트",
+        //                 "$price":79000.0,
+        //                 "$product_brand":"ZIOZIA"
+        //             }
+        //         ];
+        //         sdk.branch.logEvent("ADD_TO_WISHLIST", event_and_custom_data, content_items);
+        //     }
+        // });
 
         /* 바로구매 */
         $('#btn_checkout_go').on('click', function(){
@@ -3260,70 +3930,70 @@
             var formCheck = false;
             formCheck = jsFormValidation(); //폼체크
 
-            if(formCheck) {
-                var preOrdUseYn = "N";
-                console.log('goodsSetYn  == {}' + goodsSetYn);
-                ItemArrSetUtil.setGoodsJsonInfo('order');
-                console.log('itemArr  == {}' + $('.itemArr').val());
-
-                if(preOrdUseYn == "Y") {
-                    var preOrdEndDt = '';
-                    preOrdEndDt = getYYYYMMDD(new Date(preOrdEndDt));
-                    var toDay = getYYYYMMDD(new Date());
-
-                    if(toDay <= preOrdEndDt) {
-                        if (loginYn) {
-                            $('#goods_form').attr('action', Constant.dlgtMallUrl + '/front/order/orderForm.do');
-                            $('#goods_form').attr('method','post');
-                            $('#goods_form').submit();
-                        } else {
-                            func_popup_init('#login_popup'); // 로그인 컨펌
-                        }
-                    } else {
-                        Storm.LayerUtil.alert('사전 주문 기간이 지났습니다.');
-                    }
-                } else {
-                    var prmtNo = Promotion.prmtInfo.prmtNo;
-                    if(prmtNo != null){
-                        Promotion.applyPrmt('btnCheckoutGo');
-                    }else if(Promotion.prmtList.length > 0 && Promotion.prmtInfo.prmtNo == null){
-                        // 적용가능한 프로모션 있지만 선택 안했을 때
-                        Storm.LayerUtil.confirm('적용가능한 프로모션이 있습니다.<br>이대로 진행 하시겠습니까?<br>(프로모션 적용은 장바구니에서도 가능합니다.)', function (){
-                            var url = Constant.uriPrefix + '/front/basket/insertBasket.do';
-                            var param = {basketJSON : $('.itemArr').val()};
-                            Storm.AjaxUtil.getJSON(url, param, function(result) {
-                                if(result.success){
-                                    // reLoadQuickCnt();
-                                    location.href = Constant.dlgtMallUrl + "/front/basket/basketList.do";
-                                }
-                            });
-
-                            addToCart();
-                        }, function (){
-                            if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
-                                optionGroupOn();
-                            }
-                            return false;
-                        } , '프로모션 미선택');
-                    }else{
-                        // 적용가능한 프로모션 없을때(일반)
-                        var url = Constant.uriPrefix + '/front/basket/insertBasket.do';
-                        var param = {basketJSON : $('.itemArr').val()};
-                        Storm.AjaxUtil.getJSON(url, param, function(result) {
-                            if(result.success){
-                                // reLoadQuickCnt();
-                                location.href = Constant.dlgtMallUrl + "/front/basket/basketList.do";
-                            }
-                        });
-
-                        addToCart();
-                    }
-                }
-            } else{
-                if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
-                    optionGroupOn();
-                }
-            }
+            // if(formCheck) {
+            //     var preOrdUseYn = "N";
+            //     console.log('goodsSetYn  == {}' + goodsSetYn);
+            //     ItemArrSetUtil.setGoodsJsonInfo('order');
+            //     console.log('itemArr  == {}' + $('.itemArr').val());
+            //
+            //     if(preOrdUseYn == "Y") {
+            //         var preOrdEndDt = '';
+            //         preOrdEndDt = getYYYYMMDD(new Date(preOrdEndDt));
+            //         var toDay = getYYYYMMDD(new Date());
+            //
+            //         if(toDay <= preOrdEndDt) {
+            //             if (loginYn) {
+            //                 $('#goods_form').attr('action', Constant.dlgtMallUrl + '/front/order/orderForm.do');
+            //                 $('#goods_form').attr('method','post');
+            //                 $('#goods_form').submit();
+            //             } else {
+            //                 func_popup_init('#login_popup'); // 로그인 컨펌
+            //             }
+            //         } else {
+            //             Storm.LayerUtil.alert('사전 주문 기간이 지났습니다.');
+            //         }
+            //     } else {
+            //         var prmtNo = Promotion.prmtInfo.prmtNo;
+            //         if(prmtNo != null){
+            //             Promotion.applyPrmt('btnCheckoutGo');
+            //         }else if(Promotion.prmtList.length > 0 && Promotion.prmtInfo.prmtNo == null){
+            //             // 적용가능한 프로모션 있지만 선택 안했을 때
+            //             Storm.LayerUtil.confirm('적용가능한 프로모션이 있습니다.<br>이대로 진행 하시겠습니까?<br>(프로모션 적용은 장바구니에서도 가능합니다.)', function (){
+            //                 var url = Constant.uriPrefix + '/front/basket/insertBasket.do';
+            //                 var param = {basketJSON : $('.itemArr').val()};
+            //                 Storm.AjaxUtil.getJSON(url, param, function(result) {
+            //                     if(result.success){
+            //                         // reLoadQuickCnt();
+            //                         location.href = Constant.dlgtMallUrl + "/front/basket/basketList.do";
+            //                     }
+            //                 });
+            //
+            //                 addToCart();
+            //             }, function (){
+            //                 if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
+            //                     optionGroupOn();
+            //                 }
+            //                 return false;
+            //             } , '프로모션 미선택');
+            //         }else{
+            //             // 적용가능한 프로모션 없을때(일반)
+            //             var url = Constant.uriPrefix + '/front/basket/insertBasket.do';
+            //             var param = {basketJSON : $('.itemArr').val()};
+            //             Storm.AjaxUtil.getJSON(url, param, function(result) {
+            //                 if(result.success){
+            //                     // reLoadQuickCnt();
+            //                     location.href = Constant.dlgtMallUrl + "/front/basket/basketList.do";
+            //                 }
+            //             });
+            //
+            //             addToCart();
+            //         }
+            //     }
+            // } else{
+            //     if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
+            //         optionGroupOn();
+            //     }
+            // }
         });
 
         /* 바로구매 */
@@ -3688,24 +4358,24 @@
         // 하단바 관심상품
         $('#bottom_btn_favorite_go').on('click', function(){
             // var memberNo =  '';
-            if(!loginYn) {
-                Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
-                    function() {
-                        move_page('login');
-                    },''
-                );
-            } else {
-                var url = Constant.uriPrefix + '/front/interest/insertInterest.do';
-                var param = {goodsNo : 'AEB1CG1101BE'}
-                Storm.AjaxUtil.getJSON(url, param, function(result) {
-                    if(result.success) {
-                        // reLoadQuickCnt();
-                        Storm.LayerUtil.confirm('관심상품으로 이동 하시겠습니까?', function() {
-                            location.href= Constant.dlgtMallUrl + "/front/interest/interestList.do";
-                        })
-                    }
-                })
-            }
+            // if(!loginYn) {
+            //     Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
+            //         function() {
+            //             move_page('login');
+            //         },''
+            //     );
+            // } else {
+            //     var url = Constant.uriPrefix + '/front/interest/insertInterest.do';
+            //     var param = {goodsNo : 'AEB1CG1101BE'}
+            //     Storm.AjaxUtil.getJSON(url, param, function(result) {
+            //         if(result.success) {
+            //             // reLoadQuickCnt();
+            //             Storm.LayerUtil.confirm('관심상품으로 이동 하시겠습니까?', function() {
+            //                 location.href= Constant.dlgtMallUrl + "/front/interest/interestList.do";
+            //             })
+            //         }
+            //     })
+            // }
         });
 
         // 초기 하단바 노출
@@ -3827,7 +4497,7 @@
         Storm.waiting.start();
         var pageIndex = Number(jQuery('#form_id_search input[name="page"]').val());
         var param = {page : pageIndex, storeName : $('#storeName').val(), paramPartnerNo : '1'};
-        var url = Constant.uriPrefix + "/front/goods/ajaxSelectStoreList.do";
+        // var url = Constant.uriPrefix + "/front/goods/ajaxSelectStoreList.do";
         Storm.AjaxUtil.loadByPost(url, param, function(result){
             Storm.waiting.stop();
             $('#form_id_search input[name="page"]').val(pageIndex);
@@ -3843,7 +4513,7 @@
     /* 상품후기조회 */
     function ajaxReviewList(){
         var param = $('#form_review_search').serialize();
-        var url = Constant.uriPrefix + '/front/review/ajaxReviewList.do?goodsNo='+'AEB1CG1101BE'+"&"+param;
+        // var url = Constant.uriPrefix + '/front/review/ajaxReviewList.do?goodsNo='+'AEB1CG1101BE'+"&"+param;
         Storm.AjaxUtil.load(url, function(result) {
             $('#detail4').html(result);
             $("#form_id_review #goodsNo").val('AEB1CG1101BE');
@@ -3855,7 +4525,7 @@
         $('#couponPop').remove();
         var couponLayerPop = "";
         var couponList = "";
-        var url = Constant.uriPrefix + '/front/coupon/downloadCoupon.do';
+        // var url = Constant.uriPrefix + '/front/coupon/downloadCoupon.do';
         var param = {couponCtgNoArr:'1,3,22465,22466,22467,2,21926,21927,21928,21926,21927,21929,22289,1001,1004,1024,1110,1001,1004,1024,1110,1,13557', goodsNo:'AEB1CG1101BE'};
         Storm.AjaxUtil.getJSON(url, param, function(result) {
             if(result.success) {
@@ -3944,7 +4614,7 @@
 
     /* 쿠폰 건별 발급 */
     function issueCoupon(couponNo) {
-        var url = Constant.uriPrefix + '/front/coupon/issueCoupon.do';
+        // var url = Constant.uriPrefix + '/front/coupon/issueCoupon.do';
         var param = {couponNo:couponNo};
 
         Storm.AjaxUtil.getJSON(url, param, function(result) {
@@ -3969,7 +4639,7 @@
             }
         });
         if(couponAvailCnt > 0) {
-            var url = Constant.uriPrefix + '/front/coupon/issueCouponAll.do';
+            // var url = Constant.uriPrefix + '/front/coupon/issueCouponAll.do';
             var param = {couponCtgNoArr:'1,3,22465,22466,22467,2,21926,21927,21928,21926,21927,21929,22289,1001,1004,1024,1110,1001,1004,1024,1110,1,13557', goodsNo:'AEB1CG1101BE'};
             Storm.AjaxUtil.getJSON(url, param, function(result) {
                 if(result.success) {
@@ -4205,7 +4875,7 @@
         param['storeNo'] = $('.choose_pixed_store_no').val();
         param['buyQtt'] = buyQtt;
         var itemNos = new Array();
-        var url = Constant.uriPrefix + '/front/goods/ajaxSelectStoreStockInfo.do';
+        // var url = Constant.uriPrefix + '/front/goods/ajaxSelectStoreStockInfo.do';
         var returnResult = true;
 
         var curSetNo = jQuery('#goods_form div.title').data('setNo');
@@ -4317,19 +4987,19 @@
 
     $('#btn_direct_question_go').on('click', function(){
         //로그인여부 검증
-        if(!loginYn){
-            Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?', function(){
-                move_page('login');
-            })
-        }else{
-            // layer_open_direct_question
-//             setDefaultQuestionForm();
-//             func_popup_init('.layer_direct_question');
-//             Storm.DaumEditor.init(); // 에디터 초기화 함수, 에디터가 여러개여도 한번만 해주면 됨
-//             $('#tx_trex_containerquestionContent').remove();
-//             Storm.DaumEditor.create('questionContent'); // contentTextarea 를 ID로 가지는 Textarea를 에디터로 설정
-            location.href = Constant.dlgtMallUrl + "/front/customer/inquiryList.do";
-        }
+//         if(!loginYn){
+//             Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?', function(){
+//                 move_page('login');
+//             })
+//         }else{
+//             // layer_open_direct_question
+// //             setDefaultQuestionForm();
+// //             func_popup_init('.layer_direct_question');
+// //             Storm.DaumEditor.init(); // 에디터 초기화 함수, 에디터가 여러개여도 한번만 해주면 됨
+// //             $('#tx_trex_containerquestionContent').remove();
+// //             Storm.DaumEditor.create('questionContent'); // contentTextarea 를 ID로 가지는 Textarea를 에디터로 설정
+//             location.href = Constant.dlgtMallUrl + "/front/customer/inquiryList.do";
+//         }
     });
 
     $('#closeBtn').on('click', function(){
@@ -4401,8 +5071,8 @@
             } else {
                 param['itemNos[0]'] = $('.itemNoArr').val();
             }
-            console.log(param);
-            var url = Constant.uriPrefix + '/front/goods/ajaxSelectStoreStockInfo.do';
+            // console.log(param);
+            // var url = Constant.uriPrefix + '/front/goods/ajaxSelectStoreStockInfo.do';
             Storm.waiting.start();
             Storm.AjaxUtil.getJSON(url, param, function(result){
                 if(result.success) {
@@ -4572,10 +5242,10 @@
         getApplicablePromotionListByGoods : function(goodsNo){
             $('#prmt_select').html('');
             $('#bottom_prmt_select').html('');
-            var url = Constant.uriPrefix + '/front/goods/getApplicablePromotionListByGoods.do',
-                param = {
-                    goodsNo : goodsNo
-                };
+            // var url = Constant.uriPrefix + '/front/goods/getApplicablePromotionListByGoods.do',
+            //     param = {
+            //         goodsNo : goodsNo
+            //     };
 
             Storm.AjaxUtil.getJSON(url, param, function(result) {
                 // var memberNo =  '';
@@ -4623,30 +5293,30 @@
                             'prmtBnfDcRate' : obj.prmtBnfDcRate,
                             'prmtBnfValue' : obj.prmtBnfValue
                         });
-                        if (!loginYn && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                            option.prop('disabled',true);
-                            option.addClass('dis');
-                            option.text(obj.prmtNm+' (회원전용)');
-                        }
-                        $select.append(option);
+                        // if (!loginYn && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+                        //     option.prop('disabled',true);
+                        //     option.addClass('dis');
+                        //     option.text(obj.prmtNm+' (회원전용)');
+                        // }
+                        // $select.append(option);
 
                         // 프로모션 선택 div 그리기
-                        prmtList += '<div class="prmt_dtl" id="prmt_dtl_'+ obj.prmtNo + '" data-prmt-no="' + obj.prmtNo + '">';
-
-                        if (!loginYn && obj.prmtKindCd == '05' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                            prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
-                            prmtList += '    <button type="button" class="login_need black">다운</button>';
-                        }else if(!loginYn && obj.prmtKindCd == '04' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                            prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
-                            prmtList += '    <button type="button" class="login_need">적용</button>';
-                        }else if(loginYn && obj.prmtKindCd == '05' && obj.memberCpNo == 0 && obj.downPossibleYn == 'Y'){
-                            prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + '</p>';
-                            prmtList += '    <button type="button" class="btn_prmt_down black">다운</button>';
-                        }else{
-                            prmtList += '    <p class="prmtNm">'+ obj.prmtNm + '</p>';
-                            prmtList += '    <button type="button" class="btn_prmt_apply black">적용하기</button>';
-                        }
-                        prmtList += '</div>';
+                        // prmtList += '<div class="prmt_dtl" id="prmt_dtl_'+ obj.prmtNo + '" data-prmt-no="' + obj.prmtNo + '">';
+                        //
+                        // if (!loginYn && obj.prmtKindCd == '05' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+                        //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
+                        //     prmtList += '    <button type="button" class="login_need black">다운</button>';
+                        // }else if(!loginYn && obj.prmtKindCd == '04' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+                        //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
+                        //     prmtList += '    <button type="button" class="login_need">적용</button>';
+                        // }else if(loginYn && obj.prmtKindCd == '05' && obj.memberCpNo == 0 && obj.downPossibleYn == 'Y'){
+                        //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + '</p>';
+                        //     prmtList += '    <button type="button" class="btn_prmt_down black">다운</button>';
+                        // }else{
+                        //     prmtList += '    <p class="prmtNm">'+ obj.prmtNm + '</p>';
+                        //     prmtList += '    <button type="button" class="btn_prmt_apply black">적용하기</button>';
+                        // }
+                        // prmtList += '</div>';
                     });
 
                     $('#prmt_list_dtl').html(prmtList);
@@ -4714,30 +5384,30 @@
                             'prmtBnfDcRate' : obj.prmtBnfDcRate,
                             'prmtBnfValue' : obj.prmtBnfValue
                         });
-                        if (!loginYn && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                            option.prop('disabled',true);
-                            option.addClass('dis');
-                            option.text(obj.prmtNm+' (회원전용)');
-                        }
-                        $select2.append(option);
+                        // if (!loginYn && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+                        //     option.prop('disabled',true);
+                        //     option.addClass('dis');
+                        //     option.text(obj.prmtNm+' (회원전용)');
+                        // }
+                        // $select2.append(option);
 
                         // 프로모션 선택 div 그리기
-                        prmtList2 += '<div class="prmt_dtl" id="bottom_prmt_dtl_'+ obj.prmtNo + '" data-prmt-no="' + obj.prmtNo + '">';
-
-                        if (!loginYn && obj.prmtKindCd == '05' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                            prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
-                            prmtList2 += '    <button type="button" class="login_need black">다운</button>';
-                        }else if(!loginYn && obj.prmtKindCd == '04' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                            prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
-                            prmtList2 += '    <button type="button" class="login_need">적용</button>';
-                        }else if(loginYn && obj.prmtKindCd == '05' && obj.memberCpNo == 0 && obj.downPossibleYn == 'Y'){
-                            prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + '</p>';
-                            prmtList2 += '    <button type="button" class="btn_prmt_down black">다운</button>';
-                        }else{
-                            prmtList2 += '    <p class="prmtNm">'+ obj.prmtNm + '</p>';
-                            prmtList2 += '    <button type="button" class="btn_prmt_apply black">적용하기</button>';
-                        }
-                        prmtList2 += '</div>';
+                        // prmtList2 += '<div class="prmt_dtl" id="bottom_prmt_dtl_'+ obj.prmtNo + '" data-prmt-no="' + obj.prmtNo + '">';
+                        //
+                        // if (!loginYn && obj.prmtKindCd == '05' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+                        //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
+                        //     prmtList2 += '    <button type="button" class="login_need black">다운</button>';
+                        // }else if(!loginYn && obj.prmtKindCd == '04' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+                        //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
+                        //     prmtList2 += '    <button type="button" class="login_need">적용</button>';
+                        // }else if(loginYn && obj.prmtKindCd == '05' && obj.memberCpNo == 0 && obj.downPossibleYn == 'Y'){
+                        //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + '</p>';
+                        //     prmtList2 += '    <button type="button" class="btn_prmt_down black">다운</button>';
+                        // }else{
+                        //     prmtList2 += '    <p class="prmtNm">'+ obj.prmtNm + '</p>';
+                        //     prmtList2 += '    <button type="button" class="btn_prmt_apply black">적용하기</button>';
+                        // }
+                        // prmtList2 += '</div>';
                     });
 
                     $('#bottom_prmt_list_dtl').html(prmtList2);
@@ -4835,11 +5505,11 @@
                 return;
             }
 
-            var url = Constant.uriPrefix + '/front/goods/getPromotionInfo.do',
-                param = {
-                    prmtNo : prmtData.prmtNo,
-                    goodsNo : goodsNo
-                };
+            // var url = Constant.uriPrefix + '/front/goods/getPromotionInfo.do',
+            //     param = {
+            //         prmtNo : prmtData.prmtNo,
+            //         goodsNo : goodsNo
+            //     };
 
             Storm.AjaxUtil.getJSON(url, param, function(result) {
                 if(result.success){
@@ -5013,7 +5683,7 @@
 
         /* '상품 선택' 클릭 - 팝업 띄우기 전 상품 리스트 세팅 */
         getPrmtTargetGoodsList : function(param){
-            var url = Constant.uriPrefix + '/front/goods/getPrmtTargetGoodsList.do';
+            // var url = Constant.uriPrefix + '/front/goods/getPrmtTargetGoodsList.do';
             Storm.AjaxUtil.getJSON(url, param, function(result){
 
                 // 초기화 - 세트별 상품나열을 위해
@@ -5213,7 +5883,7 @@
             });
 
             $('.select_prmt_target_goods .popup.detail .img_wrap').html('<ul class="slideshow"></ul>');
-            var url = Constant.uriPrefix + '/front/goods/getPrmtTargetGoodsDtl.do';
+            // var url = Constant.uriPrefix + '/front/goods/getPrmtTargetGoodsDtl.do';
             var param = {goodsNo : goodsData.goodsNo};
             Storm.AjaxUtil.getJSON(url, param, function (result) {
                 // 슬라이드 이미지
@@ -5445,14 +6115,14 @@
 
         // 사이즈 불러오기
         setSizeInfoToSelect : function(goodsNo, itemNo, storeNo, $target, string, sizeIndex){
-            var url = Constant.uriPrefix + '/front/goods/getGoodsSizeList.do',
-                param = {
-                    goodsNo : goodsNo,
-                    storeNo : storeNo,
-                    storeRecptYn : 'N'
-                },
-                setNo = Promotion.curSetInfo.setNo
-            ;
+            // var url = Constant.uriPrefix + '/front/goods/getGoodsSizeList.do',
+            //     param = {
+            //         goodsNo : goodsNo,
+            //         storeNo : storeNo,
+            //         storeRecptYn : 'N'
+            //     },
+            //     setNo = Promotion.curSetInfo.setNo
+            // ;
 
             // 서버요청
             Storm.AjaxUtil.getJSON(url, param, function (result) {
@@ -5643,18 +6313,18 @@
                 i++
             });
 
-            var url = Constant.uriPrefix + '/front/basket/insertBasketAppliedPrmt.do';
+            // var url = Constant.uriPrefix + '/front/basket/insertBasketAppliedPrmt.do';
 
-            Storm.AjaxUtil.getJSON(url, param, function(result) {
-                if(result.success){
-                    if(btnType == 'btnCartGo'){
-                        func_popup_init('.layer_bag');
-                    }else if(btnType == 'btnCheckoutGo'){
-                        location.href = Constant.dlgtMallUrl + "/front/basket/basketList.do";
-                    }
-                }
-            });
-            return;
+            // Storm.AjaxUtil.getJSON(url, param, function(result) {
+            //     if(result.success){
+            //         if(btnType == 'btnCartGo'){
+            //             func_popup_init('.layer_bag');
+            //         }else if(btnType == 'btnCheckoutGo'){
+            //             location.href = Constant.dlgtMallUrl + "/front/basket/basketList.do";
+            //         }
+            //     }
+            // });
+            // return;
         },
 
         // 총합계 금액 계산
@@ -5723,7 +6393,7 @@
 
         // 상품 쿠폰 다운로드
         downloadGoodsCoupon : function(prmtNo){
-            var url = Constant.uriPrefix + "/front/goods/insertCouponByPrmtNo.do";
+            // var url = Constant.uriPrefix + "/front/goods/insertCouponByPrmtNo.do";
             var param = {prmtNo:prmtNo};
 
             Storm.AjaxUtil.getJSON(url, param, function(result) {

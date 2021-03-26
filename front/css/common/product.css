@@ -501,7 +501,27 @@
 
 .select_arrow { position: absolute; top: 44px; right: 87px; pointer-events: none; border-style: solid; border-width: 6px 3px 0 3px; border-color: #000 transparent transparent transparent; transform: rotate(180deg); }
 
+.product-detail__recommend {
+    clear: both;
+}
 
-
+.layer.layer_bag .popup { width: 880px; margin: -125px 0 0 -175px; }
+.layer.layer_bag .popup .body { padding: 20px 0 30px; }
+.layer.layer_bag .popup .body .text { color: #666; line-height: 20px; font-size: 13px; height: 107px; }
+.layer.layer_bag .popup .body .btn_group { font-size: 0; text-align: center; }
+.layer.layer_bag .popup .body .btn_group .btn { margin: 0 5px; }
+.layer.layer_bag .thumbnail-list ul li {
+    width: 120px;
+    height: auto;
+}
+.layer.layer_bag .thumbnail-list ul li .prd-info {
+    text-align: left;
+}
+.layer.layer_bag .thumbnail-list ul li .prd-info .etc_txt a.visible_tx .name {
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    webkit-line-clamp: 1;
+}
 
 
