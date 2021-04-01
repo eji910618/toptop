@@ -759,22 +759,26 @@ footer .footer-bottom .sns dd:first-child {
 
 .gototop {width: 48px; height: 48px; margin-top: 10px; background-repeat: round; background-image: url("/front/img/ssts/common/PC_scroll_top.png");margin-left: 20%; background-size: cover;}
 
+.layer.layer_size {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 .layer.layer_size .popup {
     max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    left: 0;
+    top: 0;
     width: 708px;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
     font-family: 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif;
-}
-.layer.layer_size .layer_size--body {
-    height: calc(100% - 78px - 58px);
 }
 .layer.layer_size .popup .head {
     border-bottom: none;
     padding-left: 42px;
     padding-right: 42px;
+    height: 78px;
 }
 .layer.layer_size .popup .head h1 {
     font-weight: bold;
@@ -790,11 +794,10 @@ footer .footer-bottom .sns dd:first-child {
 .layer.layer_size .layer_size--tabs {
     margin-left: -6px;
     margin-right: -7px;
-    font-size: 0;
+    display: -ms-flex;
+    display: flex;
 }
 .layer.layer_size .layer_size--tab {
-    display: inline-block;
-    vertical-align: middle;
     padding-left: 6px;
     padding-right: 7px;
 }
@@ -816,9 +819,6 @@ footer .footer-bottom .sns dd:first-child {
 .layer.layer_size .layer_size--content {
     display: none;
     padding: 60px 42px;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 .layer.layer_size .layer_size--content.active {
     display: block;
