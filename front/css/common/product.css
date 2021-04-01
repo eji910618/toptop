@@ -87,8 +87,6 @@
 #product_detail section .detail_tab_contents .size_info .left li span { display: inline-block; vertical-align: top; font-size: 12px; color: #666; }
 #product_detail section .detail_tab_contents .size_info .right { float: left; }
 #product_detail section .detail_tab_contents .size_info .right img { display: block; }
-#product_detail section .detail_tab_contents .size_detail p { display: block; width: 100%; color: #666; line-height: 100%; text-align: right; margin-bottom: 10px; }
-#product_detail section .detail_tab_contents .size_detail p.bottom { margin-top: 20px; color: #999; text-align: left; }
 #product_detail section .detail_tab_contents .delivery_tab { overflow: hidden; height: 50px; position: relative; margin-bottom: 60px; }
 #product_detail section .detail_tab_contents .delivery_tab:after { content: ''; display: block; clear: both; width: 100%; height: 1px; border-bottom: 1px solid #e5e5e5; position: absolute; bottom: 0; left: 0; }
 #product_detail section .detail_tab_contents .delivery_tab li { float: left; margin-right: -1px; position: relative; z-index: 1; }
@@ -523,5 +521,4 @@
     width: 100%;
     webkit-line-clamp: 1;
 }
-
 

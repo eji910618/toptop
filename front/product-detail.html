@@ -2371,108 +2371,531 @@
 <div class="layer layer_size">
     <div class="popup">
         <div class="head">
-            <h1>실측 사이즈</h1>
+            <h1>SIZE GUIDE</h1>
             <button type="button" name="button" class="btn_close close">close</button>
         </div>
-        <div class="section size_detail pt0">
-            <p>단위(cm)</p>
-            <table class="hor">
-                <colgroup>
-                    <col width="14.285714285714286%">
-                    <col width="14.285714285714286%">
-                    <col width="14.285714285714286%">
-                    <col width="14.285714285714286%">
-                    <col width="14.285714285714286%">
-                    <col width="14.285714285714286%">
-                    <col width="14.285714285714286%">
-                </colgroup>
-                <thead>
-                <tr>
-                    <th>사이즈</th>
-                    <th>어깨너비</th>
-                    <th>가슴둘레</th>
-                    <th>밑단둘레</th>
-                    <th>소매길이</th>
-                    <th>화장</th>
-                    <th>총길이</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        95</td>
-                    <td>
-                        45</td>
-                    <td>
-                        107</td>
-                    <td>
-                        115</td>
-                    <td>
-                        62</td>
-                    <td>
-                        0</td>
-                    <td>
-                        95</td>
-                </tr>
-                <tr>
-                    <td>
-                        100</td>
-                    <td>
-                        47</td>
-                    <td>
-                        112</td>
-                    <td>
-                        120</td>
-                    <td>
-                        63</td>
-                    <td>
-                        0</td>
-                    <td>
-                        97</td>
-                </tr>
-                <tr>
-                    <td>
-                        105</td>
-                    <td>
-                        49</td>
-                    <td>
-                        117</td>
-                    <td>
-                        125</td>
-                    <td>
-                        64</td>
-                    <td>
-                        0</td>
-                    <td>
-                        99</td>
-                </tr>
-                <tr>
-                    <td>
-                        110</td>
-                    <td>
-                        51</td>
-                    <td>
-                        124</td>
-                    <td>
-                        132</td>
-                    <td>
-                        65</td>
-                    <td>
-                        0</td>
-                    <td>
-                        100</td>
-                </tr>
-                </tbody>
-            </table>
-            <p class="bottom">사이즈는 측정 방법과 생산 과정에 따라 약간의 오차가 발생할 수 있습니다.</p>
+        <div class="layer_size--body">
+            <nav class="layer_size--nav">
+                <ul class="layer_size--tabs">
+                    <li class="layer_size--tab active">
+                        <button type="button" class="layer_size--tabBtn" data-target="#layerSizeMen">MEN</button>
+                    </li>
+                    <li class="layer_size--tab">
+                        <button type="button" class="layer_size--tabBtn" data-target="#layerSizeWomen">WOMEN</button>
+                    </li>
+                    <li class="layer_size--tab">
+                        <button type="button" class="layer_size--tabBtn" data-target="#layerSizeKids">KIDS</button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="layer_size--content active" id="layerSizeMen">
+                <h2 class="layer_size--title">상의</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>Free</th>
+                        <th>XXS</th>
+                        <th>XS</th>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>L</th>
+                        <th>XL</th>
+                        <th>2XL</th>
+                        <th>3XL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>&nbsp;</td>
+                        <td>85</td>
+                        <td>90</td>
+                        <td>95</td>
+                        <td>100</td>
+                        <td>105</td>
+                        <td>110</td>
+                        <td>115</td>
+                    </tr>
+                    <tr>
+                        <td>999</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>103</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2 class="layer_size--title">하의</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                        <col style="width: 11.111111%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>Free</th>
+                        <th>XXS</th>
+                        <th>XS</th>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>L</th>
+                        <th>XL</th>
+                        <th>2XL</th>
+                        <th>3XL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>72</td>
+                        <td>26</td>
+                        <td>28</td>
+                        <td>30</td>
+                        <td>32</td>
+                        <td>34</td>
+                        <td>36</td>
+                        <td>94</td>
+                    </tr>
+                    <tr>
+                        <td>999</td>
+                        <td>&nbsp;</td>
+                        <td>74</td>
+                        <td>29</td>
+                        <td>31</td>
+                        <td>33</td>
+                        <td>86</td>
+                        <td>90</td>
+                        <td>96</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>76</td>
+                        <td>78</td>
+                        <td>82</td>
+                        <td>88</td>
+                        <td>90</td>
+                        <td>98</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>79</td>
+                        <td>84</td>
+                        <td>550</td>
+                        <td>92</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>80</td>
+                        <td>540</td>
+                        <td>&nbsp;</td>
+                        <td>560</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>530</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2 class="layer_size--title">액세서리</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>프리사이즈<span>(Free)</span></th>
+                        <th>슈즈<span>(발사이즈 참고)</span></th>
+                        <th>모자류<span>(머리둘레)</span></th>
+                        <th>성인양말<span>(발사이즈 참고)</span></th>
+                        <th>키즈양말<span>(발사이즈 참고)</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>52(S)</td>
+                        <td>235</td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>999</td>
+                        <td>260</td>
+                        <td>54(M)</td>
+                        <td>275</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>270</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>280</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>220</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="layer_size--content" id="layerSizeWomen">
+                <h2 class="layer_size--title">상의</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>Free</th>
+                        <th>XXS</th>
+                        <th>XS</th>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>L</th>
+                        <th>XL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>80</td>
+                        <td>85</td>
+                        <td>90</td>
+                        <td>95</td>
+                        <td>100</td>
+                        <td>105</td>
+                    </tr>
+                    <tr>
+                        <td>999</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2 class="layer_size--title">하의</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                        <col style="width: 14.285714%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>Free</th>
+                        <th>XXS</th>
+                        <th>XS</th>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>L</th>
+                        <th>XL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>80</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>30</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>999</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>67</td>
+                        <td>29</td>
+                        <td>74</td>
+                        <td>79</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>520</td>
+                        <td>70</td>
+                        <td>76</td>
+                        <td>550</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>72</td>
+                        <td>540</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>530</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2 class="layer_size--title">액세서리</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>프리사이즈<span>(Free)</span></th>
+                        <th>슈즈<span>(발사이즈 참고)</span></th>
+                        <th>모자류<span>(머리둘레)</span></th>
+                        <th>성인양말<span>(발사이즈 참고)</span></th>
+                        <th>키즈양말<span>(발사이즈 참고)</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>52(S)</td>
+                        <td>235</td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>999</td>
+                        <td>260</td>
+                        <td>54(M)</td>
+                        <td>275</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>270</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>280</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>220</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="layer_size--content" id="layerSizeKids">
+                <h2 class="layer_size--title">상/하의</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>3~4세</th>
+                        <th>5~6세</th>
+                        <th>7~8세</th>
+                        <th>8~9세</th>
+                        <th>10~11세</th>
+                        <th>11~12세</th>
+                        <th>12~13세</th>
+                        <th>13이상</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>100</td>
+                        <td>110</td>
+                        <td>120</td>
+                        <td>130</td>
+                        <td>140</td>
+                        <td>150</td>
+                        <td>160</td>
+                        <td>170</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2 class="layer_size--title">언더웨어</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                        <col style="width: 12.5%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>3~4세</th>
+                        <th>5~6세</th>
+                        <th>7~8세</th>
+                        <th>8~9세</th>
+                        <th>10~11세</th>
+                        <th>11~12세</th>
+                        <th>12~13세</th>
+                        <th>13이상</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>65</td>
+                        <td>70</td>
+                        <td>70</td>
+                        <td>75</td>
+                        <td>80</td>
+                        <td>80</td>
+                        <td>85</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h2 class="layer_size--title">액세서리</h2>
+                <table class="layer_size--table">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>프리사이즈<span>(Free)</span></th>
+                        <th>슈즈<span>(발사이즈 참고)</span></th>
+                        <th>모자류<span>(머리둘레)</span></th>
+                        <th>성인양말<span>(발사이즈 참고)</span></th>
+                        <th>키즈양말<span>(발사이즈 참고)</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>250</td>
+                        <td>52(S)</td>
+                        <td>235</td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>999</td>
+                        <td>260</td>
+                        <td>54(M)</td>
+                        <td>275</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>270</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>280</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>220</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <!--         <div class="body mCustomScrollbar"> -->
-        <!--                 <ul class="layer_size_tab"> -->
-        <!--                 </ul> -->
-        <!--                     <p>단위(cm)</p> -->
-        <!--                     <p class="bottom">사이즈는 측정 방법과 생산 과정에 따라 약간의 오차가 발생할 수 있습니다.</p> -->
-        <!--                 </div> -->
-        <!--         </div> -->
     </div>
 </div>
 <div class="layer layer_own_size">
@@ -2487,7 +2910,8 @@
             </div>
         </div>
     </div>
-</div><div class="layer layer_point">
+</div>
+<div class="layer layer_point">
     <div class="popup">
         <div class="head">
             <h1>포인트 안내</h1>
@@ -2678,7 +3102,8 @@
             </div>
         </div>
     </div>
-</div><script>
+</div>
+<script>
     $(document).ready(function(){
 
         $('.rate_dropdown > div').on('click', function(){
@@ -2761,7 +3186,8 @@
 
 </script>
 <div class="layer layer_review" id="popup_review_write">
-    <form id="form_id_review" action="/kr/front/goods/goodsDetail.do?goodsNo=AEB1CG1101BE&trackNo=20&trackDtl=AEB1CG1101" method="post"><input type="hidden" name="mode" id="mode" value="insert"/>
+    <form id="form_id_review" action="/kr/front/goods/goodsDetail.do?goodsNo=AEB1CG1101BE&trackNo=20&trackDtl=AEB1CG1101" method="post">
+        <input type="hidden" name="mode" id="mode" value="insert"/>
         <input type="hidden" name="bbsId" id="bbsId" value="review"/>
         <input type="hidden" name="lettNo" id="lettNo" value=""/>
         <input type="hidden" name="goodsNo" id="goodsNo" value=""/>
@@ -2841,7 +3267,10 @@
         </div>
         <div>
             <input type="hidden" name="_csrf" value="f6511882-079f-4865-a3f6-55348b4d90e9" />
-        </div></form></div><script>
+        </div>
+    </form>
+</div>
+<script>
     jQuery(document).ready(function() {
         //숫자만 입력
         var re = new RegExp("[^0-9]","i");
@@ -3101,7 +3530,8 @@
             </div>
         </div>
     </form>
-</div><div class="layer layer_restock" id="ctrl_restock_layer">
+</div>
+<div class="layer layer_restock" id="ctrl_restock_layer">
     <div class="popup">
         <div class="head">
             <h1>재입고 알람신청</h1>
@@ -3417,7 +3847,8 @@
 </div>
 
 <!-- crema -->
-<div class="crema-popup"></div><div id="big_slider" class="">
+<div class="crema-popup"></div>
+<div id="big_slider" class="">
     <div class="head">
         <h1>카라 히든 버튼 맥코트</h1>
         <p>AEB1CG1101BE</p>
@@ -3529,7 +3960,8 @@
         </div>
     </div>
 </div>
-<!-- //layer popup --><script>
+<!-- //layer popup -->
+<script>
     $(document).ready(function() {
         var obj = [];
         var popupGrpCd = jQuery("#popupGrpCd").val();
@@ -3593,7 +4025,7 @@
         });
     });
 </script>
-<input type="hidden" id = "popupGrpCd" name = "popupGrpCd" value = "SG" />
+<input type="hidden" id="popupGrpCd" name = "popupGrpCd" value = "SG" />
 <form name="frmPopup">
     <input type="hidden" name="popupNm" id = "popupNm" >
     <input type="hidden" name="content" id = "content" >
@@ -4425,19 +4857,19 @@
         ];
         sdk.branch.logEvent("VIEW_ITEM", event_and_custom_data, content_items);
 
-        window._eglqueue = window._eglqueue || [];
-        _eglqueue.push(['setVar', 'cuid', cuid]);
-        _eglqueue.push(['setVar', 'itemId', 'AEB1CG1101BE']);
-        _eglqueue.push(['setVar', 'userId', (memberNo == 0) ? '' : memberNo]);
-        _eglqueue.push(['setVar', 'categoryId', '1110']);
-        _eglqueue.push(['setVar', 'brandId', '1']);
-        _eglqueue.push(['track', 'view']);
-        _eglqueue.push(['track', 'product']);
-        (function (s, x) {
-            s = document.createElement('script'); s.type = 'text/javascript';
-            s.async = true; s.defer = true; s.src = (('https:' == document.location.protocol) ? 'https' : 'http') + '://logger.eigene.io/js/logger.min.js';
-            x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-        })();
+        // window._eglqueue = window._eglqueue || [];
+        // _eglqueue.push(['setVar', 'cuid', cuid]);
+        // _eglqueue.push(['setVar', 'itemId', 'AEB1CG1101BE']);
+        // _eglqueue.push(['setVar', 'userId', (memberNo == 0) ? '' : memberNo]);
+        // _eglqueue.push(['setVar', 'categoryId', '1110']);
+        // _eglqueue.push(['setVar', 'brandId', '1']);
+        // _eglqueue.push(['track', 'view']);
+        // _eglqueue.push(['track', 'product']);
+        // (function (s, x) {
+        //     s = document.createElement('script'); s.type = 'text/javascript';
+        //     s.async = true; s.defer = true; s.src = (('https:' == document.location.protocol) ? 'https' : 'http') + '://logger.eigene.io/js/logger.min.js';
+        //     x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        // })();
 
     });
 
@@ -5247,245 +5679,245 @@
             //         goodsNo : goodsNo
             //     };
 
-            Storm.AjaxUtil.getJSON(url, param, function(result) {
-                // var memberNo =  '';
-                if(result.success && result.totalRows > 0) {
-                    // 성공 && 존재하면
-                    var inform = '동일상품 복수구매를 원할시에도 반드시<br>프로모션 적용상품으로 선택해주세요.';
-                    $('#prmt_inform').html(inform);
-
-                    var output = '';
-                    output += '<div class="benefit_word"><span>할인혜택</span></div>';
-                    output += '<div class="prmt_select_dtl" id="prmt_select_dtl">';
-                    output += '    <select name="appliablePrmt" id="appliable_prmt_select">';
-                    output += '        <option value="0" class="hidden">묶음할인 쿠폰, 프로모션 적용</option>';
-                    output += '    </select>';
-                    output += '    <div class="prmt_list_dtl hidden" id="prmt_list_dtl"></div>';
-                    output += '</div>';
-
-                    $('#prmt_select').html(output);
-
-                    var prmtList  = '<p class="promotion">PROMOTION</p><p class="blank">&nbsp;</p>';
-                    prmtList += '<div class="prmt_dtl" id="prmt_dtl_0" data-prmt-no="0">';
-                    prmtList += '    <p class="prmtNm dis">할인혜택 선택 안함</p>';
-                    prmtList += '    <button type="button" class="btn_prmt_apply active">미적용</button>';
-                    prmtList += '</div>';
-
-                    // 하단바 노출 기준 조정
-                    BOTTOM_BAR_APPEARENCE_STANDARD = $('#btn_favorite_go').position().top;
-
-                    var $select = jQuery('#appliable_prmt_select');
-                    jQuery.each(result.resultList, function(idx, obj) {
-                        Promotion.prmtList = result.resultList;
-                        var option = jQuery('<option class="hidden" />');
-                        option.val(obj.prmtNo).text(obj.prmtNm).data({
-                            'goodsNo' : goodsNo,
-                            'prmtNo' : obj.prmtNo,
-                            'prmtKindCd' : obj.prmtKindCd,
-                            'prmtBnfCd1' : obj.prmtBnfCd1,
-                            'prmtBnfCd2' : obj.prmtBnfCd2,
-                            'prmtBnfCd3' : obj.prmtBnfCd3,
-                            'applyStartDttm' : obj.applyStartDttm,
-                            'applyEndDttm' : obj.applyEndDttm,
-                            'prmtApplicableAmt' : obj.prmtApplicableAmt,
-                            'prmtApplicableQtt' : obj.prmtApplicableQtt,
-                            'prmtTargetCd' : obj.prmtTargetCd,
-                            'prmtBnfDcRate' : obj.prmtBnfDcRate,
-                            'prmtBnfValue' : obj.prmtBnfValue
-                        });
-                        // if (!loginYn && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                        //     option.prop('disabled',true);
-                        //     option.addClass('dis');
-                        //     option.text(obj.prmtNm+' (회원전용)');
-                        // }
-                        // $select.append(option);
-
-                        // 프로모션 선택 div 그리기
-                        // prmtList += '<div class="prmt_dtl" id="prmt_dtl_'+ obj.prmtNo + '" data-prmt-no="' + obj.prmtNo + '">';
-                        //
-                        // if (!loginYn && obj.prmtKindCd == '05' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                        //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
-                        //     prmtList += '    <button type="button" class="login_need black">다운</button>';
-                        // }else if(!loginYn && obj.prmtKindCd == '04' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                        //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
-                        //     prmtList += '    <button type="button" class="login_need">적용</button>';
-                        // }else if(loginYn && obj.prmtKindCd == '05' && obj.memberCpNo == 0 && obj.downPossibleYn == 'Y'){
-                        //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + '</p>';
-                        //     prmtList += '    <button type="button" class="btn_prmt_down black">다운</button>';
-                        // }else{
-                        //     prmtList += '    <p class="prmtNm">'+ obj.prmtNm + '</p>';
-                        //     prmtList += '    <button type="button" class="btn_prmt_apply black">적용하기</button>';
-                        // }
-                        // prmtList += '</div>';
-                    });
-
-                    $('#prmt_list_dtl').html(prmtList);
-
-                    /* select box change event */
-                    /* $('#appliable_prmt_select').change(function(){
-                        alert(11);
-                        var prmtData = $(this).find('option:selected').data();
-                        Promotion.prmtSelect(goodsNo, prmtData);
-
-                        // 하단 바 & layer 동기화
-                        $('#bottom_appliable_prmt_select').val(prmtData.prmtNo);
-                        $('#layer_appliable_prmt_select').val(prmtData.prmtNo);
-
-                        if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
-                            $('#layer_prmt_list').removeClass('hidden');
-                        }
-                    }); */
-
-                    $('#appliable_prmt_select').on('click',function(){
-                        if($('#prmt_list_dtl').hasClass('hidden')){
-                            $('#prmt_list_dtl').removeClass('hidden');
-                        }else{
-                            $('#prmt_list_dtl').addClass('hidden');
-                        }
-                    });
-
-                    $('#prmt_guide').html('<a href="#"><span>GUIDE</span>프로모션 적용가이드 영상보기 (클릭)</a>');
-
-
-                    // 하단바
-                    var output2 = '';
-                    output2 += '<div class="bottom_benefit_word"><span>할인혜택</span></div>';
-                    output2 += '<div class="prmt_select_dtl" id="bottom_prmt_select_dtl">';
-                    output2 += '    <div class="prmt_list_dtl hidden" id="bottom_prmt_list_dtl"></div>';
-                    output2 += '    <select name="bottom_appliablePrmt" id="bottom_appliable_prmt_select">';
-                    output2 += '        <option value="0" class="hidden">묶음할인 쿠폰, 프로모션 적용</option>';
-                    output2 += '    </select>';
-                    output2 += '    <div class="select_arrow"></div>';
-                    output2 += '</div>';
-                    $('#bottom_prmt_select').html(output2);
-
-                    var prmtList2  = '<p class="promotion">PROMOTION</p><p class="blank">&nbsp;</p>';
-                    prmtList2 += '<div class="prmt_dtl" id="bottom_prmt_dtl_0" data-prmt-no="0">';
-                    prmtList2 += '    <p class="prmtNm dis">할인혜택 선택 안함</p>';
-                    prmtList2 += '    <button type="button" class="btn_prmt_apply active">미적용</button>';
-                    prmtList2 += '</div>';
-
-                    var $select2 = jQuery('#bottom_appliable_prmt_select');
-                    jQuery.each(result.resultList, function(idx, obj) {
-                        Promotion.prmtList = result.resultList;
-                        var option = jQuery('<option class="hidden" />');
-                        option.val(obj.prmtNo).text(obj.prmtNm).data({
-                            'goodsNo' : goodsNo,
-                            'prmtNo' : obj.prmtNo,
-                            'prmtKindCd' : obj.prmtKindCd,
-                            'prmtBnfCd1' : obj.prmtBnfCd1,
-                            'prmtBnfCd2' : obj.prmtBnfCd2,
-                            'prmtBnfCd3' : obj.prmtBnfCd3,
-                            'applyStartDttm' : obj.applyStartDttm,
-                            'applyEndDttm' : obj.applyEndDttm,
-                            'prmtApplicableAmt' : obj.prmtApplicableAmt,
-                            'prmtApplicableQtt' : obj.prmtApplicableQtt,
-                            'prmtTargetCd' : obj.prmtTargetCd,
-                            'prmtBnfDcRate' : obj.prmtBnfDcRate,
-                            'prmtBnfValue' : obj.prmtBnfValue
-                        });
-                        // if (!loginYn && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                        //     option.prop('disabled',true);
-                        //     option.addClass('dis');
-                        //     option.text(obj.prmtNm+' (회원전용)');
-                        // }
-                        // $select2.append(option);
-
-                        // 프로모션 선택 div 그리기
-                        // prmtList2 += '<div class="prmt_dtl" id="bottom_prmt_dtl_'+ obj.prmtNo + '" data-prmt-no="' + obj.prmtNo + '">';
-                        //
-                        // if (!loginYn && obj.prmtKindCd == '05' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                        //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
-                        //     prmtList2 += '    <button type="button" class="login_need black">다운</button>';
-                        // }else if(!loginYn && obj.prmtKindCd == '04' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
-                        //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
-                        //     prmtList2 += '    <button type="button" class="login_need">적용</button>';
-                        // }else if(loginYn && obj.prmtKindCd == '05' && obj.memberCpNo == 0 && obj.downPossibleYn == 'Y'){
-                        //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + '</p>';
-                        //     prmtList2 += '    <button type="button" class="btn_prmt_down black">다운</button>';
-                        // }else{
-                        //     prmtList2 += '    <p class="prmtNm">'+ obj.prmtNm + '</p>';
-                        //     prmtList2 += '    <button type="button" class="btn_prmt_apply black">적용하기</button>';
-                        // }
-                        // prmtList2 += '</div>';
-                    });
-
-                    $('#bottom_prmt_list_dtl').html(prmtList2);
-
-
-                    /* $('#bottom_appliable_prmt_select').change(function(){
-                        console.log($(this).find('option:selected').data());
-                        var prmtData = $(this).find('option:selected').data();
-                        Promotion.prmtSelect(goodsNo, prmtData);
-
-                        // 기본 & layer 동기화
-                        $('#appliable_prmt_select').val(prmtData.prmtNo);
-                        $('#layer_appliable_prmt_select').val(prmtData.prmtNo);
-
-                        if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
-                            $('#layer_prmt_list').removeClass('hidden');
-                        }
-                    }); */
-
-                    $('#bottom_appliable_prmt_select').on('click',function(){
-                        if($('#bottom_prmt_list_dtl').hasClass('hidden')){
-                            $('#bottom_prmt_list_dtl').removeClass('hidden');
-                        }else{
-                            $('#bottom_prmt_list_dtl').addClass('hidden');
-                        }
-
-                    });
-
-                    $('#bottom_prmt_guide').html('<a href="#"><span>GUIDE</span>프로모션 적용가이드 영상보기 (클릭)</a>');
-
-                    // 버튼클릭(공통)
-                    // #클릭1. 로그인 필요시(비회원이 회원전용 프로모션 적용 or 비회원이 쿠폰 다운로드)
-                    $('button.login_need').on('click', function(){
-                        Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
-                            function() {
-                                move_page('login');
-                            },''
-                        );
-                    });
-
-                    // #클릭2. 다운로드 클릭
-                    $('button.btn_prmt_down').on('click', function(){
-                        var prmtNo = $(this).parent().data('prmtNo');
-                        Promotion.downloadGoodsCoupon(prmtNo);
-                    });
-
-                    // #클릭3. 적용 클릭
-                    $('button.btn_prmt_apply').on('click', function(){
-                        var prmtNo = $(this).parent().data('prmtNo');
-
-                        // 선택한 프로모션 데이터 세팅
-                        $('#appliable_prmt_select').val(prmtNo);
-                        $('#bottom_appliable_prmt_select').val(prmtNo);
-                        var prmtData = $('#appliable_prmt_select').find('option:selected').data();
-
-                        // 프로모션 선택시 함수
-                        Promotion.prmtSelect(goodsNo, prmtData);
-
-                        // div 숨기기
-                        $('.prmt_list_dtl').addClass('hidden');
-
-                        // 버튼색 변경
-                        $('.prmt_list_dtl .prmt_dtl button').removeClass('active');
-                        $('.prmt_list_dtl .prmt_dtl button').text('적용하기');
-                        $('.prmt_list_dtl #prmt_dtl_' + prmtNo + ' button').addClass('active');
-                        $('.prmt_list_dtl #prmt_dtl_' + prmtNo + ' button').text('적용');
-                        $('.prmt_list_dtl #bottom_prmt_dtl_' + prmtNo + ' button').addClass('active');
-                        $('.prmt_list_dtl #bottom_prmt_dtl_' + prmtNo + ' button').text('적용');
-
-                        if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
-                            if(prmtNo != 0){
-                                $('#layer_prmt_list').removeClass('hidden');
-                            }
-                        }
-
-                    });
-                }
-            });
+            // Storm.AjaxUtil.getJSON(url, param, function(result) {
+            //     // var memberNo =  '';
+            //     if(result.success && result.totalRows > 0) {
+            //         // 성공 && 존재하면
+            //         var inform = '동일상품 복수구매를 원할시에도 반드시<br>프로모션 적용상품으로 선택해주세요.';
+            //         $('#prmt_inform').html(inform);
+            //
+            //         var output = '';
+            //         output += '<div class="benefit_word"><span>할인혜택</span></div>';
+            //         output += '<div class="prmt_select_dtl" id="prmt_select_dtl">';
+            //         output += '    <select name="appliablePrmt" id="appliable_prmt_select">';
+            //         output += '        <option value="0" class="hidden">묶음할인 쿠폰, 프로모션 적용</option>';
+            //         output += '    </select>';
+            //         output += '    <div class="prmt_list_dtl hidden" id="prmt_list_dtl"></div>';
+            //         output += '</div>';
+            //
+            //         $('#prmt_select').html(output);
+            //
+            //         var prmtList  = '<p class="promotion">PROMOTION</p><p class="blank">&nbsp;</p>';
+            //         prmtList += '<div class="prmt_dtl" id="prmt_dtl_0" data-prmt-no="0">';
+            //         prmtList += '    <p class="prmtNm dis">할인혜택 선택 안함</p>';
+            //         prmtList += '    <button type="button" class="btn_prmt_apply active">미적용</button>';
+            //         prmtList += '</div>';
+            //
+            //         // 하단바 노출 기준 조정
+            //         BOTTOM_BAR_APPEARENCE_STANDARD = $('#btn_favorite_go').position().top;
+            //
+            //         var $select = jQuery('#appliable_prmt_select');
+            //         jQuery.each(result.resultList, function(idx, obj) {
+            //             Promotion.prmtList = result.resultList;
+            //             var option = jQuery('<option class="hidden" />');
+            //             option.val(obj.prmtNo).text(obj.prmtNm).data({
+            //                 'goodsNo' : goodsNo,
+            //                 'prmtNo' : obj.prmtNo,
+            //                 'prmtKindCd' : obj.prmtKindCd,
+            //                 'prmtBnfCd1' : obj.prmtBnfCd1,
+            //                 'prmtBnfCd2' : obj.prmtBnfCd2,
+            //                 'prmtBnfCd3' : obj.prmtBnfCd3,
+            //                 'applyStartDttm' : obj.applyStartDttm,
+            //                 'applyEndDttm' : obj.applyEndDttm,
+            //                 'prmtApplicableAmt' : obj.prmtApplicableAmt,
+            //                 'prmtApplicableQtt' : obj.prmtApplicableQtt,
+            //                 'prmtTargetCd' : obj.prmtTargetCd,
+            //                 'prmtBnfDcRate' : obj.prmtBnfDcRate,
+            //                 'prmtBnfValue' : obj.prmtBnfValue
+            //             });
+            //             // if (!loginYn && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+            //             //     option.prop('disabled',true);
+            //             //     option.addClass('dis');
+            //             //     option.text(obj.prmtNm+' (회원전용)');
+            //             // }
+            //             // $select.append(option);
+            //
+            //             // 프로모션 선택 div 그리기
+            //             // prmtList += '<div class="prmt_dtl" id="prmt_dtl_'+ obj.prmtNo + '" data-prmt-no="' + obj.prmtNo + '">';
+            //             //
+            //             // if (!loginYn && obj.prmtKindCd == '05' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+            //             //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
+            //             //     prmtList += '    <button type="button" class="login_need black">다운</button>';
+            //             // }else if(!loginYn && obj.prmtKindCd == '04' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+            //             //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
+            //             //     prmtList += '    <button type="button" class="login_need">적용</button>';
+            //             // }else if(loginYn && obj.prmtKindCd == '05' && obj.memberCpNo == 0 && obj.downPossibleYn == 'Y'){
+            //             //     prmtList += '    <p class="prmtNm dis">'+ obj.prmtNm + '</p>';
+            //             //     prmtList += '    <button type="button" class="btn_prmt_down black">다운</button>';
+            //             // }else{
+            //             //     prmtList += '    <p class="prmtNm">'+ obj.prmtNm + '</p>';
+            //             //     prmtList += '    <button type="button" class="btn_prmt_apply black">적용하기</button>';
+            //             // }
+            //             // prmtList += '</div>';
+            //         });
+            //
+            //         $('#prmt_list_dtl').html(prmtList);
+            //
+            //         /* select box change event */
+            //         /* $('#appliable_prmt_select').change(function(){
+            //             alert(11);
+            //             var prmtData = $(this).find('option:selected').data();
+            //             Promotion.prmtSelect(goodsNo, prmtData);
+            //
+            //             // 하단 바 & layer 동기화
+            //             $('#bottom_appliable_prmt_select').val(prmtData.prmtNo);
+            //             $('#layer_appliable_prmt_select').val(prmtData.prmtNo);
+            //
+            //             if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
+            //                 $('#layer_prmt_list').removeClass('hidden');
+            //             }
+            //         }); */
+            //
+            //         $('#appliable_prmt_select').on('click',function(){
+            //             if($('#prmt_list_dtl').hasClass('hidden')){
+            //                 $('#prmt_list_dtl').removeClass('hidden');
+            //             }else{
+            //                 $('#prmt_list_dtl').addClass('hidden');
+            //             }
+            //         });
+            //
+            //         $('#prmt_guide').html('<a href="#"><span>GUIDE</span>프로모션 적용가이드 영상보기 (클릭)</a>');
+            //
+            //
+            //         // 하단바
+            //         var output2 = '';
+            //         output2 += '<div class="bottom_benefit_word"><span>할인혜택</span></div>';
+            //         output2 += '<div class="prmt_select_dtl" id="bottom_prmt_select_dtl">';
+            //         output2 += '    <div class="prmt_list_dtl hidden" id="bottom_prmt_list_dtl"></div>';
+            //         output2 += '    <select name="bottom_appliablePrmt" id="bottom_appliable_prmt_select">';
+            //         output2 += '        <option value="0" class="hidden">묶음할인 쿠폰, 프로모션 적용</option>';
+            //         output2 += '    </select>';
+            //         output2 += '    <div class="select_arrow"></div>';
+            //         output2 += '</div>';
+            //         $('#bottom_prmt_select').html(output2);
+            //
+            //         var prmtList2  = '<p class="promotion">PROMOTION</p><p class="blank">&nbsp;</p>';
+            //         prmtList2 += '<div class="prmt_dtl" id="bottom_prmt_dtl_0" data-prmt-no="0">';
+            //         prmtList2 += '    <p class="prmtNm dis">할인혜택 선택 안함</p>';
+            //         prmtList2 += '    <button type="button" class="btn_prmt_apply active">미적용</button>';
+            //         prmtList2 += '</div>';
+            //
+            //         var $select2 = jQuery('#bottom_appliable_prmt_select');
+            //         jQuery.each(result.resultList, function(idx, obj) {
+            //             Promotion.prmtList = result.resultList;
+            //             var option = jQuery('<option class="hidden" />');
+            //             option.val(obj.prmtNo).text(obj.prmtNm).data({
+            //                 'goodsNo' : goodsNo,
+            //                 'prmtNo' : obj.prmtNo,
+            //                 'prmtKindCd' : obj.prmtKindCd,
+            //                 'prmtBnfCd1' : obj.prmtBnfCd1,
+            //                 'prmtBnfCd2' : obj.prmtBnfCd2,
+            //                 'prmtBnfCd3' : obj.prmtBnfCd3,
+            //                 'applyStartDttm' : obj.applyStartDttm,
+            //                 'applyEndDttm' : obj.applyEndDttm,
+            //                 'prmtApplicableAmt' : obj.prmtApplicableAmt,
+            //                 'prmtApplicableQtt' : obj.prmtApplicableQtt,
+            //                 'prmtTargetCd' : obj.prmtTargetCd,
+            //                 'prmtBnfDcRate' : obj.prmtBnfDcRate,
+            //                 'prmtBnfValue' : obj.prmtBnfValue
+            //             });
+            //             // if (!loginYn && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+            //             //     option.prop('disabled',true);
+            //             //     option.addClass('dis');
+            //             //     option.text(obj.prmtNm+' (회원전용)');
+            //             // }
+            //             // $select2.append(option);
+            //
+            //             // 프로모션 선택 div 그리기
+            //             // prmtList2 += '<div class="prmt_dtl" id="bottom_prmt_dtl_'+ obj.prmtNo + '" data-prmt-no="' + obj.prmtNo + '">';
+            //             //
+            //             // if (!loginYn && obj.prmtKindCd == '05' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+            //             //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
+            //             //     prmtList2 += '    <button type="button" class="login_need black">다운</button>';
+            //             // }else if(!loginYn && obj.prmtKindCd == '04' && (obj.prmtTargetCd == '04' || obj.prmtBnfCd3 == '07')){ /* 회원전용 프로모션 비회원은 선택 못하게 */
+            //             //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + ' (회원전용)</p>';
+            //             //     prmtList2 += '    <button type="button" class="login_need">적용</button>';
+            //             // }else if(loginYn && obj.prmtKindCd == '05' && obj.memberCpNo == 0 && obj.downPossibleYn == 'Y'){
+            //             //     prmtList2 += '    <p class="prmtNm dis">'+ obj.prmtNm + '</p>';
+            //             //     prmtList2 += '    <button type="button" class="btn_prmt_down black">다운</button>';
+            //             // }else{
+            //             //     prmtList2 += '    <p class="prmtNm">'+ obj.prmtNm + '</p>';
+            //             //     prmtList2 += '    <button type="button" class="btn_prmt_apply black">적용하기</button>';
+            //             // }
+            //             // prmtList2 += '</div>';
+            //         });
+            //
+            //         $('#bottom_prmt_list_dtl').html(prmtList2);
+            //
+            //
+            //         /* $('#bottom_appliable_prmt_select').change(function(){
+            //             console.log($(this).find('option:selected').data());
+            //             var prmtData = $(this).find('option:selected').data();
+            //             Promotion.prmtSelect(goodsNo, prmtData);
+            //
+            //             // 기본 & layer 동기화
+            //             $('#appliable_prmt_select').val(prmtData.prmtNo);
+            //             $('#layer_appliable_prmt_select').val(prmtData.prmtNo);
+            //
+            //             if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
+            //                 $('#layer_prmt_list').removeClass('hidden');
+            //             }
+            //         }); */
+            //
+            //         $('#bottom_appliable_prmt_select').on('click',function(){
+            //             if($('#bottom_prmt_list_dtl').hasClass('hidden')){
+            //                 $('#bottom_prmt_list_dtl').removeClass('hidden');
+            //             }else{
+            //                 $('#bottom_prmt_list_dtl').addClass('hidden');
+            //             }
+            //
+            //         });
+            //
+            //         $('#bottom_prmt_guide').html('<a href="#"><span>GUIDE</span>프로모션 적용가이드 영상보기 (클릭)</a>');
+            //
+            //         // 버튼클릭(공통)
+            //         // #클릭1. 로그인 필요시(비회원이 회원전용 프로모션 적용 or 비회원이 쿠폰 다운로드)
+            //         $('button.login_need').on('click', function(){
+            //             Storm.LayerUtil.confirm('로그인이 필요합니다. 지금 로그인 하시겠습니까?',
+            //                 function() {
+            //                     move_page('login');
+            //                 },''
+            //             );
+            //         });
+            //
+            //         // #클릭2. 다운로드 클릭
+            //         $('button.btn_prmt_down').on('click', function(){
+            //             var prmtNo = $(this).parent().data('prmtNo');
+            //             Promotion.downloadGoodsCoupon(prmtNo);
+            //         });
+            //
+            //         // #클릭3. 적용 클릭
+            //         $('button.btn_prmt_apply').on('click', function(){
+            //             var prmtNo = $(this).parent().data('prmtNo');
+            //
+            //             // 선택한 프로모션 데이터 세팅
+            //             $('#appliable_prmt_select').val(prmtNo);
+            //             $('#bottom_appliable_prmt_select').val(prmtNo);
+            //             var prmtData = $('#appliable_prmt_select').find('option:selected').data();
+            //
+            //             // 프로모션 선택시 함수
+            //             Promotion.prmtSelect(goodsNo, prmtData);
+            //
+            //             // div 숨기기
+            //             $('.prmt_list_dtl').addClass('hidden');
+            //
+            //             // 버튼색 변경
+            //             $('.prmt_list_dtl .prmt_dtl button').removeClass('active');
+            //             $('.prmt_list_dtl .prmt_dtl button').text('적용하기');
+            //             $('.prmt_list_dtl #prmt_dtl_' + prmtNo + ' button').addClass('active');
+            //             $('.prmt_list_dtl #prmt_dtl_' + prmtNo + ' button').text('적용');
+            //             $('.prmt_list_dtl #bottom_prmt_dtl_' + prmtNo + ' button').addClass('active');
+            //             $('.prmt_list_dtl #bottom_prmt_dtl_' + prmtNo + ' button').text('적용');
+            //
+            //             if($(window).scrollTop() >= BOTTOM_BAR_APPEARENCE_STANDARD){
+            //                 if(prmtNo != 0){
+            //                     $('#layer_prmt_list').removeClass('hidden');
+            //                 }
+            //             }
+            //
+            //         });
+            //     }
+            // });
         },
 
         /* 프로모션 선택시 */
@@ -5511,41 +5943,41 @@
             //         goodsNo : goodsNo
             //     };
 
-            Storm.AjaxUtil.getJSON(url, param, function(result) {
-                if(result.success){
-                    // 선택한 프로모션 데이터 세팅(프로모션 정보)
-                    Promotion.prmtInfo = result.data;
-                    prmtData = result.data;
-
-                    // 상품 쿠폰일 경우 수량 1개로 조정
-                    if(prmtData.prmtKindCd == '05'){
-                        $('#buyQtt').val(1);
-                        $('.info_wrap .amount').addClass('disabled');
-                    }else{
-                        $('.info_wrap .amount').removeClass('disabled');
-                    }
-
-                    // 선택한 프로모션 데이터 세팅(세트 정보)
-                    Promotion.setList = result.extraData.PRMT_SET_LIST;
-                    if(prmtData.prmtBnfCd1 == '02'){	/* 묶음별 할인 */
-                        if(prmtData.prmtBnfCd2 == '04'){	/* 증정 */
-                            if(prmtData.prmtBnfCd3 == '08'){	/* 사은품 증정 */
-                                Promotion.freebieList = result.extraData.FREEBIE_LIST;
-                                Promotion.freebieTypeCd = Promotion.freebieList[0].freebieTypeCd;
-                            }else{
-                                Promotion.freebieList = {};
-                            }
-                        }else{
-                            Promotion.freebieList = {};
-                        }
-                        Promotion.renderGroupSetDiv(prmtData);
-                    }
-                }
-
-                // 하단 프로모션 레이어 bottom 값 조정
-                var height = $('.basic_group').height() + $('.option_group').height() + 60;
-                $('.layer_prmt_list').css('bottom', height + 'px');
-            });
+            // Storm.AjaxUtil.getJSON(url, param, function(result) {
+            //     if(result.success){
+            //         // 선택한 프로모션 데이터 세팅(프로모션 정보)
+            //         Promotion.prmtInfo = result.data;
+            //         prmtData = result.data;
+            //
+            //         // 상품 쿠폰일 경우 수량 1개로 조정
+            //         if(prmtData.prmtKindCd == '05'){
+            //             $('#buyQtt').val(1);
+            //             $('.info_wrap .amount').addClass('disabled');
+            //         }else{
+            //             $('.info_wrap .amount').removeClass('disabled');
+            //         }
+            //
+            //         // 선택한 프로모션 데이터 세팅(세트 정보)
+            //         Promotion.setList = result.extraData.PRMT_SET_LIST;
+            //         if(prmtData.prmtBnfCd1 == '02'){	/* 묶음별 할인 */
+            //             if(prmtData.prmtBnfCd2 == '04'){	/* 증정 */
+            //                 if(prmtData.prmtBnfCd3 == '08'){	/* 사은품 증정 */
+            //                     Promotion.freebieList = result.extraData.FREEBIE_LIST;
+            //                     Promotion.freebieTypeCd = Promotion.freebieList[0].freebieTypeCd;
+            //                 }else{
+            //                     Promotion.freebieList = {};
+            //                 }
+            //             }else{
+            //                 Promotion.freebieList = {};
+            //             }
+            //             Promotion.renderGroupSetDiv(prmtData);
+            //         }
+            //     }
+            //
+            //     // 하단 프로모션 레이어 bottom 값 조정
+            //     var height = $('.basic_group').height() + $('.option_group').height() + 60;
+            //     $('.layer_prmt_list').css('bottom', height + 'px');
+            // });
         },
 
         /* 묶음 영역 그리기 */

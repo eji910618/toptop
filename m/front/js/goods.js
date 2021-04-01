@@ -127,13 +127,14 @@
     });
     //YOU MAY ALSO LIKE 슬라이드 end
 
-    $('.layer_size_tab button').on('click', function(){//사이즈 조견표 탭 토글링
-        var idx = $(this).parent().index() + 1;
-        $('.layer_size_tab button').removeClass('active');
-        $('.layer_size_content').removeClass('active');
-        $(this).addClass('active');
-        $('.layer_size_content.item' + idx).addClass('active');
-    });
+     $('.layer.layer_size .layer_size--nav .layer_size--tabBtn').on('click', function(){
+         var $this = $(this);
+         var target = $this.data('target');
+         $this.parent().addClass('active')
+             .siblings('.layer_size--tab').removeClass('active');
+         $(target).addClass('active')
+             .siblings('.layer_size--content').removeClass('active');
+     });
 
     $('.rate_dropdown > div').on('click', function(){//상품평 작성 > 별점 셀렉트 박스 토글링
         $(this).parent().toggleClass('active');
