@@ -71,6 +71,17 @@
 .main_rolling .bx-wrapper .bx-pager .bx-pager-item a { background: none; border: 1px solid #fff; border-radius: 50%; }
 .main_rolling .bx-wrapper .bx-pager .bx-pager-item a.active { background-color: #fff; }
 
+.main_recommend {
+    margin: 60px 0;
+    font-family: 'Apple SD Gothic Neo', 'SamsungOne', 'Noto Sans KR', 'Malgun Gothic', 맑은고딕, Dotum, 돋움, Gulim, 굴림, Helvetica, Arial, sans-serif;
+}
+.main_recommend .container {
+    margin: 0 1.7%;
+}
+.main_recommend .card-goods__group.carousel-freeMode.swiper-container {
+    padding: 0 1.7%;
+}
+
 .title_h2 { padding: 45px 0 25px; font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 18px; text-align: center; }
 .title_h3 { padding: 45px 0 0px; font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 18px; text-align: center; }
 .main_feature .title_h2 {font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 18px; text-align: center;}
@@ -140,6 +151,30 @@
 .main_banner .benefit > a.b3:after { background-position: 0 -160px; }
 .main_banner .outlet { margin-top: 30px; position: relative; }
 .main_banner .outlet img { display: block; width: 100%; }
+
+.main_banner.swiper-container .subpage {
+    padding: 0;
+}
+.main_banner.swiper-container .swiper-slide {
+    padding: 0 1.7%;
+}
+.main_banner.swiper-container .subpage > a > div {
+    background-color: #FAFAFA;
+    padding: 20px;
+}
+.main_banner.swiper-container .subpage > a > div > .word2 {
+    padding-top: 0;
+}
+.main_banner.swiper-container .swiper-pagination {
+    margin-top: 10px;
+    position: static;
+}
+.main_banner.swiper-container .swiper-pagination-bullet {
+    border-color: #111;
+}
+.main_banner.swiper-container .swiper-pagination-bullet-active {
+    background-color: #111111;
+}
 
 /* main_mall 20180119 edit */
 .main_mall { margin: 14px 0 0; padding-bottom: 25px; }

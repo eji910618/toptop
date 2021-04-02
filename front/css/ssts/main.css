@@ -134,6 +134,10 @@ z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-ali
 
 #container .main_brand .inner { width: 1398px; }
 .main_brand { margin-top: 70px; }
+.main_brand .title_h1 {
+    text-align: left;
+    padding-bottom: 0;
+}
 .main_brand .brand_wrap { overflow: hidden; }
 .main_brand .brand_wrap ul.slide { margin-right: -18px; }
 .main_brand .brand_wrap ul.slide > li { margin-right: 18px; float: left; width: 454px; }
@@ -192,9 +196,24 @@ z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-ali
 .main_banner .outlet { position: relative; }
 .main_banner .outlet .btns { position: absolute; top: 50%; right: 203px; margin-top: -12px; }
 
+#container .main_recommend .inner { width: 1400px; }
+.main_recommend {
+    margin: 60px 0 35px;
+}
+.main_recommend .card-goods__group.swiper-container .swiper-slide.card-goods {
+    margin-right: 16px;
+}
+.main_recommend .card-goods__group.swiper-container .swiper-slide.card-goods:last-child {
+    margin-right: 0;
+}
+
 /* main_mall 20171219 edit */
 #container .main_mall .inner { width: 1400px; }
 .main_mall { margin: 60px 0 35px; }
+.main_mall .title_h1 {
+    text-align: left;
+    padding-bottom: 0;
+}
 .main_mall .inner { overflow: hidden; }
 .main_mall .slider_wrap { float: left; width: 100%; }
 .main_mall .slider_wrap .bxslider li > div { position: relative; }
