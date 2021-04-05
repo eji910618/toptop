@@ -135,6 +135,22 @@
          $(target).addClass('active')
              .siblings('.layer_size--content').removeClass('active');
      });
+     $('.layer.layer_size div.layer_size--wrap').on('scroll', function(){
+         var $this = $(this), thisParent = $this.parent();
+         var thisW = Math.floor($this.width());
+         var tableW = Math.floor($this.find('table.layer_size--table').outerWidth());
+         var tableMaxVal = tableW - thisW;
+         var scrollLeft = $this.scrollLeft();
+         if ( 0 < scrollLeft && tableMaxVal > scrollLeft ) {
+             thisParent.addClass('dimmed-left dimmed-right');
+         } else if ( tableMaxVal === scrollLeft ) {
+             thisParent.addClass('dimmed-left')
+                 .removeClass('dimmed-right');
+         } else if ( 0 === scrollLeft ) {
+             thisParent.addClass('dimmed-right')
+                 .removeClass('dimmed-left');
+         }
+     });
 
     $('.rate_dropdown > div').on('click', function(){//상품평 작성 > 별점 셀렉트 박스 토글링
         $(this).parent().toggleClass('active');

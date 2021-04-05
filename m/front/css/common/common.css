@@ -1468,6 +1468,35 @@ footer#footer .sns a:first-child {
 .layer.layer_size .layer_size--title:first-child {
     margin-top: 0;
 }
+.layer.layer_size .layer_size--table {
+    position: relative;
+}
+.layer.layer_size div.layer_size--table.dimmed-left:before,
+.layer.layer_size div.layer_size--table.dimmed-right:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+.layer.layer_size div.layer_size--table.dimmed-left:before {
+    left: 0;
+    background: rgba(255, 255, 255, 1);
+    background: linear-gradient(to right, white, transparent);
+}
+.layer.layer_size div.layer_size--table.dimmed-right:after {
+    right: 0;
+    background: rgba(255, 255, 255, 1);
+    background: linear-gradient(to left, white, transparent);
+}
+.layer.layer_size .layer_size--wrap {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 .layer.layer_size .layer_size--table thead th {
     border-bottom: 1px solid #e9e9e9;
     font-size: 13px;
@@ -1483,23 +1512,23 @@ footer#footer .sns a:first-child {
     font-weight: normal;
     display: block;
 }
-.layer.layer_size .layer_size--table:not(table) {
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
 .layer.layer_size table.layer_size--table {
     width: 100%;
     border-top: 1px solid #000;
     border-bottom: 1px solid #e9e9e9;
     table-layout: fixed;
 }
-.layer.layer_size .layer_size--table td {
+.layer.layer_size table.layer_size--table td {
     text-align: center;
     line-height: 24px;
     font-size: 12px;
     font-weight: 500;
+}
+.layer.layer_size table.layer_size--table tr:first-child td {
+    padding-top: 5px;
+}
+.layer.layer_size table.layer_size--table tr:last-child td {
+    padding-bottom: 5px;
 }
 
 /*************************************************
