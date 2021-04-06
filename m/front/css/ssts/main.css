@@ -79,7 +79,10 @@
     margin: 0 1.7%;
 }
 .main_recommend .card-goods__group.carousel-freeMode.swiper-container {
-    padding: 0 1.7%;
+    padding: 0 calc(8/375*100vw);
+}
+.main_recommend .card-goods__group.carousel-freeMode .carousel-item:last-child {
+    margin-right: 1.5vw;
 }
 
 .title_h2 { padding: 45px 0 25px; font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 18px; text-align: center; }

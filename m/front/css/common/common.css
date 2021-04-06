@@ -1728,6 +1728,7 @@ footer#footer .sns a:first-child {
     display: block;
     color: #757575;
     font-size: 12px;
+    white-space: nowrap;
 }
 .badge .badge-icon {
     display: inline-block;
@@ -1827,13 +1828,13 @@ footer#footer .sns a:first-child {
 *************************************************/
 .carousel-freeMode .carousel-item {
     width: auto;
-    margin-left: 2.5641025641vw;
+    margin-right: 2.5641025641vw;
 }
 .carousel-freeMode .carousel-inner {
     overflow: visible;
 }
-.carousel-freeMode .carousel-item:first-child {
-    margin-left: 0;
+.carousel-freeMode .carousel-item:last-child {
+    margin-right: 0;
 }
 .carousel__scrollbar .swiper-scrollbar {
     position: static;
