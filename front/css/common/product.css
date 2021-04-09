@@ -155,8 +155,18 @@
 #product_detail aside .info_wrap > ul > li div.color ul li.colorchip_img input[type=radio] + label:before { width: 41px; height: 41px; z-index: 2; }
 #product_detail aside .info_wrap > ul > li div.color ul li.colorchip_img input[type=radio]:checked + label:before { width: 39px; height: 39px; border: 2px solid #111; box-shadow: inset 0 0 0px 2px #fff; }
 #product_detail aside .info_wrap > ul > li div.color ul li.colorchip_img input[type=radio]:disabled + label:before { width: 41px; height: 41px; background: #ddd url("/front/img/ziozia/common/spr_product_pc.png") -188px -212px / 1700% 1700% no-repeat; opacity: 0.5; }
-#product_detail aside .info_wrap > ul > li div.size li, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div.size li { border: 1px solid #ccc; }
-#product_detail aside .info_wrap > ul > li div.size li input[type=radio] + label, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div.size li input[type=radio] + label { font-size: 11px; line-height: 23px; margin: -0.5px 0 0 -1px; }
+#product_detail aside .info_wrap > ul > li div.size li, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div.size li {
+    min-width: 27px;
+    width: auto;
+    border: 1px solid #ccc;
+}
+#product_detail aside .info_wrap > ul > li div.size li input[type=radio] + label, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div.size li input[type=radio] + label {
+    font-size: 11px;
+    line-height: 23px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: -0.5px 0 0 -1px;
+}
 #product_detail aside .info_wrap > ul > li div.size li input[type=radio]:checked + label:before, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div li input[type=radio]:checked + label:before { top: -1px; left: -1px; }
 #product_detail aside .info_wrap > ul > li div.size li input[type=radio]:disabled, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div li input[type=radio]:disabled { cursor: default; }
 #product_detail aside .info_wrap > ul > li div.size li input[type=radio]:disabled + label, .select_prmt_target_goods .popup.detail .content_wrap .info_wrap > ul > li div li input[type=radio]:disabled + label { cursor: default; opacity: 0.3; background: #ddd url(/front/img/ziozia/common/spr_product_pc.png) -138px -155px no-repeat; width: inherit; height: inherit; margin: -1px 0 0 -1px;}
