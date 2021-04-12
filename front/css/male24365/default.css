@@ -618,12 +618,6 @@ transform: rotate(180deg);*/ }
 #self_package .close { display: block; width: 14px; height: 14px; overflow: hidden; text-indent: -9999px; background: url("/front/img/male24365/common/spr_product.png") -50px -50px no-repeat; position: absolute; top: 20px; right: 20px; }
 #self_package.active { z-index: 10; opacity: 1; pointer-events: auto; }
 
-
-.size-comm-chip .s-chip { display: inline-block; width: 23px; height: 23px; border: 1px solid #ccc; font-size: 11px; line-height: 21px; }
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .size-comm-chip { /* IE10+ specific styles go here */ }
-  .size-comm-chip .s-chip { height: 22px; } }
-.size-comm-chip .s-chip.none { background-color: #ccc; color: #fff; }
-
 /* 20171019 edit start  */
 .color-comm-chip { /*a.c-chip:hover::before,
 a.c-chip:hover:after,*/ /*a.c-chip:hover::before,*/ /*a.c-chip:hover:after,*/ }

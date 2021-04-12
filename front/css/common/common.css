@@ -546,6 +546,29 @@ header .h1 .search_area.active .util-search-detail { display: block; }
 #container .inner.thumnail_wrap .thumbnail-list.viewmode ul { margin-right: -20px; }
 #container .inner.thumnail_wrap .thumbnail-list.viewmode ul li { margin-right: 20px; }
 
+.size-comm-chip .s-chip {
+    display: inline-block;
+    min-width: 23px;
+    height: 23px;
+    border: 1px solid #ccc;
+    font-size: 11px;
+    line-height: 21px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .size-comm-chip { /* IE10+ specific styles go here */
+    }
+    .size-comm-chip .s-chip {
+        height: 22px;
+    }
+}
+
+.size-comm-chip .s-chip.none {
+    background-color: #ccc;
+    color: #fff;
+}
 
 .thumbnail-list { overflow: hidden; margin-bottom: 3px; }
 .thumbnail-list:after { display: block; clear: both; content: ''; }
