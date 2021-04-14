@@ -119,8 +119,64 @@
                 </ul>
             </nav>
 
+            <!-- main-visual -->
+            <section class="main-visual swiper-container">
+                <div class="main-visual__wrap swiper-wrapper">
+                    <a href="" class="main-visual__item swiper-slide">
+                        <img src="https://imgp.topten10mall.com/ssts/image/goods/BLB2PP1002BK_MDL1_M?AR=0&RS=390"
+                             alt="슬림핏 사이드밴딩 쿨맥스 커버팬츠 슬랙스" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">폴햄 x 프로젝트 엠 x 폴햄키즈</h3>
+                            <h2 class="main-visual__title">4월의 MENS WEEK</h2>
+                            <p class="main-visual__text">단독 APP전용 10% 쿠폰</p>
+                            <p class="main-visual__date">2021.04.09 - 2021.04.15</p>
+                        </div>
+                    </a>
+                    <a href="" class="main-visual__item swiper-slide">
+                        <img src="https://imgp.topten10mall.com/ssts/image/goods/AEB2KG1101LBE_MDL1_M?AR=0&RS=390"
+                             alt="슬림핏 사이드밴딩 쿨맥스 커버팬츠 슬랙스" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">폴햄 x 프로젝트 엠 x 폴햄키즈</h3>
+                            <h2 class="main-visual__title">4월의 MENS WEEK</h2>
+                            <p class="main-visual__text">단독 APP전용 10% 쿠폰</p>
+                        </div>
+                    </a>
+                    <a href="" class="main-visual__item swiper-slide">
+                        <img src="https://imgp.topten10mall.com/ssts/image/goods/BLB5WD1501WT_MDL1_M?AR=0&RS=390"
+                             alt="슬림핏 사이드밴딩 쿨맥스 커버팬츠 슬랙스" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">폴햄 x 프로젝트 엠 x 폴햄키즈</h3>
+                            <h2 class="main-visual__title">4월의 MENS WEEK</h2>
+                            <p class="main-visual__text">단독 APP전용 10% 쿠폰</p>
+                            <p class="main-visual__date">2021.04.09 - 2021.04.15</p>
+                        </div>
+                    </a>
+                    <a href="" class="main-visual__item swiper-slide">
+                        <img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1TR1101WT_MDL1_M?AR=0&RS=390"
+                             alt="슬림핏 사이드밴딩 쿨맥스 커버팬츠 슬랙스" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">폴햄 x 프로젝트 엠 x 폴햄키즈</h3>
+                            <h2 class="main-visual__title">4월의 MENS WEEK</h2>
+                            <p class="main-visual__text">단독 APP전용 10% 쿠폰</p>
+                        </div>
+                    </a>
+                    <a href="" class="main-visual__item swiper-slide">
+                        <img src="https://imgp.topten10mall.com/ssts/image/goods/AEB1WD1102WT_MDL1_M?AR=0&RS=390"
+                             alt="슬림핏 사이드밴딩 쿨맥스 커버팬츠 슬랙스" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">폴햄 x 프로젝트 엠 x 폴햄키즈</h3>
+                            <h2 class="main-visual__title">4월의 MENS WEEK</h2>
+                            <p class="main-visual__text">단독 APP전용 10% 쿠폰</p>
+                            <p class="main-visual__date">2021.04.09 - 2021.04.15</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="main-visual__pagination"></div>
+            </section>
+            <!-- main-visual -->
+
             <!-- main_rolling -->
-            <section class="main_rolling swiper-container">
+            <!--<section class="main_rolling swiper-container">
                 <div class="bxslider main_visual swiper-wrapper">
                     <div class="swiper-slide  black">
                         <a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=14554" >
@@ -132,7 +188,6 @@
                                 </div>
                             </div>
                             <img src="https://imgb.topten10mall.com/image/ssts/image/banner//2021/01/14/1610599787817.jpg?v=1" alt="" class="bnr">
-
                         </a>
                     </div>
                     <div class="swiper-slide  black">
@@ -145,7 +200,6 @@
                                 </div>
                             </div>
                             <img src="https://imgb.topten10mall.com/image/ssts/image/banner//2021/01/14/1610599958940.jpg?v=1" alt="" class="bnr">
-
                         </a>
                     </div>
                     <div class="swiper-slide  black">
@@ -202,7 +256,7 @@
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
-            </section>
+            </section>-->
             <!--<a href="/m/kr/front/viewBannerThumbnail.do" style="display: block; margin-top: 20px;">
                 <img src="/m/front/img/ssts/common/goto_banner_thumbnail4.jpg" style="width: 100%;">
             </a>-->
@@ -2353,6 +2407,16 @@
             },
             pagination: {
                 el: '.main_rolling .swiper-pagination',
+            },
+            loop: true,
+        });
+
+        var mainVisualSwiper = new Swiper('.main-visual.swiper-container', {
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: '.main-visual.swiper-container .main-visual__pagination',
             },
             loop: true,
         });

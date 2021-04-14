@@ -2,6 +2,35 @@
 @font-face {font-family:'Montserrat'; src:url('/m/front/fonts/Montserrat-Regular.ttf');}
 @font-face {font-family:'Noto sans cjk kr'; src:url('/m/front/fonts/NotoSansCJKkr-Regular.otf');}
 
+@font-face {
+    font-family: 'YoonGothicPro';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/m/front/fonts/search/YoonGothicPro740.eot");
+    src: url("/m/front/fonts/search/YoonGothicPro740.eot?#iefix") format("embedded-opentype"), url("/m/front/fonts/search/YoonGothicPro740.woff") format("woff"), url("/m/front/fonts/search/YoonGothicPro740.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'YoonGothicPro';
+    font-style: normal;
+    font-weight: 700;
+    src: url("/m/front/fonts/search/YoonGothicPro780.eot");
+    src: url("/m/front/fonts/search/YoonGothicPro780.eot?#iefix") format("embedded-opentype"), url("/m/front/fonts/search/YoonGothicPro780.woff") format("woff"), url("/m/front/fonts/search/YoonGothicPro780.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/m/front/fonts/search/Inter-Regular.eot");
+    src: url("/m/front/fonts/search/Inter-Regular.eot?#iefix") format("embedded-opentype"), url("/m/front/fonts/search/Inter-Regular.woff") format("woff"), url("/m/front/fonts/search/Inter-Regular.woff2") format("woff2"), url("/m/front/fonts/search/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url("/m/front/fonts/search/Inter-Bold.eot");
+    src: url("/m/front/fonts/search/Inter-Bold.eot?#iefix") format("embedded-opentype"), url("/m/front/fonts/search/Inter-Bold.woff") format("woff"), url("/m/front/fonts/search/Inter-Bold.woff2") format("woff2"), url("/m/front/fonts/search/Inter-Bold.ttf") format("truetype");
+}
+
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 body { margin: 0; }
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
