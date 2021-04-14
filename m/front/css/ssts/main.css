@@ -50,6 +50,7 @@
     font-weight: 500;
     line-height: 20px;
     padding: 13px 9px;
+    white-space: nowrap;
 }
 .main-nav .main-nav__item:first-child .main-nav__link {
     margin-left: -9px;
