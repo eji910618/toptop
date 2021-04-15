@@ -135,6 +135,9 @@
     -moz-transition: opacity .3s ease-in-out;
     -o-transition: opacity .3s ease-in-out;
     transition: opacity .3s ease-in-out;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 .main-visual .main-visual__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     opacity: 1;
