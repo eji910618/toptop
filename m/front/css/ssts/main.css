@@ -99,19 +99,19 @@
     color: #fff;
 }
 .main-visual .main-visual__subTitle {
-    font-size: calc(12/390*100vw);
+    font-size: calc(14/390*100vw);
 }
 .main-visual .main-visual__title {
-    font-size: calc(20/390*100vw);
+    font-size: calc(24/390*100vw);
     font-weight: bold;
     margin-top: calc(8/390*100vw);
     margin-bottom: calc(4/390*100vw);
 }
 .main-visual .main-visual__text {
-    font-size: calc(14/390*100vw);
+    font-size: calc(16/390*100vw);
 }
 .main-visual .main-visual__date {
-    font-size: calc(12/390*100vw);
+    font-size: calc(14/390*100vw);
     margin-top: calc(15/390*100vw);
 }
 .main-visual .main-visual__pagination {
