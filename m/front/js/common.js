@@ -91,8 +91,9 @@ jQuery(document).ready(function() {
         $(this).parents('.layer').removeClass('active');
         $('.layer').css('top', 0); // 다른 팝업들 위치 top 0으로 고정
     });
-    
+
 /////////////////header start
+    var $headerContainer = $('#ssts-wrapper .header_container');
     $('#bottom_bar .bottomBar-gnb').click(function(){//util(메뉴/검색/장바구니/MY 영역) 상세 보기 20171013 수정
         $('#ssts-wrapper').addClass('active');
         $('.header-util-op').css({ zIndex: 3 });
@@ -144,7 +145,6 @@ jQuery(document).ready(function() {
     });
     ///////////////// header end
 
-    var scrollTriggerPos = 400;
     ///////////////// #stickySide
     var $stickySide = $('#stickySide');
     var stickySideWrap = $stickySide.find('.stickySide-wrap');
@@ -159,19 +159,49 @@ jQuery(document).ready(function() {
     });
     ///////////////// #stickySide end
     ///////////////// #bottom_bar
+    var isUp = $(window).scrollTop() === 0;
     var scrollLastTop = 0;
     var scrollDir = 0;
     var $bottomBar = $('#bottom_bar');
+    var $stickyNav = $('#stickyNav'), stickyNavLen = $stickyNav.length;
+    var scrollTriggerPos = stickyNavLen ? $stickyNav.offset().top : 300;
+    if ( stickyNavLen ) $('body').addClass('has-stickyNav');
+
     function bottomBarMotion() {
         var scrollTop = $(window).scrollTop();
         scrollDir = scrollLastTop - scrollTop;
         if ( scrollTop >= scrollTriggerPos ) {
+            if ( stickyNavLen ) {
+                $headerContainer.addClass('fixed');
+                $stickyNav.addClass('fixed');
+            }
             if (scrollDir < 0) {
-                $bottomBar.addClass('active');
-                $stickySide.addClass('active-down');
+                if ( isUp ) {
+                    // console.log("down");
+                    isUp = false;
+                    if (stickyNavLen) {
+                        $headerContainer.addClass('active-up');
+                        $stickyNav.removeClass('active-down');
+                    }
+                    $bottomBar.addClass('active');
+                    $stickySide.addClass('active-down');
+                }
             } else {
-                $bottomBar.removeClass('active');
-                $stickySide.removeClass('active-down');
+                if ( !isUp ) {
+                    // console.log("up");
+                    isUp = true;
+                    if (stickyNavLen) {
+                        $headerContainer.removeClass('active-up');
+                        $stickyNav.addClass('active-down');
+                    }
+                    $bottomBar.removeClass('active');
+                    $stickySide.removeClass('active-down');
+                }
+            }
+        } else {
+            if ( stickyNavLen ) {
+                $headerContainer.removeClass('fixed');
+                $stickyNav.removeClass('fixed active-down');
             }
         }
         scrollLastTop = scrollTop;
@@ -295,7 +325,7 @@ jQuery(document).ready(function() {
             if(sumBuyQtt >= buyQtt) {
                 return false;
             }
-            
+
             // 클레임 수량 제한
             if($(this).hasClass('claim_qtt')) {
                 limitCnt = $(this).parent().parent().parent().parent().find('input[name="cancelableQtt"]').val();
