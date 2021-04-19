@@ -530,8 +530,11 @@ table.display-table-fmt.hor tbody td:first-child { color: #111; }
 }
 
 .product-detail__recommend .swiper-wrapper {
-    height: auto;
-    /*height: calc(114px + 58.9743589744vw);*/
+    /*height: auto;*/
+    height: calc(120px + 58.9743589744vw);
+}
+.card-goods__group.carousel-freeMode.swiper-container .card-goods {
+    height: calc(120px + 58.9743589744vw);
 }
 
 /* .scrollOff{position:fixed;overflow:hidden;height:100%;} */
