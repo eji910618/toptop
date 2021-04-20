@@ -142,6 +142,8 @@ jQuery(document).ready(function() {
     $headerBrandBtn.on('click', function() {
         $headerBrandBtn.toggleClass('active');
         $headerBrandList.toggleClass('active');
+        $('body').toggleClass('body-overflow');
+        $headerContainer.toggleClass('zIndex-up');
     });
     ///////////////// header end
 

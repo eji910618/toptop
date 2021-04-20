@@ -216,6 +216,10 @@ h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: normal; }
     color: #ff3500 !important;
 }
 
+body.body-overflow {
+    overflow: hidden;
+}
+
 a.btn, button.btn, input.btn, span.btn { display: inline-block; height: 35px; line-height: 35px; padding: 0 17px; background-color: #111; color: #fff; font-size: 13px; text-align: center; white-space: nowrap; }
 a.btn.w100p, button.btn.w100p, input.btn.w100p, span.btn.w100p { padding: 0; display: block; }
 a.btn.bd, button.btn.bd, input.btn.bd, span.btn.bd { background-color: #fff; color: #111; border: 1px solid #111; line-height: 33px; }
@@ -1001,6 +1005,9 @@ footer#footer .sns a:first-child {
 }
 #ssts-wrapper .header_container.active-up {
     top: -50px;
+}
+#ssts-wrapper .header_container.zIndex-up {
+    z-index: 5;
 }
 #ssts-wrapper .header-util-search { height: 100%; position: fixed; }
 #ssts-wrapper-wr { overflow: hidden; position: relative; min-height: 100%; -webkit-transition: all ease-in-out 0.3s; -moz-transition: all ease-in-out 0.3s; -ms-transition: all ease-in-out 0.3s; -o-transition: all ease-in-out 0.3s; transition: all ease-in-out 0.3s; }
