@@ -20,14 +20,76 @@
 #intro .intro_close { position: absolute; top: 20px; right: 15px; width: 14px; height: 13px; background: url("/m/front/img/edition/common/spr_slider.png") -30px 0 no-repeat; background-size: 50px auto; text-indent: -9999px; cursor: pointer; z-index: 100; }
 
 /* 메인 상단 롤링 */
-.main_rolling { z-index: 1; position: relative; }
-.main_rolling .main_visual li { position: relative; }
-.main_rolling .main_visual li a { display: block; position: relative; }
-.main_rolling .main_visual li img.bnr, .main_rolling .main_visual li img.ratio { width: 100%; display: block; }
-.main_rolling .main_visual li img.bnr { position: absolute; top: 0; left: 0; }
-.main_rolling .main_visual li iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-.main_rolling .main_visual li .bg_play { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #111; opacity: .5; }
-.main_rolling .main_visual li .btn_play { position: absolute; top: 50%; left: 50%; background: url("/m/front/img/edition/common/spr_slider.png") 0 0 no-repeat; background-size: 50px auto; background-position: 0 -20px; width: 42px; height: 42px; margin: -21px 0 0 -21px; overflow: hidden; line-height: 500px; }
+.main-visual {
+    font-family: 'Inter', 'YoonGothicPro', AppleSDGothicNeo, 'Apple SD Gothic Neo', '맑은 고딕', 'Malgun Gothic', Arial, sans-serif, serif, '돋움', Dotum;
+}
+.main-visual .main-visual__item:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.06) 57%, rgba(0, 0, 0, 0.55));
+    background-image: -moz-linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.06) 57%, rgba(0, 0, 0, 0.55));
+    background-image: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.06) 57%, rgba(0, 0, 0, 0.55));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.06) 57%, rgba(0, 0, 0, 0.55));
+}
+.main-visual .main-visual__caption {
+    width: 100%;
+    position: absolute;
+    bottom: calc(46/390*100vw);
+    left: 0;
+    z-index: 2;
+    padding-left: calc(30/390*100vw);
+    padding-right: calc(30/390*100vw);
+    color: #fff;
+}
+.main-visual .main-visual__subTitle {
+    font-size: calc(14/390*100vw);
+}
+.main-visual .main-visual__title {
+    font-size: calc(24/390*100vw);
+    font-weight: bold;
+    margin-top: calc(8/390*100vw);
+    margin-bottom: calc(4/390*100vw);
+}
+.main-visual .main-visual__text {
+    font-size: calc(16/390*100vw);
+}
+.main-visual .main-visual__date {
+    font-size: calc(14/390*100vw);
+    margin-top: calc(15/390*100vw);
+}
+.main-visual .main-visual__pagination {
+    display: flex;
+    position: absolute;
+    bottom: calc(20/390*100vw);
+    left: 0;
+    z-index: 2;
+    padding-left: calc(25/390*100vw);
+    padding-right: calc(25/390*100vw);
+}
+.main-visual .main-visual__pagination .swiper-pagination-bullet {
+    display: block;
+    height: 1px;
+    width: 100%;
+    border: none;
+    background-color: #fff;
+    opacity: 0.3;
+    margin: 0 calc(5/390*100vw);
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.main-visual .main-visual__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    opacity: 1;
+}
 
 /* main_category 20180122 edit */
 .main_category { margin-top: 30px; }
