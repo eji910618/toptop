@@ -2401,15 +2401,15 @@
         recomIdAddCookie();
 
         // 20180125 edit
-        var swiper1 = new Swiper('.main_rolling', {//메인 슬라이더
-            autoplay: {
-                delay: 5000,
-            },
-            pagination: {
-                el: '.main_rolling .swiper-pagination',
-            },
-            loop: true,
-        });
+        // var swiper1 = new Swiper('.main_rolling', {//메인 슬라이더
+        //     autoplay: {
+        //         delay: 5000,
+        //     },
+        //     pagination: {
+        //         el: '.main_rolling .swiper-pagination',
+        //     },
+        //     loop: true,
+        // });
 
         var mainVisualSwiper = new Swiper('.main-visual.swiper-container', {
             autoplay: {
@@ -2420,6 +2420,8 @@
             },
             loop: true,
         });
+
+        var mainRecommendSlide = new carouselFree('.main_recommend .carousel-freeMode.swiper-container');
 
         var mainBottomBannerSlide = new Swiper('.main_banner.swiper-container', {
             autoplay: {

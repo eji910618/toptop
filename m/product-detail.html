@@ -4609,6 +4609,10 @@
 
     $(document).ready(function(){
 
+        $('.product-detail__recommend .carousel-freeMode.swiper-container').each(function() {
+            new carouselFree(this);
+        });
+
         var trackNo = 0;
         var trackDtl = '';
         var trackParam = '';

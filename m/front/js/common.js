@@ -403,11 +403,37 @@ jQuery(document).ready(function() {
         $('html, body').scrollTop($window_scrl_top);
     });
 
-    $('.carousel-freeMode.swiper-container').each(function() {
-        var $this = $(this);
-        if ( $this.hasClass('carousel__scrollbar') ) {
-            var swiperScrollbar = $this.parent().find('.swiper-scrollbar');
-            new Swiper($this, {
+    // $('.carousel-freeMode.swiper-container').each(function() {
+    //     var $this = $(this);
+    //     if ( $this.hasClass('carousel__scrollbar') ) {
+    //         var swiperScrollbar = $this.parent().find('.swiper-scrollbar');
+    //         new Swiper($this, {
+    //             freeMode: true,
+    //             slidesPerView: 'auto',
+    //             scrollbar: {
+    //                 el: swiperScrollbar,
+    //                 draggable: true
+    //             }
+    //         });
+    //     } else {
+    //         new Swiper($this, {
+    //             freeMode: true,
+    //             slidesPerView: 'auto'
+    //         });
+    //     }
+    // });
+});
+
+var carouselFree = function(target) {
+    var me = this;
+    var el = $(target);
+
+    me.swiper = null;
+    me.init = function() {
+        // Slide
+        if ( el.hasClass('carousel__scrollbar') ) {
+            var swiperScrollbar = el.parent().find('.swiper-scrollbar');
+            me.swiper = new Swiper(el, {
                 freeMode: true,
                 slidesPerView: 'auto',
                 scrollbar: {
@@ -416,13 +442,15 @@ jQuery(document).ready(function() {
                 }
             });
         } else {
-            new Swiper($this, {
+            me.swiper = new Swiper(el, {
                 freeMode: true,
                 slidesPerView: 'auto'
             });
         }
-    });
-});
+    };
+    me.init();
+    return me;
+};
 
 //팝업 열기 start
 var $window_scrl_top = 0;
