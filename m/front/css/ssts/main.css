@@ -215,7 +215,7 @@
 .main_banner .subpage > a > div > .word3 { font-family: 'Open Sans', 'Apple SD Gothic Neo', 'Nanum Gothic'; font-size: 4.2vw; line-height: 1.5em; letter-spacing: -0.03em; }
 .main_banner .subpage > a > div { padding: 11px 11px 25px 11px; }
 .main_banner .subpage > a .btns { position: absolute; bottom: 25px; left: 50%; margin-left: -50px; }
-.main_banner .subpage > a + a { margin-top: 15px; }
+.main_banner:not(.swiper-container) .subpage > a + a { margin-top: 15px; }
 .main_banner .benefit { overflow: hidden; margin: 30px 4.7% 0; }
 .main_banner .benefit > a { display: block; position: relative; padding: 20px 112px 20px 25px; background: #f3f3f3; line-height: 22px; }
 .main_banner .benefit > a + a { margin-top: 1px; }
@@ -236,6 +236,9 @@
 .main_banner.swiper-container .subpage > a > div {
     background-color: #FAFAFA;
     padding: 20px;
+}
+.main_banner.swiper-container .subpage > a > .word1 {
+    left: calc(1.7% + 4vw);
 }
 .main_banner.swiper-container .subpage > a > div > .word2 {
     padding-top: 0;
