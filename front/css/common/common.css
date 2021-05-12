@@ -285,7 +285,7 @@ header.active #gnb > ul > li ul li a:hover { color: #111; text-decoration: under
 header.active .util li a { color: #666; }
 header.active .util li a span { color: #111; }
 header.black #gnb > ul > li strong { color: #111; }
-header.black #gnb > ul > li strong a { color: #111; }
+header.black #gnb > ul > li strong a { color: #111; vertical-align: top; }
 header.black .util li a { color: #666; }
 header.black .util li a span { color: #111; }
 
