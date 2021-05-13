@@ -337,14 +337,103 @@
 
 .select_prmt_target_goods .popup{margin-top: -300px !important}
 .select_prmt_target_goods .popup .body{padding: 0 30px 0;}
+.select_prmt_target_goods .pagination {
+    margin-top: 36px;
+    height: auto;
+}
+.select_prmt_target_goods .pagination li.img {
+    width: 28px;
+    height: 28px;
+    margin: 0 6px;
+}
+.select_prmt_target_goods .pagination li.img.prev {
+    background-position: 8px 5px;
+}
+.select_prmt_target_goods .pagination li.img.next {
+    background-position: -42px 5px;
+}
+.select_prmt_target_goods .pagination a {
+    padding: 0;
+    width: 28px;
+    line-height: 28px;
+    color: #c7c7c7;
+    font-weight: bold;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.select_prmt_target_goods .pagination a.active,
+.select_prmt_target_goods .pagination a:hover {
+    color: #fff;
+    background-color: #111111;
+}
+.select_prmt_target_goods .promotion__text {
+    font-size: 12px;
+    color: #989898;
+    position: absolute;
+    left: -30px;
+    right: -30px;
+    bottom: 0;
+    z-index: 2;
+    line-height: 40px;
+    background-color: #FAFAFA;
+    text-align: center;
+}
+.before_select_prmt_goods {
+    padding-bottom: 52px;
+}
 .promotion_type_bundle{padding-bottom: 20px;}
 #ctrl_div_prmt_target_search .type2 h2{height: 43px; font-size: 14px; font-weight: bold; line-height: 43px;}
-#ctrl_ul_prmt_target_set_goods {overflow: hidden;}
-#ctrl_ul_prmt_target_set_goods li{position: relative; height: 290px; width: 128px; float: left; text-align: center;}
-#ctrl_ul_prmt_target_set_goods li img{display: block; width: 110px; margin: 0 auto;}
-#ctrl_ul_prmt_target_set_goods li .bot{position: absolute; bottom: 20px; left: 0; width: 100%;}
-#ctrl_ul_prmt_target_set_goods li .bot .btn{line-height: normal; height: 29px; padding: 0 23px; font-size: 12px; border: 1px solid #ccc; color: #111; background-color: #f7f7f7;}
-#ctrl_ul_prmt_target_set_goods li .bot .soldout{color: #df4738; line-height: 29px;}
+#ctrl_ul_prmt_target_set_goods {
+    overflow: hidden;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+#ctrl_ul_prmt_target_set_goods li {
+    position: relative;
+    width: 20%;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 30px;
+}
+#ctrl_ul_prmt_target_set_goods li img {
+    display: block;
+    width: 100%;
+    border: 1px solid transparent;
+    margin-left: -1px;
+}
+#ctrl_ul_prmt_target_set_goods li:hover img {
+    border-color: #111;
+}
+#ctrl_ul_prmt_target_set_goods .text__brand {
+    color: #989898;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+#ctrl_ul_prmt_target_set_goods .text__name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#ctrl_ul_prmt_target_set_goods li:hover .text__name {
+    text-decoration: underline;
+}
+#ctrl_ul_prmt_target_set_goods li .bot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#ctrl_ul_prmt_target_set_goods li .bot .btn {
+    text-indent: -9999999px;
+    font-size: 0;
+    background-color: transparent;
+    height: 100%;
+    padding: 0;
+}
+/*#ctrl_ul_prmt_target_set_goods li .bot .soldout{color: #df4738; line-height: 29px;}*/
 #ctrl_ul_prmt_target_set_goods li .text p b{display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
 #ctrl_ul_prmt_target_set_goods li .text p em{display: block; color: #999}
 #ctrl_ul_prmt_target_set_goods li .text p.price{padding-top: 4px}
@@ -405,8 +494,18 @@
 .applied_prmt_freebie .product .size ul li input[type=radio]:disabled + label{background-color: #ccc; color: #fff; cursor: default;}
 
 /* 팝업 검색란 */
-#ctrl_div_prmt_target_search .popup_search_box{position: absolute; right: 0; top: 0; margin-top: 10px; border-bottom: 1px solid #111;}
-#ctrl_div_prmt_target_search .popup_search_box .popup_search_word{height: 30px; border: 0px; width: 200px;}
+#ctrl_div_prmt_target_search .popup_search_box {
+    display: -ms-flex;
+    display: flex;
+    margin-top: 30px;
+    border-bottom: 1px solid #111;
+}
+#ctrl_div_prmt_target_search .popup_search_box .popup_search_word {
+    height: 30px;
+    border: 0;
+    width: 100%;
+    padding-left: 0;
+}
 #ctrl_div_prmt_target_search .popup_search_box .popup_search_btn i{display: block; background: url(/front/img/ssts/common/spr_search.png) no-repeat 0 0; width: 21px; height: 20px; line-height: 500px; overflow: hidden;}
 
 #goods_form .info_wrap .amount.disabled{border: 1px solid #eee;}

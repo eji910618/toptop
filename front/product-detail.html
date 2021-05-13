@@ -889,13 +889,32 @@
                 </div><!-- //기본 -->
                 <div class="prmt_list" id="prmt_list">
                     <!-- 안내사항 -->
-                    <div id="prmt_inform"></div>
+                    <div id="prmt_inform">동일상품 복수구매를 원할시에도 반드시<br>프로모션 적용상품으로 선택해주세요.</div>
 
                     <!-- 프로모션 선택 콤보박스 -->
-                    <div id="prmt_select"></div>
+                    <div id="prmt_select">
+                        <div class="benefit_word"><span>할인혜택</span></div>
+                        <div class="prmt_select_dtl" id="prmt_select_dtl"><select name="appliablePrmt"
+                                                                                  id="appliable_prmt_select">
+                            <option value="0" class="hidden">묶음할인 쿠폰, 프로모션 적용</option>
+                            <option class="hidden" value="6587">[올젠] 3장에 30,000원</option>
+                        </select>
+                            <div class="prmt_list_dtl hidden" id="prmt_list_dtl"><p class="promotion">PROMOTION</p>
+                                <p class="blank">&nbsp;</p>
+                                <div class="prmt_dtl" id="prmt_dtl_0" data-prmt-no="0"><p class="prmtNm dis">할인혜택 선택
+                                    안함</p>
+                                    <button type="button" class="btn_prmt_apply active">미적용</button>
+                                </div>
+                                <div class="prmt_dtl" id="prmt_dtl_6587" data-prmt-no="6587"><p class="prmtNm">[올젠] 3장에
+                                    30,000원</p>
+                                    <button type="button" class="btn_prmt_apply black">적용하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- 프로모션 가이드 링크 -->
-                    <div id="prmt_guide"></div>
+                    <div id="prmt_guide"><a href="#"><span>GUIDE</span>프로모션 적용가이드 영상보기 (클릭)</a></div>
 
                     <!-- 프로모션 명 / 혜택 -->
                     <div class="promotion_name hidden" id="promotion_name"></div>
@@ -2124,7 +2143,7 @@
         </div>
     </div>
 </div>
-<!-- //회원등급별 혜택보기 --><div class="layer select_prmt_target_goods">
+<!-- //회원등급별 혜택보기 --><div class="layer select_prmt_target_goods active">
     <div class="popup" style="width: 700px;">
         <div class="head">
             <h1>프로모션 상품 선택</h1>
@@ -2134,14 +2153,132 @@
             <div class="scroll_inner">
                 <div id="ctrl_div_prmt_target_search">
                     <div class="promotion_type_bundle type2 ctrl_div_prmt_dtl" id="ctrl_div_prmt_target_set_goods">
-                        <h2>상품 세트 그룹 명</h2>
-                        <div class="popup_search_box hidden">
-                            <input type="text" class="popup_search_word" placeholder="검색어를 입력하세요." value="" onKeypress="javascript:if(event.keyCode==13) {Promotion.popupSearchBtnClick()}"/>
+                        <div class="popup_search_box">
+                            <input type="text" class="popup_search_word" placeholder="찾으시는 상품을 검색해보세요" value="" onKeypress="javascript:if(event.keyCode==13) {Promotion.popupSearchBtnClick()}"/>
                             <button type="button" class="popup_search_btn"><i>search</i></button>
                         </div>
                         <div class="before_select_prmt_goods" id="before_select_prmt_goods">
-                            <ul class="promotion_slide" id="ctrl_ul_prmt_target_set_goods"></ul>
-                            <ul class="pagination" id="ctrl_ul_prmt_target_set_goods_page"></ul>
+                            <ul class="promotion_slide" id="ctrl_ul_prmt_target_set_goods">
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904BKC_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904WTC_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904WTB_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904LGN_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904CH_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904BKC_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904WTC_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904WTB_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904LGN_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/ZPB2TR1904CH_MDL1_L?AR=0&RS=290X390"
+                                        alt="올리버 캠프닉 그래픽 반팔티">
+                                    <div class="text">
+                                        <p class="text__brand">OLZEN</p>
+                                        <p class="text__name">올리버 캠프닉 그래픽 반팔티</p>
+                                    </div>
+                                    <div class="bot">
+                                        <button type="button" class="btn">선택</button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="pagination" id="ctrl_ul_prmt_target_set_goods_page">
+                                <li class="img prev"><a href="#none" class="" data-page="0">이전</a></li>
+                                <li><a href="#none" class="active">1</a></li>
+                                <li><a href="#none" class="num" data-page="2">2</a></li>
+                                <li><a href="#none" class="num" data-page="3">3</a></li>
+                                <li><a href="#none" class="num" data-page="4">4</a></li>
+                                <li class="img next"><a href="#none" class="nex" data-page="2">다음</a></li>
+                            </ul>
+                            <p class="promotion__text">상품 클릭 후 사이즈를 선택해주세요</p>
                         </div>
                         <div class="selected_prmt_goods hidden" id ="selected_prmt_goods"></div>
                     </div>
@@ -2976,7 +3113,7 @@
                     <tr>
                         <td rowspan="2">상품평 작성</td>
                         <td>
-                            <img src="/m/front/img/ssts/common/img_review.jpg" style="width: 100%;">
+                            <img src="/m/front/img/ssts/common/img_review.jpg" style="width: 100%;" alt="">
                         </td>
                     </tr>
                     <tr>
@@ -4089,8 +4226,8 @@
         var expdate = new Date();
         expdate.setTime(expdate.getTime() + 1000 * 3600 * 24 * 1);
         var LatelyGoods = getCookie('LATELY_GOODS');
-        var thisItem='AEB1CG1101BE'+"||"+'카라 히든 버튼 맥코트'+"||"+'/image/ssts/image/goods//AEB1CG1101BE1_T'+"||"+'1'+"||"+parseInt('79000.0');
-        var itemCheck='AEB1CG1101BE';
+        var thisItem='ZPB2TR1904OR'+"||"+'카라 히든 버튼 맥코트'+"||"+'/image/ssts/image/goods//ZPB2TR1904OR1_T'+"||"+'1'+"||"+parseInt('79000.0');
+        var itemCheck='ZPB2TR1904OR';
         if (thisItem){
             if (LatelyGoods != "" && LatelyGoods != null) {
                 if (LatelyGoods.indexOf(itemCheck) ==-1 ){ //값이 없으면
@@ -4148,7 +4285,7 @@
             //alert(itemNo);
             if(goodsSetYn != 'Y') {
                 $('.itemNoArr').val(itemNo);
-                var itemInfo = '[{"companyNo":null,"siteNo":1,"partnerNo":1,"partnerNm":null,"upPartnerNo":null,"partnerId":null,"langCd":null,"regrNo":null,"regrNm":null,"regDttm":null,"updrNo":null,"updrNm":null,"updDttm":null,"delrNo":null,"delrNm":null,"delDttm":null,"itemNo":"AEB1CG1101BE95","goodsNo":"AEB1CG1101BE","itemNm":"카라 히든 버튼 트렌치 코트","useYn":"Y","purchasePrice":329000.0,"customerPrice":329000.0,"salePrice":179000.0,"specialPrice":null,"stockQtt":52,"saleQtt":0,"itemVer":0,"attrVer":1,"attrNo1":171946,"attrNo2":null,"attrNo3":null,"attrNo4":null,"attrValue1":"95","attrValue2":null,"attrValue3":null,"attrValue4":null,"optNo1":207271,"optNo2":null,"optNo3":null,"optNo4":null,"optValue1":"사이즈","optValue2":null,"optValue3":null,"optValue4":null,"standardPriceYn":"Y","registFlag":"L"},{"companyNo":null,"siteNo":1,"partnerNo":1,"partnerNm":null,"upPartnerNo":null,"partnerId":null,"langCd":null,"regrNo":null,"regrNm":null,"regDttm":null,"updrNo":null,"updrNm":null,"updDttm":null,"delrNo":null,"delrNm":null,"delDttm":null,"itemNo":"AEB1CG1101BE100","goodsNo":"AEB1CG1101BE","itemNm":"카라 히든 버튼 트렌치 코트","useYn":"Y","purchasePrice":329000.0,"customerPrice":329000.0,"salePrice":179000.0,"specialPrice":null,"stockQtt":292,"saleQtt":0,"itemVer":0,"attrVer":1,"attrNo1":171947,"attrNo2":null,"attrNo3":null,"attrNo4":null,"attrValue1":"100","attrValue2":null,"attrValue3":null,"attrValue4":null,"optNo1":207271,"optNo2":null,"optNo3":null,"optNo4":null,"optValue1":"사이즈","optValue2":null,"optValue3":null,"optValue4":null,"standardPriceYn":"N","registFlag":"L"},{"companyNo":null,"siteNo":1,"partnerNo":1,"partnerNm":null,"upPartnerNo":null,"partnerId":null,"langCd":null,"regrNo":null,"regrNm":null,"regDttm":null,"updrNo":null,"updrNm":null,"updDttm":null,"delrNo":null,"delrNm":null,"delDttm":null,"itemNo":"AEB1CG1101BE105","goodsNo":"AEB1CG1101BE","itemNm":"카라 히든 버튼 트렌치 코트","useYn":"Y","purchasePrice":329000.0,"customerPrice":329000.0,"salePrice":179000.0,"specialPrice":null,"stockQtt":351,"saleQtt":0,"itemVer":0,"attrVer":1,"attrNo1":171948,"attrNo2":null,"attrNo3":null,"attrNo4":null,"attrValue1":"105","attrValue2":null,"attrValue3":null,"attrValue4":null,"optNo1":207271,"optNo2":null,"optNo3":null,"optNo4":null,"optValue1":"사이즈","optValue2":null,"optValue3":null,"optValue4":null,"standardPriceYn":"N","registFlag":"L"},{"companyNo":null,"siteNo":1,"partnerNo":1,"partnerNm":null,"upPartnerNo":null,"partnerId":null,"langCd":null,"regrNo":null,"regrNm":null,"regDttm":null,"updrNo":null,"updrNm":null,"updDttm":null,"delrNo":null,"delrNm":null,"delDttm":null,"itemNo":"AEB1CG1101BE110","goodsNo":"AEB1CG1101BE","itemNm":"카라 히든 버튼 트렌치 코트","useYn":"Y","purchasePrice":329000.0,"customerPrice":329000.0,"salePrice":179000.0,"specialPrice":null,"stockQtt":103,"saleQtt":0,"itemVer":0,"attrVer":1,"attrNo1":171949,"attrNo2":null,"attrNo3":null,"attrNo4":null,"attrValue1":"110","attrValue2":null,"attrValue3":null,"attrValue4":null,"optNo1":207271,"optNo2":null,"optNo3":null,"optNo4":null,"optValue1":"사이즈","optValue2":null,"optValue3":null,"optValue4":null,"standardPriceYn":"N","registFlag":"L"}]';
+                var itemInfo = '[{"companyNo":null,"siteNo":1,"partnerNo":1,"partnerNm":null,"upPartnerNo":null,"partnerId":null,"langCd":null,"regrNo":null,"regrNm":null,"regDttm":null,"updrNo":null,"updrNm":null,"updDttm":null,"delrNo":null,"delrNm":null,"delDttm":null,"itemNo":"ZPB2TR1904OR95","goodsNo":"AEB1CG1101BE","itemNm":"카라 히든 버튼 트렌치 코트","useYn":"Y","purchasePrice":329000.0,"customerPrice":329000.0,"salePrice":179000.0,"specialPrice":null,"stockQtt":52,"saleQtt":0,"itemVer":0,"attrVer":1,"attrNo1":171946,"attrNo2":null,"attrNo3":null,"attrNo4":null,"attrValue1":"95","attrValue2":null,"attrValue3":null,"attrValue4":null,"optNo1":207271,"optNo2":null,"optNo3":null,"optNo4":null,"optValue1":"사이즈","optValue2":null,"optValue3":null,"optValue4":null,"standardPriceYn":"Y","registFlag":"L"},{"companyNo":null,"siteNo":1,"partnerNo":1,"partnerNm":null,"upPartnerNo":null,"partnerId":null,"langCd":null,"regrNo":null,"regrNm":null,"regDttm":null,"updrNo":null,"updrNm":null,"updDttm":null,"delrNo":null,"delrNm":null,"delDttm":null,"itemNo":"AEB1CG1101BE100","goodsNo":"AEB1CG1101BE","itemNm":"카라 히든 버튼 트렌치 코트","useYn":"Y","purchasePrice":329000.0,"customerPrice":329000.0,"salePrice":179000.0,"specialPrice":null,"stockQtt":292,"saleQtt":0,"itemVer":0,"attrVer":1,"attrNo1":171947,"attrNo2":null,"attrNo3":null,"attrNo4":null,"attrValue1":"100","attrValue2":null,"attrValue3":null,"attrValue4":null,"optNo1":207271,"optNo2":null,"optNo3":null,"optNo4":null,"optValue1":"사이즈","optValue2":null,"optValue3":null,"optValue4":null,"standardPriceYn":"N","registFlag":"L"},{"companyNo":null,"siteNo":1,"partnerNo":1,"partnerNm":null,"upPartnerNo":null,"partnerId":null,"langCd":null,"regrNo":null,"regrNm":null,"regDttm":null,"updrNo":null,"updrNm":null,"updDttm":null,"delrNo":null,"delrNm":null,"delDttm":null,"itemNo":"AEB1CG1101BE105","goodsNo":"AEB1CG1101BE","itemNm":"카라 히든 버튼 트렌치 코트","useYn":"Y","purchasePrice":329000.0,"customerPrice":329000.0,"salePrice":179000.0,"specialPrice":null,"stockQtt":351,"saleQtt":0,"itemVer":0,"attrVer":1,"attrNo1":171948,"attrNo2":null,"attrNo3":null,"attrNo4":null,"attrValue1":"105","attrValue2":null,"attrValue3":null,"attrValue4":null,"optNo1":207271,"optNo2":null,"optNo3":null,"optNo4":null,"optValue1":"사이즈","optValue2":null,"optValue3":null,"optValue4":null,"standardPriceYn":"N","registFlag":"L"},{"companyNo":null,"siteNo":1,"partnerNo":1,"partnerNm":null,"upPartnerNo":null,"partnerId":null,"langCd":null,"regrNo":null,"regrNm":null,"regDttm":null,"updrNo":null,"updrNm":null,"updDttm":null,"delrNo":null,"delrNm":null,"delDttm":null,"itemNo":"AEB1CG1101BE110","goodsNo":"AEB1CG1101BE","itemNm":"카라 히든 버튼 트렌치 코트","useYn":"Y","purchasePrice":329000.0,"customerPrice":329000.0,"salePrice":179000.0,"specialPrice":null,"stockQtt":103,"saleQtt":0,"itemVer":0,"attrVer":1,"attrNo1":171949,"attrNo2":null,"attrNo3":null,"attrNo4":null,"attrValue1":"110","attrValue2":null,"attrValue3":null,"attrValue4":null,"optNo1":207271,"optNo2":null,"optNo3":null,"optNo4":null,"optValue1":"사이즈","optValue2":null,"optValue3":null,"optValue4":null,"standardPriceYn":"N","registFlag":"L"}]';
                 var itemInfo = jQuery.parseJSON(itemInfo);
                 jQuery.each(itemInfo,function(idx,obj){
                     if(obj.itemNo == itemNo) {
@@ -5676,8 +5813,8 @@
 
         /* 적용 가능 프로모션 조회 */
         getApplicablePromotionListByGoods : function(goodsNo){
-            $('#prmt_select').html('');
-            $('#bottom_prmt_select').html('');
+            // $('#prmt_select').html('');
+            // $('#bottom_prmt_select').html('');
             // var url = Constant.uriPrefix + '/front/goods/getApplicablePromotionListByGoods.do',
             //     param = {
             //         goodsNo : goodsNo
