@@ -1325,6 +1325,7 @@ i.icon {
 }
 .card-goods strong.card-goods__price {
     font-size: 14px;
+    font-weight: bold;
 }
 .card-goods s.card-goods__price {
     font-size: 12px;
@@ -1384,4 +1385,7 @@ i.icon {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+}
+.carousel-fraction * {
+    font-weight: bold;
 }
