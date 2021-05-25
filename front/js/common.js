@@ -319,6 +319,9 @@ jQuery(document).ready(function() {
         var carouselNextEl = carouselParent.find('.carousel-arrows__next');
         var carouselPrevEl = carouselParent.find('.carousel-arrows__prev');
         var carouselOpt = {
+            loop: true,
+            loopedSlides: carouselPerGroup === undefined ? null : carouselPerGroup,
+            simulateTouch: false,
             slidesPerView: 'auto',
             slidesPerGroup: carouselPerGroup === undefined ? 1 : carouselPerGroup
         };
