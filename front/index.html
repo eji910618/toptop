@@ -2122,23 +2122,6 @@
     <!--- 퀵메뉴 --->
     <div id="quick_menu">
 
-        <div class="quick_area">
-            <div class="quick_body">
-                <button class="title"><strong class="quick_tlt">최근 본 상품</strong></button>
-                <div class="lately_goods">
-                    <ul class="quick_view quick_con2" id="quick_view"></ul>
-                    <p class="btn_quick2" align="center">
-                        <a href="#" class="btn_quick_pre2"></a>
-                        <span id="current_count"></span> /
-                        <span id="lately_count"></span>
-                        <a href="#" class="btn_quick_next2"></a>
-                    </p>
-
-                    <p class="quick_num2"></p>
-                </div>
-            </div>
-        </div>
-
         <div id="plusfriend-chat-button-new" style="display: none;">
             <a href="javascript:;" id="kakaoTalkBtn" target="_blank"><img style="width: 80px;" src="/front/img/ssts/common/kakaoNewIconP.png"></a>
         </div>
@@ -2146,6 +2129,125 @@
         <div id="happytalk-chat-button" style="display: none;">
             <!-- <a href="javascript:;" onclick="window.open('https://customer.happytalk.io/public_v1/chat_v4/public_point?go=C&is_login=N&uid=&site_id=1000221496&category_id=99006&division_id=99007&usergb=W&title=%5B%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%83%81%EB%8B%B4%EC%B0%BD%5D', '', 'width=350, height=500'); return false;"><img style="width: 100%;" src="//happytalk.io/assets/main/img/btn-chat.png"></a> -->
             <a href="javascript:;" id="happyTalkBtn"><img style="width: 48px;height:53px;margin-left:20%;" src="/front/img/ssts/common/PC_talk_new_2.png"></a>
+        </div>
+
+        <div class="quick-history">
+            <button type="button" class="quick-history__toggle text-hide">최근본상품</button>
+            <div class="quick-history__layer">
+                <div class="quick-history__header">
+                    <h1 class="quick-history__title">최근 본 상품</h1>
+                    <button type="button" name="button" class="quick-history__close">close</button>
+                </div>
+                <div class="quick-history__body">
+                    <div class="quick-history__toolbar">
+                        <button type="button" class="quick-history__delete">전체삭제</button>
+                    </div>
+                    <div class="card-goods__group d-flex">
+                        <a href="" class="card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">129,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">229,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">329,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEB1ER1101IV_MDL1_L?AR=0&RS=290x395)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">429,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="card card-goods">
+                            <figure class="card-goods__img"
+                                    style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/EPA3KC1300LBR2_L?AR=0&RS=233x317)">
+                                워셔블 라운드 니트
+                                <div class="card-goods__img is-hover"
+                                     style="background-image: url(https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=233x317)"></div>
+                                <span class="card-goods__label">
+                                    <img src="https://imgb.topten10mall.com/image/common/icon/2021/02/14/1613278249387"
+                                         class="img-responsive">
+                                </span>
+                            </figure>
+                            <div class="card-goods__body">
+                                <p class="card-goods__brand">AND Z <span class="card-goods__label">21FW</span></p>  <!-- card-goods__label -->
+                                <p class="card-goods__text">슬림핏 사이드밴딩 커버팬츠 슬랙스</p>
+                                <div class="card-goods__priceInfo">
+                                    <strong class="card-goods__price">529,000</strong>
+                                    <s class="card-goods__price">446,000</s>
+                                    <strong class="card-goods__discount">70%</strong>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="quick-history__footer">
+                    <p>최근 3일간 최대 20개의 상품이 표시됩니다</p>
+                </div>
+            </div>
         </div>
 
         <button type="button" name="button" class="gototop"></button>

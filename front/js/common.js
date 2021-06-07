@@ -347,6 +347,14 @@ jQuery(document).ready(function() {
             console.log('error');
         }
     });
+
+    // 최근 본 상품
+    $('#quick_menu .quick-history__toggle').on('click', function () {
+        $(this).parent('.quick-history').toggleClass('active');
+    });
+    $('#quick_menu .quick-history__close').on('click', function () {
+        $(this).parents('.quick-history').removeClass('active');
+    });
 });
 
 
