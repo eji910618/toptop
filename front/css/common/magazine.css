@@ -99,7 +99,7 @@
 #magazine .story_list ul li a ul.tagList li { float: left; padding: 3px 9px; margin: 0 0 0 15px; color: white; font-size: 15px; width: auto; }
 #magazine .story_list ul li a ul.tagList li + li { margin-left: 8px; }
 #magazine .story_list ul li a > p { padding: 27px 0 0; height: 180px; }
-#magazine .story_list ul li a > p span { display: block; }	
+#magazine .story_list ul li a > p span { display: block; }
 #magazine .story_list ul li a > p span.type { font-size: 12px; font-weight: 700; text-underline-position: under; text-decoration: underline }
 #magazine .story_list ul li a > p span.tit { margin-bottom: 8px; font-size: 17px; font-weight: 700; margin-top: 16px; }
 #magazine .story_list ul li a > p span.word1 { margin-bottom: 8px; font-size: 14px; letter-spacing: -1px; }
@@ -131,6 +131,9 @@
 #magazine .story_wrap .story_conts .list ul li.template._7 .bx-wrapper .bx-pager .bx-pager-item a { display: block; width: 9px; height: 9px; background: url("/front/img/ssts/common/spr_slider.png") 0 0 no-repeat; text-indent: -9999px; }
 #magazine .story_wrap .story_conts .list ul li.template._7 .bx-wrapper .bx-pager .bx-pager-item a.bx-pager-link { background-position: -21px -61px; }
 #magazine .story_wrap .story_conts .list ul li.template._7 .bx-wrapper .bx-pager .bx-pager-item a.active { background-position: -1px -61px; }
+#magazine .thumbnail-list .card.card-goods {
+    margin-bottom: 60px;
+}
 
 .lookbook_layer { visibility: hidden; }
 .lookbook_layer .layer_bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 11000; }

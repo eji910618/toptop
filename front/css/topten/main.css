@@ -63,15 +63,16 @@ body.intro_active { overflow: hidden; }
 .main_suggest { overflow: hidden; width: 1200px; margin: 55px auto 0; }
 .main_suggest > div { float: left; width: 590px; }
 .main_suggest > div + div { margin-left: 20px; }
-.main_suggest .img img { width: 100%; }
-.main_suggest .suggest { padding-bottom: 14px; border: 1px solid #e4e4e4; border-top: 0 none; }
+.main_suggest .suggest { padding-bottom: 30px; border: 1px solid #e4e4e4; border-top: 0 none; }
 .main_suggest .suggest .tit { padding: 20px 0 28px; text-align: center; letter-spacing: -0.06vw; }
 .main_suggest .suggest .tit strong { display: block; margin-bottom: 6px; font-family: "Open Sans", Apple SD Gohic Neo, sans-serif; font-size: 25px; }
 .main_suggest .suggest .tit span { font-size: 16px; font-family: "Open Sans", Apple SD Gohic Neo, sans-serif; color: #666; }
 .main_suggest .suggest .thumbnail-list { margin-bottom: 0; padding: 0 29px; }
-.main_suggest .suggest .thumbnail-list ul li { width: 160px; height: auto; margin: 0 0 0 25px; height: 320px; }
+.main_suggest .suggest .thumbnail-list ul li { width: 160px; height: auto; margin: 0 0 0 25px; }
 .main_suggest .suggest .thumbnail-list ul li:first-child { margin: 0; }
-.main_suggest .suggest .thumbnail-list ul li .prd-img { overflow: hidden; height: 218px; }
+.main_suggest .suggest .thumbnail-list .card-goods__img {
+    height: 218px;
+}
 
 .main_feature { overflow: hidden; width: 1200px; margin: 35px auto 0; }
 .main_feature .title_h2 { padding: 40px 0 33px; font-size: 26px; font-weight: bold; text-align: center; }

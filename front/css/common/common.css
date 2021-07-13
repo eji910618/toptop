@@ -1347,6 +1347,9 @@ i.icon {
     -moz-border-radius: 20px;
     border-radius: 20px;
 }
+.card-goods .badge-group {
+    margin-top: 6px;
+}
 .card-goods .badge-group .badge {
     margin-right: 5px;
 }
@@ -1360,8 +1363,20 @@ i.icon {
     margin-top: 10px;
     line-height: normal;
 }
+.card-goods__link {
+    display: block;
+}
+.card-goods__link .card-goods__text {
+    margin-top: 0;
+}
+.card-goods__link .card-goods__priceInfo {
+    margin-top: 6px;
+}
 .card-goods__brand {
     color: #989898;
+}
+.card-goods__brand + .card-goods__text {
+    margin-top: 6px;
 }
 .card-goods__brand .card-goods__label {
     position: relative;
@@ -1384,6 +1399,7 @@ i.icon {
     z-index: 1;
 }
 .card-goods__img {
+    display: block;
     position: relative;
     width: 100%;
     height: 300px;
@@ -1428,6 +1444,7 @@ i.icon {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-size: 12px;
     margin-top: 5px;
 }
 .card-goods__option {
@@ -1440,17 +1457,49 @@ i.icon {
 .card-goods strong.card-goods__price {
     font-size: 14px;
     font-weight: bold;
+    line-height: 17px;
 }
 .card-goods s.card-goods__price {
     font-size: 12px;
     color: #989898;
     margin-left: 5px;
+    line-height: 17px;
 }
 .card-goods .card-goods__discount {
     color: #ff3500;
     font-size: 14px;
     margin-left: 10px;
     font-weight: bold;
+    line-height: 17px;
+}
+.card-goods .card-colors {
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 9px;
+}
+.card-goods .card-color__chips {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.card-goods .card-color__more {
+    display: block;
+    width: 12px;
+    height: 12px;
+    font: 0/0 a !important;
+    color: transparent;
+    text-shadow: none;
+    border: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #ececec url(/front/img/common/colorChips__more.png) center no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
 }
 .card-goods__group {
     margin-left: -5px;

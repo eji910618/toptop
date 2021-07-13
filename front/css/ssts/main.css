@@ -142,15 +142,9 @@ z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-ali
 .main_brand .brand_wrap ul.slide { margin-right: -18px; }
 .main_brand .brand_wrap ul.slide > li { margin-right: 18px; float: left; width: 454px; }
 .main_brand .brand_wrap ul.slide > li > div { padding: 21px 0px 7px; }
-.main_brand .brand_wrap ul.slide > li > div img { width: 100%; }
-.main_brand .brand_wrap ul.slide > li > div > div.icon_area { display: block; padding: 22px 0px; }
-.main_brand .brand_wrap ul.slide > li > div > div.icon_area:after { content:''; display:block; clear:both; }
-.main_brand .brand_wrap ul.slide > li > div > div.icon_area img.icon { width: 74px; margin-right: 10px; float: left; }
-.main_brand .brand_wrap ul.slide > li > div > div.icon_area > .txt_area { float: left; }
-.main_brand .brand_wrap ul.slide > li > div > div.icon_area > .txt_area .partnerNm { font-size: 12px; font-family: "Open Sans", sans-serif; font-weight: bold; display: block; margin-top: 4px; }
-.main_brand .brand_wrap ul.slide > li > div > div.icon_area > .txt_area strong { font-size: 18px; font-family: "Open Sans", Noto Sans KR, sans-serif; line-height: 22x; letter-spacing: 0.3px; font-weight: bold; display: block; margin-top: 8px; }
-.main_brand .brand_wrap ul.slide > li > div > div.icon_area > .txt_area .word2 { display: block; font-size: 14px; font-family: "KoPub gothic",sans-serif; color: #aaa; font-weight: 400; letter-spacing: -0.7px; }
-.main_brand .brand_wrap ul.slide > li > div > a { display: block; position: relative; }
+.main_brand .brand_wrap ul.slide .card-goods__img {
+    height: 200px;
+}
 .main_brand .brand_wrap .bx-wrapper .bx-controls-direction a { width: 65px; height: 66px; }
 .main_brand .brand_wrap .bx-wrapper .bx-controls-direction a.bx-prev { left: 20px; background-position: 0 -116px;  }
 .main_brand .brand_wrap .bx-wrapper .bx-controls-direction a.bx-next { right: 20px; background-position: -73px -116px; }
@@ -160,19 +154,8 @@ z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-ali
 .main_brand .brand_wrap ul.tagList li { float: left; padding: 3px 9px; color: white; font-size: 15px; }
 .main_brand .brand_wrap ul.tagList li + li { margin-left: 8px; }
 .main_brand .suggest { margin-top: 8px; }
-.main_brand .suggest .thumbnail-list ul li { width: 147px; height: auto; margin: 0 0 0 8px; height: 260px; }
+.main_brand .suggest .thumbnail-list ul li { width: 146px; height: 310px; margin: 0 0 0 8px; }
 .main_brand .suggest .thumbnail-list ul li:first-child { margin: 0; }
-.main_brand .suggest .thumbnail-list ul li .prd-img { overflow: hidden; height: 188px; }
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt { text-align: left; font-size: 12px; }
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt span.brand { display: none; }
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt span.name { display: inline-block; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt a.visible_tx .price { margin-top: -3px; }
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt a.visible_tx .otype { display: none; }
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt .hidden_tx { text-align: center; }
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt .hidden_tx .size-comm-chip { margin: auto; }
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt .hidden_tx .color-comm-chip { margin: 10px auto; }
-.main_brand .suggest .thumbnail-list ul li .prd-info .etc_txt .price .p_o { color: #999 }
-.main_brand .suggest .thumbnail-list ul li .prd-info .saleRateArea { margin-bottom: -16px; }
 
 .main_rolling_under { width: 1400px; margin: 0 auto; }
 .main_rolling_under .benefit { overflow: hidden; }

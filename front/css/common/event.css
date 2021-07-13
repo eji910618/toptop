@@ -9,6 +9,9 @@
 #event .event_list:last-child .pagination { /* 20180116 add */ padding-bottom: 0; }
 #event .event_list h4 { font-family: "Open Sans", sans-serif; font-weight: 600; font-size: 24px; line-height: 100%; text-align: center; padding: 94px 0 57px; }
 #event .event_list .pagination { /* 20180116 add */ padding: 24px 0 86px; box-sizing: content-box; }
+#event .event_list .thumbnail-list .card.card-goods {
+    margin-bottom: 60px;
+}
 #event .special_list { overflow: hidden; margin-right: -45px; }
 #event .special_list:after { display: block; clear: both; content: ''; }
 #event .special_list li { position: relative; width: 374px; margin-right: 12px; float: left; margin-bottom: 97px; }

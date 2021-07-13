@@ -89,8 +89,25 @@ z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-ali
 .main_online .thumbnail-only h3 b { /* 20171023 edited */ margin-top: 10px; line-height: 54px; max-height: 270px; overflow: hidden; }
 .main_online .thumbnail-only .h3_etc { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
 .main_online .thumbnail-only .h3_etc a { display: block; width: 100%; height: 100%; background-color: transparent; line-height: 200%; color: transparent; }
-.main_online .thumbnail-list { width: auto; height: 820px; margin: 0 0 0 680px; overflow: visible; }
-.main_online .thumbnail-list ul li { margin: 0 0 0 10px; }
+.main_online .card-goods__group {
+    float: right;
+    width: 460px;
+    display: -ms-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: -34px;
+}
+.main_online .card-goods__group .card-goods {
+    width: 210px;
+    margin-top: 34px;
+}
+.main_online .card-goods__group .card-goods__img {
+    height: 286px;
+}
 .main_online:after { display: block; clear: both; content: ''; }
 
 .main_feature { margin-top: 108px; }

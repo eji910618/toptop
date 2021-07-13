@@ -85,16 +85,26 @@ z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-ali
 .main_suggest { overflow: hidden; margin-top: 40px; }
 .main_suggest .inner > div { float: left; width: 560px; }
 .main_suggest .inner > div + div { margin-left: 20px; }
-.main_suggest .suggest { padding-bottom: 34px; border: 1px solid #e4e4e4; border-top: 0 none; }
+.main_suggest .suggest { padding-bottom: 30px; border: 1px solid #e4e4e4; border-top: 0 none; }
 .main_suggest .suggest .tit { padding: 21px 0 16px; text-align: center; }
 .main_suggest .suggest .tit strong { display: block; margin-bottom: 7px; font-family: "Playfair Display", serif; font-size: 30px; }
 .main_suggest .suggest .tit span { font-size: 16px; color: #666; }
 .main_suggest .suggest .thumbnail-list { margin-bottom: 0; padding: 0 29px; }
 .main_suggest .suggest .thumbnail-list ul li { width: 160px; height: auto; margin: 0 0 0 10px; }
 .main_suggest .suggest .thumbnail-list ul li:first-child { margin: 0; }
-.main_suggest .suggest .thumbnail-list ul li .prd-img { overflow: hidden; height: 218px; }
+.main_suggest .suggest .thumbnail-list .card-goods__img {
+    height: 218px;
+}
 
 .main_video { margin-top: 100px; }
+.main_video iframe { display: block; }
+.main_video .video_inner { position: relative; }
+.main_video .video_inner .thumb-background { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.main_video .video_inner .thumb-desc { position: absolute; left: 50%; bottom: 108px; transform: translateX(-50%); -webkit-transform: translateX(-50%); font-family: "Playfair Display", serif; color: #fff; text-align: center; }
+.main_video .video_inner .thumb-desc strong { display: block; font-size: 60px; }
+.main_video .video_inner .thumb-desc span { display: block; font-size: 16px; margin-top: 8px; }
+.main_video .video_inner .vod_cover { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.main_video .video_inner .vod_cover span { display: block; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); text-indent: -9999px; width: 60px; height: 60px; background: url("/front/img/olzen/common/spr_slider.png") -140px 0 no-repeat; z-index: 50; }
 
 .main_magazine ul { overflow: hidden; }
 .main_magazine ul li { float: left; width: 366px; }
