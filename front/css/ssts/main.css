@@ -142,6 +142,15 @@ z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-ali
 .main_brand .brand_wrap ul.slide { margin-right: -18px; }
 .main_brand .brand_wrap ul.slide > li { margin-right: 18px; float: left; width: 454px; }
 .main_brand .brand_wrap ul.slide > li > div { padding: 21px 0px 7px; }
+.main_brand .brand_wrap ul.slide > li > div img { width: 100%; }
+.main_brand .brand_wrap ul.slide > li > div > div.icon_area { display: block; padding: 22px 0px; }
+.main_brand .brand_wrap ul.slide > li > div > div.icon_area:after { content:''; display:block; clear:both; }
+.main_brand .brand_wrap ul.slide > li > div > div.icon_area img.icon { width: 74px; margin-right: 10px; float: left; }
+.main_brand .brand_wrap ul.slide > li > div > div.icon_area > .txt_area { float: left; }
+.main_brand .brand_wrap ul.slide > li > div > div.icon_area > .txt_area .partnerNm { font-size: 12px; font-family: "Open Sans", sans-serif; font-weight: bold; display: block; margin-top: 4px; }
+.main_brand .brand_wrap ul.slide > li > div > div.icon_area > .txt_area strong { font-size: 18px; font-family: "Open Sans", Noto Sans KR, sans-serif; line-height: 22x; letter-spacing: 0.3px; font-weight: bold; display: block; margin-top: 8px; }
+.main_brand .brand_wrap ul.slide > li > div > div.icon_area > .txt_area .word2 { display: block; font-size: 14px; font-family: "KoPub gothic",sans-serif; color: #aaa; font-weight: 400; letter-spacing: -0.7px; }
+.main_brand .brand_wrap ul.slide > li > div > a { display: block; position: relative; }
 .main_brand .brand_wrap ul.slide .card-goods__img {
     height: 200px;
 }
@@ -156,6 +165,10 @@ z-index: 100;*/ position: absolute; bottom: 55px; left: 0; width: 100%; text-ali
 .main_brand .suggest { margin-top: 8px; }
 .main_brand .suggest .thumbnail-list ul li { width: 146px; height: 310px; margin: 0 0 0 8px; }
 .main_brand .suggest .thumbnail-list ul li:first-child { margin: 0; }
+.main_brand .card-goods strong.card-goods__price,
+.main_brand .card-goods .card-goods__discount {
+    font-size: 12px;
+}
 
 .main_rolling_under { width: 1400px; margin: 0 auto; }
 .main_rolling_under .benefit { overflow: hidden; }
