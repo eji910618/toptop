@@ -10,6 +10,10 @@ table.display-table-fmt.hor th { text-align: center; }
 table.display-table-fmt.hor thead th:last-child { border-right: 1px solid #ddd; }
 table.display-table-fmt.hor tbody td:first-child { color: #111; }
 
+.header-util-title {
+    border-bottom: none;
+}
+
 #product_detail.inner { padding: 0; }
 #product_detail:after { display: block; clear: both; content: ''; }
 #product_detail .detail_slider { /* 20180125 edit */ position: relative; padding: 0px 0px 15px; /* border-bottom: 1px solid #e5e5e5; margin: 0 4.7%; */ }
@@ -539,4 +543,37 @@ table.display-table-fmt.hor tbody td:first-child { color: #111; }
 
 /* .scrollOff{position:fixed;overflow:hidden;height:100%;} */
 
-
+.detail-navigation {
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: 1px solid #c9c9c9;
+}
+.detail-navigation.fixed {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    display: flex;
+    z-index: 3;
+}
+.detail-navigation .detail-navigation__button {
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #111;
+    background-color: #fff;
+    white-space: nowrap;
+}
+.detail-navigation.fixed .detail-navigation__button {
+    display: block;
+    width: 100%;
+}
+.detail-navigation .detail-navigation__button:first-child {
+    padding-left: 19px;
+}
+.detail-navigation .detail-navigation__button.active {
+    color: #fff;
+    background-color: #111;
+}

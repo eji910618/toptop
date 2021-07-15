@@ -163,6 +163,67 @@
     });
 });
 
+$(window).on('load', function () {
+    var clicked, lastId;
+    var $headerH = $('.header_container').outerHeight();
+    var $detailNavi = $('.detail-navigation'),
+        detailNaviItem = $detailNavi.find('.detail-navigation__button'),
+        detailNavScrollItem = detailNaviItem.map(function() {
+            var item = $($(this).data('target'));
+            if (item.length) { return item; }
+        });
+    var detailNaviH = $detailNavi.outerHeight();
+    var detailSt = $(window).scrollTop();
+    $(window).on('scroll', function () {
+        detailSt = $(this).scrollTop();
+        detailNavigation(detailSt);
+        detailNavigationScroll();
+    });
+    detailNavigation(detailSt);
+    function detailNavigation(st) {
+        var navShowOffset = $('#detail0').offset().top - $headerH - detailNaviH;
+        if ( st >= navShowOffset ) {
+            $detailNavi.addClass('fixed');
+        } else {
+            $detailNavi.removeClass('fixed');
+        }
+    }
+    function detailNavigationScroll(state) {
+        detailSt = $(window).scrollTop();
+        var cur = detailNavScrollItem.map(function () {
+            if (Math.floor($(this).offset().top-$headerH-detailNaviH) <= detailSt) {
+                return this;
+            }
+        });
+        cur = cur[cur.length - 1];
+        var navId = cur && cur.length ? cur[0].id : '';
+        if (lastId !== navId) {
+            lastId = navId;
+            if (clicked === undefined || clicked === false) {
+                detailNaviItem.removeClass('active');
+                if (state === true) {
+                    navId = cur[cur.length-1];
+                }
+                $detailNavi.find('.detail-navigation__button[data-target="#' + navId + '"]').addClass('active');
+            }
+        }
+    }
+    detailNavigationScroll();
+    detailNaviItem.on('click', function () {
+        var $this = $(this);
+        var $scrollTargetOffset = $($this.data('target')).offset().top;
+        $this.addClass('active')
+            .siblings('.detail-navigation__button').removeClass('active');
+        clicked = true;
+        $('html, body').stop().animate({
+            scrollTop: $scrollTargetOffset - $headerH - detailNaviH
+        }, 'slow', function() {
+            clicked = false;
+        });
+        return false;
+    });
+});
+
 //네이버 맵 조회
 StoreNaverMapUtil = {
     render:function(area_id,roadAddr) {
