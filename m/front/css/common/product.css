@@ -23,9 +23,6 @@ table.display-table-fmt.hor tbody td:first-child { color: #111; }
 #product_detail .detail_slider .swiper-pagination-bullet-active { background: #000; }
 #product_detail .detail_tab_zone { margin-top: 30px; }
 #product_detail a.detail_tab { display: block; position: relative; margin: 0 4.7%; line-height: 45px; height: 45px; overflow: hidden; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom: -1px; font-size: 13px; font-weight: bold; }
-#product_detail a.detail_tab:after { content: ''; display: block; position: absolute; background-color: #111; overflow: hidden; width: 13px; height: 1px; right: 10px; top: 21px; }
-#product_detail a.detail_tab:before { content: ''; display: block; position: absolute; background-color: #111; overflow: hidden; width: 1px; height: 13px; right: 16px; top: 15px; }
-#product_detail a.detail_tab.active:before { display: none; }
 #product_detail .detail_tab_contents { padding-bottom: 30px; display: none; }
 #product_detail .detail_tab_contents.active { display: block; background-color: #fff; position: relative; }
 #product_detail .detail_tab_contents .title { font-size: 12px; font-weight: bold; line-height: 50px; height: 37px; }

@@ -82,9 +82,8 @@
         $('#self_package').toggleClass('active');
     });
 
-    $('.detail_tab_zone a.detail_tab').click(function(){//상품 상세정보 탭 토글링 20180125 edit
-        $(this).toggleClass('active');
-        $(this).next().toggleClass('active');
+    $('.detail_tab_zone a.detail_tab').click(function(e){
+        e.preventDefault();
     });
     $('.delivery_tab li a').click(function(){//배송/교환/반품 안내 내 탭 토글링
         $('.delivery_tab li a').removeClass('active');
@@ -172,7 +171,7 @@ $(window).on('load', function () {
             var item = $($(this).data('target'));
             if (item.length) { return item; }
         });
-    var detailNaviH = $detailNavi.outerHeight();
+    var detailNaviH = $detailNavi.height();
     var detailSt = $(window).scrollTop();
     $(window).on('scroll', function () {
         detailSt = $(this).scrollTop();
@@ -181,7 +180,7 @@ $(window).on('load', function () {
     });
     detailNavigation(detailSt);
     function detailNavigation(st) {
-        var navShowOffset = $('#detail0').offset().top - $headerH - detailNaviH;
+        var navShowOffset = $('#goodsDetailNotice').offset().top - $headerH - detailNaviH;
         if ( st >= navShowOffset ) {
             $detailNavi.addClass('fixed');
         } else {
@@ -191,7 +190,9 @@ $(window).on('load', function () {
     function detailNavigationScroll(state) {
         detailSt = $(window).scrollTop();
         var cur = detailNavScrollItem.map(function () {
-            if (Math.floor($(this).offset().top-$headerH-detailNaviH) <= detailSt) {
+            var $this = $(this);
+            var offsetTarget = $this.prev('.detail_tab').length ? $this.prev('.detail_tab') : $this;
+            if (Math.floor(offsetTarget.offset().top-$headerH-detailNaviH) <= detailSt) {
                 return this;
             }
         });
@@ -211,12 +212,13 @@ $(window).on('load', function () {
     detailNavigationScroll();
     detailNaviItem.on('click', function () {
         var $this = $(this);
-        var $scrollTargetOffset = $($this.data('target')).offset().top;
+        var $scrollTarget = $($this.data('target'));
+        var offsetTarget = $scrollTarget.prev('.detail_tab').length ? $scrollTarget.prev('.detail_tab') : $scrollTarget;
         $this.addClass('active')
             .siblings('.detail-navigation__button').removeClass('active');
         clicked = true;
         $('html, body').stop().animate({
-            scrollTop: $scrollTargetOffset - $headerH - detailNaviH
+            scrollTop: offsetTarget.offset().top - $headerH - detailNaviH
         }, 'slow', function() {
             clicked = false;
         });
