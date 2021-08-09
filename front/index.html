@@ -44,18 +44,15 @@
 </head>
 <body class="">
 <!-- header// -->
-<header  class="black">
-    <div class="outer"></div>
-
+<header id="header">
     <script>
         $(document).ready(function() {
             //띠배너 쿠키 확인
-            var lineBannerCloseCookie = getCookie("lineBannerCloseCookie");
-            if(lineBannerCloseCookie || $('.mainTopLineBanner .bxslider li').size() < 1){
+            if($('.mainTopLineBanner .bxslider li').length < 1){
                 return;
             }
 
-            for(var j=0; j<$('.mainTopLineBanner .bxslider li').size(); j++){
+            for(var j=0; j<$('.mainTopLineBanner .bxslider li').length; j++){
                 //닫기 버튼 색상 계산
                 var colorSize = $(".mainTopLineBanner .bxslider li:nth-child("+(j+1)+") a.clslider").data('bg');
                 var colorArr = [];
@@ -79,8 +76,9 @@
         });
 
         function lineBannerLoad(){
+            var $container = $('#contents').length ? $('#contents') : $('#container');
             var topBanHeight = 86,//메인 상단 띠배너 높이값
-                container_pt = $('#container').css('margin-top').replace('px','')*1,//컨텐츠 영역 margin-top값
+                container_pt = $container.css('padding-top').replace('px','')*1,//컨텐츠 영역 margin-top값
                 topBanSlide = '',
                 topBanSetting = {
                     auto: true,
@@ -94,25 +92,16 @@
                 };
 
             if ($('.mainTopLineBanner').length > 0) {//메인 상단 띠배너가 있으면
-                topBanSlide = $('.mainTopLineBanner .bxslider').bxSlider(topBanSetting);//메인 상단 띠배너 load
+                // topBanSlide = $('.mainTopLineBanner .bxslider').bxSlider(topBanSetting);//메인 상단 띠배너 load
                 setTimeout(function(){
                     $('.mainTopLineBanner').addClass('active');
-                    $('#container').stop().animate({ marginTop: container_pt + topBanHeight }, 300);
-                    $('header .outer').stop().animate({ marginTop: topBanHeight }, 300);
-                },300);
+                    $container.stop().animate({ paddingTop: container_pt + topBanHeight }, 300);
+                }, 300);
             }
 
             $('.mainTopLineBanner a.clslider').click(function(){//메인 상단 띠배너 닫기
                 $('.mainTopLineBanner').removeClass('active');
-                $('#container').stop().animate({ marginTop: container_pt }, 300);
-                $('header .outer').stop().animate({ marginTop: 0 }, 300);
-
-                // 띠배너 쿠키 설정
-                setCookie('lineBannerCloseCookie', 'Y', '', cookieServerName);
-
-                setTimeout(function(){
-                    topBanSlide.destroySlider();//메인 상단 띠배너 destroy
-                }, 400);
+                $container.stop().animate({ paddingTop: container_pt }, 300);
 
                 return false;
             });
@@ -122,251 +111,215 @@
         <!-- 	<a href="#" class="clslider">닫기</a> -->
     </div>
     <!-- //180629 추가 -->
-
-    <div class="all_brand">
-        <div class="logo">
-            <a href="//www.topten10mall.com/kr/front/viewMain.do"><img src="/front/img/common/brand/spr_brand_ssts.png?v=1" alt="logo"></a>
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <h1 class="header-symbol">
+                <a href="//www.topten10mall.com/kr/front/viewMain.do" class="header-symbol__link">Topten Mall</a>
+            </h1>
+            <ul class="header-brand__list">
+                <li class="header-brand__item"><a class="header-brand__link" href="//ziozia.topten10mall.com/kr/front/viewMain.do">ZIOZIA</a></li>
+                <li class="header-brand__item"><a class="header-brand__link" href="//andz.topten10mall.com/kr/front/viewMain.do">AND Z</a></li>
+                <li class="header-brand__item"><a class="header-brand__link" href="//olzen.topten10mall.com/kr/front/viewMain.do">OLZEN</a></li>
+                <li class="header-brand__item"><a class="header-brand__link" href="//edition.topten10mall.com/kr/front/viewMain.do">EDITION</a></li>
+                <li class="header-brand__item"><a class="header-brand__link" href="//topten.topten10mall.com/kr/front/viewMain.do">TOPTEN10</a></li>
+                <li class="header-brand__item"><a class="header-brand__link" href="//polham.topten10mall.com/kr/front/viewMain.do">POLHAM</a></li>
+                <li class="header-brand__item"><a class="header-brand__link" href="//projectm.topten10mall.com/kr/front/viewMain.do">PROJECT M</a></li>
+                <li class="header-brand__item"><a class="header-brand__link" href="//toptenkids.topten10mall.com/kr/front/viewMain.do">TOPTEN KIDS</a></li>
+                <li class="header-brand__item"><a class="header-brand__link" href="//polhamkids.topten10mall.com/kr/front/viewMain.do">POLHAM KIDS</a></li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="//ziozia.topten10mall.com/kr/front/viewMain.do">ZIOZIA</a></li>
-            <li><a href="//andz.topten10mall.com/kr/front/viewMain.do">AND Z</a></li>
-            <li><a href="//olzen.topten10mall.com/kr/front/viewMain.do">OLZEN</a></li>
-            <li><a href="//edition.topten10mall.com/kr/front/viewMain.do">EDITION</a></li>
-            <li><a href="//topten.topten10mall.com/kr/front/viewMain.do">TOPTEN10</a></li>
-            <li><a href="//polham.topten10mall.com/kr/front/viewMain.do">POLHAM</a></li>
-            <li><a href="//projectm.topten10mall.com/kr/front/viewMain.do">PROJECT M</a></li>
-            <li><a href="//toptenkids.topten10mall.com/kr/front/viewMain.do">TOPTEN KIDS</a></li>
-            <li><a href="//polhamkids.topten10mall.com/kr/front/viewMain.do">POLHAM KIDS</a></li>
-        </ul>
-    </div><script>
-    $(document).ready(function() {
-        // if(loginYn){
-        //     $('#loginHeader').addClass('hidden');
-        //     $('#logoutHeader').removeClass('hidden');
-        // }else{
-        //     $('#loginHeader').removeClass('hidden');
-        //     $('#logoutHeader').addClass('hidden');
-        // }
+        <div class="d-flex justify-content-end header-search">
+            <div class="header-search__form">
+                <div class="search_close"></div>
+                <div class="sch-engine">
+                    <input type="text" id="searchWord" placeholder="검색어를 입력하세요." class="form-control" value="슬랙스">
+                    <input type="hidden" id="searchLink" value="">
+                    <button type="button" class="header-search__submit" id="btn_search"><i>search</i></button>
+                </div>
 
-        var len = '0';
-        var i = Math.floor(Math.random()*len);
-        var word = new Array();
-        var link = new Array();
-
-        $('#searchWord').val(word[i]);
-        $('#searchLink').val(link[i]);
-
-    });
-</script>
-    <div class="inenr_container">
-        <div class="inner">
-            <div class="h1">
-                <div class="search_area">
-                    <div class="search_close"></div>
-                    <div class="search">
-                        <div class="sch-engine">
-                            <input type="text" id="searchWord" placeholder="검색어를 입력하세요."
-                                   onkeyup="headerInputKeyup(this);"
-                                   onkeydown="if(event.keyCode == 13){$('#btn_search').click();}"
-                                   onfocus="javascript:init_focus(this);" value="">
-                            <input type="hidden" id="searchLink" value="">
-                            <button type="button" id="btn_search"><i>search</i></button>
+                <!-- search -->
+                <div class="util-search-detail">
+                    <div class="word-engine search-input__before ">
+                        <div class="word-wr">
+                            <b>최근 검색어</b>
+                            <ul id="ulLatelyWord">
+                                <li>
+                                    <a href="#" onclick="view_searchWord(this);" data-search-word="박서준">박서준</a>
+                                    <a href="#" class="del" onclick="RatelyWordUtil.deleteCookie('박서준')">삭제</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="view_searchWord(this);" data-search-word="박서준">박서준</a>
+                                    <a href="#" class="del" onclick="RatelyWordUtil.deleteCookie('박서준')">삭제</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="word-wr">
+                            <b>인기 검색어</b>
+                            <ul>
+                                <li><a href="#">1. 롱패딩</a></li>
+                                <li><a href="#">2. 롱패딩</a></li>
+                                <li><a href="#">3. 롱패딩</a></li>
+                                <li><a href="#">4. 롱패딩</a></li>
+                                <li><a href="#">5. 롱패딩</a></li>
+                                <li><a href="#">6. 롱패딩</a></li>
+                                <li><a href="#">7. 롱패딩</a></li>
+                                <li><a href="#">8. 롱패딩</a></li>
+                                <li><a href="#">9. 롱패딩</a></li>
+                                <li><a href="#">10. 핀스트라이프 셔츠</a></li>
+                            </ul>
+                        </div>
+                        <div class="word-wr">
+                            <b>최근 본 상품</b>
+                            <ul id="searchLatelyGoods">
+                                <li>
+                                    <a href="javascript:goods_detail('BLB1TR1001IV');">
+                                        <img src="https://imgp.topten10mall.com/ssts/image/goods/BLB1TR1001IV_MDL1_L?AR=0&amp;RS=60X82">
+                                        <div class="goods_info">
+                                            <span class="partner_nm">AND Z</span>
+                                            <span class="goods_nm">럭키N러브 콜라보 오버핏 맨투맨</span>
+                                            <span class="sale_price comma"><s>74,000원</s>&nbsp;<strong>39,000원</strong></span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:goods_detail('AEA4FP1104BK');">
+                                        <img src="https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&amp;RS=60X82">
+                                        <div class="goods_info">
+                                            <span class="partner_nm">ZIOZIA</span>
+                                            <span class="goods_nm">히든 슬릿 구스다운 코트</span>
+                                            <span class="sale_price comma"><s>74,000원</s><strong>39,000원</strong></span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-
-                    <!-- search -->
-                    <div class="util-search-detail">
-                        <div class="word-engine search-input__before">
+                    <div class="word-engine search-input__after d-none">
+                        <div class="clearfix">
                             <div class="word-wr">
-                                <b>최근 검색어</b>
-                                <ul id="ulLatelyWord">
-                                    <li>
-                                        <a href="" class="del" onclick="RatelyWordUtil.deleteCookie('ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ')">삭제</a>
-                                        <a href="" onclick="view_searchWord(this);" data-search-word="ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ">ㅁㄴㅇㅁㄴㅇㅇㅇㅇㅇ</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="del" onclick="RatelyWordUtil.deleteCookie('asd')">삭제</a>
-                                        <a href="" onclick="view_searchWord(this);" data-search-word="asd">asd</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="del" onclick="RatelyWordUtil.deleteCookie('박서준')">삭제</a>
-                                        <a href="" onclick="view_searchWord(this);" data-search-word="박서준">박서준</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="word-wr">
-                                <b>인기 검색어</b>
                                 <ul>
-                                    <li><a href="#">1. 롱패딩</a></li>
-                                    <li><a href="#">2. 롱패딩</a></li>
-                                    <li><a href="#">3. 롱패딩</a></li>
-                                    <li><a href="#">4. 롱패딩</a></li>
-                                    <li><a href="#">5. 롱패딩</a></li>
-                                    <li><a href="#">6. 롱패딩</a></li>
-                                    <li><a href="#">7. 롱패딩</a></li>
-                                    <li><a href="#">8. 롱패딩</a></li>
-                                    <li><a href="#">9. 롱패딩</a></li>
-                                    <li><a href="#">10. 핀스트라이프 셔츠</a></li>
+                                    <li><a href="#"><span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">에디션 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">지오지아 슬림핏 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">탑텐 여성 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">폴햄 린넨 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">앤드지 베이직 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">탑텐 여성 와이드 <span class="text-primary">슬랙스</span></a></li>
                                 </ul>
                             </div>
                             <div class="word-wr">
-                                <b>최근 본 상품</b>
-                                <ul id="searchLatelyGoods">
-                                    <li>
-                                        <a href="javascript:goods_detail('BLB1TR1001IV');">
-                                            <img src="https://imgp.topten10mall.com/ssts/image/goods/BLB1TR1001IV_MDL1_L?AR=0&RS=60X82">
-                                            <div class="goods_info">
-                                                <span class="partner_nm">AND Z</span>
-                                                <span class="goods_nm">럭키N러브 콜라보 오버핏 맨투맨</span>
-                                                <span class="sale_price comma">AND Z원 </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:goods_detail('AEA4FP1104BK');">
-                                            <img src="https://imgp.topten10mall.com/ssts/image/goods/AEA4FP1104BK_MDL1_L?AR=0&RS=60X82">
-                                            <div class="goods_info">
-                                                <span class="partner_nm">ZIOZIA</span>
-                                                <span class="goods_nm">히든 슬릿 구스다운 코트</span>
-                                                <span class="sale_price comma">ZIOZIA원 </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <!-- 연관검색어 -->
-                        <div class="word-engine search-input__after hidden">
-                            <div class="clearfix">
-                                <div class="word-wr">
-                                    <ul>
-                                        <li><a href="#"><span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">에디션 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">지오지아 슬림핏 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">탑텐 여성 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">폴햄 린넨 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">앤드지 베이직 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">탑텐 여성 와이드 <span class="text-primary">슬랙스</span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="word-wr">
-                                    <ul>
-                                        <li><a href="#">프로젝트엠 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">올젠 가을 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">남자 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">남성 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">여성 <span class="text-primary">슬랙스</span> 팬츠</a></li>
-                                        <li><a href="#">여자 <span class="text-primary">슬랙스</span></a></li>
-                                        <li><a href="#">탑텐 공용 <span class="text-primary">슬랙스</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="search-word__category">
-                                <b><span class="text-primary">슬랙스</span> 추천 카테고리</b>
                                 <ul>
-                                    <li><a href="#">남성 > 하의 > 긴바지 > <span class="text-primary">슬랙스</span></a></li>
-                                    <li><a href="#">텐텐데이 > 1+1 > 팬츠 > <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">프로젝트엠 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">올젠 가을 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">남자 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">남성 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">여성 <span class="text-primary">슬랙스</span> 팬츠</a></li>
+                                    <li><a href="#">여자 <span class="text-primary">슬랙스</span></a></li>
+                                    <li><a href="#">탑텐 공용 <span class="text-primary">슬랙스</span></a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="btn-util-wrap">
-                            <a href="#" class="btn-util-close">닫기</a>
+                        <div class="search-word__category">
+                            <b><span class="text-primary">슬랙스</span> 추천 카테고리</b>
+                            <ul>
+                                <li><a href="#">남성 > 하의 > 긴바지 > <span class="text-primary">슬랙스</span></a></li>
+                                <li><a href="#">텐텐데이 > 1+1 > 팬츠 > <span class="text-primary">슬랙스</span></a></li>
+                            </ul>
                         </div>
+                    </div>
+                    <div class="btn-util-wrap">
+                        <a href="#" class="btn-util-close">닫기</a>
                     </div>
                 </div>
-                <!-- //util 상세내용 -->
             </div>
-            <div class="h2">
-
-                <nav id="gnb">
-                    <ul id="gnb-ul">
-                        <li>
-                            <strong><a href="/kr/front/search/categorySearch.do?ctgNo=19269">스프링스테이</a></strong>
-                            <ul>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=21850">봄 아우터</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=21851">봄 상의</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=21852">봄 팬츠</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=21853">봄 키즈</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=21854">아울렛</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong><a href="/kr/front/search/categorySearch.do?ctgNo=1001">남성</a></strong>
-                            <ul>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1005">상의</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1006">하의</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1007">정장</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=5366">셋업</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1004">아우터</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1010">이너웨어</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1008">악세서리</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong><a href="/kr/front/search/categorySearch.do?ctgNo=1002">여성</a></strong>
-                            <ul>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1012">상의</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1013">하의</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1014">원피스</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1011">아우터</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1017">이너웨어</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1015">악세서리</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong><a href="/kr/front/search/categorySearch.do?ctgNo=1003">아동</a></strong>
-                            <ul>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1018">남아</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1019">여아</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=1020">악세서리</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong><a href="/kr/front/search/categorySearch.do?ctgNo=3000">아울렛</a></strong>
-                            <ul>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=3001">남성</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=3002">여성</a></li>
-                                <li><a href="/kr/front/search/categorySearch.do?ctgNo=3003">아동</a></li>
-                            </ul>
-                        </li>
-                        <li class="mag">
-                            <strong>매거진</strong>
-                            <ul>
-                                <li><a href="https://www.topten10mall.com/kr/front/magazine/storyList.do">스토리즈</a></li>
-                                <li><a href="/kr/front/magazine/styleList.do">스타일</a></li>
-                                <li><a href="/kr/front/magazine/lookbookList.do">룩북</a></li>
-                                <li><a href="/kr/front/magazine/newsList.do">뉴스</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <strong><a href="/kr/front/special/specialList.do">기획전</a></strong>
-                        </li>
-                        <li>
-                            <strong><a href="/kr/front/event/eventList.do">이벤트</a></strong>
-                        </li>
-                        <li>
-                            <strong><a href="https://www.topten10mall.com/kr/front/event/eventView.do?dispBannerNo=8552">베스트 리뷰</a></strong>
-                        </li>
-
-                    </ul>
-                    <div class="gnb-collabo-content">
-                    </div>
-
-                </nav>
-
-                <ul class="util hidden" id="loginHeader">
-                    <li class="login"><a href="#" onclick="move_page('loginToMain')">LOGIN</a></li>
-                    <li class="cart"><a href="#" onclick="move_page('basket');">CART</a></li>
+        </div>
+        <div class="d-flex justify-content-between">
+            <nav id="gnb">
+                <ul class="gnb-list">
+                    <li class="gnb-list__item">
+                        <a class="gnb-list__category" href="">스프링-업</a>
+                        <ul class="gnb-category__list">
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">봄 특가</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">겨울아울렛</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list__item">
+                        <a class="gnb-list__category" href="">남성</a>
+                        <ul class="gnb-category__list">
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">상의</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">하의</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">정장</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">셋업</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">아우터</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">이너웨어</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">악세서리</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list__item">
+                        <a class="gnb-list__category" href="">여성</a>
+                        <ul class="gnb-category__list">
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">상의</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">하의</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">원피스</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">아우터</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">이너웨어</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">악세서리</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list__item">
+                        <a class="gnb-list__category" href="">아동</a>
+                        <ul class="gnb-category__list">
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">남아</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">여아</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">악세서리</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list__item">
+                        <a class="gnb-list__category" href="">아울렛</a>
+                        <ul class="gnb-category__list">
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">남성</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">여성</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">아동</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list__item">
+                        <strong class="gnb-list__category">악세서리</strong>
+                        <ul class="gnb-category__list">
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">남성</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">여성</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">아동</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="">가방특가</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list__item">
+                        <strong class="gnb-list__category">매거진</strong>
+                        <ul class="gnb-category__list">
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="https://www.topten10mall.com/kr/front/magazine/storyList.do">스토리즈</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="/kr/front/magazine/styleList.do">스타일</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="/kr/front/magazine/lookbookList.do">룩북</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="/kr/front/magazine/newsList.do">뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li class="gnb-list__item">
+                        <strong class="gnb-list__category">이벤트</strong>
+                        <ul class="gnb-category__list">
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="/kr/front/special/specialList.do">기획전</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="/kr/front/event/eventList.do">이벤트</a></li>
+                            <li class="gnb-category__item"><a class="gnb-category__link" href="https://www.topten10mall.com/kr/front/event/eventView.do?dispBannerNo=8552">베스트 리뷰</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <ul class="util hidden" id="logoutHeader">
-                    <li class="logout" id="a_id_logout"><a href="#" >LOGOUT</a></li>
-                    <li class="my"><a href="#" onclick="move_page('mypage');">MY</a></li>
-                    <li class="wish"><a href="#" onclick="move_page('interest');">WISH</a></li>
-                    <li class="cart"><a href="#" onclick="move_page('basket');">CART</a></li>
-                </ul>
-            </div>
+            </nav>
+            <ul class="header-util" id="loginHeader">
+                <li class="header-util__item login"><a class="header-util__link" href="#" onclick="move_page('loginToMain')">LOGIN</a></li>
+                <li class="header-util__item cart"><a class="header-util__link" href="#" onclick="move_page('basket');">CART</a></li>
+            </ul>
+            <ul class="header-util d-none" id="logoutHeader">
+                <li class="header-util__item logout" id="a_id_logout"><a class="header-util__link" href="#">LOGOUT</a></li>
+                <li class="header-util__item my"><a class="header-util__link" href="#" onclick="move_page('mypage');">MY</a></li>
+                <li class="header-util__item wish"><a class="header-util__link" href="#" onclick="move_page('interest');">WISH</a></li>
+                <li class="header-util__item cart"><a class="header-util__link" href="#" onclick="move_page('basket');">CART</a></li>
+            </ul>
         </div>
     </div>
 </header>
