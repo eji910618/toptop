@@ -1828,6 +1828,8 @@ i.icon {
 }
 .card-goods .badge-group {
     margin-top: 6px;
+    max-height: 36px;
+    overflow: hidden;
 }
 .card-goods .badge-group .badge {
     margin-right: 5px;
