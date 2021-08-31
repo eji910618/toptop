@@ -166,17 +166,16 @@ jQuery(document).ready(function() {
     var scrollDir = 0;
     var $bottomBar = $('#bottom_bar');
     var $stickyNav = $('#stickyNav'), stickyNavLen = $stickyNav.length;
-    var scrollTriggerPos = stickyNavLen ? $stickyNav.offset().top : 300;
+    var scrollTriggerPos = stickyNavLen ? $stickyNav.offset().top : 200;
     if ( stickyNavLen ) $('body').addClass('has-stickyNav');
 
     function bottomBarMotion() {
         var scrollTop = $(window).scrollTop();
         scrollDir = scrollLastTop - scrollTop;
         if ( scrollTop >= scrollTriggerPos ) {
-            if ( stickyNavLen ) {
-                $headerContainer.addClass('fixed');
-                $stickyNav.addClass('fixed');
-            }
+            $('.header-util-title').addClass('fixed');
+            $headerContainer.addClass('fixed');
+            if ( stickyNavLen ) $stickyNav.addClass('fixed');
             if (scrollDir < 0) {
                 if ( isUp ) {
                     // console.log("down");
@@ -201,10 +200,9 @@ jQuery(document).ready(function() {
                 }
             }
         } else {
-            if ( stickyNavLen ) {
-                $headerContainer.removeClass('fixed');
-                $stickyNav.removeClass('fixed active-down');
-            }
+            $('.header-util-title').removeClass('fixed');
+            $headerContainer.removeClass('fixed');
+            if ( stickyNavLen ) $stickyNav.removeClass('fixed active-down');
         }
         scrollLastTop = scrollTop;
     }
