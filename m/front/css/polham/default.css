@@ -645,7 +645,7 @@ table {
 .layer.layer_mms { position: relative; min-height: 0; opacity: 1; pointer-events: auto; display: block; overflow: hidden; }
 .layer.layer_mms:before { position: static; opacity: 0; }
 .layer.layer_mms .popup { margin-bottom: -1px; }
-.layer.layer_comm_notice { min-height: 0; z-index: 2; }
+.layer.layer_comm_notice { min-height: 0; z-index: 100; }
 .layer.layer_comm_notice:before { display: none; }
 .layer.layer_comm_notice .popup { width: auto; margin: 0 4.7%; border: 1px solid #cbcbcb; position: relative; }
 .layer.layer_comm_notice .popup:before { position: absolute; top: 4px; left: 4px; content: ''; display: block; opacity: .2; filter: alpha(opacity=20); width: 100%; height: 100%; background-color: #000; z-index: -1; }
