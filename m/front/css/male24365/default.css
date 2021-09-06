@@ -667,7 +667,7 @@ table {
 .layer.layer_mms .popup { margin-bottom: -1px; }
 .layer.layer_comm_notice { min-height: 0; z-index: 100; }
 .layer.layer_comm_notice:before { display: none; }
-.layer.layer_comm_notice .popup { width: auto; margin: 0 4.7%; border: 1px solid #cbcbcb; position: relative; }
+.layer.layer_comm_notice .popup { width: auto; margin: 0 4.7%; border: 1px solid #cbcbcb; position: static; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); -ms-transform: translate(0, 0); -o-transform: translate(0, 0); transform: translate(0, 0); }
 .layer.layer_comm_notice .popup:before { position: absolute; top: 4px; left: 4px; content: ''; display: block; opacity: .2; filter: alpha(opacity=20); width: 100%; height: 100%; background-color: #000; z-index: -1; }
 .layer.layer_comm_notice .popup .head { border: 0; position: static; }
 .layer.layer_comm_notice .popup .head .btn_close { top: auto; right: 10px; bottom: 5px; margin: 0; width: auto; height: 20px; text-indent: 0; text-decoration: underline; font-size: 11px; color: #666; }
