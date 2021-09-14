@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>TOPTEN10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui" />
+    <link rel="shortcut icon" href="/image/ssts/image/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/image/favicon/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="_csrf" content="9a552be1-efb3-4a92-b156-834d542f9722"/>
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf_header" content="X-CSRF-TOKEN"/>
+    <meta name="naver-site-verification" content="f94fd8adb97c5cd8867c590251bf50badcc6af42"/>
+    <meta name="facebook-domain-verification" content="zjxqqp76ied5rexqzvtzyzrnthhm2k" />
+    <!-- 모바일 context -->
+    <script type="text/javascript">
+        var MOBILE_CONTEXT_PATH ="/m";
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://imgb.topten10mall.com/m/front/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="https://imgb.topten10mall.com/m/front/css/common/common.css?v=4">
+    <link rel="stylesheet" type="text/css" href="https://imgb.topten10mall.com/m/front/css/topten/default.css?v=4">
+    <link rel="stylesheet" type="text/css" href="https://imgmain_featureb.topten10mall.com/m/front/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://imgb.topten10mall.com/m/front/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="https://imgb.topten10mall.com/m/front/css/custom.css">
+    <script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery.min.js"></script>
+    <script type="text/javascript">
+        var HTTP_SERVER_URL = 'http://topten-cdn.topten10mall.com',
+            HTTPS_SERVER_URL = 'https://topten-cdn.topten10mall.com',
+            HTTPX_SERVER_URL = 'https://topten-cdn.topten10mall.com';
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/m/front/css/ttshop/main.css">
+</head>
+<body>
+<div id="ssts-wrapper-wr"><!-- 20171013 ssts-wrapper/GNB/MY/All Brand 를 감싸는 ssts-wrapper-wr 영역 추가 -->
+    <div id="ssts-wrapper">
+        <!-- header// -->
+        <script>
+            $(document).ready(function() {
+                if(loginYn){
+                    $('#loginHeader').hide();
+                    $('#logoutHeader').show();
+                }else{
+                    $('#loginHeader').show();
+                    $('#logoutHeader').hide();
+                }
+
+                //띠배너 쿠키 확인
+                var lineBannerCloseCookie = getCookie("lineBannerCloseCookie");
+                if(lineBannerCloseCookie || $('.mainTopLineBanner .lineBannerArea li').size() < 1){
+                    return;
+                }
+
+                for(var j=0; j<$('.mainTopLineBanner .lineBannerArea li').size(); j++){
+
+                    //닫기 버튼 색상 계산
+                    var colorSize = $(".mainTopLineBanner .lineBannerArea li:nth-child("+(j+1)+") a.clslider").data('bg');
+                    var colorArr = [];
+                    if(colorSize.length == 7){
+                        for(var i=0; i<6; i++){
+                            if(colorSize.charCodeAt([i+1]) > 47 && colorSize.charCodeAt([i+1]) < 58){
+                                colorArr[i] = colorSize.split('')[i+1];
+                            }else if(colorSize.charCodeAt([i+1]) > 64 && colorSize.charCodeAt([i+1]) < 71){
+                                colorArr[i] = colorSize.charCodeAt([i+1]) - 54;
+                            }else if(colorSize.charCodeAt([i+1]) > 96 && colorSize.charCodeAt([i+1]) < 103){
+                                colorArr[i] = colorSize.charCodeAt([i+1]) - 86;
+                            }
+                        }
+                        if(colorArr[0]*10 + colorArr[1]*1 + colorArr[2]*10 + colorArr[3]*1 + colorArr[4]*10 + colorArr[5]*1 < 200){
+                            $(".mainTopLineBanner li:nth-child("+(j+1)+") a.clslider").addClass('clslider2');
+                        }
+                    }
+                }
+
+                $(".mainTopLineBanner .lineBannerArea li").show();
+                lineBannerLoad();
+            });
+
+            function lineBannerLoad(){
+                var topBanSlide = '',
+                    topBanSetting = {
+                        auto: true,
+                        stopAutoOnClick: true,
+                        pause: 3500,
+                        controls: false,
+                        infiniteLoop: true,
+                        touchEnabled: false,
+                        pager: false,
+                        mode: 'fade'
+                    };
+
+                if ($('.mainTopLineBanner').length > 0) {//메인 상단 띠배너가 있으면
+                    topBanSlide = $('.mainTopLineBanner .lineBannerArea').bxSlider(topBanSetting);//메인 상단 띠배너 load
+                }
+
+                var interval = setInterval(function(){
+                    if($('.mainTopLineBanner').height() != 0){
+                        var lineBannerHeight = $('.mainTopLineBanner').height();
+                        $('.header-util-title').css('margin-top', lineBannerHeight + 51);
+                        $('#container').css('margin-top', lineBannerHeight + 51);
+                        $('.header-brand__list').css('margin-top', lineBannerHeight);
+                        clearInterval(interval);
+                    }
+                },20);
+
+                $('.mainTopLineBanner a.clslider').click(function(){//메인 상단 띠배너 닫기
+                    $('#ssts-wrapper .header-util-detail').css({ marginTop: 0 });
+                    $('.header-brand__list').css('margin-top', 0);
+                    $('.mainTopLineBanner').slideUp(400);
+
+                    // 띠배너 쿠키 설정
+                    setCookie('lineBannerCloseCookie', 'Y', '', cookieServerName);
+
+                    setTimeout(function(){
+                        topBanSlide.destroy();//메인 상단 띠배너 destroy
+                    }, 400);
+
+                    // 검색창 높이 조절
+                    $('.header-util-search').css('padding-top', '30px');
+
+                    // 헤더 높이 조절
+                    $('.header-util-title').css('margin-top', '');
+                    $('#container').css('margin-top', '');
+
+                    return false;
+                });
+            }
+        </script>
+        <div class="header_container">
+            <div class="mainTopLineBanner">
+            </div>
+            <!-- //180629 추가 -->
+
+            <header>
+                <h1 class="header-symbol">
+                    <a href="/m/kr/front/viewMain.do">topten10mall</a>
+                    <button type="button" class="header-brand__toggle"><span>모든 브랜드</span></button>
+                </h1>
+                <ul class="util util-r" id="loginHeader">
+                    <li class="search"><a href="javascript:move_page('searchForm')">SEARCH</a></li>
+                    <li class="cart"><a href="https://www.topten10mall.com/m/kr/front/basket/basketList.do"></a></li>
+                </ul>
+                <ul class="util util-r" id="logoutHeader" style="display: none;">
+                    <li class="search"><a href="javascript:move_page('searchForm')">SEARCH</a></li>
+                    <li class="cart"><a href="https://www.topten10mall.com/m/kr/front/basket/basketList.do"></a></li>
+                </ul>
+            </header>
+
+            <div class="header-brand__list">
+                <div class="header-brand__item header-brand__1">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,6);" class="header-brand__link">탑텐</a>
+                </div>
+                <div class="header-brand__item header-brand__2">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,7);" class="header-brand__link">폴햄</a>
+                </div>
+                <div class="header-brand__item header-brand__3">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,2);" class="header-brand__link">앤드지</a>
+                </div>
+                <div class="header-brand__item header-brand__4">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,8);" class="header-brand__link">프로젝트엠</a>
+                </div>
+                <div class="header-brand__item header-brand__5">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,3);" class="header-brand__link">올젠</a>
+                </div>
+                <div class="header-brand__item header-brand__6">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,1);" class="header-brand__link">지오지아</a>
+                </div>
+                <div class="header-brand__item header-brand__7">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,4);" class="header-brand__link">에디션</a>
+                </div>
+                <div class="header-brand__item header-brand__8">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,13);" class="header-brand__link">WML</a>
+                </div>
+                <div class="header-brand__item header-brand__9">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,5);" class="header-brand__link">탑텐키즈</a>
+                </div>
+                <div class="header-brand__item header-brand__10">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,9);" class="header-brand__link">폴햄키즈</a>
+                </div>
+                <div class="header-brand__item header-brand__0">
+                    <a href="javascript:location.href=Partner.getPartnerUrl(1,0);" class="header-brand__link">탑텐몰</a>
+                </div>
+            </div>
+        </div>
+        <!-- SEARCH/LOGIN// -->
+        <div class="header-util-op"></div>
+        <!-- //SEARCH/LOGIN --><!-- //header -->
+        <!-- container// -->
+        <input type="hidden" id="instagramLayerPartnerNo" value="6"/>
+        <section id="container">
+            <!--
+                컨텐츠에 좌우 여백이 있는 경우
+                좌우 각각 4.7% 로 여백을 주세요.
+            -->
+            <!-- 구좌명 분리 -->
+            <nav class="main-nav swiper-container" id="stickyNav">
+                <ul class="swiper-wrapper main-nav__wrap">
+                    <li class="swiper-slide main-nav__item">
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1" class="main-nav__link">신상품</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1001" class="main-nav__link">남성</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1002" class="main-nav__link">여성</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=3000" class="main-nav__link">아울렛</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="/m/kr/front/special/specialList.do" class="main-nav__link">기획전</a>
+                    </li>
+                    <li class="swiper-slide main-nav__item">
+                        <a href="/m/kr/front/event/eventList.do" class="main-nav__link">이벤트</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- main-visual -->
+            <section class="main-visual swiper-container">
+                <div class="main-visual__wrap swiper-wrapper">
+                    <a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=18798" class="main-visual__item swiper-slide">
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner/2021/09/03/1630629481642.jpg"
+                             alt="" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">추석특집</h3>
+                            <h2 class="main-visual__title">GOLDEN WEEK</h2>
+                            <p class="main-visual__text">행복한 추석, 가을 인기상품 특별한 가격으로!<br><br>2021.09.03 - 2021.09.23</p>
+                            <!-- <p class="main-visual__date">2021.04.09 - 2021.04.15</p> -->
+                        </div>
+                    </a>
+                    <a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=19214" class="main-visual__item swiper-slide">
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner/2021/09/09/1631143863703.jpg"
+                             alt="" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">페트병,플리스가 되다</h3>
+                            <h2 class="main-visual__title">ECO FLEECE</h2>
+                            <p class="main-visual__text">환경을 생각하는 탑텐의 작은 움직임</p>
+                            <!-- <p class="main-visual__date">2021.04.09 - 2021.04.15</p> -->
+                        </div>
+                    </a>
+                    <a href="https://topten.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=19157" class="main-visual__item swiper-slide">
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner/2021/09/07/1631003448122.jpg"
+                             alt="" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">TOPTEN F/W OUTER COLLECTION</h3>
+                            <h2 class="main-visual__title">다시 돌아온 아우터</h2>
+                            <p class="main-visual__text">탑텐 아우터로 더욱 가볍고 따뜻하게</p>
+                            <!-- <p class="main-visual__date">2021.04.09 - 2021.04.15</p> -->
+                        </div>
+                    </a>
+                    <a href="https://topten.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=18789" class="main-visual__item swiper-slide">
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner/2021/08/24/1629767531418.jpg"
+                             alt="" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">탑텐 X 국립발레단</h3>
+                            <h2 class="main-visual__title">CASHMERE SWEATER</h2>
+                            <p class="main-visual__text">발레의 우아함과 어울리는 캐시미어 100%</p>
+                            <!-- <p class="main-visual__date">2021.04.09 - 2021.04.15</p> -->
+                        </div>
+                    </a>
+                    <a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=18539" class="main-visual__item swiper-slide">
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner/2021/08/13/1628814525746.jpg"
+                             alt="" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">믿고 입는, 탑텐 셔츠</h3>
+                            <h2 class="main-visual__title">OXFORD SHIRT</h2>
+                            <p class="main-visual__text">탄탄한 소재와 남다른 디테일</p>
+                            <!-- <p class="main-visual__date">2021.04.09 - 2021.04.15</p> -->
+                        </div>
+                    </a>
+                    <a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=11165" class="main-visual__item swiper-slide">
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner/2021/09/01/1630472414897.jpg"
+                             alt="" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">Moisture Warm</h3>
+                            <h2 class="main-visual__title">천연 발열내의 '온에어'</h2>
+                            <p class="main-visual__text">탑텐 온에어의 따뜻함을 느껴보세요!</p>
+                            <!-- <p class="main-visual__date">2021.04.09 - 2021.04.15</p> -->
+                        </div>
+                    </a>
+                    <a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=18540" class="main-visual__item swiper-slide">
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner/2021/09/01/1630472229343.jpg"
+                             alt="" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">입는 순간 돋보이는 핏</h3>
+                            <h2 class="main-visual__title">21' DENIM | PANTS</h2>
+                            <p class="main-visual__text">다리가 길어 보이는 탑텐 신상 팬츠</p>
+                            <!-- <p class="main-visual__date">2021.04.09 - 2021.04.15</p> -->
+                        </div>
+                    </a>
+                    <a href="https://topten.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=16432" class="main-visual__item swiper-slide">
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner/2021/04/22/1619066637912.jpg"
+                             alt="" class="main-visual__img img-responsive">
+                        <div class="main-visual__caption">
+                            <h3 class="main-visual__subTitle">탑텐 X 조인혁</h3>
+                            <h2 class="main-visual__title">JOIN EARTH</h2>
+                            <p class="main-visual__text">탄생 스토리를 공개합니다.</p>
+                            <!-- <p class="main-visual__date">2021.04.09 - 2021.04.15</p> -->
+                        </div>
+                    </a>
+                </div>
+                <div class="main-visual__pagination"></div>
+            </section>
+            <!-- main-visual -->
+
+            <!-- main_online -->
+            <section class="main_online">
+                <h2>ONLINE ONLY</h2>
+
+                <div class="thumbnail-only">
+                    <a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=18950" >
+                        <div class="thumb_etc">
+                        </div>
+                        <img src="https://imgb.topten10mall.com/image/ziozia/image/banner//2021/08/27/1630069939474.jpg" alt="" class="thumb">
+                    </a>
+                </div>
+                <div class="thumbnail-list">
+                    <ul>
+                        <li >
+                            <a href="https://ziozia.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=AEB4JP1101BK" data-goodsNo="AEB4JP1101BK" data-brand="ZIOZIA" data-position="1" onclick="commonGtmClickEvent(this);">
+                                <p class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/AEB4JP1101BK_MDL1_L?AR=0&RS=290x395" alt="MA-1 점퍼">
+                                </p>
+                                <div class="prd-info">
+                                    <div class="event_tx">
+                                        <div class='saleRateArea'><div class='saleRate'><span>69%</span></div></div></div>
+
+                                    <div class="etc_txt">
+                                        <span class="name" data-goodNo="AEB4JP1101BK">MA-1 점퍼</span>
+                                        <span class="price">
+                <span class="p_x">199,000</span><span class="p_o">61,000</span></span>
+                                        <span class="otype"><i>NEW</i></span></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="https://ziozia.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=AEB4JP1101LGR" data-goodsNo="AEB4JP1101LGR" data-brand="ZIOZIA" data-position="2" onclick="commonGtmClickEvent(this);">
+                                <p class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/AEB4JP1101LGR_MDL1_L?AR=0&RS=290x395" alt="MA-1 점퍼">
+                                </p>
+                                <div class="prd-info">
+                                    <div class="event_tx">
+                                        <div class='saleRateArea'><div class='saleRate'><span>69%</span></div></div></div>
+
+                                    <div class="etc_txt">
+                                        <span class="name" data-goodNo="AEB4JP1101LGR">MA-1 점퍼</span>
+                                        <span class="price">
+                <span class="p_x">199,000</span><span class="p_o">61,000</span></span>
+                                        <span class="otype"><i>NEW</i></span></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="https://ziozia.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=AEB4VP1101BK" data-goodsNo="AEB4VP1101BK" data-brand="ZIOZIA" data-position="3" onclick="commonGtmClickEvent(this);">
+                                <p class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/AEB4VP1101BK_MDL1_L?AR=0&RS=290x395" alt="에어 서플라이 구스다운 베스트">
+                                </p>
+                                <div class="prd-info">
+                                    <div class="event_tx">
+                                        <div class='saleRateArea'><div class='saleRate'><span>84%</span></div></div></div>
+
+                                    <div class="etc_txt">
+                                        <span class="name" data-goodNo="AEB4VP1101BK">에어 서플라이 구스다운 베스트</span>
+                                        <span class="price">
+                <span class="p_x">199,000</span><span class="p_o">31,000</span></span>
+                                        <span class="otype"></span></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="https://ziozia.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=AEB4VP1101LBL" data-goodsNo="AEB4VP1101LBL" data-brand="ZIOZIA" data-position="4" onclick="commonGtmClickEvent(this);">
+                                <p class="prd-img">
+                                    <img src="https://imgp.topten10mall.com/ssts/image/goods/AEB4VP1101LBL_MDL1_L?AR=0&RS=290x395" alt="에어 서플라이 구스다운 베스트">
+                                </p>
+                                <div class="prd-info">
+                                    <div class="event_tx">
+                                        <div class='saleRateArea'><div class='saleRate'><span>84%</span></div></div></div>
+
+                                    <div class="etc_txt">
+                                        <span class="name" data-goodNo="AEB4VP1101LBL">에어 서플라이 구스다운 베스트</span>
+                                        <span class="price">
+                <span class="p_x">199,000</span><span class="p_o">31,000</span></span>
+                                        <span class="otype"></span></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- //main_online -->
+
+            <!-- exhibition long banner -->
+            <section class="event_banner">
+                <div class="banner">
+                    <a href="https://www.topten10mall.com/m/kr/front/magazine/newsView.do?dispBannerNo=14098" >
+                        <img src="https://imgb.topten10mall.com/image/topten/image/banner//2021/04/14/1618395012877.jpg" alt="">
+                    </a>
+                </div>
+            </section>
+            <!-- // exhibition long banner -->
+
+            <!-- sub visual -->
+            <section class="main_thumblist">
+                <ul>
+                    <li>
+                        <a href="https://andz.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=BLB3EC1502BK" >
+                            <img src="https://imgb.topten10mall.com/image/andz/image/banner//2021/08/26/1629935526359.jpg" alt="" class="thumb">
+                            <span class="wrp">
+                                <b>21 FW 신상 캐시미어 가디건</b>
+                                <i>바로가기 ▶</i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=19145" >
+                            <img src="https://imgb.topten10mall.com/image/andz/image/banner//2021/09/05/1630839375861.jpg" alt="" class="thumb">
+                            <span class="wrp">
+                                <b>Suit - Outlet</b>
+                                <i>탑텐몰 단독특가 ▶</i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- //sub visual -->
+
+            <!-- main_feature -->
+            <section class="main_feature">
+                <div class="man">
+                    <h2 class="title_h2">
+                        <span>MD&rsquo;S PICK</span>
+                    </h2>
+                    <ul class="title-list">
+                        <li><a href="#" class="on">MAN</a></li>
+                        <li><a href="#">WOMAN</a></li>
+                        <!--                        <li><a href="#">MD&rsquo;S PICK</a></li> -->
+                    </ul>
+
+                    <div class="thumbnail-list main-slider-thumbnail swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- NEW -->
+                            <div class="swiper-slide">
+                                <div class="thumbnail-list-in">
+                                    <div class="in-list">
+                                        <a href="https://topten.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=MSA4JP1502EC" data-goodsNo="MSA4JP1502EC" data-brand="TOPTEN10" data-position="1" onclick="commonGtmClickEvent(this);">
+                                            <p class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/MSA4JP1502EC1_L?AR=0&RS=290x395" alt="남성) 리얼라이트구스 크루넥 점퍼">
+                                            </p>
+                                            <div class="prd-info">
+                                                <div class="event_tx">
+                                                    <div class='saleRateArea'><div class='saleRate'><span>75%</span></div></div></div>
+
+                                                <div class="etc_txt">
+                                                    <span class="name" data-goodNo="MSA4JP1502EC">남성) 리얼라이트구스 크루넥 점퍼</span>
+                                                    <span class="price">
+                <span class="p_x">79,900</span><span class="p_o">19,900</span></span>
+                                                    <span class="otype"></span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="in-list">
+                                        <a href="https://topten.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=MSA4TS1901IV" data-goodsNo="MSA4TS1901IV" data-brand="TOPTEN10" data-position="2" onclick="commonGtmClickEvent(this);">
+                                            <p class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/MSA4TS1901IV1_L?AR=0&RS=290x395" alt="소프트 브러쉬드 긴팔 티">
+                                            </p>
+                                            <div class="prd-info">
+                                                <div class="event_tx">
+                                                    <div class='saleRateArea'><div class='saleRate'><span>50%</span></div></div></div>
+
+                                                <div class="etc_txt">
+                                                    <span class="name" data-goodNo="MSA4TS1901IV">소프트 브러쉬드 긴팔 티</span>
+                                                    <span class="price">
+                <span class="p_x">19,900</span><span class="p_o">9,900</span></span>
+                                                    <span class="otype"></span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="in-list">
+                                        <a href="https://topten.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=MSA4TU1901BKP" data-goodsNo="MSA4TU1901BKP" data-brand="TOPTEN10" data-position="3" onclick="commonGtmClickEvent(this);">
+                                            <p class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/MSA4TU1901BKP1_L?AR=0&RS=290x395" alt="소프트 브러쉬드 터틀넥 긴팔 티">
+                                            </p>
+                                            <div class="prd-info">
+                                                <div class="event_tx">
+                                                    <div class='saleRateArea'><div class='saleRate'><span>50%</span></div></div></div>
+
+                                                <div class="etc_txt">
+                                                    <span class="name" data-goodNo="MSA4TU1901BKP">소프트 브러쉬드 터틀넥 긴팔 티</span>
+                                                    <span class="price">
+                <span class="p_x">19,900</span><span class="p_o">9,900</span></span>
+                                                    <span class="otype"></span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="in-list">
+                                        <a href="https://topten.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=MSA4TU1901BK" data-goodsNo="MSA4TU1901BK" data-brand="TOPTEN10" data-position="4" onclick="commonGtmClickEvent(this);">
+                                            <p class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/MSA4TU1901BK1_L?AR=0&RS=290x395" alt="소프트 브러쉬드 터틀넥 긴팔 티">
+                                            </p>
+                                            <div class="prd-info">
+                                                <div class="event_tx">
+                                                    <div class='saleRateArea'><div class='saleRate'><span>50%</span></div></div></div>
+
+                                                <div class="etc_txt">
+                                                    <span class="name" data-goodNo="MSA4TU1901BK">소프트 브러쉬드 터틀넥 긴팔 티</span>
+                                                    <span class="price">
+                <span class="p_x">19,900</span><span class="p_o">9,900</span></span>
+                                                    <span class="otype"></span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- BEST -->
+                            <div class="swiper-slide">
+                                <div class="thumbnail-list-in">
+                                    <div class="in-list">
+                                        <a href="https://topten.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=MSB5UB2001LBE" data-goodsNo="MSB5UB2001LBE" data-brand="TOPTEN10" data-position="1" onclick="commonGtmClickEvent(this);">
+                                            <p class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/MSB5UB2001LBE_MDL1_L?AR=0&RS=290x395" alt="여성) BALANCE 와이어리스 브라">
+                                            </p>
+                                            <div class="prd-info">
+                                                <div class="event_tx">
+                                                    <div class='saleRateArea'><div class='saleRate'><span>33%</span></div></div></div>
+
+                                                <div class="etc_txt">
+                                                    <span class="name" data-goodNo="MSB5UB2001LBE">여성) BALANCE 와이어리스 브라</span>
+                                                    <span class="price">
+                <span class="p_x">29,900</span><span class="p_o">19,900</span></span>
+                                                    <span class="otype"></span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="in-list">
+                                        <a href="https://topten.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=MSA4VP2502CO" data-goodsNo="MSA4VP2502CO" data-brand="TOPTEN10" data-position="2" onclick="commonGtmClickEvent(this);">
+                                            <p class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/MSA4VP2502CO_MDL1_L?AR=0&RS=290x395" alt="여성) 리얼라이트구스 크루넥 경량 베스트">
+                                            </p>
+                                            <div class="prd-info">
+                                                <div class="event_tx">
+                                                    <div class='saleRateArea'><div class='saleRate'><span>78%</span></div></div></div>
+
+                                                <div class="etc_txt">
+                                                    <span class="name" data-goodNo="MSA4VP2502CO">여성) 리얼라이트구스 크루넥 경량 베스트</span>
+                                                    <span class="price">
+                <span class="p_x">59,900</span><span class="p_o">12,900</span></span>
+                                                    <span class="otype"></span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="in-list">
+                                        <a href="https://topten.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=MSA4VP2503PK" data-goodsNo="MSA4VP2503PK" data-brand="TOPTEN10" data-position="3" onclick="commonGtmClickEvent(this);">
+                                            <p class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/MSA4VP2503PK1_L?AR=0&RS=290x395" alt="여성) 리얼라이트구스 브이넥 베스트">
+                                            </p>
+                                            <div class="prd-info">
+                                                <div class="event_tx">
+                                                    <div class='saleRateArea'><div class='saleRate'><span>78%</span></div></div></div>
+
+                                                <div class="etc_txt">
+                                                    <span class="name" data-goodNo="MSA4VP2503PK">여성) 리얼라이트구스 브이넥 베스트</span>
+                                                    <span class="price">
+                <span class="p_x">59,900</span><span class="p_o">12,900</span></span>
+                                                    <span class="otype"></span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="in-list">
+                                        <a href="https://topten.topten10mall.com/m/kr/front/goods/goodsDetail.do?goodsNo=MSA4EU2902MT" data-goodsNo="MSA4EU2902MT" data-brand="TOPTEN10" data-position="4" onclick="commonGtmClickEvent(this);">
+                                            <p class="prd-img">
+                                                <img src="https://imgp.topten10mall.com/ssts/image/goods/MSA4EU2902MT1_L?AR=0&RS=290x395" alt="여성) 소프트 터치 터틀넥 스웨터">
+                                            </p>
+                                            <div class="prd-info">
+                                                <div class="event_tx">
+                                                    <div class='saleRateArea'><div class='saleRate'><span>46%</span></div></div></div>
+
+                                                <div class="etc_txt">
+                                                    <span class="name" data-goodNo="MSA4EU2902MT">여성) 소프트 터치 터틀넥 스웨터</span>
+                                                    <span class="price">
+                <span class="p_x">29,900</span><span class="p_o">15,900</span></span>
+                                                    <span class="otype"></span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //BEST -->
+                            <!-- MD&rsquo;S PICK -->
+                            <!-- //MD&rsquo;S PICK -->
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- //main_feature -->
+
+        </section><!-- //container -->
+        <!-- footer// -->
+        <!-- footer // -->
+        <footer id="footer">
+            <div class="link_wrap">
+                <div id="footer_login_area" class="log_link">
+                    <a href="javascript:move_page('loginToMain')" id="a_id_footer_login">로그인</a>
+                </div>
+                <ul class="etc_link">
+                    <li><a href="#none" onclick="javascript:location.href='/m/kr/front/company.do?siteInfoCd=03'">이용약관</a></li>
+                    <li><a href="#none" onclick="javascript:location.href='/m/kr/front/company.do?siteInfoCd=04'"><b>개인정보처리방침</b></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h1 class="footer-symbol">TOPTEN Mall</h1>
+                <div class="inf">
+                    신성통상(주) / 대표자 : 황대규<br />
+                    <address>주소 : 서울 강동구 풍성로63길 84&nbsp;신성빌딩</address>
+                    통신판매업 신고번호 : 2015-서울강동-1890</div>
+                <div class="footer-info__box">
+                    <p>
+                <span>
+                    사업자등록번호<br>
+                    104-81-01106</span>
+                        <a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=1048101106&openBrowser=1" class="footer-info__link" target="_blank">사업자 정보확인</a>
+                    </p>
+                    <p>
+                <span>
+                    <img src="/m/front/img/ssts/common/btn_usafe@2x.png" class="footer-info__img"><br>
+                    <small>채무지급보증안내</small>
+                </span>
+                        <a id="btn_usafe" class="footer-info__link">서비스가입사실확인</a>
+                    </p>
+                </div>
+                <p class="copy">&copy; 2018 TOPTEN10. ALL RIGHTS RESERVED</p>
+            </div>
+
+            <div class="footer-bottom">
+                <h2 class="footer-bottom__title">고객센터 1600-3424</h2>
+                <table class="cs">
+                    <colgroup>
+                        <col width="22%" />
+                        <col width="3%" />
+                        <col width="*" />
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <td>상담업무시간</td>
+                        <td>|</td>
+                        <td>
+                            9:30~17:30<br>
+                            점심시간 : 12:30~13:30<br>
+                            (토/일, 공휴일 휴무)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>물류반품 주소</td>
+                        <td>|</td>
+                        <td>경기 양주시 평화로 1837&nbsp;탑텐몰 덕정물류센터</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail 주소</td>
+                        <td>|</td>
+                        <td>topten10mallcs@ssts.co.kr</td>
+                    </tr>
+                    <tr>
+                        <td>Fax 번호</td>
+                        <td>|</td>
+                        <td>031-864-4166</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="sns">
+                    <a href="https://www.facebook.com/toptenssts?openBrowser=1" class="facebook">facebook</a>
+                    <a href="https://www.instagram.com/topten10_official?openBrowser=1" class="instagram">instagram</a>
+                    <a href="https://www.youtube.com/channel/UCnVTWazlwbXzHKCLXTNMfpA?view_as=subscriber&openBrowser=1" class="youtube">youtube</a>
+                </div>
+            </div>
+        </footer>
+        <!-- // #footer -->
+
+        <script type="text/javascript">
+            var zenVertical = '117px';
+            $(document).ready(function(){
+
+                if(loginYn){
+                    $('#footer_login_area').html('<a href="#" id="a_id_footer_logout">로그아웃</a>');
+                }
+
+                var now = new Date();
+
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                var day = now.getDay();
+                //var today = hour+ "" + minute;      //현재시간
+
+
+                var loginChk = 'N';
+                var memberNm = '';
+                var mobile = '';
+                var parameter1 = '';
+                var host = '';
+                var pathName = '';
+                var search = '';
+                memberNm = '';
+                mobile = '';
+                host = $(location).attr('host');
+                pathName = $(location).attr('pathname');
+                search = $(location).attr('search');
+
+                parameter1 = host + pathName + search;
+                if(loginYn){
+                    loginChk = 'Y';
+                    if (isAndroidApp) {
+                        window.android.setIdentity(memberNo);
+                    } else if (isIosApp) {
+                        webkit.messageHandlers.setIdentity.postMessage(memberNo);
+                    }
+                } else {
+                    loginChk = 'N';
+                }
+                /*
+                     $('#happyTalkBtn').on('click', function(){
+                         happytalk.open();
+                         return false;
+                     });
+                */
+
+                if(location.pathname.indexOf('/m/kr/front/goods/goodsDetail.do') == -1){
+                    $('.gotopre').remove();
+                }
+
+                // 지급보증서
+                $('#btn_usafe').on('click', function(){
+                    func_popup_init('.layer_usafe');
+                });
+
+                /* branch */
+                sdk.branch.init('key_live_mcJRNctUXHgOBZTLlZKQNndmsDidRoJC');
+
+                if(isApp) {
+                    $('ul.etc_link').append('<li><a href="#none" onclick="goSettings();return false;">알림설정</a></li>');
+                    zenVertical = '193px';
+                }else{
+                    $('.stickySide__btn.stickySide__alert').remove();
+                    $('.stickySide__btn.stickySide__toggle').remove();
+                    $('#stickySide .stickySide-wrap').addClass('active');
+                    /* $('#happytalk-chat-button').css('bottom', '0'); */
+                }
+
+                $('a[href*="openBrowser=1"]').on('click',function(e){
+                    e.preventDefault();
+                    if(isIosApp){
+                        webkit.messageHandlers.openBrowser.postMessage($(this).attr('href'));
+                    }else if(isAndroidApp){
+                        window.android.openBrowser($(this).attr('href'));
+                    }else{
+                        window.open($(this).attr('href'), '_black');
+                    }
+                });
+
+                $('a[href*="newWebview=1"]').on('click',function(e){
+                    e.preventDefault();
+                    if(isIosApp){
+                        webkit.messageHandlers.newWebview.postMessage($(this).attr('href'));
+                    }else if(isAndroidApp){
+                        window.android.newWebview($(this).attr('href'));
+                    }else{
+                        window.open($(this).attr('href'), '_self');
+                    }
+                });
+            });
+
+            function goPushList(){
+                if(isIosApp){
+                    webkit.messageHandlers.goPushList.postMessage("");
+                }else{
+                    window.android.goPushList();
+                }
+            }
+
+            function addPushBadge(isAdd){
+                if(isAdd){
+                    $('.addPushBadge').addClass('label');
+                }else{
+                    $('.addPushBadge.label').removeClass('label');
+                }
+            }
+
+            function goSettings(){
+                if(isIosApp){
+                    webkit.messageHandlers.goSettings.postMessage("");
+                }else{
+                    window.android.goSettings();
+                }
+            }
+
+            //zendesk
+            window.zESettings = {
+                webWidget: {
+                    offset: {
+                        mobile: {
+                            horizontal: '-1%',
+                            vertical: zenVertical
+                        }
+                    }
+                }
+            };
+
+        </script>
+        <!--
+        <div class="footer-scrl-btns">
+            <a href="#" class="gotopre"><i>PREV</i></a>
+            <a href="#" class="gototop"><i>TOP</i></a>
+
+            <div id="plusfriend-chat-button-new" style="display: none;">
+                <a href="javascript:;" id="kakaoTalkBtn" target="_blank"><img style="width: 100%;" src="/m/front/img/ssts/common/kakaoNewIconM.png"></a>
+            </div>
+
+            <div id="happytalk-chat-button" style="display: none;">
+            <!-- <a href="javascript:;" onclick="window.open('https://customer.happytalk.io/public_v1/chat_v4/public_point?go=C&is_login=N&uid=&site_id=1000221496&category_id=99006&division_id=99007&usergb=W&title=%5B%ED%85%8C%EC%8A%A4%ED%8A%B8+%EC%83%81%EB%8B%B4%EC%B0%BD%5D', '', 'width=350, height=500'); return false;"><img style="width: 100%;" src="//happytalk.io/assets/main/img/btn-chat.png"></a> -->
+        <!--<a href="javascript:;" id="happyTalkBtn" target="_blank"><img style="width: 100%;" src="/m/front/img/ssts/common/Mobile_talk_new_2.png?v=1"></a>
+        </div>
+    </div>
+    -->
+        <!-- #stickySide -->
+        <aside id="stickySide">
+            <div class="stickySide-wrap">
+                <!-- <div id="plusfriend-chat-button-new" class="stickySide__btn">
+                    <a href="javascript:;" id="kakaoTalkBtn" target="_blank">
+                        <img src="/m/front/img/ssts/common/kakaoNewIconM.png" class="img-responsive">
+                    </a>
+                </div> -->
+                <!-- <div id="happytalk-chat-button" class="stickySide__btn">
+                    <a href="javascript:;" id="happyTalkBtn" target="_blank">
+                        <img src="/m/front/img/common/layout/icon-talk-circle-fill.png" class="img-responsive">
+                    </a>
+                </div> -->
+                <a href="javascript:;" class="stickySide__btn stickySide__alert addPushBadge" onclick="goPushList();">알림</a>    <!-- 안읽은 푸쉬알림 있을때 label class 추가 -->
+                <button type="button" class="stickySide__btn stickySide__toggle addPushBadge">더보기</button>   <!-- 안읽은 푸쉬알림 있을때 label class 추가 -->
+            </div>
+            <button type="button" class="stickySide__btn stickySide__top">위로</button>
+            <button type="button" class="stickySide__btn stickySide__back" onclick="window.history.back();">뒤로가기</button>
+        </aside>
+        <!-- // #stickySide -->
+
+        <!-- #bottom_bar -->
+        <div id="bottom_bar">
+            <div class="bottomBar-item bottomBar-gnb">
+                <button type="button">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-cate@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">카테고리</span>
+                </button>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/interest/interestList.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-like@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">관심상품</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/viewMain.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-home@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">탑텐몰</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/search/latelyGoodsList.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-recent@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">히스토리</span>
+                </a>
+            </div>
+            <div class="bottomBar-item">
+                <a href="https://www.topten10mall.com/m/kr/front/member/mypage.do">
+                    <span class="bottomBar__icon"><img src="/m/front/img/common/layout/bars-mypage@3x.png" class="img-responsive"></span>
+                    <span class="bottomBar__text">MY</span>
+                </a>
+            </div>
+        </div>
+        <!-- // #bottom_bar -->
+        <!--
+           <div class="item"><a href="#" onclick="javascript:move_page('loginToMain');">
+                   <span class="icon"><img src="/m/front/img/ssts/main/img_bottom_4.png"></span>
+                   <span class="txt">MY</span>
+               </a></div>
+
+       -->
+
+        <!--
+        <script>
+        var lastPoint = 0;
+        var direction = 0;
+        $(window).scroll(function() {
+            direction = lastPoint - $(this).scrollTop();
+            if(direction < 0) {
+                $('#bottom_bar').removeClass('on');
+            }else{
+                $('#bottom_bar').addClass('on');
+            }
+            lastPoint = $(this).scrollTop();
+        });
+        function myPageMove(){
+
+            if(loginYn){
+                $('header > ul.util.util-r > li.my > a').trigger('click');
+            }else{
+                move_page('loginToMain');
+            }
+        }
+        </script>
+        -->
+
+        <t:putAttribute name="popupLayer">
+            <div class="layer layer_usafe">
+                <div class="popup">
+                    <div class="head">
+                        <h1>서비스가입사실확인</h1>
+                        <button type="button" name="button" class="btn_close popup_btn_close">close</button>
+                    </div>
+                    <div class="body">
+                        <div class="usafe_conts">
+                            <img style="width: 100%;" src="/front/img/ssts/common/img_usafe.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t:putAttribute>
+
+        <t:putAttribute name="cafe24">
+
+            <!-- canonical SEO 2018/08/17 -->
+            <link rel="canonical" href="https://www.topten10mall.com">
+            <span itemscope="" itemtype="http://schema.org/Organization">
+<link itemprop="url" href="https://www.topten10mall.com">
+<a itemprop="sameAs" href="https://www.facebook.com/topten10mall">
+</a>
+</span>
+            <!--20210903 Start of topten10mall Zendesk Widget script -->
+            <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=891b6128-3fbd-4fe9-8910-e050b573f08a"> </script>
+            <!-- End of topten10mall Zendesk Widget script -->
+            <!--
+            <script async="async">
+                window.__ht_wc = window.__ht_wc || {};
+                window.__ht_wc.host = 'design.happytalkio.com';
+                window.__ht_wc.site_id = '1000221496'; // site_id
+                window.__ht_wc.site_name = '신성통상(주)'; // 회사 이름
+                window.__ht_wc.category_id = '99006'; // 대분류 id
+                window.__ht_wc.division_id = '99007'; // 중분류 id
+
+                // 고정 및 Custom 파라미터 추가 영역, 파라미터가 여러개인 경우 ,(콤마)로 구분
+                // window.__ht_wc.params = 'site_uid=abcd1234,parameter1=param1';
+                // 앱 개발시, 웹뷰 Local Storage 사용가능하도록 처리
+
+                (function() {
+                    var ht = document.createElement('script');
+                    ht.type = 'text/javascript';
+                    ht.async = true;
+                    ht.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + window.__ht_wc.host + '/web_chatting/tracking.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ht, s);
+                })();
+            </script>
+             -->
+            <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+            <script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
+            <script type="text/javascript">
+                if (!wcs_add) var wcs_add={};
+                wcs_add["wa"] = "s_40b6465d4f90";
+                if (!_nasa) var _nasa={};
+                wcs.inflow("topten10mall.com");
+                wcs_do(_nasa);
+            </script>
+
+            <!-- Facebook Pixel Code -->
+            <script>
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                    n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t,s)}(window, document,'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '589840528045600');
+                fbq('track', 'PageView');
+            </script>
+
+            <noscript>
+                <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=589840528045600&ev=PageView&noscript=1"/>
+            </noscript>
+            <!-- End Facebook Pixel Code -->
+
+            <!-- Return script start -->
+            <div id="return_panel"></div>
+            <script type="text/javascript">
+                var shop_id = "topten10mall";
+                var shop_domain = "topten10mall.com";
+                var shop_pr = "etc";
+                var shop_etc = {"prod_link":"/m/kr/front/goods/goodsDetail.do?goodsNo=", "img":"image1"};
+                function return_panel_init(){
+                    $("#return_panel").RETURNPanel({});
+                }
+                function return_panel_start(){
+                    var url = "//blackhole.hearina.com/return/gid/"+shop_domain;
+                    var xmlhttp = new createCORSRequest('GET',url);
+                    xmlhttp.withCredentials = true;
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var jsonObj = JSON.parse(this.responseText);
+                            if( jsonObj.use == "true" ){
+                                window.globalRETURN = new HEARINA();
+                                globalRETURN.jsInit(shop_id, shop_domain, shop_pr, jsonObj.gid, shop_etc, false);
+                            }
+                        }
+                    };
+                    xmlhttp.open("GET", url, true);
+                    xmlhttp.send();
+                }
+                function createCORSRequest(method, url) {
+                    var xhr = new XMLHttpRequest();
+                    if ("withCredentials" in xhr) {
+                        xhr.open(method, url, true);
+                    } else if (typeof XDomainRequest != "undefined") {
+                        xhr = new XDomainRequest();
+                        xhr.open(method, url);
+                    } else {
+                        xhr = null;
+                    }
+                    return xhr;
+                }
+                try {
+                    var now = new Date();
+                    var script = document.createElement('script');
+                    var url = "//cdn.hearina.com/js/return_hearina.v.1.5.js?ver=2&req="+ now.getFullYear() + now.getMonth() + now.getDate();
+                    var head = document.getElementsByTagName("head")[0] || document.body;
+                    script.async = true;
+                    script.src = url;
+                    script.onreadystatechange = function () {
+                        if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                            try {
+                                return_panel_start();
+                            }catch(e){}
+                        }
+                    };
+                    script.onload = function () {
+                        try{
+                            return_panel_start();
+                        }catch(e){}
+                    };
+                    head.appendChild(script);
+                } catch(e){}
+            </script>
+            <!-- Return script end -->
+
+            <!-- Return script end -->
+            <!-- BS CTS TRACKING SCRIPT FOR SETTING ENVIRONMENT V.20 / FILL THE VALUE TO SET. -->
+            <!-- COPYRIGHT (C) 2002-2018 BIZSPRING INC. L4AD ALL RIGHTS RESERVED. -->
+            <script type="text/javascript">
+                _L_LACD = ".toptenmall.com";
+            </script>
+            <!-- END OF ENVIRONMENT SCRIPT -->
+
+            <!-- BS CTS TRACKING SCRIPT V.20 / 14240 : CTS / DO NOT ALTER THIS SCRIPT. -->
+            <!-- COPYRIGHT (C) 2002-2018 BIZSPRING INC. L4AD ALL RIGHTS RESERVED. -->
+            <script type="text/javascript">
+                (function(b,s,t,c,k){b[k]=s;b[s]=b[s]||function(){(b[s].q=b[s].q||[]).push(arguments)};  var f=t.getElementsByTagName(c)[0],j=t.createElement(c);j.async=true;j.src='//fs.bizspring.net/fs4/l4cts.v4.2.js';f.parentNode.insertBefore(j,f);})(window,'_tcts_m',document,'script','BSAnalyticsObj');
+                _tcts_m('14240','SJCOMM');
+            </script><!-- END OF BS CTS TRACKING SCRIPT -->
+
+            <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+            <script type="text/javascript">
+                kakaoPixel('1221914281330557110').pageView();
+            </script>
+
+        </t:putAttribute>
+
+        <!-- //footer --><!-- //footer -->
+    </div>
+
+    <!-- GNB/MY// -->
+    <!-- GNB// -->
+    <div class="header-util-detail header-util-gnb">
+        <p class="logo">
+            <a href="https://www.topten10mall.com/m/kr/front/viewMain.do">TOPTEN10</a>
+        </p>
+        <nav class="ttkids_head">
+            <div class="tab_items">
+                <button type="button" name="button">브랜드</button>
+                <button type="button" name="button" class="active">카테고리</button>
+            </div>
+            <div class="tab_content">
+                <div class="header-util__brand">
+                    <dl>
+                        <dt><a href="//ziozia.topten10mall.com/m/kr/front/viewMain.do">ZIOZIA</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//andz.topten10mall.com/m/kr/front/viewMain.do">AND Z</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//olzen.topten10mall.com/m/kr/front/viewMain.do">OLZEN</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//edition.topten10mall.com/m/kr/front/viewMain.do">EDITION</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//topten.topten10mall.com/m/kr/front/viewMain.do">TOPTEN10</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//polham.topten10mall.com/m/kr/front/viewMain.do">POLHAM</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//projectm.topten10mall.com/m/kr/front/viewMain.do">PROJECT M</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//toptenkids.topten10mall.com/m/kr/front/viewMain.do">TOPTEN KIDS</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="//polhamkids.topten10mall.com/m/kr/front/viewMain.do">POLHAM KIDS</a></dt>
+                    </dl>
+                </div>
+                <div class="header-util__brand">
+                    <dl>
+                        <dt><a href="https://topten.topten10mall.com/kr/front/event/eventView.do?dispBannerNo=15039">BALANCE</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://wml.topten10mall.com">WML</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://olzen.topten10mall.com/kr/front/event/eventView.do?dispBannerNo=12094">OLIVER</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://topten.topten10mall.com/kr/front/special/exhibitionDetail.do?prmtNo=1720">EX2O2</a></dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="https://www.topten10mall.com/kr/front/event/eventView.do?dispBannerNo=15888">Bag#</a></dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="tab_content active">
+                <dl>
+                    <dt>
+                        <button type="button" name="button">신상품</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1">전체보기</a>
+                    </dd>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=3">신상품</a>
+                    </dd>
+                    <dd>
+                        <button>단독특가</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21840">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21842">아우터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21843">상의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=21844">하의</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>콜라보</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=22212">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=22213">카카오프렌즈</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=24445">춥파춥스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=24443">디즈니</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=24444">조인혁</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=21841">요가복</a>
+                    </dd>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=20131">언더웨어</a>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">남성</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1001">전체보기</a>
+                    </dd>
+                    <dd>
+                        <button>아우터</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1004">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1021">자켓</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1022">다운/패딩</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1023">점퍼</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1024">코트</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1025">가죽 & 퍼</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>상의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1005">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1026">셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1027">티셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1028">니트/스웨터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1029">가디건</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>하의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1006">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1030">긴바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1031">반바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1032">청바지</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>악세서리</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1008">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1035">벨트</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1036">넥타이</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1037">양말</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1038">신발</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1039">가방</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1040">잡화</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>이너웨어</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1010">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1043">쿨에어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1045">라운지 웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1046">언더웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1044">온에어</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">여성</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=1002">전체보기</a>
+                    </dd>
+                    <dd>
+                        <button>아우터</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1011">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1050">자켓</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1048">점퍼</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1047">다운/패딩</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1049">코트</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>상의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1012">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1051">티셔츠</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1052">셔츠/블라우스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1053">니트 / 스웨터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1054">가디건 / 집업</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>하의</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1013">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1055">긴바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1056">반바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1057">청바지</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1058">스커트</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>원피스</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1014">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1059">롱 원피스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1060">미니 원피스</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>악세서리</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1015">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1061">양말</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1062">신발</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1063">가방</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1064">잡화</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>이너웨어</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1017">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1068">쿨에어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1067">라운지웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1070">언더웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=1069">온에어</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">아울렛</button>
+                    </dt>
+                    <dd>
+                        <a href="/m/kr/front/search/categorySearch.do?ctgNo=3000">전체보기</a>
+                    </dd>
+                    <dd>
+                        <button>남성</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3001">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3004">아우터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3005">상의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3006">하의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3007">정장</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3008">악세서리</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3009">스윔웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3010">이너웨어</a></dd>
+                        </dl>
+                    </dd>
+                    <dd>
+                        <button>여성</button>
+                        <dl>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3002">전체보기</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3011">아우터</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3012">상의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3013">하의</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3014">원피스</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3015">악세서리</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3016">스윔웨어</a></dd>
+                            <dd><a href="/m/kr/front/search/categorySearch.do?ctgNo=3017">이너웨어</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>
+                        <button type="button" name="button">매거진</button>
+                    </dt>
+                    <dd><a href="https://www.topten10mall.com/m/kr/front/magazine/storyList.do">스토리즈</a></dd>
+                    <dd><a href="/m/kr/front/magazine/styleList.do">스타일</a></dd>
+                    <dd><a href="/m/kr/front/magazine/lookbookList.do">룩북</a></dd>
+                    <dd><a href="/m/kr/front/magazine/newsList.do">뉴스</a></dd>
+                </dl>
+                <dl class="header-util__event">
+                    <dt>
+                        <button type="button" name="button">이벤트</button>
+                    </dt>
+                    <dd><a href="/m/kr/front/special/specialList.do">기획전</a></dd>
+                    <dd><a href="/m/kr/front/event/eventList.do">이벤트</a></dd>
+                    <dd><a href="https://www.topten10mall.com/m/kr/front/event/eventView.do?dispBannerNo=8552">베스트 리뷰</a></dd>
+                </dl>
+
+            </div>
+
+
+        </nav>
+        <a href="#" class="btn-cls">CLOSE</a>
+    </div>
+    <!-- //GNB --></div>
+<!-- //GNB/MY -->
+<!-- Layer// -->
+<!-- 회원등급별 혜택보기// -->
+<div class="layer layer_benefit">
+    <div class="popup">
+        <div class="head">
+            <h1>회원등급별 혜택보기</h1>
+            <button type="button" name="button" class="btn_close popup_btn_close">close</button>
+        </div>
+        <div class="body">
+            <div class="benefit_conts" style="padding-top: 15px;">
+
+                <div style="background-color: #f2f2f2;padding-top: 12px;padding-bottom: 12px; margin-bottom: 25px;">
+                </div>
+
+                <table>
+                    <colgroup>
+                        <col style="width: 30%;">
+                        <col style="width: 26%;">
+                        <col style="width: 39%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <p style="padding-bottom:5px;">※ 해당 등급혜택은 5월 1일부터 적용됩니다.</p>
+                        <th scope="col">회원등급</th>
+                        <th scope="col">등급조건<br><span>(6개월 누적금액)</span></th>
+                        <th scope="col">혜택</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row"><span class="wr"><i class="ico vip">V</i>VIP</span></th>
+                        <td>50만원 이상</td>
+                        <td>
+                            <ul class="guide_txt">
+                                <li>4만원이상 : 4,000원</li>
+                                <li>5만원이상 : 5,000원<br><span style="color: crimson;"> └ 앱전용 쿠폰</span></li>
+                                <li>7만원이상 : 7,000원</li>
+                                <li>9만원이상 : 9,000원</li>
+                                <li>12만원이상 : 12,000원</li>
+                                <li>생일 10,000포인트</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="wr"><i class="ico gold">G</i>GOLD</span></th>
+                        <td>30만원 이상<br>50만원 미만</td>
+                        <td>
+                            <ul class="guide_txt">
+                                <li>4만원이상 : 4,000원</li>
+                                <li>5만원이상 : 5,000원<br><span style="color: crimson;"> └ 앱전용 쿠폰</span></li>
+                                <li>7만원이상 : 7,000원</li>
+                                <li>9만원이상 : 9,000원</li>
+                                <li>생일 10,000포인트</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="wr"><i class="ico silver">S</i>SILVER</span></th>
+                        <td>10만원 이상<br>30만원 미만</td>
+                        <td>
+                            <ul class="guide_txt">
+                                <li>4만원이상 : 4,000원</li>
+                                <li>5만원이상 : 5,000원<br><span style="color: crimson;"> └ 앱전용 쿠폰</span></li>
+                                <li>7만원이상 : 7,000원</li>
+                                <li>생일 10,000포인트</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="wr"><i class="ico welcome">W</i>WELCOME</span></th>
+                        <td>신규 회원가입</td>
+                        <td>
+                            <ul class="guide_txt">
+                                <li>10% 할인 / 3만원이상<br>(최대 7천원)</li>
+                                <li>재구매 할인 쿠폰<br>3천원 할인 / 3만원이상<br><span style="color: crimson;">└ 앱전용 쿠폰</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <th colspan="3">
+                        * 상세 내용 PC버전 확인 [고객센터>회원혜택]<br>
+                        * 회원등급은 6개월간 누적 구매금액을 바탕으로 산정되며 매월 1일 변경됩니다.<br>
+                        <!--                                 * 포인트 사용에 따른 구매액은 누적 구매금액에 포함되지 않습니다.<br> -->
+                        * 누적 구매금액은 구매완료(구매확정)된 금액을 대상으로 합니다.<br>
+                        * 할인쿠폰은 매월 발급되며 중복할인 가능합니다.<br>
+                        * 생일 포인트는 정식 회원 대상 혜택이며, 간편가입 ID는 지급제외됩니다.<br><br>
+                    </th>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //회원등급별 혜택보기 --><script>
+    $(document).ready(function() {
+        var obj = [];
+        var popupGrpCd = jQuery("#popupGrpCd").val();
+        $.each(obj, function(i) {
+            var name = "cookieName_"+obj[i].siteNo+obj[i].popupGrpCd+obj[i].popupNo;
+            var value = "cookieValue_"+obj[i].siteNo+obj[i].popupGrpCd+obj[i].popupNo;
+            var cookieValue = getCookie(name);
+
+            //쿠기 생성
+            jQuery('#cookieInsert_'+i).on('click', function(e) {
+                var ckkClick = $('input:checkbox[id=today_check_'+i+']').is(':checked');
+                if(ckkClick){
+                    var expdate = new Date();
+                    expdate.setTime(expdate.getTime() + 1000 * 3600 * 24 * obj[i].cookieValidPeriod);
+                    var name = "cookieName_"+obj[i].siteNo+obj[i].popupGrpCd+obj[i].popupNo;
+                    var value = "cookieValue_"+obj[i].siteNo+obj[i].popupGrpCd+obj[i].popupNo;
+                    setCookie(name,value,expdate);
+                }
+
+                $('#layerPopup_'+i).removeClass('active');
+            });
+
+            if(obj[i].popupGbCd == "P"){
+                var width=10;
+                var height=10;
+                var left = obj[i].pstLeft;
+                var top = obj[i].pstTop;
+                var specs = "position:absolute, width=" + width;
+                specs += ",height=" + height;
+                specs += ",left=" + left;
+                specs += ",top=" + top;
+                specs += ",scrollbars=no";
+                specs += ",status=no";
+                specs += ",toolbar=no";
+
+                if(obj[i].popupGrpCd == popupGrpCd){
+                    if(cookieValue != value){
+                        var frmObj = document.frmPopup;
+                        var url = Constant.uriPrefix + "/front/openPopup.do";
+                        window.open("", "mywindow"+obj[i].popupNo, specs );
+                        frmPopup.action = url;
+                        frmPopup.method="post";
+                        frmPopup.target = "mywindow"+obj[i].popupNo;
+                        frmPopup.popupNm.value = obj[i].popupNm;
+                        frmPopup.content.value = obj[i].content;
+                        frmPopup.popupGrpCd.value = obj[i].popupGrpCd;
+                        frmPopup.popupNo.value = obj[i].popupNo;
+                        frmPopup.cookieValidPeriod.value = obj[i].cookieValidPeriod;
+                        frmPopup.submit();
+                    }
+                }
+            } else {
+                if(obj[i].popupGrpCd == popupGrpCd){
+                    if(cookieValue != value){
+                        $('#layerPopup_'+i).addClass('active');
+                    }
+                } else {
+                    $('#layerPopup_'+i).removeClass('active');
+                }
+            }
+        });
+    });
+</script>
+<input type="hidden" id = "popupGrpCd" name = "popupGrpCd" value = "MM" />
+<form name="frmPopup">
+    <input type="hidden" name="popupNm" id = "popupNm" >
+    <input type="hidden" name="content" id = "content" >
+    <input type="hidden" name="popupNo" id = "popupNo" >
+    <input type="hidden" name="popupGrpCd" id = "popupGrpCd" >
+    <input type="hidden" name="cookieValidPeriod" id = "cookieValidPeriod" >
+</form>
+
+<!-- //Layer -->
+</body>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery.uniform.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery.bxslider.min.js"></script>
+
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery.mask.min.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery.form.min.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery.blockUI.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery/validation-Engine-2.6.2/js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/jquery/validation-Engine-2.6.2/js/languages/jquery.validationEngine-ko.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type="text/javascript" src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/cookie.js?v=2"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/common.js?v=12345678911"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/storm.js?v=2"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/custom.js?v=2"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/layer.js?v=3"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/ssts.js?v=2"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/sdk.js?v=3"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/paging.js?v=2"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/datepicker.js?v=2"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/instagram/instafeed.min.js"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/instagram.js"></script>
+<script type="text/javascript" src="/m/kr/front/djs/jsVar.js?v=2"></script>
+<script type="text/javascript" src="/m/kr/front/djs/linkJS.js?v=6"></script>
+<script type="text/javascript" src="/m/kr/front/djs/memberJS.js?v=2"></script>
+<script type="text/javascript" src="https://imgb.topten10mall.com/m/front/js/libs/swiper.min.js?v=1"></script>
+<script type="text/javascript" src="https://imgp.topten10mall.com/com/product/js/custom.js?v=2"></script><script>
+    // google GTM 향상된 전자 상거래를 위한 클릭 이벤트
+    function commonGtmClickEvent(obj){
+
+        try {
+            dataLayer.push({
+                'event': 'productClick',
+                'ecommerce': {
+                    'click': {
+                        'actionField': {'list': 'Search Results'},      // Optional list property.
+                        'products': [{
+                            'name': $(obj).find('.card-goods__text').text(),      // 제품의 이름 (상품명)
+                            'id': $(obj).attr('data-goodsNo'),                      // 제품의 ID   (상품번호)
+                            'price': parseInt($(obj).find('.card-goods__priceInfo').find('strong[class=card-goods__price]').text().replace(/,/g,"")),  // 제품의 가격 (상품가격)
+                            'brand': $(obj).attr('data-brand'),    // 브랜드 명
+                            //'category': $('.tl-d1').find('a').last().text(),        // 카테고리 명
+                            // 'variant': "TOPTEN10",                    // 제품의 옵션 ((상품옵션))
+                            'position': parseInt($(obj).attr('data-position'))                // 제품의 위치
+                        }]
+                    }
+                },
+                'eventCallback': function() {
+                    //document.location = $(obj).attr('href')
+                }
+            });
+            //console.log("goods commonGtmClickEvent info:"+JSON.stringify(dataLayer));
+        } catch (e) {
+            console.error("google GTM commonGtmClickEvent error:"+e.message);
+        }
+    }
+
+
+    // google GTM 장바구니 담기 이벤트
+    function commonGtmAddtoCartEvent(){
+        try {
+
+            //console.log("goods commonGtmAddtoCartEvent info:"+JSON.stringify(dataLayer));
+        } catch (e) {
+            console.error("google GTM commonGtmAddtoCartEvent error:"+e.message);
+        }
+    }
+
+    //google GTM 장바구니 개별 담기 이벤트 (마이페이지 > 관심상품, 재입고알림)
+    function commonGtmAddtoCartMypageEvent(obj){
+        try {
+            dataLayer.push({
+                'event': 'addToCart',
+                'ecommerce': {
+                    'currencyCode' : 'KRW',
+                    'add': {
+                        'products': [{
+                            'name': obj.goodsNm,                    // 제품의 이름 (상품명)
+                            'id': obj.goodsNo,                      // 제품의 ID   (상품번호)
+                            'price': obj.salePrice,                 // 제품의 가격 (상품가격)
+                            'brand': obj.partnerNm,                 // 브랜드 명
+                            'quantity': 1                           // 상품의 개수
+                        }]
+                    }
+                }
+            });
+            //console.log("goods commonGtmAddtoCartMypageEvent info:"+JSON.stringify(dataLayer));
+        } catch (e) {
+            console.error("google GTM commonGtmAddtoCartMypageEvent error:"+e.message);
+        }
+    }
+
+    //google GTM 장바구니 제거 이벤트
+    function commonGtmRemoveCartEvent(obj){
+        try {
+            dataLayer.push({
+                'event': 'removeFromCart',
+                'ecommerce': {
+                    'remove': {
+                        'products': [{
+                            'name': obj.goodsNm,                    // 제품의 이름 (상품명)
+                            'id': obj.goodsNo,                      // 제품의 ID   (상품번호)
+                            'price': obj.salePrice,                 // 제품의 가격 (상품가격)
+                            'brand': obj.partnerNm,                 // 브랜드 명
+                            'quantity': 1                           // 상품의 개수
+                        }]
+                    }
+                }
+            });
+            //console.log("goods commonGtmRemoveCartEvent info:"+JSON.stringify(dataLayer));
+        } catch (e) {
+            console.error("google GTM commonGtmRemoveCartEvent error:"+e.message);
+        }
+    }
+
+    //googel GTM 결제 행동(Checkout 행동분석)
+    function commonGtmCheckout() {
+        try {
+            dataLayer.push({
+                'event': 'checkout',
+                'ecommerce': {
+                    'checkout': {
+                        'actionField': {'step': 1, 'option': '결재'},
+                        'products':
+                            [
+
+                            ]
+                    }
+                }
+            });
+            //console.log("goods commonGtmCheckout info:"+JSON.stringify(dataLayer));
+        } catch (e) {
+            console.error("google GTM commonGtmCheckout error:"+e.message);
+        }
+    }
+
+    //google GTM 구매 완료
+</script><script type="text/javascript">
+    $(window).load(function() {
+        var mainNavSwiper = new Swiper('.main-nav', {
+            freeMode: true,
+            slidesPerView: 'auto'
+        });
+    });
+    $(window).load(function(){
+        setTimeout(function(){
+            if ($('.main_rolling .swiper-slide').eq(0).hasClass('black')) {
+                $('header').addClass( 'black' );
+            } else {
+                $('header').removeClass( 'black' );
+            }
+        }, 400);
+    });
+
+    $(document).ready(function() {
+        /* 메인 슬라이드 */
+        var mainVisualSwiper = new Swiper('.main-visual.swiper-container', {
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: '.main-visual.swiper-container .main-visual__pagination',
+            },
+            loop: true,
+        });
+
+        //New, Best, MD’s pick 슬라이드 start
+        var swiper2 = new Swiper('.main_feature .man .swiper-container', {
+            autoHeight: true
+        });
+        swiper2.on('slideChange', function () {
+            $('.main_feature .man ul.title-list li a').removeClass('on');
+            $('.main_feature .man ul.title-list li').eq(swiper2.activeIndex).find('a').addClass('on');
+        });
+        $('.main_feature .man ul.title-list li a').click(function(){
+            $('.main_feature .man ul.title-list li a').removeClass('on');
+            $(this).addClass('on');
+            swiper2.slideTo($(this).parent().index(),500,false);
+            return false;
+        });
+
+        var swiper3 = new Swiper('.main_feature .woman .swiper-container', {
+            autoHeight: true
+        });
+        swiper3.on('slideChange', function () {
+            $('.main_feature .woman ul.title-list li a').removeClass('on');
+            $('.main_feature .woman ul.title-list li').eq(swiper3.activeIndex).find('a').addClass('on');
+        });
+        $('.main_feature .woman ul.title-list li a').click(function(){
+            $('.main_feature .woman ul.title-list li a').removeClass('on');
+            $(this).addClass('on');
+            swiper3.slideTo($(this).parent().index(),500,false);
+            return false;
+        });
+        //New, Best, MD’s pick 슬라이드 end
+
+        var swiper4 = new Swiper('.main_suggest', {
+            autoHeight: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            loop: true,
+        });
+
+        // 인스타그램
+        var userId = "1360424325";
+        var clientId = "d838ea9956794edca73b382856270f9c";
+        var accessToken = "";
+        var siteNo = "1";
+        var partnerNo = "6";
+        var instagramAct = "topten10_official";
+        var articleCnt = 4;
+        if(accessToken == ""){
+            $('.main_instagram').remove();
+        }else{
+            Instagram.create(instagramAct, userId, clientId, accessToken, siteNo, partnerNo, articleCnt);
+        }
+
+        $('.main_movie .movie a.vod_cover').click(function(){//Season concept 동영상 재생
+            yt_player.playVideo();
+            $(this).fadeOut();
+            return false;
+        });
+
+    });
+
+    /**
+     * Youtube API 로드 (Season concept 동영상)
+     */
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    /**
+     * onYouTubeIframeAPIReady 함수는 필수로 구현해야 한다.
+     * 플레이어 API에 대한 JavaScript 다운로드 완료 시 API가 이 함수 호출한다.
+     * 페이지 로드 시 표시할 플레이어 개체를 만들어야 한다.
+     */
+    var yt_player;
+    /* 20171120 삭제
+    function onYouTubePlayerAPIReady() {
+        yt_player = new YT.Player('ytplayer');
+    }*/
+    function onYouTubeIframeAPIReady() {
+        yt_player = new YT.Player('ytplayer', {
+            events: {
+                //'onReady': onPlayerReady,               // 플레이어 로드가 완료되고 API 호출을 받을 준비가 될 때마다 실행
+                //'onStateChange': onPlayerStateChange    // 플레이어의 상태가 변경될 때마다 실행
+            }
+        });
+    }
+    function onPlayerReady(event) {
+        console.log('onPlayerReady 실행');
+
+        // 플레이어 자동실행 (주의: 모바일에서는 자동실행되지 않음)
+        event.target.playVideo();
+    }
+    var playerState;
+    function onPlayerStateChange(event) {
+        playerState = event.data == YT.PlayerState.ENDED ? '종료됨' :
+            event.data == YT.PlayerState.PLAYING ? '재생 중' :
+                event.data == YT.PlayerState.PAUSED ? '일시중지 됨' :
+                    event.data == YT.PlayerState.BUFFERING ? '버퍼링 중' :
+                        event.data == YT.PlayerState.CUED ? '재생준비 완료됨' :
+                            event.data == -1 ? '시작되지 않음' : '예외';
+
+        console.log('onPlayerStateChange 실행: ' + playerState);
+    }
+    /**
+     * Youtube API 로드 End (Season concept 동영상)
+     */
+</script>
+
+<!-- 크리테오 스크립트 -->
+<script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+<script type="text/javascript">
+    try {
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            { event: "setAccount", account: 51710 },
+            { event: "setEmail", email: "" },
+            { event: "setSiteType", type: "m" },
+            { event: "viewHome" }
+        );
+    } catch (e) {
+        console.error(e.message);
+    }
+</script>
+</html>
